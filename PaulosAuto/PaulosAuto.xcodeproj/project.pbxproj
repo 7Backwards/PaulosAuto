@@ -56,15 +56,55 @@
 		B0658AA02417E55500245732 /* PaulosAuto */ = {
 			isa = PBXGroup;
 			children = (
-				B0658AA12417E55500245732 /* AppDelegate.swift */,
-				B0658AA32417E55500245732 /* SceneDelegate.swift */,
-				B0658AA52417E55500245732 /* ViewController.swift */,
-				B0658AA72417E55500245732 /* Main.storyboard */,
-				B0658AAA2417E55700245732 /* Assets.xcassets */,
-				B0658AAC2417E55700245732 /* LaunchScreen.storyboard */,
-				B0658AAF2417E55700245732 /* Info.plist */,
+				B0658AB62417E6CA00245732 /* AppDelegate */,
+				B0658AB52417E6A300245732 /* Controllers */,
+				B0658AB72417E6D300245732 /* Storyboard */,
+				B0658AB82417E74C00245732 /* Resources */,
+				B0658AB92417E76200245732 /* Configurations */,
 			);
 			path = PaulosAuto;
+			sourceTree = "<group>";
+		};
+		B0658AB52417E6A300245732 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AA52417E55500245732 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B0658AB62417E6CA00245732 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AA12417E55500245732 /* AppDelegate.swift */,
+				B0658AA32417E55500245732 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B0658AB72417E6D300245732 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AAC2417E55700245732 /* LaunchScreen.storyboard */,
+				B0658AA72417E55500245732 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B0658AB82417E74C00245732 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AAA2417E55700245732 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0658AB92417E76200245732 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AAF2417E55700245732 /* Info.plist */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PaulosAuto/Info.plist;
+				INFOPLIST_FILE = PaulosAuto/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PaulosAuto/Info.plist;
+				INFOPLIST_FILE = PaulosAuto/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
