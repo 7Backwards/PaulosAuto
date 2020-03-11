@@ -15,14 +15,17 @@ class HomeViewController: ViewController {
         
         let image: UIView = UIImageView(image: UIImage(named: "Paulosauto-2.png"))
         image.contentMode = UIView.ContentMode.scaleAspectFit
+        image.center = self.navigationItem.titleView?.center ??
         self.navigationItem.titleView = image
+//        self.navigationItem.til
+        
         
         let button1 = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(getter: UICommandAlternate.action))
         
         let button2 = UIBarButtonItem(image: UIImage(systemName : "gear"), style: .plain, target: self, action: #selector(getter: UICommandAlternate.action))
         button2.tintColor = .clear
         navigationItem.setRightBarButton(button1, animated: false)
-        navigationItem.setLeftBarButton(button2, animated: false)
+        //navigationItem.setLeftBarButton(button2, animated: false)
         
     }
     
