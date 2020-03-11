@@ -18,18 +18,23 @@ class ViewController: UIViewController {
         debugPrint("viewDidLoad")
     }
     
-    func addNavBarImage() {
+    func addNavBarLogo() {
+        
         let imageView = UIImageView(image: #imageLiteral(resourceName: "Paulosauto-2"))
-        imageView.frame = CGRect(x: 0, y: -20, width: 200, height: 70)
+        imageView.frame = CGRect(x: 0, y: -15, width: 200, height: 70)
         imageView.contentMode = .scaleAspectFit
-        
-        let titleView = UIView(frame: CGRect(x: 0, y: -20, width: 200, height: 70))
-        
+        let titleView = UIView(frame: CGRect(x: 0, y: -15, width: 200, height: 70))
         titleView.addSubview(imageView)
         titleView.backgroundColor = .clear
         self.navigationItem.titleView = titleView
     }
-    
+
+    func addNavBarSettings() {
+        
+        var image = UIImage(systemName: "gear")
+        image = image?.withRenderingMode(.alwaysOriginal)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: nil)
+    }
     
 }
 

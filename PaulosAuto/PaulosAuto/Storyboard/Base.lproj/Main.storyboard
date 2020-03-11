@@ -95,80 +95,38 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="qYP-Sh-vUJ">
-            <objects>
-                <tableViewController id="tJ9-Th-MdX" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mwr-AO-Z4a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fdm-wm-SAq">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fdm-wm-SAq" id="H4q-Sf-KRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="tJ9-Th-MdX" id="gQ8-SP-vCR"/>
-                            <outlet property="delegate" destination="tJ9-Th-MdX" id="MG2-xY-Mag"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="1vW-mA-TND"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bt8-jR-eg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3031" y="781"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="3HR-oo-dVu">
-            <objects>
-                <tableViewController id="2jS-ll-gkJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gd4-M9-gSg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RCh-xp-JTb">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RCh-xp-JTb" id="eNd-TN-qSQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2jS-ll-gkJ" id="hQd-Ds-yCU"/>
-                            <outlet property="delegate" destination="2jS-ll-gkJ" id="8O2-mu-tks"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="TJw-Kw-ZXv"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gfg-lx-IFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3033" y="1517"/>
-        </scene>
         <!--Faturas-->
         <scene sceneID="oxc-3p-KfO">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="eiI-UB-oRC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Faturas" image="doc.text" selectedImage="doc.text.fill" catalog="system" id="HOh-Vk-THa"/>
+                    <tabBarItem key="tabBarItem" title="Faturas" image="doc.text" catalog="system" selectedImage="doc.text.fill" id="HOh-Vk-THa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RPz-3g-QMD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2jS-ll-gkJ" kind="relationship" relationship="rootViewController" id="F74-q0-x3g"/>
+                        <segue destination="T4Z-me-1Yd" kind="relationship" relationship="rootViewController" id="Y9C-WW-O94"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYU-Nc-3By" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2118" y="1517"/>
+        </scene>
+        <!--Faturas Scene-->
+        <scene sceneID="PK8-hN-Igy">
+            <objects>
+                <viewController id="T4Z-me-1Yd" customClass="FaturasScene" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5St-VQ-SgS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DcP-4r-fah"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SBn-X4-VqX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMy-TP-bJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3035" y="1526"/>
         </scene>
         <!--Problemas-->
         <scene sceneID="EN2-wT-Gnw">
@@ -180,12 +138,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tJ9-Th-MdX" kind="relationship" relationship="rootViewController" id="kUD-v8-2td"/>
+                        <segue destination="YK8-cm-R9v" kind="relationship" relationship="rootViewController" id="W23-I5-1Ff"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9z-Vt-4tF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2116" y="781"/>
+        </scene>
+        <!--Problemas Scene-->
+        <scene sceneID="8Vz-Wf-9vA">
+            <objects>
+                <viewController id="YK8-cm-R9v" customClass="ProblemasScene" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1C-HY-47D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XEm-Uq-hhf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kxs-y1-Zvx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4J-cR-tn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="781"/>
         </scene>
         <!--Página inicial-->
         <scene sceneID="Zvr-Ky-A1u">
@@ -245,7 +219,7 @@
     </scenes>
     <resources>
         <image name="Paulosauto-2" width="1280" height="905"/>
-        <image name="doc.text" width="16" height="16"/>
+        <image name="doc.text" catalog="system" width="56" height="64"/>
         <image name="doc.text.fill" catalog="system" width="56" height="64"/>
         <image name="exclamationmark.triangle" catalog="system" width="64" height="56"/>
         <image name="exclamationmark.triangle.fill" catalog="system" width="64" height="56"/>
