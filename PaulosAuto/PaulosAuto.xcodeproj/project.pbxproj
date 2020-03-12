@@ -13,6 +13,7 @@
 		B0658AA92417E55500245732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0658AA72417E55500245732 /* Main.storyboard */; };
 		B0658AAB2417E55700245732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0658AAA2417E55700245732 /* Assets.xcassets */; };
 		B0658AAE2417E55700245732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0658AAC2417E55700245732 /* LaunchScreen.storyboard */; };
+		B06ABA99241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06ABA98241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift */; };
 		B0AB7FE624195CBD007AF3FD /* PaginaInicialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB7FE524195CBD007AF3FD /* PaginaInicialScene.swift */; };
 		FACD18162419AEEE0085574C /* ProblemasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasScene.swift */; };
 		FACD18182419AF880085574C /* FaturasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* FaturasScene.swift */; };
@@ -27,6 +28,7 @@
 		B0658AAA2417E55700245732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0658AAD2417E55700245732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0658AAF2417E55700245732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B06ABA98241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipamentos.swift; sourceTree = "<group>"; };
 		B0AB7FE524195CBD007AF3FD /* PaginaInicialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaInicialScene.swift; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ProblemasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasScene.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* FaturasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaturasScene.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B0AB7FE524195CBD007AF3FD /* PaginaInicialScene.swift */,
 				FACD18152419AEEE0085574C /* ProblemasScene.swift */,
 				FACD18172419AF880085574C /* FaturasScene.swift */,
+				B06ABA98241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				FACD18182419AF880085574C /* FaturasScene.swift in Sources */,
+				B06ABA99241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B0AB7FE624195CBD007AF3FD /* PaginaInicialScene.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasScene.swift in Sources */,
