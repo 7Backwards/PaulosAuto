@@ -17,6 +17,9 @@
 		B0AB7FE624195CBD007AF3FD /* PaginaInicialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB7FE524195CBD007AF3FD /* PaginaInicialScene.swift */; };
 		FACD18162419AEEE0085574C /* ProblemasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasScene.swift */; };
 		FACD18182419AF880085574C /* FaturasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* FaturasScene.swift */; };
+		FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1819241AEB170085574C /* GridFlowLayout.swift */; };
+		FACD181C241AEB2A0085574C /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181B241AEB2A0085574C /* ListFlowLayout.swift */; };
+		FACD181E241AFF980085574C /* ListarMaquinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListarMaquinas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B0AB7FE524195CBD007AF3FD /* PaginaInicialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginaInicialScene.swift; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ProblemasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasScene.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* FaturasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaturasScene.swift; sourceTree = "<group>"; };
+		FACD1819241AEB170085574C /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
+		FACD181B241AEB2A0085574C /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlowLayout.swift; sourceTree = "<group>"; };
+		FACD181D241AFF980085574C /* ListarMaquinas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListarMaquinas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				FACD18152419AEEE0085574C /* ProblemasScene.swift */,
 				FACD18172419AF880085574C /* FaturasScene.swift */,
 				B06ABA98241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift */,
+				FACD1819241AEB170085574C /* GridFlowLayout.swift */,
+				FACD181B241AEB2A0085574C /* ListFlowLayout.swift */,
+				FACD181D241AFF980085574C /* ListarMaquinas.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,8 +200,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
+				FACD181E241AFF980085574C /* ListarMaquinas.swift in Sources */,
 				FACD18182419AF880085574C /* FaturasScene.swift in Sources */,
 				B06ABA99241A8B4C00E8EE43 /* CollectionViewEquipamentos.swift in Sources */,
+				FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */,
+				FACD181C241AEB2A0085574C /* ListFlowLayout.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B0AB7FE624195CBD007AF3FD /* PaginaInicialScene.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasScene.swift in Sources */,
