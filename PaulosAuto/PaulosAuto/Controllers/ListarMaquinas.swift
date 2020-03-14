@@ -11,13 +11,12 @@ import UIKit
 class ListarMaquinas: ViewController {
     
     
-    
 
+    @IBOutlet weak var collectionCell: CollectionViewEquipamentos!
     @IBOutlet var listButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var gridbutton: UIButton!
     
-
     var isGridFlowLayoutUsed: Bool = false {
         didSet {
             updateButtonAppearance()
@@ -26,8 +25,8 @@ class ListarMaquinas: ViewController {
     
     var gridFlowLayout = GridFlowLayout()
     var listFlowLayout = ListFlowLayout()
-    fileprivate let Array = ["River Cruise", "North Island"]
-    fileprivate let itemsToDisplay = [("5523b3f1cf47c"), ("5523b505b7b72")] // image names
+    var array: [equipamento] = [equipamento(modelo:"CB10",serialnumber:"4732642B" ,utilizacao:40,imagem:"5523b3f1cf47c"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +35,8 @@ class ListarMaquinas: ViewController {
         collectionView.collectionViewLayout = gridFlowLayout
         collectionView.dataSource = self
         isGridFlowLayoutUsed = true
+        super.addNavBarLogo()
+        super.addNavBarSettings()
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +64,7 @@ class ListarMaquinas: ViewController {
         UIView.animate(withDuration: 0.2) { () -> Void in
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.setCollectionViewLayout(layout, animated: true)
-           
+            
             
         }
     }
@@ -71,20 +72,27 @@ class ListarMaquinas: ViewController {
 
 extension ListarMaquinas: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemsToDisplay.count
+        return array.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentos.self), for: indexPath) as! CollectionViewEquipamentos
         
-        let index = indexPath.row % itemsToDisplay.count
-        let imageName = itemsToDisplay[index]
-        cell.imageEquipamento.image = UIImage(named: imageName)
-        cell.imageEquipamento.contentMode = .scaleAspectFit
-        cell.modeloEquipamento.text = Array[indexPath.row]
+        if let imageName = array[indexPath.row].imagem {
+            
+            cell.imageEquipamento.contentMode = .scaleAspectFit
+            cell.imageEquipamento.image = UIImage(named: imageName)
+        }
+        if let modeloText = array[indexPath.row].modelo {
+            
+            cell.modeloEquipamento.text = modeloText
+        }
+        if let utilizacaoText = array[indexPath.row].utilizacao {
+            
+            cell.utilizacaoEquipamento.text = "\(utilizacaoText)"
+        }
         cell.cellView.setCardView(view: cell.cellView)
-        
         return cell
         
     }

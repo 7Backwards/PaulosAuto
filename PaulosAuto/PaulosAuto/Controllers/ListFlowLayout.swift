@@ -15,6 +15,7 @@ class ListFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         setupLayout()
+        
     }
     
     /**
