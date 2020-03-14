@@ -278,24 +278,24 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewEquipamentos" id="Q3l-7r-z47" customClass="CollectionViewEquipamentos" customModule="PaulosAuto" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="CollectionViewEquipamentos" id="Q3l-7r-z47" customClass="CollectionViewEquipamentos" customModule="PaulosAuto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="176" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-Ym-CUa">
-                                                    <rect key="frame" x="16" y="15" width="145" height="134"/>
+                                                <view contentMode="left" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-Ym-CUa">
+                                                    <rect key="frame" x="15" y="15" width="146" height="134"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-nZ-hzL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="93"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-nZ-hzL">
+                                                            <rect key="frame" x="15" y="10" width="120" height="104"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="93" id="xoh-L3-9zE"/>
+                                                                <constraint firstAttribute="width" constant="120" id="c2w-pp-JOE"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLL-sK-maQ">
-                                                            <rect key="frame" x="0.0" y="111" width="145" height="23"/>
+                                                            <rect key="frame" x="0.0" y="111" width="146" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="7yv-wJ-eZl"/>
                                                             </constraints>
@@ -306,11 +306,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="zwV-nZ-hzL" secondAttribute="bottom" constant="20" id="8cw-WR-qrN"/>
                                                         <constraint firstAttribute="trailing" secondItem="dLL-sK-maQ" secondAttribute="trailing" id="Cta-LL-Ixc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="zwV-nZ-hzL" secondAttribute="trailing" id="DGk-Z9-L7j"/>
                                                         <constraint firstAttribute="bottom" secondItem="dLL-sK-maQ" secondAttribute="bottom" id="IbM-8R-6tc"/>
-                                                        <constraint firstItem="zwV-nZ-hzL" firstAttribute="top" secondItem="PXe-Ym-CUa" secondAttribute="top" id="eQP-Za-trC"/>
-                                                        <constraint firstItem="zwV-nZ-hzL" firstAttribute="leading" secondItem="PXe-Ym-CUa" secondAttribute="leading" id="ibP-v6-SQl"/>
+                                                        <constraint firstItem="zwV-nZ-hzL" firstAttribute="leading" secondItem="PXe-Ym-CUa" secondAttribute="leading" constant="15" id="eO2-5j-stQ"/>
+                                                        <constraint firstItem="zwV-nZ-hzL" firstAttribute="top" secondItem="PXe-Ym-CUa" secondAttribute="top" constant="10" id="f36-dT-HI8"/>
                                                         <constraint firstItem="dLL-sK-maQ" firstAttribute="leading" secondItem="PXe-Ym-CUa" secondAttribute="leading" id="yxP-0i-6Kw"/>
                                                     </constraints>
                                                 </view>
@@ -320,7 +320,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="PXe-Ym-CUa" secondAttribute="trailing" constant="7" id="J8S-f5-z3h"/>
                                             <constraint firstItem="PXe-Ym-CUa" firstAttribute="top" secondItem="Q3l-7r-z47" secondAttribute="topMargin" constant="7" id="W9j-XO-emR"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="PXe-Ym-CUa" secondAttribute="bottom" constant="7" id="dvz-Ir-r94"/>
-                                            <constraint firstItem="PXe-Ym-CUa" firstAttribute="leading" secondItem="Q3l-7r-z47" secondAttribute="leadingMargin" constant="8" id="xoh-rF-fRL"/>
+                                            <constraint firstItem="PXe-Ym-CUa" firstAttribute="leading" secondItem="Q3l-7r-z47" secondAttribute="leadingMargin" constant="7" id="xoh-rF-fRL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="cellView" destination="PXe-Ym-CUa" id="elq-we-TqY"/>
@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2y-BJ-vN7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2990" y="92"/>
+            <point key="canvasLocation" x="2989.8550724637685" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>

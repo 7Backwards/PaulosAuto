@@ -16,6 +16,7 @@ class GridFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         setupLayout()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,4 +51,6 @@ class GridFlowLayout: UICollectionViewFlowLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         return collectionView!.contentOffset
     }
+    
+    
 }

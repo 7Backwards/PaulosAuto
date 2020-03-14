@@ -11,10 +11,13 @@ import UIKit
 class ListarMaquinas: ViewController {
     
     
+    
 
     @IBOutlet var listButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var gridbutton: UIButton!
+    
+
     var isGridFlowLayoutUsed: Bool = false {
         didSet {
             updateButtonAppearance()
@@ -60,6 +63,8 @@ class ListarMaquinas: ViewController {
         UIView.animate(withDuration: 0.2) { () -> Void in
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.setCollectionViewLayout(layout, animated: true)
+           
+            
         }
     }
 }
@@ -76,9 +81,10 @@ extension ListarMaquinas: UICollectionViewDataSource {
         let index = indexPath.row % itemsToDisplay.count
         let imageName = itemsToDisplay[index]
         cell.imageEquipamento.image = UIImage(named: imageName)
+        cell.imageEquipamento.contentMode = .scaleAspectFit
         cell.modeloEquipamento.text = Array[indexPath.row]
         cell.cellView.setCardView(view: cell.cellView)
-      
+        
         return cell
         
     }
@@ -87,17 +93,13 @@ extension UIView {
     
     func setCardView(view : UIView){
         
-        view.layer.cornerRadius = 2.0
-        view.layer.borderColor  =  UIColor.lightGray.cgColor
-        view.layer.borderWidth = 2.0
-        view.layer.shadowOpacity = 1.0
-        view.layer.shadowColor =  UIColor.clear.cgColor
-        view.layer.shadowRadius = 2.0
-        view.layer.shadowOffset = CGSize(width:3, height: 3)
-        view.layer.masksToBounds = true
-        
+        view.layer.cornerRadius = 15
+        view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+        view.layer.masksToBounds = false
     }
 }
+
+
 
 
 
