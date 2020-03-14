@@ -62,8 +62,8 @@ class PaginaInicialScene: ViewController,UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         
-        equipamentosTable.dataSource = self as? UITableViewDataSource
-        equipamentosTable.delegate = self as? UITableViewDelegate
+        equipamentosTable.dataSource = self as UITableViewDataSource
+        equipamentosTable.delegate = self as UITableViewDelegate
         super.viewDidLoad()
         super.addNavBarLogo()
         super.addNavBarSettings()

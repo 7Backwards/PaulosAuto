@@ -11,8 +11,9 @@ import UIKit
 class ListarMaquinas: ViewController {
     
     
-
-    @IBOutlet weak var collectionCell: CollectionViewEquipamentos!
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var listButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var gridbutton: UIButton!
@@ -37,6 +38,9 @@ class ListarMaquinas: ViewController {
         isGridFlowLayoutUsed = true
         super.addNavBarLogo()
         super.addNavBarSettings()
+        super.setSearchBarStyle(searchBar: searchBar)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,15 +105,18 @@ extension ListarMaquinas: UICollectionViewDataSource {
         return cell
         
     }
+
 }
 extension UIView {
     
     func setCardView(view : UIView){
         
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 5
         view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
         view.layer.masksToBounds = false
     }
+    
+
 }
 
 
