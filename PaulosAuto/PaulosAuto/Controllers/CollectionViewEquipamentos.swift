@@ -15,6 +15,7 @@ class CollectionViewEquipamentos: UICollectionViewCell {
     @IBOutlet weak var modeloEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
     @IBOutlet weak var utilizacaoEquipamento: UILabel!
+    @IBOutlet weak var numeroSerieEquipamento: UILabel!
     
      
 
