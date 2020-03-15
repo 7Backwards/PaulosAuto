@@ -37,7 +37,7 @@ class ListarMaquinas: ViewController {
         collectionView.dataSource = self
         isGridFlowLayoutUsed = true
         super.addNavBarLogo()
-        super.addNavBarSettings()
+        super.addNavBarFilter()
         super.setSearchBarStyle(searchBar: searchBar)
         
         

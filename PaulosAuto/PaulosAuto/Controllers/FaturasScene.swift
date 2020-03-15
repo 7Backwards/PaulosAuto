@@ -14,7 +14,6 @@ class FaturasScene: ViewController {
         
         super.viewDidLoad()
         super.addNavBarLogo()
-        super.addNavBarSettings()
     }
     
     

@@ -29,11 +29,12 @@ class ViewController: UIViewController {
         self.navigationItem.titleView = titleView
     }
 
-    func addNavBarSettings() {
+    func addNavBarFilter() {
         
-        var image = UIImage(systemName: "gear")
-        image = image?.withRenderingMode(.alwaysOriginal)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: nil)
+        
+  
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem?.tintColor =  .red
     }
     
     func setSearchBarStyle(searchBar: UISearchBar) {

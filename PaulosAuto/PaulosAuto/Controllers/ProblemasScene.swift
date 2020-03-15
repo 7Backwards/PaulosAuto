@@ -14,7 +14,6 @@ class ProblemasScene: ViewController {
         
         super.viewDidLoad()
         super.addNavBarLogo()
-        super.addNavBarSettings()
     }
     
     
