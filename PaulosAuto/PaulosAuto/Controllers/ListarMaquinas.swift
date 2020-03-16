@@ -64,24 +64,17 @@ class ListarMaquinas: ViewController, UICollectionViewDelegate, UISearchBarDeleg
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-
-
- 
             filteredEquipamentos = equipamentos.filter { (equipamento) -> Bool in
                 return equipamento.serialNumber?.range(of: searchText, options: [ .caseInsensitive ]) != nil
             }
-
             searchActive = !filteredEquipamentos.isEmpty
-
             self.collectionView.reloadData()
-        
-          
        }
 
-       override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            // Dispose of any resources that can be recreated.
-       }
+    }
     
     @IBAction func gridButtonDidTap(_ sender: UIButton) {
         
@@ -117,52 +110,51 @@ class ListarMaquinas: ViewController, UICollectionViewDelegate, UISearchBarDeleg
             }
     }
     
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentos.self), for: indexPath) as! CollectionViewEquipamentos
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentos.self), for: indexPath) as! CollectionViewEquipamentos
         
-            if(searchActive) {
+        if(searchActive) {
                 
-                if let imageName = filteredEquipamentos[indexPath.row].imagem {
+            if let imageName = filteredEquipamentos[indexPath.row].imagem {
                     
-                            cell.imageEquipamento.contentMode = .scaleAspectFit
-                            cell.imageEquipamento.image = UIImage(named: imageName)
-                        }
-                        if let modeloText = filteredEquipamentos[indexPath.row].modelo {
-                    
-                            cell.modeloEquipamento.text = modeloText
-                        }
-                        if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
-                    
-                            cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                        }
-                
-                        if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
-                    
-                            cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                        }
-                
+                cell.imageEquipamento.contentMode = .scaleAspectFit
+                cell.imageEquipamento.image = UIImage(named: imageName)
             }
-            else {
-                if let imageName = equipamentos[indexPath.row].imagem {
-            
-                    cell.imageEquipamento.contentMode = .scaleAspectFit
-                    cell.imageEquipamento.image = UIImage(named: imageName)
-                }
-                if let modeloText = equipamentos[indexPath.row].modelo {
-            
-                    cell.modeloEquipamento.text = modeloText
-                }
-                if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
-            
-                    cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                }
-        
-                if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
-            
-                    cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                }
+            if let modeloText = filteredEquipamentos[indexPath.row].modelo {
+                    
+                cell.modeloEquipamento.text = modeloText
             }
+            if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
+                    
+                cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
+            }
+                
+            if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
+                    
+                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
+            }
+                
+        }
+        else {
+            if let imageName = equipamentos[indexPath.row].imagem {
+            
+                cell.imageEquipamento.contentMode = .scaleAspectFit
+                cell.imageEquipamento.image = UIImage(named: imageName)
+            }
+            if let modeloText = equipamentos[indexPath.row].modelo {
+            
+                cell.modeloEquipamento.text = modeloText
+            }
+            if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
+            
+                cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
+            }
+            if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
+            
+                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
+            }
+        }
         cell.cellView.setCardView(view: cell.cellView)
         return cell
     }

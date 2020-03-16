@@ -16,6 +16,7 @@ struct equipamento: Decodable {
     var imagem : String?
     
     init(modelo:String,serialnumber:String,utilizacao:Int,imagem:String){
+        
         self.modelo = modelo
         self.serialNumber = serialnumber
         self.utilizacao = utilizacao

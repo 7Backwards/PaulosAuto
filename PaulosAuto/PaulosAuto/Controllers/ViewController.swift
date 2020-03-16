@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         debugPrint("viewDidLoad")
     }
@@ -31,8 +32,6 @@ class ViewController: UIViewController {
 
     func addNavBarFilter() {
         
-        
-  
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem?.tintColor =  .red
     }
@@ -49,26 +48,30 @@ class ViewController: UIViewController {
     
 }
 
-extension CALayer {
-  func applySketchShadow(
-    color: UIColor = .black,
-    alpha: Float = 0.16,
-    x: CGFloat = 0,
-    y: CGFloat = 3,
-    blur: CGFloat = 6,
-    spread: CGFloat = 0)
-  {
-    shadowColor = color.cgColor
-    shadowOpacity = alpha
-    shadowOffset = CGSize(width: x, height: y)
-    shadowRadius = blur / 2.0
-    if spread == 0 {
-      shadowPath = nil
-    } else {
-      let dx = -spread
-      let rect = bounds.insetBy(dx: dx, dy: dx)
-      shadowPath = UIBezierPath(rect: rect).cgPath
+    extension CALayer {
+        
+        func applySketchShadow(
+            
+            color: UIColor = .black,
+            alpha: Float = 0.16,
+            x: CGFloat = 0,
+            y: CGFloat = 3,
+            blur: CGFloat = 6,
+            spread: CGFloat = 0)
+        {
+            shadowColor = color.cgColor
+            shadowOpacity = alpha
+            shadowOffset = CGSize(width: x, height: y)
+            shadowRadius = blur / 2.0
+            if spread == 0 {
+                
+                shadowPath = nil
+            } else {
+                
+                let dx = -spread
+                let rect = bounds.insetBy(dx: dx, dy: dx)
+                shadowPath = UIBezierPath(rect: rect).cgPath
+            }
+        }
     }
-  }
-}
 
