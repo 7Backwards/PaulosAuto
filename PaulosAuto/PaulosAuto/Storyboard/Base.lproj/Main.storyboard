@@ -278,7 +278,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ME-z2-qA3">
                                 <rect key="frame" x="10" y="56" width="394" height="703"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Pesquisar por número de série" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-81-9Yc">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Pesquisar por número de série" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-81-9Yc">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="56"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -288,6 +288,9 @@
                                             <string>Title</string>
                                             <string>Title</string>
                                         </scopeButtonTitles>
+                                        <connections>
+                                            <outlet property="delegate" destination="0Mv-eo-OSB" id="8xL-9y-3Dw"/>
+                                        </connections>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-Wi-WAP">
                                         <rect key="frame" x="0.0" y="61" width="394" height="22"/>
@@ -412,8 +415,6 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstItem="vgG-nQ-4C6" firstAttribute="top" secondItem="shv-tP-wXR" secondAttribute="bottom" constant="2" id="KMY-ua-Kzn"/>
-                                                                        <constraint firstItem="dLL-sK-maQ" firstAttribute="top" secondItem="zwV-nZ-hzL" secondAttribute="bottom" constant="2" id="fzf-G0-gBc"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="vgG-nQ-4C6" secondAttribute="bottom" id="we4-7l-Prg"/>
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
@@ -427,8 +428,12 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="PXe-Ym-CUa" firstAttribute="top" secondItem="Q3l-7r-z47" secondAttribute="topMargin" id="Hs8-VC-VWf"/>
+                                                    <constraint firstItem="PXe-Ym-CUa" firstAttribute="leading" secondItem="Q3l-7r-z47" secondAttribute="leadingMargin" id="IWM-Ej-vIq"/>
                                                     <constraint firstItem="PXe-Ym-CUa" firstAttribute="leading" secondItem="Q3l-7r-z47" secondAttribute="leadingMargin" id="LLC-3N-1Hb"/>
                                                     <constraint firstItem="PXe-Ym-CUa" firstAttribute="top" secondItem="Q3l-7r-z47" secondAttribute="topMargin" id="Vgj-dK-P2s"/>
+                                                    <constraint firstItem="PXe-Ym-CUa" firstAttribute="bottom" secondItem="Q3l-7r-z47" secondAttribute="bottomMargin" id="ZGL-Q1-dLw"/>
+                                                    <constraint firstItem="PXe-Ym-CUa" firstAttribute="trailing" secondItem="Q3l-7r-z47" secondAttribute="trailingMargin" id="mfR-e3-vr6"/>
                                                     <constraint firstItem="PXe-Ym-CUa" firstAttribute="bottom" secondItem="Q3l-7r-z47" secondAttribute="bottomMargin" id="uMp-9D-cUk"/>
                                                     <constraint firstItem="PXe-Ym-CUa" firstAttribute="trailing" secondItem="Q3l-7r-z47" secondAttribute="trailingMargin" id="xCh-md-u0F"/>
                                                 </constraints>
@@ -441,6 +446,10 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="0Mv-eo-OSB" id="CBT-rh-hYN"/>
+                                            <outlet property="delegate" destination="0Mv-eo-OSB" id="EAQ-yD-lFl"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
