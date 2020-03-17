@@ -267,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="2142" y="-708"/>
         </scene>
-        <!--Listar Equipamento-->
+        <!--ListarEquipamentoController-->
         <scene sceneID="al1-g4-l6Z">
             <objects>
-                <viewController title="Listar Equipamento" id="0Mv-eo-OSB" customClass="ListarMaquinasController" sceneMemberID="viewController">
+                <viewController title="ListarEquipamentoController" id="0Mv-eo-OSB" customClass="ListarEquipamentoController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubG-7e-29b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,9 +288,6 @@
                                             <string>Title</string>
                                             <string>Title</string>
                                         </scopeButtonTitles>
-                                        <connections>
-                                            <outlet property="delegate" destination="0Mv-eo-OSB" id="8xL-9y-3Dw"/>
-                                        </connections>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-Wi-WAP">
                                         <rect key="frame" x="0.0" y="61" width="394" height="22"/>
@@ -316,9 +313,6 @@
                                                         <state key="normal" backgroundImage="square.grid.2x2" catalog="system">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="gridButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="5Gj-uw-cOH"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqI-jZ-TBA">
                                                         <rect key="frame" x="27" y="3" width="18" height="16"/>
@@ -328,9 +322,6 @@
                                                         <state key="normal" title="List" backgroundImage="list.dash" catalog="system">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="listButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="TFD-IF-SWG"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -361,7 +352,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="CollectionViewEquipamentos" id="Q3l-7r-z47" customClass="CollectionViewEquipamentosController" customModule="PaulosAuto" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="CollectionViewEquipamentosController" id="Q3l-7r-z47" customClass="CollectionViewEquipamentosController" customModule="PaulosAuto" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="176" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -443,19 +434,15 @@
                                                     <constraint firstItem="PXe-Ym-CUa" firstAttribute="trailing" secondItem="Q3l-7r-z47" secondAttribute="trailingMargin" id="xCh-md-u0F"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="cellView" destination="PXe-Ym-CUa" id="elq-we-TqY"/>
-                                                    <outlet property="imageEquipamento" destination="zwV-nZ-hzL" id="8mB-MM-SyI"/>
-                                                    <outlet property="modeloEquipamento" destination="dLL-sK-maQ" id="CNd-Ij-ghY"/>
-                                                    <outlet property="numeroSerieEquipamento" destination="vgG-nQ-4C6" id="5J4-N9-HeC"/>
-                                                    <outlet property="stackViewCell" destination="Yl3-Ks-YSC" id="DK2-bf-1mq"/>
-                                                    <outlet property="utilizacaoEquipamento" destination="shv-tP-wXR" id="aIb-TV-4EH"/>
+                                                    <outlet property="cellView" destination="PXe-Ym-CUa" id="Qa0-1x-bvx"/>
+                                                    <outlet property="imageEquipamento" destination="zwV-nZ-hzL" id="q4R-5d-Ti1"/>
+                                                    <outlet property="modeloEquipamento" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
+                                                    <outlet property="numeroSerieEquipamento" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
+                                                    <outlet property="stackViewCell" destination="Yl3-Ks-YSC" id="2fs-vL-6ZL"/>
+                                                    <outlet property="utilizacaoEquipamento" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="0Mv-eo-OSB" id="CBT-rh-hYN"/>
-                                            <outlet property="delegate" destination="0Mv-eo-OSB" id="EAQ-yD-lFl"/>
-                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -473,10 +460,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZwT-u0-eNj"/>
                     <connections>
-                        <outlet property="collectionView" destination="Kcj-pH-aRn" id="Lmu-LO-5gt"/>
-                        <outlet property="gridbutton" destination="sP7-S2-bfP" id="iRj-0V-02a"/>
-                        <outlet property="listButton" destination="HqI-jZ-TBA" id="lIC-iV-xz5"/>
-                        <outlet property="searchBar" destination="jIG-81-9Yc" id="F9p-cF-dEh"/>
+                        <outlet property="collectionView" destination="Kcj-pH-aRn" id="rE4-dj-DnE"/>
+                        <outlet property="gridButton" destination="sP7-S2-bfP" id="jzD-mD-e21"/>
+                        <outlet property="listButton" destination="HqI-jZ-TBA" id="eTU-cE-pin"/>
+                        <outlet property="searchBar" destination="jIG-81-9Yc" id="ves-CE-uw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2y-BJ-vN7" sceneMemberID="firstResponder"/>

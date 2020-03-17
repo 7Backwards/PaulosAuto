@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ListarMaquinasController: ViewController, UICollectionViewDelegate, UISearchBarDelegate {
+class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
     // MARK: - Outlets
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet var listButton: UIButton!
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var gridbutton: UIButton!
+    @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var gridButton: UIButton!
     
     // MARK: - Variables
     
@@ -58,7 +58,6 @@ class ListarMaquinasController: ViewController, UICollectionViewDelegate, UISear
         addNavBarFilter()
         super.setSearchBarStyle(searchBar: searchBar)
         collectionView.collectionViewLayout = gridFlowLayout
-        collectionView.dataSource = self
         isGridFlowLayoutUsed = true
     }
     

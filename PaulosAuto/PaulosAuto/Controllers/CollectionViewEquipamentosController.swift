@@ -12,6 +12,8 @@ class CollectionViewEquipamentosController: UICollectionViewCell {
     
     // MARK: - Outlets
     
+    
+
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var modeloEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
@@ -19,6 +21,5 @@ class CollectionViewEquipamentosController: UICollectionViewCell {
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
     @IBOutlet weak var stackViewCell: UIStackView!
     
-     
 
 }
