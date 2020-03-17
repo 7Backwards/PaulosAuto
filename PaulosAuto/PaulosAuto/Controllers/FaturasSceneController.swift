@@ -1,5 +1,5 @@
 //
-//  ProblemasScene.swift
+//  FaturasScene.swift
 //  PaulosAuto
 //
 //  Created by Neves on 11/03/2020.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ProblemasScene: ViewController {
+class FaturasSceneController: ViewController {
+    
+    // MARK: - Functions
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         super.addNavBarLogo()
     }
+    
     
     
     

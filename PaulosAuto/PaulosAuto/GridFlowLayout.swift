@@ -1,5 +1,5 @@
 //
-//  ListFlowLayout.swift
+//  GridFlowLayout.swift
 //  PaulosAuto
 //
 //  Created by Neves on 12/03/2020.
@@ -8,9 +8,13 @@
 
 import Foundation
 import UIKit
-class ListFlowLayout: UICollectionViewFlowLayout {
+class GridFlowLayout: UICollectionViewFlowLayout {
+    
+    // MARK: - Constants
     
     let itemHeight: CGFloat = 200
+    
+    // MARK: - Functions
     
     override init() {
         
@@ -26,22 +30,24 @@ class ListFlowLayout: UICollectionViewFlowLayout {
     
     func setupLayout() {
         
-        minimumInteritemSpacing = 0
+        minimumInteritemSpacing = 1
         minimumLineSpacing = 1
         scrollDirection = .vertical
     }
     
     var itemWidth: CGFloat {
         
-        return collectionView!.frame.width
+        return collectionView!.frame.width / 2 - 1
     }
     
     override var itemSize: CGSize {
         
         set {
+            
             self.itemSize = CGSize(width: itemWidth, height: itemHeight)
         }
         get {
+            
             return CGSize(width: itemWidth, height: itemHeight)
         }
     }

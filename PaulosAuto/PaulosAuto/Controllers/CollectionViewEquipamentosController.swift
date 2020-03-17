@@ -8,14 +8,16 @@
 
 import UIKit
 
-class CollectionViewEquipamentos: UICollectionViewCell {
+class CollectionViewEquipamentosController: UICollectionViewCell {
     
-
+    // MARK: - Outlets
+    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var modeloEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
     @IBOutlet weak var utilizacaoEquipamento: UILabel!
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
+    @IBOutlet weak var stackViewCell: UIStackView!
     
      
 
