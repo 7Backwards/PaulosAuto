@@ -125,7 +125,7 @@ class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentosController.self), for: indexPath) as! CollectionViewEquipamentosController
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentosCell.self), for: indexPath) as! CollectionViewEquipamentosCell
         if isGridFlowLayoutUsed {
             
             cell.stackViewCell.axis = .vertical

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewEquipamentosController: UICollectionViewCell {
+class CollectionViewEquipamentosCell: UICollectionViewCell {
     
     // MARK: - Outlets
     

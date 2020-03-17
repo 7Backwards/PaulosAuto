@@ -20,7 +20,7 @@
 		FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1819241AEB170085574C /* GridFlowLayout.swift */; };
 		FACD181C241AEB2A0085574C /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181B241AEB2A0085574C /* ListFlowLayout.swift */; };
 		FACD181E241AFF980085574C /* ListarEquipamentoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListarEquipamentoController.swift */; };
-		FACD1820241C64ED0085574C /* CollectionViewEquipamentosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipamentosController.swift */; };
+		FACD1820241C64ED0085574C /* CollectionViewEquipamentosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */; };
 		FACD1823241D35F10085574C /* Equipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1822241D35F10085574C /* Equipamento.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		FACD1819241AEB170085574C /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
 		FACD181B241AEB2A0085574C /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlowLayout.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListarEquipamentoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListarEquipamentoController.swift; sourceTree = "<group>"; };
-		FACD181F241C64ED0085574C /* CollectionViewEquipamentosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipamentosController.swift; sourceTree = "<group>"; };
+		FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipamentosCell.swift; sourceTree = "<group>"; };
 		FACD1822241D35F10085574C /* Equipamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipamento.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 				B0658AA52417E55500245732 /* ViewController.swift */,
 				FACD18152419AEEE0085574C /* ProblemasSceneController.swift */,
 				FACD18172419AF880085574C /* FaturasSceneController.swift */,
-				FACD181F241C64ED0085574C /* CollectionViewEquipamentosController.swift */,
+				FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */,
 				FACD181D241AFF980085574C /* ListarEquipamentoController.swift */,
 			);
 			path = Controllers;
@@ -232,7 +232,7 @@
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				FACD181E241AFF980085574C /* ListarEquipamentoController.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Card.swift in Sources */,
-				FACD1820241C64ED0085574C /* CollectionViewEquipamentosController.swift in Sources */,
+				FACD1820241C64ED0085574C /* CollectionViewEquipamentosCell.swift in Sources */,
 				FACD18182419AF880085574C /* FaturasSceneController.swift in Sources */,
 				FACD1823241D35F10085574C /* Equipamento.swift in Sources */,
 				FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */,
