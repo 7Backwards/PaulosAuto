@@ -314,7 +314,7 @@
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="gridButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="vxC-dg-Ica"/>
+                                                            <action selector="gridButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="JbU-2J-PNh"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqI-jZ-TBA">
@@ -326,7 +326,7 @@
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="listButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="EvL-NO-ham"/>
+                                                            <action selector="listButtonDidTap:" destination="0Mv-eo-OSB" eventType="touchUpInside" id="SQJ-ox-2mK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

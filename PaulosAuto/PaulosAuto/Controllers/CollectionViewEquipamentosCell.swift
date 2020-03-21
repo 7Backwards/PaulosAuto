@@ -1,5 +1,5 @@
 //
-//  CollectionViewEquipamentos.swift
+//  CollectionViewEquipamentosCell.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 12/03/2020.
@@ -9,10 +9,8 @@
 import UIKit
 
 class CollectionViewEquipamentosCell: UICollectionViewCell {
-    
+  
     // MARK: - Outlets
-    
-    
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var modeloEquipamento: UILabel!
@@ -20,6 +18,13 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
     @IBOutlet weak var utilizacaoEquipamento: UILabel!
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
     @IBOutlet weak var stackViewCell: UIStackView!
+    
+
+    var listarEquipamentoController = ListarEquipamentoController()
+    
+   
+    
+
     
 
 }

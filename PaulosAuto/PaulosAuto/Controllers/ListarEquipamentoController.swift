@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
-//  Grid&ListCollectionView
+//  ListarEquipamentoController.swift
+//  PaulosAuto
 //
-//  Created by Mohammed Azeem Azeez on 04/03/2019.
-//  Copyright © 2019 Riverswave Technologies Ltd. All rights reserved.
+//  Created by Gonçalo Neves on 12/03/2020.
+//  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
 import UIKit
 
-class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class ListarEquipamentoController: ViewController, UISearchBarDelegate, UICollectionViewDelegate {
     
     // MARK: - Outlets
     
@@ -17,7 +17,13 @@ class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var gridButton: UIButton!
     
-    // MARK: - Variables
+    // MARK: - Constants
+    
+    let gridFlowLayout = GridFlowLayout()
+    let listFlowLayout = ListFlowLayout()
+    
+    
+    // MARK: - Properties
     
     var isGridFlowLayoutUsed: Bool = false {
         
@@ -28,37 +34,29 @@ class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UIC
     }
     var filteredEquipamentos = [equipamento]()
     var searchActive = false
-    var gridFlowLayout = GridFlowLayout()
-    var listFlowLayout = ListFlowLayout()
+    
     var equipamentos: [equipamento] = [equipamento(modelo:"CB10",serialnumber:"4732642B" ,utilizacao:40,imagem:"5523b3f1cf47c"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72")]
     
-    // MARK: - Action
     
+    // MARK: - Private
     
-    @IBAction func gridButtonDidTap(_ sender: UIButton) {
+    private func setupEquipamentoController() {
         
+        super.addNavBarLogo()
+        super.setSearchBarStyle(searchBar: searchBar)
+        searchBar.delegate = self
+        addNavBarFilter()
+        collectionView.collectionViewLayout = gridFlowLayout
         isGridFlowLayoutUsed = true
+        collectionView.delegate = self
     }
     
-    @IBAction func listButtonDidTap(_ sender: UIButton) {
-        
-        isGridFlowLayoutUsed = false
-    }
-    
-    // MARK: - Functions
-    
+    // MARK: - Public
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        searchBar.delegate = self
-        super.addNavBarLogo()
-        addNavBarFilter()
-        super.setSearchBarStyle(searchBar: searchBar)
-        collectionView.collectionViewLayout = gridFlowLayout
-        isGridFlowLayoutUsed = true
+        setupEquipamentoController()
     }
     
     func addNavBarFilter() {
@@ -93,10 +91,10 @@ class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UIC
     }
     
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     func updateButtonAppearance() {
@@ -105,82 +103,23 @@ class ListarEquipamentoController: ViewController, UICollectionViewDelegate, UIC
         UIView.animate(withDuration: 0.2) { () -> Void in
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.setCollectionViewLayout(layout, animated: true)
-            DispatchQueue.main.async{
-                self.collectionView.reloadData()
-            }
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    // MARK: - Action
+    
+    
+    @IBAction func gridButtonDidTap(_ sender: UIButton) {
         
-        if(searchActive) {
-            
-            return filteredEquipamentos.count
-        }
-        else {
-            
-            return equipamentos.count
-        }
+        isGridFlowLayoutUsed = true
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    @IBAction func listButtonDidTap(_ sender: UIButton) {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CollectionViewEquipamentosCell.self), for: indexPath) as! CollectionViewEquipamentosCell
-        if isGridFlowLayoutUsed {
-            
-            cell.stackViewCell.axis = .vertical
-            
-        }
-        else {
-            
-            cell.stackViewCell.axis = .horizontal
-        }
-        if(searchActive) {
-            
-            if let imageName = filteredEquipamentos[indexPath.row].imagem {
-                
-                cell.imageEquipamento.contentMode = .scaleAspectFit
-                cell.imageEquipamento.image = UIImage(named: imageName)
-            }
-            if let modeloText = filteredEquipamentos[indexPath.row].modelo {
-                
-                cell.modeloEquipamento.text = modeloText
-            }
-            if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
-                
-                cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-            }
-            
-            if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
-                
-                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-            }
-            
-        }
-        else {
-            if let imageName = equipamentos[indexPath.row].imagem {
-                
-                cell.imageEquipamento.contentMode = .scaleAspectFit
-                cell.imageEquipamento.image = UIImage(named: imageName)
-            }
-            if let modeloText = equipamentos[indexPath.row].modelo {
-                
-                cell.modeloEquipamento.text = modeloText
-            }
-            if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
-                
-                cell.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-            }
-            if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
-                
-                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-            }
-        }
-        cell.cellView.setCardView(view: cell.cellView)
-        
-        return cell
-        }
+        isGridFlowLayoutUsed = false
     }
+    
+}
 
 
 
