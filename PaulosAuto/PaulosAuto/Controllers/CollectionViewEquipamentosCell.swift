@@ -23,7 +23,15 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
     var listarEquipamentoController = ListarEquipamentoController()
     
    
+    func setVerticalStackView() {
+        
+        stackViewCell.axis = .vertical
+    }
     
+    func setHorizontalStackView() {
+        
+        stackViewCell.axis = .horizontal
+    }
 
     
 

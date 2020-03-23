@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListarEquipamentoController: ViewController, UISearchBarDelegate, UICollectionViewDelegate {
+class ListarEquipamentoController: ViewController {
     
     // MARK: - Outlets
     
@@ -65,30 +65,7 @@ class ListarEquipamentoController: ViewController, UISearchBarDelegate, UICollec
         self.navigationItem.rightBarButtonItem?.tintColor =  .red
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        filteredEquipamentos = equipamentos.filter { (equipamento) -> Bool in
-            return equipamento.serialNumber?.range(of: searchText, options: [ .caseInsensitive ]) != nil
-        }
-        searchActive = !filteredEquipamentos.isEmpty
-        self.collectionView.reloadData()
-    }
+   
     
     override func didReceiveMemoryWarning() {
         
