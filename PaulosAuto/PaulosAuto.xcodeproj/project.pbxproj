@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		B02A3A972429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift */; };
+=======
+		B02A3A952428DACF0008DDC6 /* ListarEquipamentoController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A942428DACF0008DDC6 /* ListarEquipamentoController+Extensions.swift */; };
+>>>>>>> Stashed changes
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -26,7 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
 		B02A3A962429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListarEquipamentoController+Extensions.swift"; sourceTree = "<group>"; };
+=======
+		B02A3A942428DACF0008DDC6 /* ListarEquipamentoController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListarEquipamentoController+Extensions.swift"; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +106,11 @@
 				FACD18172419AF880085574C /* FaturasSceneController.swift */,
 				FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */,
 				FACD181D241AFF980085574C /* ListarEquipamentoController.swift */,
+<<<<<<< Updated upstream
 				B02A3A962429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift */,
+=======
+				B02A3A942428DACF0008DDC6 /* ListarEquipamentoController+Extensions.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,7 +256,11 @@
 				FA05FB0C24204ED40033B901 /* CALayer+applySketchShadow.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasSceneController.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
+<<<<<<< Updated upstream
 				B02A3A972429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift in Sources */,
+=======
+				B02A3A952428DACF0008DDC6 /* ListarEquipamentoController+Extensions.swift in Sources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

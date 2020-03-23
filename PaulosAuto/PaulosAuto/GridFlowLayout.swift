@@ -33,6 +33,7 @@ class GridFlowLayout: UICollectionViewFlowLayout {
         minimumInteritemSpacing = 1
         minimumLineSpacing = 1
         scrollDirection = .vertical
+        
     }
     
     var itemWidth: CGFloat {

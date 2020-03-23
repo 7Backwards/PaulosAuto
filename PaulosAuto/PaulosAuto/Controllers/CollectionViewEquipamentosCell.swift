@@ -9,9 +9,9 @@
 import UIKit
 
 class CollectionViewEquipamentosCell: UICollectionViewCell {
-  
+    
     // MARK: - Outlets
-
+    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var modeloEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
@@ -19,12 +19,14 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
     @IBOutlet weak var stackViewCell: UIStackView!
     
-
+    
     var listarEquipamentoController = ListarEquipamentoController()
     
+<<<<<<< Updated upstream
    
-    func setVerticalStackView() {
-        
+=======
+    override func awakeFromNib() {
+        super.awakeFromNib()
         stackViewCell.axis = .vertical
     }
     
@@ -32,7 +34,22 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
         
         stackViewCell.axis = .horizontal
     }
-
     
+>>>>>>> Stashed changes
+    func setVerticalStackView() {
+        
+        stackViewCell.axis = .vertical
+    }
+<<<<<<< Updated upstream
+    
+    func setHorizontalStackView() {
+        
+        stackViewCell.axis = .horizontal
+    }
 
+=======
+    
+    
+>>>>>>> Stashed changes
+    
 }

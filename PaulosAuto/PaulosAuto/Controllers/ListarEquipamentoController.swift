@@ -48,7 +48,10 @@ class ListarEquipamentoController: ViewController {
         addNavBarFilter()
         collectionView.collectionViewLayout = gridFlowLayout
         isGridFlowLayoutUsed = true
-        collectionView.delegate = self
+        collectionView.register(CollectionViewEquipamentosCell.self, forCellWithReuseIdentifier: "CollectionViewEquipamentosCell")
+        collectionView.dataSource = self
+        
+        
     }
     
     // MARK: - Public
@@ -65,7 +68,11 @@ class ListarEquipamentoController: ViewController {
         self.navigationItem.rightBarButtonItem?.tintColor =  .red
     }
     
+<<<<<<< Updated upstream
    
+=======
+    
+>>>>>>> Stashed changes
     
     override func didReceiveMemoryWarning() {
         
@@ -89,6 +96,7 @@ class ListarEquipamentoController: ViewController {
     @IBAction func gridButtonDidTap(_ sender: UIButton) {
         
         isGridFlowLayoutUsed = true
+        
     }
     
     @IBAction func listButtonDidTap(_ sender: UIButton) {
