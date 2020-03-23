@@ -9,14 +9,3 @@
 import Foundation
 import UIKit
 
-<<<<<<< Updated upstream
-=======
-extension CollectionViewEquipamentosCell: UICollectionViewDataSource {
-    
-   
-    
-   
-    
-
-}
->>>>>>> Stashed changes
