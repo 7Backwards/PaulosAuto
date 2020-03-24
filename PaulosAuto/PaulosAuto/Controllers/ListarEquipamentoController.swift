@@ -13,9 +13,10 @@ class ListarEquipamentoController: ViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var gridButton: UIButton!
+    @IBOutlet weak var changeLayoutButton: UIButton!
+    
+
     
     // MARK: - Constants
     
@@ -35,7 +36,7 @@ class ListarEquipamentoController: ViewController {
     var filteredEquipamentos = [equipamento]()
     var searchActive = false
     
-    var equipamentos: [equipamento] = [equipamento(modelo:"CB10",serialnumber:"4732642B" ,utilizacao:40,imagem:"5523b3f1cf47c"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72")]
+    var equipamentos: [equipamento] = [equipamento(modelo:"CB10",serialnumber:"4732642B" ,utilizacao:40,imagem:"5523b3f1cf47c",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos")]
     
     
     // MARK: - Private
@@ -44,11 +45,12 @@ class ListarEquipamentoController: ViewController {
         
         super.addNavBarLogo()
         super.setSearchBarStyle(searchBar: searchBar)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         searchBar.delegate = self
         addNavBarFilter()
         collectionView.collectionViewLayout = gridFlowLayout
         isGridFlowLayoutUsed = true
-        collectionView.delegate = self
     }
     
     // MARK: - Public
@@ -80,21 +82,27 @@ class ListarEquipamentoController: ViewController {
         UIView.animate(withDuration: 0.2) { () -> Void in
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.setCollectionViewLayout(layout, animated: true)
+           
+            
         }
+        
+        if(self.isGridFlowLayoutUsed == true) { self.changeLayoutButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+         }
+        else{
+             self.changeLayoutButton.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
+         }
+        
+        
     }
     
     // MARK: - Action
     
     
-    @IBAction func gridButtonDidTap(_ sender: UIButton) {
+    @IBAction func changelayoutButtonDidTap(_ sender: UIButton) {
         
-        isGridFlowLayoutUsed = true
+         isGridFlowLayoutUsed = !isGridFlowLayoutUsed
     }
     
-    @IBAction func listButtonDidTap(_ sender: UIButton) {
-        
-        isGridFlowLayoutUsed = false
-    }
     
 }
 

@@ -14,12 +14,14 @@ struct equipamento: Decodable {
     var serialNumber : String?
     var utilizacao : Int?
     var imagem : String?
+    var tipo : String?
     
-    init(modelo:String,serialnumber:String,utilizacao:Int,imagem:String){
+    init(modelo:String,serialnumber:String,utilizacao:Int,imagem:String,tipo:String){
         
         self.modelo = modelo
         self.serialNumber = serialnumber
         self.utilizacao = utilizacao
         self.imagem = imagem
+        self.tipo = tipo
     }
 }

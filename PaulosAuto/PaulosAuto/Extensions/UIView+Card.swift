@@ -15,7 +15,7 @@ extension UIView {
     
     func setCardView(view : UIView){
         
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = 10
         view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
         view.layer.masksToBounds = false
     }
