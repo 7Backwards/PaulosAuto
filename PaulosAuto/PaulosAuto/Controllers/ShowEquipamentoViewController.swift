@@ -34,7 +34,7 @@ class ShowEquipamentoViewController: ViewController {
     private func setupEquipamentoViewController() {
         
         super.addNavBarLogo()
-        navigationItem.leftBarButtonItem?.tintColor = .red
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
     }
     
     
