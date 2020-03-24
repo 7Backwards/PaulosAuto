@@ -20,6 +20,7 @@ class ShowEquipamentoViewController: ViewController {
     @IBOutlet weak var tipoEquipamento: UILabel!
     @IBOutlet weak var serialNumberEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     
     // MARK: - Properties
@@ -44,8 +45,8 @@ class ShowEquipamentoViewController: ViewController {
         super.viewDidLoad()
         setupEquipamentoViewController()
         cardView.setCardView(view: cardView)
-        ReportarProblemaButton.setButtonStyle(Button: ReportarProblemaButton,color: .red, cornerRadius: 10)
-        RegistarUtilizacaoButton.setButtonStyle(Button: RegistarUtilizacaoButton,color: .white, cornerRadius: 10)
+        ReportarProblemaButton.setButtonStyle(Button: ReportarProblemaButton, cornerRadius: 10)
+        RegistarUtilizacaoButton.setButtonStyle(Button: RegistarUtilizacaoButton, cornerRadius: 10)
         setupInfo()
     }
     

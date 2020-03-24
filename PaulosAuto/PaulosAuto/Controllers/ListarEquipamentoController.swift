@@ -70,7 +70,7 @@ class ListarEquipamentoController: ViewController {
     func addNavBarFilter() {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem?.tintColor =  .red
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
     }
     
     

@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
         searchBar.searchTextField.borderStyle = .none
         searchBar.searchTextField.backgroundColor = .white
-        searchBar.searchTextField.layer.cornerRadius = 15
+        searchBar.searchTextField.layer.cornerRadius = 25
         searchBar.searchTextField.clipsToBounds = false
         searchBar.searchTextField.layer.masksToBounds = false
         searchBar.searchTextField.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
