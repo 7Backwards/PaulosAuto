@@ -39,7 +39,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
                 
                 if let imageName = filteredEquipamentos[indexPath.row].imagem {
                     
-                    cellGrid.imageEquipamento.contentMode = .scaleAspectFit
+                    cellGrid.imageEquipamento.contentMode = .scaleAspectFill
                     cellGrid.imageEquipamento.image = UIImage(named: imageName)
                 }
                 if let modeloText = filteredEquipamentos[indexPath.row].modelo {
@@ -60,7 +60,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
             else {
                 if let imageName = equipamentos[indexPath.row].imagem {
                     
-                    cellGrid.imageEquipamento.contentMode = .scaleAspectFit
+                    cellGrid.imageEquipamento.contentMode = .scaleAspectFill
                     cellGrid.imageEquipamento.image = UIImage(named: imageName)
                 }
                 if let modeloText = equipamentos[indexPath.row].modelo {
@@ -88,7 +88,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
                 
                 if let imageName = filteredEquipamentos[indexPath.row].imagem {
                     
-                    cellList.imageEquipamento.contentMode = .scaleAspectFit
+                    cellList.imageEquipamento.contentMode = .scaleAspectFill
                     cellList.imageEquipamento.image = UIImage(named: imageName)
                 }
                 if let modeloText = filteredEquipamentos[indexPath.row].modelo {
@@ -109,7 +109,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
             else {
                 if let imageName = equipamentos[indexPath.row].imagem {
                     
-                    cellList.imageEquipamento.contentMode = .scaleAspectFit
+                    cellList.imageEquipamento.contentMode = .scaleAspectFill
                     cellList.imageEquipamento.image = UIImage(named: imageName)
                 }
                 if let modeloText = equipamentos[indexPath.row].modelo {
@@ -140,6 +140,7 @@ extension ListarEquipamentoController: UICollectionViewDelegate {
             ShowEquipamentoViewController, let index =
             collectionView.indexPathsForSelectedItems?.first {
             destination.equipamento = equipamentos[index.row]
+            
         }
     }
     

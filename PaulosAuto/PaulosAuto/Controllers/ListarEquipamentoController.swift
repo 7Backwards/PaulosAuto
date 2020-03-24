@@ -16,7 +16,7 @@ class ListarEquipamentoController: ViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var changeLayoutButton: UIButton!
     
-
+    
     
     // MARK: - Constants
     
@@ -61,13 +61,19 @@ class ListarEquipamentoController: ViewController {
         setupEquipamentoController()
     }
     
+    override func viewWillAppear(_ animated: Bool) { // As soon as vc appears
+        super.viewWillAppear(true)
+        showTabBar()
+    }
+    
+    
     func addNavBarFilter() {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem?.tintColor =  .red
     }
     
-   
+    
     
     override func didReceiveMemoryWarning() {
         
@@ -82,15 +88,15 @@ class ListarEquipamentoController: ViewController {
         UIView.animate(withDuration: 0.2) { () -> Void in
             self.collectionView.collectionViewLayout.invalidateLayout()
             self.collectionView.setCollectionViewLayout(layout, animated: true)
-           
+            
             
         }
         
         if(self.isGridFlowLayoutUsed == true) { self.changeLayoutButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-         }
+        }
         else{
-             self.changeLayoutButton.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
-         }
+            self.changeLayoutButton.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
+        }
         
         
     }
@@ -100,7 +106,7 @@ class ListarEquipamentoController: ViewController {
     
     @IBAction func changelayoutButtonDidTap(_ sender: UIButton) {
         
-         isGridFlowLayoutUsed = !isGridFlowLayoutUsed
+        isGridFlowLayoutUsed = !isGridFlowLayoutUsed
     }
     
     

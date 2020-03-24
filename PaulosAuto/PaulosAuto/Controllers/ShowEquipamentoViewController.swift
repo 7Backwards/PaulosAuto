@@ -49,13 +49,21 @@ class ShowEquipamentoViewController: ViewController {
         setupInfo()
     }
     
+    override func viewWillAppear(_ animated: Bool) { 
+        super.viewWillAppear(true)
+        hideTabBar()
+        
+    }
+    
+
+    
     func setupInfo() {
         
         modeloEquipamento.text = equipamento.modelo
         modeloEquipamento.textColor = .red
         tipoEquipamento.text = equipamento.tipo
         serialNumberEquipamento.text = equipamento.serialNumber
-        imageEquipamento.contentMode = .scaleAspectFit
+        imageEquipamento.contentMode = .scaleAspectFill
         imageEquipamento.image = UIImage(named: equipamento.imagem!)
     }
 }

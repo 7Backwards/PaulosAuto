@@ -42,6 +42,26 @@ class ViewController: UIViewController {
         searchBar.searchTextField.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
     }
     
+    func hideTabBar() {
+        var frame = self.tabBarController?.tabBar.frame
+        frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tabBarController?.tabBar.frame = frame!
+            self.tabBarController?.tabBar.isHidden = true
+        })
+        
+    }
+    
+    func showTabBar() {
+        var frame = self.tabBarController?.tabBar.frame
+        frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tabBarController?.tabBar.frame = frame!
+            self.tabBarController?.tabBar.isHidden = false
+        })
+        
+    }
+    
 
     
 }
