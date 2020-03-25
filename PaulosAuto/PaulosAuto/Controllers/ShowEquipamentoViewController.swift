@@ -13,7 +13,9 @@ class ShowEquipamentoViewController: ViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var cardView: UIView!
+    
+    @IBOutlet weak var informacoesView: UIView!
+    @IBOutlet weak var historicoView: UIView!
     @IBOutlet weak var RegistarUtilizacaoButton: UIButton!
     @IBOutlet weak var ReportarProblemaButton: UIButton!
     @IBOutlet weak var modeloEquipamento: UILabel!
@@ -21,6 +23,7 @@ class ShowEquipamentoViewController: ViewController {
     @IBOutlet weak var serialNumberEquipamento: UILabel!
     @IBOutlet weak var imageEquipamento: UIImageView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    
     
     
     // MARK: - Properties
@@ -44,7 +47,7 @@ class ShowEquipamentoViewController: ViewController {
         
         super.viewDidLoad()
         setupEquipamentoViewController()
-        cardView.setCardView(view: cardView)
+        informacoesView.setCardView(view: informacoesView)
         ReportarProblemaButton.setButtonStyle(Button: ReportarProblemaButton, cornerRadius: 10)
         RegistarUtilizacaoButton.setButtonStyle(Button: RegistarUtilizacaoButton, cornerRadius: 10)
         setupInfo()
@@ -56,7 +59,7 @@ class ShowEquipamentoViewController: ViewController {
         
     }
     
-
+    
     
     func setupInfo() {
         
@@ -67,4 +70,30 @@ class ShowEquipamentoViewController: ViewController {
         imageEquipamento.contentMode = .scaleAspectFill
         imageEquipamento.image = UIImage(named: equipamento.imagem!)
     }
+    
+    // MARK: - Action
+    
+    
+    @IBAction func segmentControlAction(_ sender: Any) {
+        
+        let getIndex = segmentControl.selectedSegmentIndex
+        
+        switch (getIndex) {
+            
+        case 0:
+            self.historicoView.fadeIn()
+            self.informacoesView.fadeOut()
+            
+        case 1:
+            self.historicoView.fadeOut()
+            self.informacoesView.fadeIn()
+            
+        default: break
+        }
+    }
+    
+    
 }
+
+
+
