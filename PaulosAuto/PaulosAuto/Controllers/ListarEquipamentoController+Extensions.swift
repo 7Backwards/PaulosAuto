@@ -15,15 +15,30 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
     
     // MARK: - Public
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if(searchActive) {
             
-            return filteredEquipamentos.count
+            if(smpFilter) {
+                smpfilterSearchArray()
+                return smpFilterSearchArray.count
+            }
+            else {
+                return filteredEquipamentos.count
+            }
+            
         }
         else {
             
-            return equipamentos.count
+            if(smpFilter) {
+                smpfilterArray()
+                return smpFilterArray.count
+            }
+            else {
+                return equipamentos.count
+            }
         }
     }
     
@@ -37,42 +52,128 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
         
         if searchActive {
             
-            if let imageName = filteredEquipamentos[indexPath.row].imagem {
-                
-                cell.imageEquipamento.image = UIImage(named: imageName)
-            }
-            if let modeloText = filteredEquipamentos[indexPath.row].modelo {
-                
-                cell.modeloEquipamento.text = modeloText
-            }
-            if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
-                
-                cell.utilizacaoEquipamento.text = "Utilização:      \(utilizacaoText) H"
-            }
+            if smpFilter {
             
-            if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
+                if let imageName = smpFilterSearchArray[indexPath.row].imagem {
+                    
+                    cell.imageEquipamento.image = UIImage(named: imageName)
+                }
+                if let anoEquipamento = smpFilterSearchArray[indexPath.row].ano {
+                    
+                    cell.anoEquipamento.text = "\(anoEquipamento)"
+                }
                 
-                cell.numeroSerieEquipamento.text = "N.Série:      \(numeroSerieText)"
+                if let modeloText = smpFilterSearchArray[indexPath.row].modelo {
+                    
+                    cell.modeloEquipamento.text = modeloText
+                }
+                if let utilizacaoText = smpFilterSearchArray[indexPath.row].utilizacao {
+                    
+                    cell.utilizacaoEquipamento.text = "\(utilizacaoText) H"
+                }
+                
+                if let numeroSerieText = smpFilterSearchArray[indexPath.row].serialNumber {
+                    
+                    cell.numeroSerieEquipamento.text = "\(numeroSerieText)"
+                }
+                cell.ativoContrato.alpha = 1
             }
-            
+            else {
+                
+                if let imageName = filteredEquipamentos[indexPath.row].imagem {
+                    
+                    cell.imageEquipamento.image = UIImage(named: imageName)
+                }
+                if let anoEquipamento = filteredEquipamentos[indexPath.row].ano {
+                    
+                    cell.anoEquipamento.text = "\(anoEquipamento)"
+                }
+                
+                if let modeloText = filteredEquipamentos[indexPath.row].modelo {
+                    
+                    cell.modeloEquipamento.text = modeloText
+                }
+                if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
+                    
+                    cell.utilizacaoEquipamento.text = "\(utilizacaoText) H"
+                }
+                
+                if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
+                    
+                    cell.numeroSerieEquipamento.text = "\(numeroSerieText)"
+                }
+                if filteredEquipamentos[indexPath.row].ativo == true {
+                    
+                    cell.ativoContrato.alpha = 1
+                }
+                else {
+                    cell.ativoContrato.alpha = 0
+                }
+            }
         }
         else {
-            if let imageName = equipamentos[indexPath.row].imagem {
+            if smpFilter {
                 
-                cell.imageEquipamento.image = UIImage(named: imageName)
-            }
-            if let modeloText = equipamentos[indexPath.row].modelo {
+                if let imageName = smpFilterArray[indexPath.row].imagem {
+                    
+                    cell.imageEquipamento.image = UIImage(named: imageName)
+                }
+                if let anoEquipamento = smpFilterArray[indexPath.row].ano {
+                    
+                    cell.anoEquipamento.text = "\(anoEquipamento)"
+                }
                 
-                cell.modeloEquipamento.text = modeloText
-            }
-            if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
+                if let modeloText = smpFilterArray[indexPath.row].modelo {
+                    
+                    cell.modeloEquipamento.text = modeloText
+                }
+                if let utilizacaoText = smpFilterArray[indexPath.row].utilizacao {
+                    
+                    cell.utilizacaoEquipamento.text = "\(utilizacaoText) H"
+                }
                 
-                cell.utilizacaoEquipamento.text = "Utilização:      \(utilizacaoText) H"
-            }
-            if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
+                if let numeroSerieText = smpFilterArray[indexPath.row].serialNumber {
+                    
+                    cell.numeroSerieEquipamento.text = "\(numeroSerieText)"
+                }
+                    cell.ativoContrato.alpha = 1
                 
-                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
             }
+            else {
+                
+                if let imageName = equipamentos[indexPath.row].imagem {
+                    
+                    cell.imageEquipamento.image = UIImage(named: imageName)
+                }
+                if let anoEquipamento = equipamentos[indexPath.row].ano {
+                    
+                    cell.anoEquipamento.text = "\(anoEquipamento)"
+                }
+                
+                if let modeloText = equipamentos[indexPath.row].modelo {
+                    
+                    cell.modeloEquipamento.text = modeloText
+                }
+                if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
+                    
+                    cell.utilizacaoEquipamento.text = "\(utilizacaoText) H"
+                }
+                
+                if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
+                    
+                    cell.numeroSerieEquipamento.text = "\(numeroSerieText)"
+                }
+                if equipamentos[indexPath.row].ativo == true {
+                    
+                    cell.ativoContrato.alpha = 1
+                }
+                else {
+                    cell.ativoContrato.alpha = 0
+                }
+                
+            }
+            
+            
         }
         cell.cellView.setCardView(view: cell.cellView)
         return cell
@@ -80,9 +181,9 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
     }
     
     
+    
+    
 }
-
-
 extension ListarEquipamentoController: UICollectionViewDelegate {
     
     // MARK: - Public

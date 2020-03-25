@@ -10,18 +10,40 @@ import Foundation
 
 struct equipamento: Decodable {
     
+    
+    // MARK: - Properties
+    
+    
+    var marca : String?
     var modelo : String?
+    var tipo : String?
     var serialNumber : String?
+    var matricula : String?
     var utilizacao : Int?
     var imagem : String?
-    var tipo : String?
+    var ano : Int?
+    var dataContrato : String?
+    var datainicioContrato : String?
+    var datafimContrato : String?
+    var ativo : Bool?
     
-    init(modelo:String,serialnumber:String,utilizacao:Int,imagem:String,tipo:String){
+    
+    // MARK: - Functions
+    
+    
+    init(marca : String?,modelo : String?,tipo : String?,serialNumber : String?,matricula : String?,utilizacao : Int?,imagem : String?,ano : Int?,dataContrato : String?,datainicioContrato : String?,datafimContrato : String?,ativo : Bool?){
         
+        self.marca = marca
         self.modelo = modelo
-        self.serialNumber = serialnumber
+        self.tipo = tipo
+        self.serialNumber = serialNumber
+        self.matricula = matricula
         self.utilizacao = utilizacao
         self.imagem = imagem
-        self.tipo = tipo
+        self.ano = ano
+        self.dataContrato = dataContrato
+        self.datainicioContrato = datainicioContrato
+        self.datafimContrato = datafimContrato
+        self.ativo = ativo
     }
 }

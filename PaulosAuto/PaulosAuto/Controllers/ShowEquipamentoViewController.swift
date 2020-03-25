@@ -26,6 +26,7 @@ class ShowEquipamentoViewController: ViewController {
     
     
     
+    
     // MARK: - Properties
     
     var serialNumberID: String!

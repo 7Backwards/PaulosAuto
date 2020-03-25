@@ -14,7 +14,7 @@ class ListarEquipamentoController: ViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var changeLayoutButton: UIButton!
+    @IBOutlet weak var smpSwitch: UISwitch!
     
     
     // MARK: - Constants
@@ -26,8 +26,10 @@ class ListarEquipamentoController: ViewController {
     
     var filteredEquipamentos = [equipamento]()
     var searchActive = false
-    
-    var equipamentos: [equipamento] = [equipamento(modelo:"CB10",serialnumber:"4732642B" ,utilizacao:40,imagem:"5523b3f1cf47c",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos"), equipamento(modelo:"CB14B",serialnumber:"4712646C" ,utilizacao:450,imagem:"5523b505b7b72",tipo:"Compactador de Asfaltos")]
+    var smpFilter = false
+    var smpFilterArray = [equipamento]()
+    var smpFilterSearchArray = [equipamento]()
+    var equipamentos: [equipamento] = [equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "6878123A", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true),equipamento(marca: "Catterpillar", modelo: "CB14B", tipo: "Compactador Rápido", serialNumber: "FTR00957", matricula: "34-XM-88", utilizacao: 1700, imagem: "CB14B", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Rígido", serialNumber: "7897234GV", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b4949693d", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "G76532JF", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "770G", tipo: "Dumper Rígido", serialNumber: "8743891A", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b4949693d", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "645G6543", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "7846512S", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "4732642B", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "5678212J", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "67623423D", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "676894GF", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "1237512G", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "123675C", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "6954F723", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "8127343D", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "9781237E", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "587401C", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CP44B", tipo: "Compactador Vibratório de Solos", serialNumber: "873215Z", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b531e09ab", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Compactador Rápido", serialNumber: "894723V", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b3f1cf47c", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: true), equipamento(marca: "Catterpillar", modelo: "CB10", tipo: "Dumper Articulado", serialNumber: "494853X", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b505b7b72", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false), equipamento(marca: "Catterpillar", modelo: "CP44B", tipo: "Compactador Vibratório de Solos", serialNumber: "47345678C", matricula: "34-XM-88", utilizacao: 1700, imagem: "5523b531e09ab", ano: 2007, dataContrato: "11/02/2020", datainicioContrato: "12/02/2020", datafimContrato: "20/02/2021", ativo: false)]
     
     
     // MARK: - Private
@@ -41,6 +43,7 @@ class ListarEquipamentoController: ViewController {
         searchBar.delegate = self
         addNavBarFilter()
         collectionView.collectionViewLayout = listFlowLayout
+        smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
     
     // MARK: - Public
@@ -54,6 +57,32 @@ class ListarEquipamentoController: ViewController {
     override func viewWillAppear(_ animated: Bool) { // As soon as vc appears
         super.viewWillAppear(true)
         showTabBar()
+    }
+    
+    func smpfilterArray() {
+        
+        smpFilterArray = equipamentos.filter { (equipamento) -> Bool in
+            return equipamento.ativo == true
+        }
+        
+    }
+    
+    
+    func smpfilterSearchArray() {
+        
+        smpFilterSearchArray = filteredEquipamentos.filter { (equipamento) -> Bool in
+            return equipamento.ativo == true
+        }
+        
+//        smpFilterSearchArray = filteredEquipamentos.filter { (equipamento) -> Bool in
+//            for equipamento in filteredEquipamentos {
+//                if equipamento.ativo == true {
+//                    return true
+//                }
+//            }
+//            return false
+//        }
+        
     }
     
     
@@ -73,13 +102,21 @@ class ListarEquipamentoController: ViewController {
     
     
     
-        
-        
+    
+    
     
     // MARK: - Action
     
     
-
+    @IBAction func smpSwitchAction(_ sender: Any) {
+        
+        smpFilter = smpSwitch.isOn
+        DispatchQueue.main.async {
+            
+            self.collectionView.reloadData()
+        }
+    }
+    
     
     
 }

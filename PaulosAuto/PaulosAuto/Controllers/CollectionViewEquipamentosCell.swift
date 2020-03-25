@@ -21,13 +21,12 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
     @IBOutlet weak var stackViewCell: UIStackView!
     @IBOutlet weak var anoEquipamento: UILabel!
-    @IBOutlet weak var matriculaEquipamento: UILabel!
+    @IBOutlet weak var ativoContrato: UILabel!
     
     
     // MARK: - Properties
     
-    var listarEquipamentoController = ListarEquipamentoController()
-    
+
     // MARK: - Public
     
 
