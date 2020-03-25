@@ -31,109 +31,61 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        if isGridFlowLayoutUsed {
-            let cellGrid = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipamentosCell", for: indexPath) as! CollectionViewEquipamentosCell
-            cellGrid.setVerticalStackView()
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipamentosCell", for: indexPath) as! CollectionViewEquipamentosCell
+        
+        
+        if searchActive {
             
-            if searchActive {
+            if let imageName = filteredEquipamentos[indexPath.row].imagem {
                 
-                if let imageName = filteredEquipamentos[indexPath.row].imagem {
-                    
-                    cellGrid.imageEquipamento.contentMode = .scaleAspectFill
-                    cellGrid.imageEquipamento.image = UIImage(named: imageName)
-                }
-                if let modeloText = filteredEquipamentos[indexPath.row].modelo {
-                    
-                    cellGrid.modeloEquipamento.text = modeloText
-                }
-                if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
-                    
-                    cellGrid.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                }
-                
-                if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
-                    
-                    cellGrid.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                }
-                
+                cell.imageEquipamento.image = UIImage(named: imageName)
             }
-            else {
-                if let imageName = equipamentos[indexPath.row].imagem {
-                    
-                    cellGrid.imageEquipamento.contentMode = .scaleAspectFill
-                    cellGrid.imageEquipamento.image = UIImage(named: imageName)
-                }
-                if let modeloText = equipamentos[indexPath.row].modelo {
-                    
-                    cellGrid.modeloEquipamento.text = modeloText
-                }
-                if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
-                    
-                    cellGrid.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                }
-                if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
-                    
-                    cellGrid.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                }
+            if let modeloText = filteredEquipamentos[indexPath.row].modelo {
+                
+                cell.modeloEquipamento.text = modeloText
             }
-            cellGrid.cellView.setCardView(view: cellGrid.cellView)
-            return cellGrid
+            if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
+                
+                cell.utilizacaoEquipamento.text = "Utilização:      \(utilizacaoText) H"
+            }
+            
+            if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
+                
+                cell.numeroSerieEquipamento.text = "N.Série:      \(numeroSerieText)"
+            }
             
         }
         else {
-            let cellList = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipamentosCell", for: indexPath) as! CollectionViewEquipamentosCell
-            cellList.setHorizontalStackView()
-            
-            if searchActive {
+            if let imageName = equipamentos[indexPath.row].imagem {
                 
-                if let imageName = filteredEquipamentos[indexPath.row].imagem {
-                    
-                    cellList.imageEquipamento.contentMode = .scaleAspectFill
-                    cellList.imageEquipamento.image = UIImage(named: imageName)
-                }
-                if let modeloText = filteredEquipamentos[indexPath.row].modelo {
-                    
-                    cellList.modeloEquipamento.text = modeloText
-                }
-                if let utilizacaoText = filteredEquipamentos[indexPath.row].utilizacao {
-                    
-                    cellList.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                }
-                
-                if let numeroSerieText = filteredEquipamentos[indexPath.row].serialNumber {
-                    
-                    cellList.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                }
-                
+                cell.imageEquipamento.image = UIImage(named: imageName)
             }
-            else {
-                if let imageName = equipamentos[indexPath.row].imagem {
-                    
-                    cellList.imageEquipamento.contentMode = .scaleAspectFill
-                    cellList.imageEquipamento.image = UIImage(named: imageName)
-                }
-                if let modeloText = equipamentos[indexPath.row].modelo {
-                    
-                    cellList.modeloEquipamento.text = modeloText
-                }
-                if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
-                    
-                    cellList.utilizacaoEquipamento.text = "Utilização: \(utilizacaoText) H"
-                }
-                if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
-                    
-                    cellList.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
-                }
+            if let modeloText = equipamentos[indexPath.row].modelo {
+                
+                cell.modeloEquipamento.text = modeloText
             }
-            cellList.cellView.setCardView(view: cellList.cellView)
-            
-            return cellList
+            if let utilizacaoText = equipamentos[indexPath.row].utilizacao {
+                
+                cell.utilizacaoEquipamento.text = "Utilização:      \(utilizacaoText) H"
+            }
+            if let numeroSerieText = equipamentos[indexPath.row].serialNumber {
+                
+                cell.numeroSerieEquipamento.text = "N.Série: \(numeroSerieText)"
+            }
         }
+        cell.cellView.setCardView(view: cell.cellView)
+        return cell
         
     }
+    
+    
 }
 
+
 extension ListarEquipamentoController: UICollectionViewDelegate {
+    
+    // MARK: - Public
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
@@ -148,6 +100,8 @@ extension ListarEquipamentoController: UICollectionViewDelegate {
 }
 
 extension ListarEquipamentoController: UISearchBarDelegate {
+    
+    // MARK: - Public
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;

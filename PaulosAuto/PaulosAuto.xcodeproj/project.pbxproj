@@ -17,12 +17,11 @@
 		B08B3B392429189300FBBD4B /* ShowEquipamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B382429189300FBBD4B /* ShowEquipamentoViewController.swift */; };
 		B08B3B3B24294FC400FBBD4B /* Button+CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3A24294FC400FBBD4B /* Button+CardStyle.swift */; };
 		B08B3B3F242AE67400FBBD4B /* UIView+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3E242AE67400FBBD4B /* UIView+Fade.swift */; };
+		B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */; };
 		FA05FB0C24204ED40033B901 /* CALayer+applySketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+applySketchShadow.swift */; };
 		FA05FB0E242064020033B901 /* UIView+Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0D242064020033B901 /* UIView+Card.swift */; };
 		FACD18162419AEEE0085574C /* ProblemasSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasSceneController.swift */; };
 		FACD18182419AF880085574C /* FaturasSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* FaturasSceneController.swift */; };
-		FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1819241AEB170085574C /* GridFlowLayout.swift */; };
-		FACD181C241AEB2A0085574C /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181B241AEB2A0085574C /* ListFlowLayout.swift */; };
 		FACD181E241AFF980085574C /* ListarEquipamentoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListarEquipamentoController.swift */; };
 		FACD1820241C64ED0085574C /* CollectionViewEquipamentosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */; };
 		FACD1823241D35F10085574C /* Equipamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1822241D35F10085574C /* Equipamento.swift */; };
@@ -41,12 +40,11 @@
 		B08B3B382429189300FBBD4B /* ShowEquipamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipamentoViewController.swift; sourceTree = "<group>"; };
 		B08B3B3A24294FC400FBBD4B /* Button+CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+CardStyle.swift"; sourceTree = "<group>"; };
 		B08B3B3E242AE67400FBBD4B /* UIView+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fade.swift"; sourceTree = "<group>"; };
+		B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFlowLayout.swift; path = PaulosAuto/Extensions/ListFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		FA05FB0B24204ED40033B901 /* CALayer+applySketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+applySketchShadow.swift"; sourceTree = "<group>"; };
 		FA05FB0D242064020033B901 /* UIView+Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Card.swift"; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ProblemasSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasSceneController.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* FaturasSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaturasSceneController.swift; sourceTree = "<group>"; };
-		FACD1819241AEB170085574C /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
-		FACD181B241AEB2A0085574C /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlowLayout.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListarEquipamentoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListarEquipamentoController.swift; sourceTree = "<group>"; };
 		FACD181F241C64ED0085574C /* CollectionViewEquipamentosCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipamentosCell.swift; sourceTree = "<group>"; };
 		FACD1822241D35F10085574C /* Equipamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipamento.swift; sourceTree = "<group>"; };
@@ -84,8 +82,6 @@
 			children = (
 				FA05FB0A24204D460033B901 /* Extensions */,
 				FA05FB0924204BE50033B901 /* Layout */,
-				FACD1819241AEB170085574C /* GridFlowLayout.swift */,
-				FACD181B241AEB2A0085574C /* ListFlowLayout.swift */,
 				FACD1821241D35DA0085574C /* Structure */,
 				B0658AB62417E6CA00245732 /* AppDelegate */,
 				B0658AB52417E6A300245732 /* Controllers */,
@@ -147,6 +143,7 @@
 		FA05FB0924204BE50033B901 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -250,9 +247,8 @@
 				FACD1823241D35F10085574C /* Equipamento.swift in Sources */,
 				B08B3B392429189300FBBD4B /* ShowEquipamentoViewController.swift in Sources */,
 				B08B3B3B24294FC400FBBD4B /* Button+CardStyle.swift in Sources */,
-				FACD181A241AEB170085574C /* GridFlowLayout.swift in Sources */,
-				FACD181C241AEB2A0085574C /* ListFlowLayout.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
+				B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+applySketchShadow.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasSceneController.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,

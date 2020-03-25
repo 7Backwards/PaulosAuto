@@ -17,22 +17,13 @@ class ListarEquipamentoController: ViewController {
     @IBOutlet weak var changeLayoutButton: UIButton!
     
     
-    
     // MARK: - Constants
     
-    let gridFlowLayout = GridFlowLayout()
     let listFlowLayout = ListFlowLayout()
     
     
     // MARK: - Properties
     
-    var isGridFlowLayoutUsed: Bool = false {
-        
-        didSet {
-            
-            updateButtonAppearance()
-        }
-    }
     var filteredEquipamentos = [equipamento]()
     var searchActive = false
     
@@ -49,8 +40,7 @@ class ListarEquipamentoController: ViewController {
         collectionView.dataSource = self
         searchBar.delegate = self
         addNavBarFilter()
-        collectionView.collectionViewLayout = gridFlowLayout
-        isGridFlowLayoutUsed = true
+        collectionView.collectionViewLayout = listFlowLayout
     }
     
     // MARK: - Public
@@ -82,32 +72,14 @@ class ListarEquipamentoController: ViewController {
     }
     
     
-    func updateButtonAppearance() {
-        
-        let layout = isGridFlowLayoutUsed ? gridFlowLayout : listFlowLayout
-        UIView.animate(withDuration: 0.2) { () -> Void in
-            self.collectionView.collectionViewLayout.invalidateLayout()
-            self.collectionView.setCollectionViewLayout(layout, animated: true)
-            
-            
-        }
-        
-        if(self.isGridFlowLayoutUsed == true) { self.changeLayoutButton.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-        }
-        else{
-            self.changeLayoutButton.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
-        }
+    
         
         
-    }
     
     // MARK: - Action
     
     
-    @IBAction func changelayoutButtonDidTap(_ sender: UIButton) {
-        
-        isGridFlowLayoutUsed = !isGridFlowLayoutUsed
-    }
+
     
     
 }

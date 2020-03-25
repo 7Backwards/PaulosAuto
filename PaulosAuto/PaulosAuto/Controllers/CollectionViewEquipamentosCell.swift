@@ -10,6 +10,8 @@ import UIKit
 
 class CollectionViewEquipamentosCell: UICollectionViewCell {
   
+
+    
     // MARK: - Outlets
 
     @IBOutlet weak var cellView: UIView!
@@ -18,20 +20,17 @@ class CollectionViewEquipamentosCell: UICollectionViewCell {
     @IBOutlet weak var utilizacaoEquipamento: UILabel!
     @IBOutlet weak var numeroSerieEquipamento: UILabel!
     @IBOutlet weak var stackViewCell: UIStackView!
+    @IBOutlet weak var anoEquipamento: UILabel!
+    @IBOutlet weak var matriculaEquipamento: UILabel!
     
-
+    
+    // MARK: - Properties
+    
     var listarEquipamentoController = ListarEquipamentoController()
     
-   
-    func setVerticalStackView() {
-        
-        stackViewCell.axis = .vertical
-    }
+    // MARK: - Public
     
-    func setHorizontalStackView() {
-        
-        stackViewCell.axis = .horizontal
-    }
+
 
     
 
