@@ -114,7 +114,15 @@ class ShowEquipamentoViewController: ViewController {
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "RegistarHorasSegue") {
+            let destinationVC = segue.destination as! RegistarHorasViewController
+            destinationVC.equipamento = self.equipamento
+        }
+    }
+    
+    
+    
 }
-
-
-

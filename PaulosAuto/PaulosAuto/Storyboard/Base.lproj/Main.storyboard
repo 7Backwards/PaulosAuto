@@ -798,6 +798,9 @@
                                                 <state key="normal" title="Registar Horas">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="YVg-wv-zoB" kind="presentation" identifier="RegistarHorasSegue" id="Q4N-AT-Di9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-43-K6I">
                                                 <rect key="frame" x="197" y="0.0" width="187" height="40"/>
@@ -851,6 +854,189 @@
             </objects>
             <point key="canvasLocation" x="3940" y="97"/>
         </scene>
+        <!--Registar Horas View Controller-->
+        <scene sceneID="vu9-ne-mhY">
+            <objects>
+                <viewController title="Registar Horas View Controller" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="YVg-wv-zoB" customClass="RegistarHorasViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9I-0B-hNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-RH-6Gf">
+                                <rect key="frame" x="41.5" y="169" width="331" height="421"/>
+                                <subviews>
+                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5zy-1K-m8D">
+                                        <rect key="frame" x="20" y="15" width="291" height="396"/>
+                                        <subviews>
+                                            <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nK0-sG-DnB">
+                                                <rect key="frame" x="0.0" y="0.0" width="291" height="15"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" tag="800" contentMode="right" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Yj8-Ah-NmO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="15"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="800" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJf-7f-1CH">
+                                                                <rect key="frame" x="272.5" y="0.0" width="18.5" height="15"/>
+                                                                <state key="normal" image="multiply" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="closeButtonAction:" destination="YVg-wv-zoB" eventType="touchUpInside" id="KbA-Ya-jJd"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="15" id="CYq-CI-Ruh"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                            </stackView>
+                                            <stackView opaque="NO" tag="800" contentMode="scaleAspectFit" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-jA-OuZ">
+                                                <rect key="frame" x="0.0" y="30" width="291" height="47.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registar Horas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-XB-Mis">
+                                                        <rect key="frame" x="8" y="12.5" width="275" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            </stackView>
+                                            <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-AQ-Rkl">
+                                                <rect key="frame" x="0.0" y="92.5" width="291" height="1"/>
+                                                <subviews>
+                                                    <view alpha="0.40000000000000002" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61f-lm-Il7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="1"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="S0Y-Hx-Lzn"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" tag="800" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j4D-sz-fuF">
+                                                <rect key="frame" x="0.0" y="108.5" width="291" height="79"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-ZK-QmK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="left" verticalHuggingPriority="251" text="Número de Série:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fl-o7-5hs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="186" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registar Horas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA2-RG-Sft">
+                                                                <rect key="frame" x="186" y="0.0" width="105" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcc-8f-ja9">
+                                                        <rect key="frame" x="0.0" y="47" width="291" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="left" verticalHuggingPriority="251" text="Último Registo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQy-5d-2Px">
+                                                                <rect key="frame" x="0.0" y="0.0" width="186" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registar Horas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4e-EM-ojR">
+                                                                <rect key="frame" x="186" y="0.0" width="105" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" tag="800" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jpa-Z6-pXj">
+                                                <rect key="frame" x="0.0" y="202.5" width="291" height="193.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBR-at-DgX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="54.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="800" contentMode="left" verticalHuggingPriority="251" text="Indique o número de horas atuais" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-bD-QGX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="54.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVi-en-Fuf">
+                                                        <rect key="frame" x="0.0" y="69.5" width="291" height="54.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" tag="800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-kp-pKq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="54.5"/>
+                                                                <color key="tintColor" red="0.1206811662" green="0.46739643990000002" blue="0.2104541814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" tag="800" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SZ3-sM-P4Z">
+                                                        <rect key="frame" x="0.0" y="139" width="291" height="54.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-MN-aHu">
+                                                                <rect key="frame" x="50" y="7.5" width="191" height="40"/>
+                                                                <color key="backgroundColor" red="0.1206811662" green="0.46739643990000002" blue="0.2104541814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="tmz-Pq-Lmk"/>
+                                                                </constraints>
+                                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <state key="normal" title="Registar Horas">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="registarHorasPopUp:" destination="Qw0-bW-1kh" eventType="touchUpInside" id="3n0-Qn-xPW"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <edgeInsets key="layoutMargins" top="0.0" left="50" bottom="0.0" right="50"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="j4D-sz-fuF" firstAttribute="height" secondItem="5zy-1K-m8D" secondAttribute="height" multiplier="0.2" id="h0E-vQ-hPU"/>
+                                            <constraint firstItem="YZg-jA-OuZ" firstAttribute="height" secondItem="5zy-1K-m8D" secondAttribute="height" multiplier="0.12" id="ieY-yG-lst"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5zy-1K-m8D" secondAttribute="trailing" constant="20" symbolic="YES" id="LUX-xQ-1Gk"/>
+                                    <constraint firstItem="5zy-1K-m8D" firstAttribute="top" secondItem="GFa-RH-6Gf" secondAttribute="top" constant="15" id="Uvr-2q-OWH"/>
+                                    <constraint firstItem="5zy-1K-m8D" firstAttribute="leading" secondItem="GFa-RH-6Gf" secondAttribute="leading" constant="20" id="dcL-An-VOd"/>
+                                    <constraint firstAttribute="bottom" secondItem="5zy-1K-m8D" secondAttribute="bottom" constant="10" id="tRT-pH-I0a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59585184010152292" green="0.59585184010152292" blue="0.59585184010152292" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GFa-RH-6Gf" firstAttribute="height" secondItem="k9I-0B-hNY" secondAttribute="height" multiplier="0.5" id="LUg-mp-1Qu"/>
+                            <constraint firstItem="GFa-RH-6Gf" firstAttribute="centerX" secondItem="z8A-sQ-13H" secondAttribute="centerX" id="LoF-An-MV7"/>
+                            <constraint firstItem="GFa-RH-6Gf" firstAttribute="width" secondItem="k9I-0B-hNY" secondAttribute="width" multiplier="0.8" id="gML-5P-wae"/>
+                            <constraint firstItem="GFa-RH-6Gf" firstAttribute="centerY" secondItem="z8A-sQ-13H" secondAttribute="centerY" id="i5u-xD-Ggc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z8A-sQ-13H"/>
+                    </view>
+                    <connections>
+                        <outlet property="PopUpView" destination="GFa-RH-6Gf" id="Gcx-vI-haV"/>
+                        <outlet property="closeButton" destination="yJf-7f-1CH" id="vIO-fH-abc"/>
+                        <outlet property="numeroSerieLabel" destination="MA2-RG-Sft" id="6RK-S3-JqB"/>
+                        <outlet property="registarHorasButton" destination="VMH-MN-aHu" id="rK9-Q3-SNI"/>
+                        <outlet property="stackViewPopUp" destination="5zy-1K-m8D" id="iaV-Gj-2N3"/>
+                        <outlet property="utilizacaoLabel" destination="S4e-EM-ojR" id="2wl-aY-g7Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vn-3P-bzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4701" y="100"/>
+        </scene>
     </scenes>
     <resources>
         <image name="5523b3f1cf47c" width="358" height="269"/>
@@ -862,6 +1048,7 @@
         <image name="exclamationmark.triangle.fill" catalog="system" width="64" height="56"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="multiply" catalog="system" width="64" height="54"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="xmark.circle" catalog="system" width="64" height="60"/>
