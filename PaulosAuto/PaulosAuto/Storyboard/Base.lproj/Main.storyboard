@@ -582,7 +582,7 @@
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u33-bx-bEV">
                                                                 <rect key="frame" x="15" y="8" width="321" height="14"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-P4-Bf0">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-P4-Bf0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="176.5" height="14"/>
                                                                         <color key="tintColor" red="0.94430422780000001" green="0.013613672" blue="0.01322687138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -747,13 +747,10 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-ef-HQN">
-                                                                                <rect key="frame" x="34.5" y="0.0" width="286.5" height="32.5"/>
-                                                                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <state key="normal" image="checkmark.circle" catalog="system">
-                                                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                </state>
-                                                                            </button>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" verticalHuggingPriority="251" image="xmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-A4-Hog">
+                                                                                <rect key="frame" x="34.5" y="0.5" width="286.5" height="31.5"/>
+                                                                                <color key="tintColor" red="0.1206811662" green="0.46739643990000002" blue="0.2104541814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </imageView>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
@@ -834,13 +831,20 @@
                     <connections>
                         <outlet property="RegistarUtilizacaoButton" destination="630-RM-39w" id="NOL-TA-0bP"/>
                         <outlet property="ReportarProblemaButton" destination="LdX-43-K6I" id="qHr-pd-yYP"/>
+                        <outlet property="ativoContratoImage" destination="Fdo-A4-Hog" id="0Q6-02-Zm9"/>
+                        <outlet property="dataContratoLabel" destination="Fbn-nD-qh7" id="U0X-SW-aos"/>
+                        <outlet property="dataFimContratoLabel" destination="dPJ-Cs-8fl" id="k9c-qF-5WA"/>
+                        <outlet property="dataInicioContratoLabel" destination="ShQ-wm-gTN" id="eFy-hc-zo8"/>
                         <outlet property="historicoView" destination="tNp-Tq-mvI" id="lfU-Yu-HJ4"/>
                         <outlet property="imageEquipamento" destination="eKr-OO-7Bb" id="kcL-I2-k6J"/>
                         <outlet property="informacoesView" destination="zEe-ai-ktO" id="9dA-R4-rDb"/>
-                        <outlet property="modeloEquipamento" destination="0wk-Ta-6Cl" id="aJa-lo-Cxm"/>
+                        <outlet property="marcaEquipamentoLabel" destination="NBa-x3-ZnZ" id="J3U-zE-ZYH"/>
+                        <outlet property="matriculaEquipamentoLabel" destination="cWp-g1-vSR" id="SFC-LG-pnR"/>
+                        <outlet property="modeloEquipamentoLabel" destination="0wk-Ta-6Cl" id="VDM-gf-geP"/>
                         <outlet property="segmentControl" destination="SNG-hX-P2v" id="0jH-rE-rCe"/>
-                        <outlet property="serialNumberEquipamento" destination="DsW-o8-FJd" id="dtd-o0-LxK"/>
-                        <outlet property="tipoEquipamento" destination="VQ6-P4-Bf0" id="djX-7n-enD"/>
+                        <outlet property="serialNumberEquipamentoLabel" destination="DsW-o8-FJd" id="9eA-4h-Opv"/>
+                        <outlet property="tipoEquipamentoLabel" destination="VQ6-P4-Bf0" id="6IT-2c-5V4"/>
+                        <outlet property="utilizacaoEquipamentoLabel" destination="DeZ-Qk-BDz" id="ZSb-Ed-M2d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2e-P3-OLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -851,7 +855,6 @@
     <resources>
         <image name="5523b3f1cf47c" width="358" height="269"/>
         <image name="Paulosauto-2" width="1280" height="905"/>
-        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
         <image name="doc.text" catalog="system" width="56" height="64"/>
         <image name="doc.text.fill" catalog="system" width="56" height="64"/>
         <image name="dot" width="300" height="250"/>
@@ -861,6 +864,7 @@
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="xmark.circle" catalog="system" width="64" height="60"/>
     </resources>
     <color key="tintColor" red="0.84091449873096447" green="0.016488519582960121" blue="0.016488519582960121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

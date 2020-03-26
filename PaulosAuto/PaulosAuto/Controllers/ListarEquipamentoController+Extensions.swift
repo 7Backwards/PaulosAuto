@@ -53,7 +53,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
         if searchActive {
             
             if smpFilter {
-            
+                
                 if let imageName = smpFilterSearchArray[indexPath.row].imagem {
                     
                     cell.imageEquipamento.image = UIImage(named: imageName)
@@ -136,7 +136,7 @@ extension ListarEquipamentoController: UICollectionViewDataSource {
                     
                     cell.numeroSerieEquipamento.text = "\(numeroSerieText)"
                 }
-                    cell.ativoContrato.alpha = 1
+                cell.ativoContrato.alpha = 1
                 
             }
             else {
@@ -189,12 +189,52 @@ extension ListarEquipamentoController: UICollectionViewDelegate {
     // MARK: - Public
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as?
-            ShowEquipamentoViewController, let index =
-            collectionView.indexPathsForSelectedItems?.first {
-            destination.equipamento = equipamentos[index.row]
+        
+        
+        if(searchActive) {
+            
+            if(smpFilter) {
+                
+                if let destination = segue.destination as?
+                    ShowEquipamentoViewController, let index =
+                    collectionView.indexPathsForSelectedItems?.first {
+                    destination.equipamento = smpFilterSearchArray[index.row]
+                    
+                }
+            }
+            else {
+                if let destination = segue.destination as?
+                    ShowEquipamentoViewController, let index =
+                    collectionView.indexPathsForSelectedItems?.first {
+                    destination.equipamento = filteredEquipamentos[index.row]
+                    
+                }
+                
+            }
             
         }
+        else {
+            
+            if(smpFilter) {
+                
+                if let destination = segue.destination as?
+                    ShowEquipamentoViewController, let index =
+                    collectionView.indexPathsForSelectedItems?.first {
+                    destination.equipamento = smpFilterArray[index.row]
+                    
+                }
+            }
+            else {
+                
+                if let destination = segue.destination as?
+                    ShowEquipamentoViewController, let index =
+                    collectionView.indexPathsForSelectedItems?.first {
+                    destination.equipamento = equipamentos[index.row]
+                    
+                }
+            }
+        }
+        
     }
     
     

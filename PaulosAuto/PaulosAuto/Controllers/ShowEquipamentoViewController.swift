@@ -16,14 +16,20 @@ class ShowEquipamentoViewController: ViewController {
     
     @IBOutlet weak var informacoesView: UIView!
     @IBOutlet weak var historicoView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var modeloEquipamentoLabel: UILabel!
+    @IBOutlet weak var serialNumberEquipamentoLabel: UILabel!
+    @IBOutlet weak var tipoEquipamentoLabel: UILabel!
+    @IBOutlet weak var dataContratoLabel: UILabel!
+    @IBOutlet weak var dataInicioContratoLabel: UILabel!
+    @IBOutlet weak var dataFimContratoLabel: UILabel!
+    @IBOutlet weak var marcaEquipamentoLabel: UILabel!
+    @IBOutlet weak var matriculaEquipamentoLabel: UILabel!
+    @IBOutlet weak var utilizacaoEquipamentoLabel: UILabel!
+    @IBOutlet weak var imageEquipamento: UIImageView!
+    @IBOutlet weak var ativoContratoImage: UIImageView!
     @IBOutlet weak var RegistarUtilizacaoButton: UIButton!
     @IBOutlet weak var ReportarProblemaButton: UIButton!
-    @IBOutlet weak var modeloEquipamento: UILabel!
-    @IBOutlet weak var tipoEquipamento: UILabel!
-    @IBOutlet weak var serialNumberEquipamento: UILabel!
-    @IBOutlet weak var imageEquipamento: UIImageView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    
     
     
     
@@ -64,12 +70,26 @@ class ShowEquipamentoViewController: ViewController {
     
     func setupInfo() {
         
-        modeloEquipamento.text = equipamento.modelo
-        modeloEquipamento.textColor = .red
-        tipoEquipamento.text = equipamento.tipo
-        serialNumberEquipamento.text = equipamento.serialNumber
-        imageEquipamento.contentMode = .scaleAspectFill
+        
+        modeloEquipamentoLabel.text = equipamento.modelo
+        tipoEquipamentoLabel.text = equipamento.tipo
+        serialNumberEquipamentoLabel.text = equipamento.serialNumber
         imageEquipamento.image = UIImage(named: equipamento.imagem!)
+        dataContratoLabel.text = equipamento.dataContrato
+        dataInicioContratoLabel.text = equipamento.datainicioContrato
+        dataFimContratoLabel.text = equipamento.datafimContrato
+        marcaEquipamentoLabel.text = equipamento.marca
+        matriculaEquipamentoLabel.text = equipamento.matricula
+        utilizacaoEquipamentoLabel.text = "\(equipamento.utilizacao!)"
+        if (equipamento.ativo == true) {
+            
+            ativoContratoImage.image = UIImage(systemName: "checkmark.circle")
+        }
+        else {
+            
+            ativoContratoImage.image = UIImage(systemName: "xmark.circle")
+        }
+        
     }
     
     // MARK: - Action

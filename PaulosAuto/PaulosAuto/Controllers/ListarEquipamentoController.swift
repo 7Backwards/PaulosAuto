@@ -74,15 +74,6 @@ class ListarEquipamentoController: ViewController {
             return equipamento.ativo == true
         }
         
-//        smpFilterSearchArray = filteredEquipamentos.filter { (equipamento) -> Bool in
-//            for equipamento in filteredEquipamentos {
-//                if equipamento.ativo == true {
-//                    return true
-//                }
-//            }
-//            return false
-//        }
-        
     }
     
     
