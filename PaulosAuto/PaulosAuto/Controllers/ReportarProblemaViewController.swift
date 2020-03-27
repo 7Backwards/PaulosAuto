@@ -9,22 +9,63 @@
 import UIKit
 
 class ReportarProblemaViewController: ViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+    
+    // MARK: - Outlets
+    
     
 
-    /*
-    // MARK: - Navigation
+    @IBOutlet weak var reportarProblemaButton: UIButton!
+    @IBOutlet weak var numeroSerieLabel: UILabel!
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var utilizacaoAtualTextField: UITextField!
+    @IBOutlet weak var modeloEquipamentoLabel: UILabel!
+    @IBOutlet weak var descricaoProblemaTextField: UITextField!
+    
+    
+    // MARK: - Properties
+    
+    
+    var equipamento : equipamento!
+    
+    
+    // MARK: - Public
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reportarProblemaButton.setButtonStyle(Button: reportarProblemaButton, cornerRadius: 10)
+       
+        numeroSerieLabel.text = equipamento.serialNumber
+        utilizacaoAtualTextField.layer.masksToBounds = true
+        
+        utilizacaoAtualTextField.layer.borderWidth = 0.5
+        utilizacaoAtualTextField.layer.cornerRadius = 10
+        
+        descricaoProblemaTextField.layer.masksToBounds = true
+        
+        descricaoProblemaTextField.layer.borderWidth = 0.5
+        descricaoProblemaTextField.layer.cornerRadius = 10
+        modeloEquipamentoLabel.text = equipamento.modelo
+        
     }
-    */
+    
+    
+    func dismisspopup() {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    // MARK: - Actions
+    
+    
 
+    
+    
+    
+    
+    
 }

@@ -20,6 +20,7 @@ class RegistarHorasViewController: ViewController {
     @IBOutlet weak var utilizacaoLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var stackViewPopUp: UIStackView!
+    @IBOutlet weak var utilizacaoAtualTextField: UITextField!
     
     
     // MARK: - Properties
@@ -36,7 +37,12 @@ class RegistarHorasViewController: ViewController {
         PopUpView.setCardView(view: PopUpView)
        registarHorasButton.setButtonStyle(Button: registarHorasButton, cornerRadius: 10)
         utilizacaoLabel.text = "\(equipamento.utilizacao!) H"
+        let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
         numeroSerieLabel.text = equipamento.serialNumber
+        utilizacaoAtualTextField.layer.masksToBounds = true
+        utilizacaoAtualTextField.layer.borderColor = textFieldBorderColor.cgColor
+        utilizacaoAtualTextField.layer.borderWidth = 1.0
+        utilizacaoAtualTextField.layer.cornerRadius = 10
         
     }
     

@@ -121,7 +121,14 @@ class ShowEquipamentoViewController: ViewController {
             let destinationVC = segue.destination as! RegistarHorasViewController
             destinationVC.equipamento = self.equipamento
         }
+        if (segue.identifier == "ReportarProblemaSegue") {
+            let destinationVC = segue.destination as! ReportarProblemaViewController
+            destinationVC.equipamento = self.equipamento
+        }
     }
+    
+    
+    
     
     
     
