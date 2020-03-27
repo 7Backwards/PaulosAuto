@@ -19,6 +19,7 @@
 		B08B3B3F242AE67400FBBD4B /* UIView+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3E242AE67400FBBD4B /* UIView+Fade.swift */; };
 		B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */; };
 		B09FE977242CFF2B00EE2FA1 /* RegistarHorasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE976242CFF2B00EE2FA1 /* RegistarHorasViewController.swift */; };
+		B09FE979242D6C2C00EE2FA1 /* ReportarProblemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE978242D6C2C00EE2FA1 /* ReportarProblemaViewController.swift */; };
 		FA05FB0C24204ED40033B901 /* CALayer+applySketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+applySketchShadow.swift */; };
 		FA05FB0E242064020033B901 /* UIView+Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0D242064020033B901 /* UIView+Card.swift */; };
 		FACD18162419AEEE0085574C /* ProblemasSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasSceneController.swift */; };
@@ -43,6 +44,7 @@
 		B08B3B3E242AE67400FBBD4B /* UIView+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fade.swift"; sourceTree = "<group>"; };
 		B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFlowLayout.swift; path = PaulosAuto/Extensions/ListFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		B09FE976242CFF2B00EE2FA1 /* RegistarHorasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistarHorasViewController.swift; sourceTree = "<group>"; };
+		B09FE978242D6C2C00EE2FA1 /* ReportarProblemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportarProblemaViewController.swift; sourceTree = "<group>"; };
 		FA05FB0B24204ED40033B901 /* CALayer+applySketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+applySketchShadow.swift"; sourceTree = "<group>"; };
 		FA05FB0D242064020033B901 /* UIView+Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Card.swift"; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ProblemasSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasSceneController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B02A3A962429011A0008DDC6 /* ListarEquipamentoController+Extensions.swift */,
 				B08B3B382429189300FBBD4B /* ShowEquipamentoViewController.swift */,
 				B09FE976242CFF2B00EE2FA1 /* RegistarHorasViewController.swift */,
+				B09FE978242D6C2C00EE2FA1 /* ReportarProblemaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			files = (
 				B08B3B3F242AE67400FBBD4B /* UIView+Fade.swift in Sources */,
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
+				B09FE979242D6C2C00EE2FA1 /* ReportarProblemaViewController.swift in Sources */,
 				FACD181E241AFF980085574C /* ListarEquipamentoController.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Card.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipamentosCell.swift in Sources */,
