@@ -39,12 +39,12 @@ class ReportarProblemaViewController: ViewController {
         numeroSerieLabel.text = equipamento.serialNumber
         utilizacaoAtualTextField.layer.masksToBounds = true
         
-        utilizacaoAtualTextField.layer.borderWidth = 0.5
+        utilizacaoAtualTextField.layer.borderWidth = 0.6
         utilizacaoAtualTextField.layer.cornerRadius = 10
         
         descricaoProblemaTextField.layer.masksToBounds = true
         
-        descricaoProblemaTextField.layer.borderWidth = 0.5
+        descricaoProblemaTextField.layer.borderWidth = 0.6
         descricaoProblemaTextField.layer.cornerRadius = 10
         modeloEquipamentoLabel.text = equipamento.modelo
         

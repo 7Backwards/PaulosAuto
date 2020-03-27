@@ -79,12 +79,34 @@ class ListarEquipamentoController: ViewController {
     
     func addNavBarFilter() {
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: nil, action: nil)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: self, action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
     }
     
+    @objc func rightButtonAction() {
+            
+         guard let FilterShowEquipamentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipamentoViewController")
+         as? FilterShowEquipamentoViewController else {
+             assertionFailure("No view controller ID FilterShowEquipamentoViewController in storyboard")
+             return
+         }
+         
+         // set the modal presentation to full screen, in iOS 13, its no longer full screen by default
+         FilterShowEquipamentoVC.modalPresentationStyle = .fullScreen
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
+        // take a snapshot of current view and set it as backingImage
+        FilterShowEquipamentoVC.snapShotImage = self.tabBarController?.view.asImage()
+
+         // present the view controller modally without animation
+         self.present(FilterShowEquipamentoVC, animated: false, completion: nil)
+        })
+        
+    }
     
+
     
+
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()

@@ -92,6 +92,8 @@ class ShowEquipamentoViewController: ViewController {
         
     }
     
+    
+    
     // MARK: - Action
     
     
