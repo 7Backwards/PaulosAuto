@@ -85,7 +85,7 @@ class ListarEquipamentoController: ViewController {
     }
     
     @objc func rightButtonAction() {
-            
+
          guard let FilterShowEquipamentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipamentoViewController")
          as? FilterShowEquipamentoViewController else {
              assertionFailure("No view controller ID FilterShowEquipamentoViewController in storyboard")
@@ -93,14 +93,13 @@ class ListarEquipamentoController: ViewController {
          }
          
          // set the modal presentation to full screen, in iOS 13, its no longer full screen by default
-         FilterShowEquipamentoVC.modalPresentationStyle = .fullScreen
-         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
-        // take a snapshot of current view and set it as backingImage
-        FilterShowEquipamentoVC.snapShotImage = self.tabBarController?.view.asImage()
+         FilterShowEquipamentoVC.modalPresentationStyle = .popover
+         
+      
 
          // present the view controller modally without animation
-         self.present(FilterShowEquipamentoVC, animated: false, completion: nil)
-        })
+         self.present(FilterShowEquipamentoVC, animated: true, completion: nil)
+        
         
     }
     
