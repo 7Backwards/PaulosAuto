@@ -6,13 +6,11 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
-
 
 extension UIView {
     
+    // MARK: - Functions
     
     func fadeIn(Duration: TimeInterval? = 0.5) {
         UIView.animate(withDuration: Duration ?? 0.5) {

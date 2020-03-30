@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="2118" y="1517"/>
         </scene>
-        <!--Faturas Scene Controller-->
+        <!--Faturas View Controller-->
         <scene sceneID="PK8-hN-Igy">
             <objects>
-                <viewController id="T4Z-me-1Yd" customClass="FaturasSceneController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T4Z-me-1Yd" customClass="FaturasViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5St-VQ-SgS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="3065" y="-708"/>
         </scene>
-        <!--Filter Show Equipamento View Controller-->
+        <!--Filter Show Equipament View Controller-->
         <scene sceneID="uHO-qg-4Hh">
             <objects>
-                <viewController storyboardIdentifier="FilterShowEquipamentoViewController" modalPresentationStyle="pageSheet" id="LCp-Wo-wfy" customClass="FilterShowEquipamentoViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterShowEquipamentoViewController" modalPresentationStyle="pageSheet" id="LCp-Wo-wfy" customClass="FilterShowEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSz-3B-hx0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +304,7 @@
         <!--ListarEquipamentoController-->
         <scene sceneID="al1-g4-l6Z">
             <objects>
-                <viewController title="ListarEquipamentoController" id="0Mv-eo-OSB" customClass="ListarEquipamentoController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ListarEquipamentoController" id="0Mv-eo-OSB" customClass="ListEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubG-7e-29b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
                                 <rect key="frame" x="10" y="56" width="394" height="703"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Pesquisar por número de série" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-81-9Yc">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="79"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="273.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,7 +324,7 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s4r-5a-F82">
-                                        <rect key="frame" x="0.0" y="84" width="394" height="54"/>
+                                        <rect key="frame" x="0.0" y="278.5" width="394" height="54"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-Wi-WAP">
                                                 <rect key="frame" x="8" y="8" width="378" height="37"/>
@@ -373,7 +373,7 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kcj-pH-aRn">
-                                        <rect key="frame" x="0.0" y="143" width="394" height="560"/>
+                                        <rect key="frame" x="0.0" y="337.5" width="394" height="365.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NWN-f2-LIp">
                                             <size key="itemSize" width="393" height="130"/>
@@ -382,7 +382,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CollectionViewEquipamentosCell" id="Q3l-7r-z47" customClass="CollectionViewEquipamentosCell" customModule="PaulosAuto" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="CollectionViewEquipmentsCell" id="Q3l-7r-z47" customClass="CollectionViewEquipmentsCell" customModule="PaulosAuto" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -393,16 +393,16 @@
                                                             <rect key="frame" x="8" y="8" width="378" height="114"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Yl3-Ks-YSC">
-                                                                    <rect key="frame" x="0.0" y="10" width="368" height="94"/>
+                                                                    <rect key="frame" x="0.0" y="5" width="368" height="104"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lVu-Ed-OCw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="94"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="104"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-nZ-hzL">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="70.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="78"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLL-sK-maQ">
-                                                                                    <rect key="frame" x="0.0" y="70.5" width="110.5" height="23.5"/>
+                                                                                    <rect key="frame" x="0.0" y="78" width="110.5" height="26"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -413,26 +413,26 @@
                                                                             </constraints>
                                                                         </stackView>
                                                                         <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88d-eJ-h53">
-                                                                            <rect key="frame" x="110.5" y="0.0" width="1" height="94"/>
+                                                                            <rect key="frame" x="110.5" y="0.0" width="1" height="104"/>
                                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="1" id="1wS-Kr-XjG"/>
                                                                             </constraints>
                                                                         </view>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="T8j-fI-Iwj">
-                                                                            <rect key="frame" x="111.5" y="0.0" width="219.5" height="94"/>
+                                                                            <rect key="frame" x="111.5" y="0.0" width="219.5" height="104"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-Zy-ABY">
-                                                                                    <rect key="frame" x="15" y="8" width="179.5" height="24"/>
+                                                                                    <rect key="frame" x="15" y="8" width="179.5" height="20"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Kp-Z3b">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shv-tP-wXR">
-                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="24"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shv-tP-wXR">
+                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -440,16 +440,16 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV6-ol-DXe">
-                                                                                    <rect key="frame" x="15" y="35" width="179.5" height="24"/>
+                                                                                    <rect key="frame" x="15" y="31" width="179.5" height="19.5"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ytz-aZ-Spn">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-aZ-Cyt">
-                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="24"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-aZ-Cyt">
+                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -457,16 +457,33 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25y-RN-5u6">
-                                                                                    <rect key="frame" x="15" y="62" width="179.5" height="24"/>
+                                                                                    <rect key="frame" x="15" y="53.5" width="179.5" height="20"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N. Série:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BZL-ne-3F7">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="24"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-nQ-4C6">
-                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="24"/>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-nQ-4C6">
+                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
+                                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-xH-agR">
+                                                                                    <rect key="frame" x="15" y="76.5" width="179.5" height="19.5"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-z4-GSg">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
+                                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-u8-ePm">
+                                                                                            <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
                                                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -477,10 +494,10 @@
                                                                             <edgeInsets key="layoutMargins" top="8" left="15" bottom="8" right="25"/>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-Yf-ivp">
-                                                                            <rect key="frame" x="331" y="0.0" width="37" height="94"/>
+                                                                            <rect key="frame" x="331" y="0.0" width="37" height="104"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-Xm-DAB">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="94"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="37" height="104"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcl-Ry-bY0">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="37" height="17"/>
@@ -508,8 +525,8 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="Yl3-Ks-YSC" firstAttribute="top" secondItem="PXe-Ym-CUa" secondAttribute="top" constant="10" id="NH5-fw-eMS"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Yl3-Ks-YSC" secondAttribute="bottom" constant="10" id="csa-aK-1I7"/>
+                                                                <constraint firstItem="Yl3-Ks-YSC" firstAttribute="top" secondItem="PXe-Ym-CUa" secondAttribute="top" constant="5" id="NH5-fw-eMS"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Yl3-Ks-YSC" secondAttribute="bottom" constant="5" id="csa-aK-1I7"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Yl3-Ks-YSC" secondAttribute="trailing" constant="10" id="hgc-hy-QYQ"/>
                                                                 <constraint firstItem="Yl3-Ks-YSC" firstAttribute="leading" secondItem="PXe-Ym-CUa" secondAttribute="leading" id="rOT-SW-FST"/>
                                                             </constraints>
@@ -524,14 +541,14 @@
                                                 </constraints>
                                                 <size key="customSize" width="394" height="130"/>
                                                 <connections>
-                                                    <outlet property="anoEquipamento" destination="9g2-aZ-Cyt" id="lUh-Co-dlQ"/>
-                                                    <outlet property="ativoContrato" destination="Pcl-Ry-bY0" id="Qcu-Ag-EGi"/>
                                                     <outlet property="cellView" destination="PXe-Ym-CUa" id="Qa0-1x-bvx"/>
-                                                    <outlet property="imageEquipamento" destination="zwV-nZ-hzL" id="q4R-5d-Ti1"/>
-                                                    <outlet property="modeloEquipamento" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
-                                                    <outlet property="numeroSerieEquipamento" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
-                                                    <outlet property="stackViewCell" destination="Yl3-Ks-YSC" id="2fs-vL-6ZL"/>
-                                                    <outlet property="utilizacaoEquipamento" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
+                                                    <outlet property="currenthoursEquipamentLabel" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
+                                                    <outlet property="equipamentImageView" destination="zwV-nZ-hzL" id="q4R-5d-Ti1"/>
+                                                    <outlet property="modelEquipamentLabel" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
+                                                    <outlet property="plateEquipmentLabel" destination="cHj-u8-ePm" id="wrD-bE-RTI"/>
+                                                    <outlet property="serialNumberEquipamentLabel" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
+                                                    <outlet property="smpLabel" destination="Pcl-Ry-bY0" id="Qcu-Ag-EGi"/>
+                                                    <outlet property="yearEquipamentLabel" destination="9g2-aZ-Cyt" id="lUh-Co-dlQ"/>
                                                     <segue destination="Qw0-bW-1kh" kind="show" identifier="ShowEquipmentInfo" id="pcR-mX-dFT"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -562,10 +579,10 @@
             </objects>
             <point key="canvasLocation" x="3016" y="94"/>
         </scene>
-        <!--Show Equipamento View Controller-->
+        <!--Show Equipament View Controller-->
         <scene sceneID="Znn-Rl-IL7">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Qw0-bW-1kh" customClass="ShowEquipamentoViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Qw0-bW-1kh" customClass="ShowEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTR-Oh-wk4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -831,7 +848,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="YVg-wv-zoB" kind="presentation" identifier="RegistarHorasSegue" id="Q4N-AT-Di9"/>
+                                                    <segue destination="YVg-wv-zoB" kind="presentation" identifier="RegisterHoursSegue" id="Q4N-AT-Di9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-43-K6I">
@@ -846,7 +863,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="fj5-O6-C37" kind="popoverPresentation" identifier="ReportarProblemaSegue" popoverAnchorView="LdX-43-K6I" id="YxX-bc-Ylh">
+                                                    <segue destination="fj5-O6-C37" kind="popoverPresentation" identifier="ReportProblemSegue" popoverAnchorView="LdX-43-K6I" id="YxX-bc-Ylh">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
                                                 </connections>
@@ -869,22 +886,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y3b-1j-Trl"/>
                     <connections>
-                        <outlet property="RegistarUtilizacaoButton" destination="630-RM-39w" id="NOL-TA-0bP"/>
-                        <outlet property="ReportarProblemaButton" destination="LdX-43-K6I" id="qHr-pd-yYP"/>
-                        <outlet property="ativoContratoImage" destination="Fdo-A4-Hog" id="0Q6-02-Zm9"/>
-                        <outlet property="dataContratoLabel" destination="Fbn-nD-qh7" id="U0X-SW-aos"/>
-                        <outlet property="dataFimContratoLabel" destination="dPJ-Cs-8fl" id="k9c-qF-5WA"/>
-                        <outlet property="dataInicioContratoLabel" destination="ShQ-wm-gTN" id="eFy-hc-zo8"/>
-                        <outlet property="historicoView" destination="tNp-Tq-mvI" id="lfU-Yu-HJ4"/>
-                        <outlet property="imageEquipamento" destination="eKr-OO-7Bb" id="kcL-I2-k6J"/>
-                        <outlet property="informacoesView" destination="zEe-ai-ktO" id="9dA-R4-rDb"/>
-                        <outlet property="marcaEquipamentoLabel" destination="NBa-x3-ZnZ" id="J3U-zE-ZYH"/>
-                        <outlet property="matriculaEquipamentoLabel" destination="cWp-g1-vSR" id="SFC-LG-pnR"/>
-                        <outlet property="modeloEquipamentoLabel" destination="0wk-Ta-6Cl" id="VDM-gf-geP"/>
+                        <outlet property="brandLabel" destination="NBa-x3-ZnZ" id="J3U-zE-ZYH"/>
+                        <outlet property="currentHoursLabel" destination="DeZ-Qk-BDz" id="ZSb-Ed-M2d"/>
+                        <outlet property="dateAgreementLabel" destination="Fbn-nD-qh7" id="U0X-SW-aos"/>
+                        <outlet property="dateEndAgreementLabel" destination="dPJ-Cs-8fl" id="k9c-qF-5WA"/>
+                        <outlet property="dateStartAgreementLabel" destination="ShQ-wm-gTN" id="eFy-hc-zo8"/>
+                        <outlet property="equipmentImageView" destination="eKr-OO-7Bb" id="kcL-I2-k6J"/>
+                        <outlet property="equipmentTypeLabel" destination="VQ6-P4-Bf0" id="6IT-2c-5V4"/>
+                        <outlet property="historyView" destination="tNp-Tq-mvI" id="lfU-Yu-HJ4"/>
+                        <outlet property="informationView" destination="zEe-ai-ktO" id="9dA-R4-rDb"/>
+                        <outlet property="modelLabel" destination="0wk-Ta-6Cl" id="VDM-gf-geP"/>
+                        <outlet property="plateLabel" destination="cWp-g1-vSR" id="SFC-LG-pnR"/>
+                        <outlet property="registerHoursButton" destination="630-RM-39w" id="NOL-TA-0bP"/>
+                        <outlet property="reportProblemButton" destination="LdX-43-K6I" id="qHr-pd-yYP"/>
                         <outlet property="segmentControl" destination="SNG-hX-P2v" id="0jH-rE-rCe"/>
-                        <outlet property="serialNumberEquipamentoLabel" destination="DsW-o8-FJd" id="9eA-4h-Opv"/>
-                        <outlet property="tipoEquipamentoLabel" destination="VQ6-P4-Bf0" id="6IT-2c-5V4"/>
-                        <outlet property="utilizacaoEquipamentoLabel" destination="DeZ-Qk-BDz" id="ZSb-Ed-M2d"/>
+                        <outlet property="serialNumberLabel" destination="DsW-o8-FJd" id="9eA-4h-Opv"/>
+                        <outlet property="smpImageView" destination="Fdo-A4-Hog" id="0Q6-02-Zm9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2e-P3-OLB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -894,7 +911,7 @@
         <!--Registar Horas View Controller-->
         <scene sceneID="vu9-ne-mhY">
             <objects>
-                <viewController title="Registar Horas View Controller" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="YVg-wv-zoB" customClass="RegistarHorasViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Registar Horas View Controller" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="YVg-wv-zoB" customClass="RegisterEquipmentHoursViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k9I-0B-hNY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -917,9 +934,6 @@
                                                                     <button opaque="NO" tag="800" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJf-7f-1CH">
                                                                         <rect key="frame" x="293.5" y="0.0" width="18.5" height="15"/>
                                                                         <state key="normal" image="multiply" catalog="system"/>
-                                                                        <connections>
-                                                                            <action selector="closeButtonAction:" destination="YVg-wv-zoB" eventType="touchUpInside" id="KbA-Ya-jJd"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -1032,9 +1046,6 @@
                                                                 <state key="normal" title="Submeter">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
-                                                                <connections>
-                                                                    <action selector="registarHorasPopUp:" destination="Qw0-bW-1kh" eventType="touchUpInside" id="3n0-Qn-xPW"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <edgeInsets key="layoutMargins" top="0.0" left="50" bottom="0.0" right="50"/>
@@ -1066,23 +1077,22 @@
                         <viewLayoutGuide key="safeArea" id="z8A-sQ-13H"/>
                     </view>
                     <connections>
-                        <outlet property="PopUpView" destination="GFa-RH-6Gf" id="Gcx-vI-haV"/>
-                        <outlet property="closeButton" destination="yJf-7f-1CH" id="vIO-fH-abc"/>
-                        <outlet property="numeroSerieLabel" destination="MA2-RG-Sft" id="6RK-S3-JqB"/>
-                        <outlet property="registarHorasButton" destination="VMH-MN-aHu" id="rK9-Q3-SNI"/>
-                        <outlet property="stackViewPopUp" destination="5zy-1K-m8D" id="iaV-Gj-2N3"/>
-                        <outlet property="utilizacaoAtualTextField" destination="jh7-kp-pKq" id="GzL-AS-Jvi"/>
-                        <outlet property="utilizacaoLabel" destination="S4e-EM-ojR" id="2wl-aY-g7Y"/>
+                        <outlet property="PopUpView" destination="GFa-RH-6Gf" id="mkY-lH-5W3"/>
+                        <outlet property="closeButton" destination="yJf-7f-1CH" id="mYF-BY-Pj7"/>
+                        <outlet property="currentHoursLabel" destination="S4e-EM-ojR" id="1kc-uE-sQq"/>
+                        <outlet property="currentHoursTextField" destination="jh7-kp-pKq" id="bcC-ey-Zq3"/>
+                        <outlet property="serialNumberLabel" destination="MA2-RG-Sft" id="DZp-Pw-WbU"/>
+                        <outlet property="submitHoursButton" destination="VMH-MN-aHu" id="N9O-gZ-KGx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vn-3P-bzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5629" y="-234"/>
         </scene>
-        <!--Reportar Problema View Controller-->
+        <!--Report Problem View Controller-->
         <scene sceneID="ByP-6e-cow">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="fj5-O6-C37" customClass="ReportarProblemaViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="fj5-O6-C37" customClass="ReportProblemViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="800" contentMode="scaleToFill" id="RLP-sY-eNn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1222,7 +1232,6 @@
                                                     <textField opaque="NO" tag="801" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-Db-v35">
                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="79"/>
                                                         <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1299,12 +1308,12 @@
                         <viewLayoutGuide key="safeArea" id="McS-li-oAS"/>
                     </view>
                     <connections>
-                        <outlet property="descricaoProblemaTextField" destination="0zD-Db-v35" id="JEH-h5-jKH"/>
+                        <outlet property="currentHourTextField" destination="j4P-Qa-zpW" id="yRL-eP-4IN"/>
                         <outlet property="handlerView" destination="o9Q-Jq-2zd" id="WHZ-or-vEN"/>
-                        <outlet property="modeloEquipamentoLabel" destination="VrE-0u-AiW" id="Fjd-zz-6m3"/>
-                        <outlet property="numeroSerieLabel" destination="ebx-OR-peq" id="IRG-oO-JKt"/>
-                        <outlet property="reportarProblemaButton" destination="fHJ-38-vWR" id="bWJ-Kb-O48"/>
-                        <outlet property="utilizacaoAtualTextField" destination="j4P-Qa-zpW" id="yRL-eP-4IN"/>
+                        <outlet property="modelLabel" destination="VrE-0u-AiW" id="Fjd-zz-6m3"/>
+                        <outlet property="problemDescriptionTextField" destination="0zD-Db-v35" id="JEH-h5-jKH"/>
+                        <outlet property="reportProblemButton" destination="fHJ-38-vWR" id="bWJ-Kb-O48"/>
+                        <outlet property="serialNumberLabel" destination="ebx-OR-peq" id="IRG-oO-JKt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdB-OO-ZdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

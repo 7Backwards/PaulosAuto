@@ -1,5 +1,5 @@
 //
-//  RegistarHorasViewController.swift
+//  RegisterEquipmentHoursViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 26/03/2020.
@@ -8,25 +8,24 @@
 
 import UIKit
 
-class RegistarHorasViewController: ViewController {
+class RegisterEquipmentHoursViewController: ViewController {
 
     
     // MARK: - Outlets
     
     
     @IBOutlet weak var PopUpView: UIView!
-    @IBOutlet weak var registarHorasButton: UIButton!
-    @IBOutlet weak var numeroSerieLabel: UILabel!
-    @IBOutlet weak var utilizacaoLabel: UILabel!
+    @IBOutlet weak var submitHoursButton: UIButton!
+    @IBOutlet weak var serialNumberLabel: UILabel!
+    @IBOutlet weak var currentHoursLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var stackViewPopUp: UIStackView!
-    @IBOutlet weak var utilizacaoAtualTextField: UITextField!
+    @IBOutlet weak var currentHoursTextField: UITextField!
     
     
     // MARK: - Properties
     
     
-    var equipamento : equipamento!
+    var equipamento : equipament!
     
     
     // MARK: - Public
@@ -35,14 +34,14 @@ class RegistarHorasViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PopUpView.setCardView(view: PopUpView)
-       registarHorasButton.setButtonStyle(Button: registarHorasButton, cornerRadius: 10)
-        utilizacaoLabel.text = "\(equipamento.utilizacao!) H"
+       submitHoursButton.setButtonStyle(Button: submitHoursButton, cornerRadius: 10)
+        currentHoursLabel.text = "\(equipamento.currentHours!) H"
         let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
-        numeroSerieLabel.text = equipamento.serialNumber
-        utilizacaoAtualTextField.layer.masksToBounds = true
-        utilizacaoAtualTextField.layer.borderColor = textFieldBorderColor.cgColor
-        utilizacaoAtualTextField.layer.borderWidth = 1.0
-        utilizacaoAtualTextField.layer.cornerRadius = 10
+        serialNumberLabel.text = equipamento.serialNumber
+        submitHoursButton.layer.masksToBounds = true
+        submitHoursButton.layer.borderColor = textFieldBorderColor.cgColor
+        submitHoursButton.layer.borderWidth = 1.0
+        submitHoursButton.layer.cornerRadius = 10
         
     }
     

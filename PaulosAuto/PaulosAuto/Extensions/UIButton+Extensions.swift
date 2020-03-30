@@ -6,7 +6,6 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIButton {
@@ -14,14 +13,13 @@ extension UIButton {
     // MARK: - Functions
     
     func setButtonStyle(Button: UIButton,
-    
-    cornerRadius: Int = 15
+                        
+                        cornerRadius: Int = 15
     ) {
         
-        
         Button.layer.cornerRadius = CGFloat(cornerRadius)
-    Button.clipsToBounds = false
-    Button.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
-
+        Button.clipsToBounds = false
+        Button.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+        
     }
 }

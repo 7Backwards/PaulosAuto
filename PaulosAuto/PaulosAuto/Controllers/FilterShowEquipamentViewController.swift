@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterShowEquipamentoViewController: ViewController {
+class FilterShowEquipamentViewController: ViewController {
     
    
     @IBOutlet weak var handlerView: UIView!
@@ -16,7 +16,7 @@ class FilterShowEquipamentoViewController: ViewController {
     override func viewDidLoad() {
         
         handlerView.layer.masksToBounds = true
-        handlerView.layer.cornerRadius = 5
+        handlerView.layer.cornerRadius = 3
     }
     
 }
