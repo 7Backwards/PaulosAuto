@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-extension ListEquipamentViewController: UICollectionViewDataSource {
+extension ListEquipmentViewController: UICollectionViewDataSource {
     
     
     // MARK: - Public
@@ -19,14 +19,14 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if(searchActive) {
+        if(searchActive && !searchFilteredEquipments.isEmpty) {
             
             if(smpActive) {
                 smpAndSearchFilter()
                 return smpAndSearchFilterArray.count
             }
             else {
-                return searchFilteredEquipaments.count
+                return searchFilteredEquipments.count
             }
             
         }
@@ -50,13 +50,13 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipmentsCell", for: indexPath) as! CollectionViewEquipmentsCell
         
         
-        if searchActive {
+        if (searchActive && !searchFilteredEquipments.isEmpty) {
             
             if smpActive {
                 
                 if let imageName = smpAndSearchFilterArray[indexPath.row].image {
                     
-                    cell.equipamentImageView.image = UIImage(named: imageName)
+                    cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
                 if let plateEquipment = smpAndSearchFilterArray[indexPath.row].plate {
@@ -66,55 +66,55 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
                 
                 if let yearequipment = smpAndSearchFilterArray[indexPath.row].year {
                     
-                    cell.yearEquipamentLabel.text = "\(yearequipment)"
+                    cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
                 if let modelText = smpAndSearchFilterArray[indexPath.row].model {
                     
-                    cell.modelEquipamentLabel.text = modelText
+                    cell.modelEquipmentLabel.text = modelText
                 }
                 if let currentHoursText = smpAndSearchFilterArray[indexPath.row].currentHours {
                     
-                    cell.currenthoursEquipamentLabel.text = "\(currentHoursText) H"
+                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
                 if let numeroSerieText = smpAndSearchFilterArray[indexPath.row].serialNumber {
                     
-                    cell.serialNumberEquipamentLabel.text = "\(numeroSerieText)"
+                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
                 cell.smpLabel.alpha = 1
             }
             else {
                 
-                if let imageName = searchFilteredEquipaments[indexPath.row].image {
+                if let imageName = searchFilteredEquipments[indexPath.row].image {
                     
-                    cell.equipamentImageView.image = UIImage(named: imageName)
+                    cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
-                if let plateEquipment = searchFilteredEquipaments[indexPath.row].plate {
+                if let plateEquipment = searchFilteredEquipments[indexPath.row].plate {
                     
                     cell.plateEquipmentLabel.text = plateEquipment
                 }
                 
-                if let yearequipment = searchFilteredEquipaments[indexPath.row].year {
+                if let yearequipment = searchFilteredEquipments[indexPath.row].year {
                     
-                    cell.yearEquipamentLabel.text = "\(yearequipment)"
+                    cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
-                if let modelText = searchFilteredEquipaments[indexPath.row].model {
+                if let modelText = searchFilteredEquipments[indexPath.row].model {
                     
-                    cell.modelEquipamentLabel.text = modelText
+                    cell.modelEquipmentLabel.text = modelText
                 }
-                if let currentHoursText = searchFilteredEquipaments[indexPath.row].currentHours {
+                if let currentHoursText = searchFilteredEquipments[indexPath.row].currentHours {
                     
-                    cell.currenthoursEquipamentLabel.text = "\(currentHoursText) H"
+                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
-                if let numeroSerieText = searchFilteredEquipaments[indexPath.row].serialNumber {
+                if let numeroSerieText = searchFilteredEquipments[indexPath.row].serialNumber {
                     
-                    cell.serialNumberEquipamentLabel.text = "\(numeroSerieText)"
+                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
-                if searchFilteredEquipaments[indexPath.row].smp == true {
+                if searchFilteredEquipments[indexPath.row].smp == true {
                     
                     cell.smpLabel.alpha = 1
                 }
@@ -128,7 +128,7 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
                 
                 if let imageName = smpFilterArray[indexPath.row].image {
                     
-                    cell.equipamentImageView.image = UIImage(named: imageName)
+                    cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
                 if let plateEquipment = smpFilterArray[indexPath.row].plate {
@@ -138,21 +138,21 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
                 
                 if let yearequipment = smpFilterArray[indexPath.row].year {
                     
-                    cell.yearEquipamentLabel.text = "\(yearequipment)"
+                    cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
                 if let modelText = smpFilterArray[indexPath.row].model {
                     
-                    cell.modelEquipamentLabel.text = modelText
+                    cell.modelEquipmentLabel.text = modelText
                 }
                 if let currentHoursText = smpFilterArray[indexPath.row].currentHours {
                     
-                    cell.currenthoursEquipamentLabel.text = "\(currentHoursText) H"
+                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
                 if let numeroSerieText = smpFilterArray[indexPath.row].serialNumber {
                     
-                    cell.serialNumberEquipamentLabel.text = "\(numeroSerieText)"
+                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
                 cell.smpLabel.alpha = 1
                 
@@ -161,7 +161,7 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
                 
                 if let imageName = equipments[indexPath.row].image {
                     
-                    cell.equipamentImageView.image = UIImage(named: imageName)
+                    cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
                 if let plateEquipment = equipments[indexPath.row].plate {
@@ -171,21 +171,21 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
                 
                 if let yearequipment = equipments[indexPath.row].year {
                     
-                    cell.yearEquipamentLabel.text = "\(yearequipment)"
+                    cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
                 if let modelText = equipments[indexPath.row].model {
                     
-                    cell.modelEquipamentLabel.text = modelText
+                    cell.modelEquipmentLabel.text = modelText
                 }
                 if let currentHoursText = equipments[indexPath.row].currentHours {
                     
-                    cell.currenthoursEquipamentLabel.text = "\(currentHoursText) H"
+                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
                 if let numeroSerieText = equipments[indexPath.row].serialNumber {
                     
-                    cell.serialNumberEquipamentLabel.text = "\(numeroSerieText)"
+                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
                 if equipments[indexPath.row].smp == true {
                     
@@ -208,19 +208,19 @@ extension ListEquipamentViewController: UICollectionViewDataSource {
     
     
 }
-extension ListEquipamentViewController: UICollectionViewDelegate {
+extension ListEquipmentViewController: UICollectionViewDelegate {
     
     // MARK: - Public
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
-        if(searchActive) {
+        if(searchActive && !searchFilteredEquipments.isEmpty) {
             
             if(smpActive) {
                 
                 if let destination = segue.destination as?
-                    ShowEquipamentViewController, let index =
+                    ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
                     destination.equipment = smpAndSearchFilterArray[index.row]
                     
@@ -228,9 +228,9 @@ extension ListEquipamentViewController: UICollectionViewDelegate {
             }
             else {
                 if let destination = segue.destination as?
-                    ShowEquipamentViewController, let index =
+                    ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = searchFilteredEquipaments[index.row]
+                    destination.equipment = searchFilteredEquipments[index.row]
                     
                 }
                 
@@ -242,7 +242,7 @@ extension ListEquipamentViewController: UICollectionViewDelegate {
             if(smpActive) {
                 
                 if let destination = segue.destination as?
-                    ShowEquipamentViewController, let index =
+                    ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
                     destination.equipment = smpFilterArray[index.row]
                     
@@ -251,7 +251,7 @@ extension ListEquipamentViewController: UICollectionViewDelegate {
             else {
                 
                 if let destination = segue.destination as?
-                    ShowEquipamentViewController, let index =
+                    ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
                     destination.equipment = equipments[index.row]
                     
@@ -264,7 +264,7 @@ extension ListEquipamentViewController: UICollectionViewDelegate {
     
 }
 
-extension ListEquipamentViewController: UISearchBarDelegate {
+extension ListEquipmentViewController: UISearchBarDelegate {
     
     // MARK: - Public
     
@@ -286,10 +286,10 @@ extension ListEquipamentViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchFilteredEquipaments = equipments.filter { (equipment) -> Bool in
+        searchFilteredEquipments = equipments.filter { (equipment) -> Bool in
             return equipment.serialNumber?.range(of: searchText, options: [ .caseInsensitive ]) != nil
         }
-        searchActive = !searchFilteredEquipaments.isEmpty
+        searchActive = !searchFilteredEquipments.isEmpty
         self.collectionView.reloadData()
     }
 }
