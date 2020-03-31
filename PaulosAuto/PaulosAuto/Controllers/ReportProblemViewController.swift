@@ -26,7 +26,7 @@ class ReportProblemViewController: ViewController {
     // MARK: - Properties
     
     
-    var equipament : equipament!
+    var Equipment : Equipment!
     
     
     // MARK: - Private
@@ -35,7 +35,7 @@ class ReportProblemViewController: ViewController {
         
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         
-        serialNumberLabel.text = equipament.serialNumber
+        serialNumberLabel.text = Equipment.serialNumber
         
         currentHourTextField.layer.masksToBounds = true
         currentHourTextField.layer.borderWidth = 0.6
@@ -45,7 +45,7 @@ class ReportProblemViewController: ViewController {
         problemDescriptionTextField.layer.borderWidth = 0.6
         problemDescriptionTextField.layer.cornerRadius = 10
         
-        modelLabel.text = equipament.model
+        modelLabel.text = Equipment.model
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3

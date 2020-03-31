@@ -143,7 +143,7 @@ class ListEquipmentViewController: ViewController {
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
             print("Notification: Keyboard will show")
-            collectionViewBottomConstraint.constant = keyboardHeight
+            collectionViewBottomConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom
         }
     }
 

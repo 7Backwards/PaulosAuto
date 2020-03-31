@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="3065" y="-708"/>
         </scene>
-        <!--Filter Show Equipament View Controller-->
+        <!--Filter Show Equipment View Controller-->
         <scene sceneID="uHO-qg-4Hh">
             <objects>
-                <viewController storyboardIdentifier="FilterShowEquipamentoViewController" modalPresentationStyle="pageSheet" id="LCp-Wo-wfy" customClass="FilterShowEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterShowEquipmentoViewController" modalPresentationStyle="pageSheet" id="LCp-Wo-wfy" customClass="FilterShowEquipmentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JSz-3B-hx0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,17 +301,20 @@
             </objects>
             <point key="canvasLocation" x="2142" y="-708"/>
         </scene>
-        <!--ListarEquipamentoController-->
+        <!--ListarEquipmentoController-->
         <scene sceneID="al1-g4-l6Z">
             <objects>
-                <viewController title="ListarEquipamentoController" id="0Mv-eo-OSB" customClass="ListEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ListarEquipmentoController" id="0Mv-eo-OSB" customClass="ListEquipmentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ubG-7e-29b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Pesquisar por número de série" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-81-9Yc">
-                                <rect key="frame" x="10" y="66" width="394" height="56"/>
+                                <rect key="frame" x="10" y="66" width="394" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pit-wE-L54"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -321,7 +324,7 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s4r-5a-F82">
-                                <rect key="frame" x="10" y="127" width="394" height="54"/>
+                                <rect key="frame" x="10" y="111" width="394" height="54"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m5m-Wi-WAP">
                                         <rect key="frame" x="8" y="8" width="378" height="37"/>
@@ -370,7 +373,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kcj-pH-aRn">
-                                <rect key="frame" x="10" y="191" width="394" height="558"/>
+                                <rect key="frame" x="10" y="175" width="394" height="584"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NWN-f2-LIp">
                                     <size key="itemSize" width="393" height="130"/>
@@ -424,13 +427,13 @@
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Kp-Z3b">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shv-tP-wXR">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -441,13 +444,13 @@
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ytz-aZ-Spn">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-aZ-Cyt">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -458,13 +461,13 @@
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N. Série:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BZL-ne-3F7">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-nQ-4C6">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -475,13 +478,13 @@
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-z4-GSg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-u8-ePm">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -538,14 +541,14 @@
                                         </constraints>
                                         <size key="customSize" width="394" height="130"/>
                                         <connections>
+                                            <outlet property="EquipmentImageView" destination="zwV-nZ-hzL" id="q4R-5d-Ti1"/>
                                             <outlet property="cellView" destination="PXe-Ym-CUa" id="Qa0-1x-bvx"/>
-                                            <outlet property="currenthoursEquipamentLabel" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
-                                            <outlet property="equipamentImageView" destination="zwV-nZ-hzL" id="q4R-5d-Ti1"/>
-                                            <outlet property="modelEquipamentLabel" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
+                                            <outlet property="currenthoursEquipmentLabel" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
+                                            <outlet property="modelEquipmentLabel" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
                                             <outlet property="plateEquipmentLabel" destination="cHj-u8-ePm" id="hn2-qO-Q8I"/>
-                                            <outlet property="serialNumberEquipamentLabel" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
+                                            <outlet property="serialNumberEquipmentLabel" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
                                             <outlet property="smpLabel" destination="Pcl-Ry-bY0" id="Qcu-Ag-EGi"/>
-                                            <outlet property="yearEquipamentLabel" destination="9g2-aZ-Cyt" id="lUh-Co-dlQ"/>
+                                            <outlet property="yearEquipmentLabel" destination="9g2-aZ-Cyt" id="lUh-Co-dlQ"/>
                                             <segue destination="Qw0-bW-1kh" kind="show" identifier="ShowEquipmentInfo" id="pcR-mX-dFT"/>
                                         </connections>
                                     </collectionViewCell>
@@ -560,7 +563,7 @@
                             <constraint firstItem="Kcj-pH-aRn" firstAttribute="leading" secondItem="4pR-Zc-0EN" secondAttribute="leading" constant="10" id="Vdh-8V-M4h"/>
                             <constraint firstItem="4pR-Zc-0EN" firstAttribute="trailing" secondItem="s4r-5a-F82" secondAttribute="trailing" constant="10" id="XOS-su-GAN"/>
                             <constraint firstItem="jIG-81-9Yc" firstAttribute="top" secondItem="4pR-Zc-0EN" secondAttribute="top" constant="10" id="YAC-P3-ftg"/>
-                            <constraint firstItem="4pR-Zc-0EN" firstAttribute="bottom" secondItem="Kcj-pH-aRn" secondAttribute="bottom" constant="10" id="eSw-oC-d5i"/>
+                            <constraint firstItem="4pR-Zc-0EN" firstAttribute="bottom" secondItem="Kcj-pH-aRn" secondAttribute="bottom" id="eSw-oC-d5i"/>
                             <constraint firstItem="4pR-Zc-0EN" firstAttribute="trailing" secondItem="Kcj-pH-aRn" secondAttribute="trailing" constant="10" id="ein-Rv-a7g"/>
                             <constraint firstItem="Kcj-pH-aRn" firstAttribute="top" secondItem="s4r-5a-F82" secondAttribute="bottom" constant="10" id="f3z-KB-PPw"/>
                             <constraint firstItem="jIG-81-9Yc" firstAttribute="leading" secondItem="4pR-Zc-0EN" secondAttribute="leading" constant="10" id="j6l-di-hKR"/>
@@ -571,6 +574,7 @@
                     <navigationItem key="navigationItem" id="ZwT-u0-eNj"/>
                     <connections>
                         <outlet property="collectionView" destination="Kcj-pH-aRn" id="rE4-dj-DnE"/>
+                        <outlet property="collectionViewBottomConstraint" destination="eSw-oC-d5i" id="nvP-iv-9Tr"/>
                         <outlet property="searchBar" destination="jIG-81-9Yc" id="ves-CE-uw1"/>
                         <outlet property="smpSwitch" destination="Bj5-59-Mz2" id="jMG-vo-3g6"/>
                     </connections>
@@ -579,10 +583,10 @@
             </objects>
             <point key="canvasLocation" x="3016" y="94"/>
         </scene>
-        <!--Show Equipament View Controller-->
+        <!--Show Equipment View Controller-->
         <scene sceneID="Znn-Rl-IL7">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Qw0-bW-1kh" customClass="ShowEquipamentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Qw0-bW-1kh" customClass="ShowEquipmentViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTR-Oh-wk4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

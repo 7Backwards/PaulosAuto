@@ -25,7 +25,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Properties
     
     
-    var equipamento : equipament!
+    var Equipmento : Equipment!
     
     
     // MARK: - Public
@@ -35,9 +35,9 @@ class RegisterEquipmentHoursViewController: ViewController {
         super.viewDidLoad()
         PopUpView.setCardView(view: PopUpView)
        submitHoursButton.setButtonStyle(Button: submitHoursButton, cornerRadius: 10)
-        currentHoursLabel.text = "\(equipamento.currentHours!) H"
+        currentHoursLabel.text = "\(Equipmento.currentHours!) H"
         let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
-        serialNumberLabel.text = equipamento.serialNumber
+        serialNumberLabel.text = Equipmento.serialNumber
         submitHoursButton.layer.masksToBounds = true
         submitHoursButton.layer.borderColor = textFieldBorderColor.cgColor
         submitHoursButton.layer.borderWidth = 1.0

@@ -1,5 +1,5 @@
 //
-//  Equipamento.swift
+//  Equipmento.swift
 //  PaulosAuto
 //
 //  Created by Neves on 14/03/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct equipament: Decodable {
+struct Equipment: Decodable {
     
     
     // MARK: - Properties

@@ -1,5 +1,5 @@
 //
-//  FilterShowEquipamentoViewController.swift
+//  FilterShowEquipmentoViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 27/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterShowEquipamentViewController: ViewController {
+class FilterShowEquipmentViewController: ViewController {
     
    
     @IBOutlet weak var handlerView: UIView!

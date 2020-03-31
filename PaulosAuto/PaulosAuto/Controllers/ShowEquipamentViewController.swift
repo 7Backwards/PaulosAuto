@@ -1,5 +1,5 @@
 //
-//  ShowEquipamentoViewController.swift
+//  ShowEquipmentoViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 23/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowEquipamentViewController: ViewController {
+class ShowEquipmentViewController: ViewController {
     
     
     // MARK: - Outlets
@@ -36,12 +36,12 @@ class ShowEquipamentViewController: ViewController {
     // MARK: - Properties
     
     var serialNumberID: String!
-    var equipment : equipament!
+    var equipment : Equipment!
     
     
     // MARK: - Private
     
-    private func setupEquipamentoViewController() {
+    private func setupEquipmentoViewController() {
         
         super.addNavBarLogo()
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
@@ -53,7 +53,7 @@ class ShowEquipamentViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupEquipamentoViewController()
+        setupEquipmentoViewController()
         informationView.setCardView(view: informationView)
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
@@ -129,11 +129,11 @@ class ShowEquipamentViewController: ViewController {
         
         if (segue.identifier == "RegisterHoursSegue") {
             let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
-            destinationVC.equipamento = self.equipment
+            destinationVC.Equipmento = self.equipment
         }
         if (segue.identifier == "ReportProblemSegue") {
             let destinationVC = segue.destination as! ReportProblemViewController
-            destinationVC.equipament = self.equipment
+            destinationVC.Equipment = self.equipment
         }
     }
     

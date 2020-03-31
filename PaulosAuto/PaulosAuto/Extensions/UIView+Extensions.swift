@@ -1,5 +1,5 @@
 //
-//  UIView+Card.swift
+//  UIView+Extensions.swift
 //  PaulosAuto
 //
 //  Created by Neves on 17/03/2020.
