@@ -83,11 +83,19 @@ class ShowEquipamentViewController: ViewController {
         currentHoursLabel.text = "\(equipment.currentHours!)"
         if (equipment.smp == true) {
             
-            smpImageView.image = UIImage(systemName: "checkmark.circle")
+            if #available(iOS 13.0, *) {
+                smpImageView.image = UIImage(systemName: "checkmark.circle")
+            } else {
+                // Fallback on earlier versions
+            }
         }
         else {
             
-            smpImageView.image = UIImage(systemName: "xmark.circle")
+            if #available(iOS 13.0, *) {
+                smpImageView.image = UIImage(systemName: "xmark.circle")
+            } else {
+                // Fallback on earlier versions
+            }
         }
         
     }
