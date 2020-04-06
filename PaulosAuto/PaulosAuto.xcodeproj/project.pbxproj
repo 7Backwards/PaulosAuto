@@ -16,6 +16,7 @@
 		B0658AAE2417E55700245732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0658AAC2417E55700245732 /* LaunchScreen.storyboard */; };
 		B08B3B392429189300FBBD4B /* ShowEquipamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B382429189300FBBD4B /* ShowEquipamentViewController.swift */; };
 		B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */; };
+		B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */; };
 		B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */; };
 		B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */; };
 		B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */; };
@@ -41,6 +42,7 @@
 		B0658AAF2417E55700245732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08B3B382429189300FBBD4B /* ShowEquipamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipamentViewController.swift; sourceTree = "<group>"; };
 		B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
 		B09FE974242B81BC00EE2FA1 /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFlowLayout.swift; path = PaulosAuto/Extensions/ListFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEquipmentHoursViewController.swift; sourceTree = "<group>"; };
 		B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */,
 				FA05FB0D242064020033B901 /* UIView+Extensions.swift */,
 				B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */,
+				B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				FACD1823241D35F10085574C /* EquipamentStruct.swift in Sources */,
 				B08B3B392429189300FBBD4B /* ShowEquipamentViewController.swift in Sources */,
 				B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */,
+				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
