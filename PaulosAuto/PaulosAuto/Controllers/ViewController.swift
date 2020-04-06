@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         debugPrint("viewDidLoad")
+        
     }
     
     func addNavBarLogo() {
@@ -34,10 +35,16 @@ class ViewController: UIViewController {
     
     func setSearchBarStyle(searchBar: UISearchBar) {
         
-        searchBar.searchTextField.borderStyle = .none
-        searchBar.layer.cornerRadius = 10
-        searchBar.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
-        searchBar.layer.masksToBounds = false
+        
+        if #available(iOS 13.0, *) {
+            
+            searchBar.searchTextField.borderStyle = .none
+            searchBar.layer.cornerRadius = 10
+            searchBar.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+            searchBar.layer.masksToBounds = false
+        }
+        
+        
     }
     
     func hideTabBar() {
