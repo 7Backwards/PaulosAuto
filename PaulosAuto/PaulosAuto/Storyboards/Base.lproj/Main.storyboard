@@ -98,7 +98,9 @@
         <scene sceneID="oxc-3p-KfO">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="eiI-UB-oRC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Faturas" image="doc.text" catalog="system" selectedImage="doc.text.fill" id="HOh-Vk-THa"/>
+                    <tabBarItem key="tabBarItem" title="Faturas" image="doc" selectedImage="doc_fill" id="HOh-Vk-THa">
+                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RPz-3g-QMD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -143,7 +145,9 @@
         <scene sceneID="EN2-wT-Gnw">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="11P-IL-OB4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Problemas" image="exclamationmark.triangle" catalog="system" selectedImage="exclamationmark.triangle.fill" id="63n-JJ-jw1"/>
+                    <tabBarItem key="tabBarItem" title="Problemas" image="exclamationmark_triangle" selectedImage="exclamationmark_triangle_fill" id="63n-JJ-jw1">
+                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k4-Ti-HcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,7 +192,9 @@
         <scene sceneID="Zvr-Ky-A1u">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Cj8-e4-kw8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Página inicial" image="house" catalog="system" selectedImage="house.fill" id="EcI-IZ-tbz"/>
+                    <tabBarItem key="tabBarItem" title="Página inicial" image="house" id="EcI-IZ-tbz">
+                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOd-qP-LyW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,19 +207,20 @@
             </objects>
             <point key="canvasLocation" x="2123" y="93"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="yQP-kc-lB4">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="8Pe-Jh-ChU" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="8Pe-Jh-ChU" customClass="TabBarViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="daY-dX-JVE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zxY-Oa-aDa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="zxY-Oa-aDa" id="Kjf-xe-WaC"/>
                         <segue destination="Cj8-e4-kw8" kind="relationship" relationship="viewControllers" id="yRp-Ru-jZx"/>
                         <segue destination="11P-IL-OB4" kind="relationship" relationship="viewControllers" id="6sK-q3-okZ"/>
                         <segue destination="eiI-UB-oRC" kind="relationship" relationship="viewControllers" id="yqd-be-p2S"/>
@@ -222,7 +229,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAs-Dc-eP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="522"/>
+            <point key="canvasLocation" x="1174" y="520"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="6ip-PW-ZbN">
@@ -289,7 +296,9 @@
         <scene sceneID="7fb-rc-Zcp">
             <objects>
                 <navigationController id="f01-eS-Kde" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" image="person" catalog="system" selectedImage="person.fill" id="JIi-A4-tNY"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person_alt_circle" selectedImage="person_alt_circle_fill" id="JIi-A4-tNY">
+                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4gk-g8-4Yq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -426,13 +435,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-Zy-ABY">
                                                                             <rect key="frame" x="15" y="8" width="179.5" height="20"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Kp-Z3b">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="47y-Kp-Z3b">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shv-tP-wXR">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="shv-tP-wXR">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -443,13 +452,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV6-ol-DXe">
                                                                             <rect key="frame" x="15" y="31" width="179.5" height="19.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ytz-aZ-Spn">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="ytz-aZ-Spn">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-aZ-Cyt">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-aZ-Cyt">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -460,13 +469,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25y-RN-5u6">
                                                                             <rect key="frame" x="15" y="53.5" width="179.5" height="20"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N. Série:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BZL-ne-3F7">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N. Série:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="BZL-ne-3F7">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-nQ-4C6">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="vgG-nQ-4C6">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -477,13 +486,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-xH-agR">
                                                                             <rect key="frame" x="15" y="76.5" width="179.5" height="19.5"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-z4-GSg">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matrícula:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-z4-GSg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-u8-ePm">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-u8-ePm">
                                                                                     <rect key="frame" x="90" y="0.0" width="89.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1333,16 +1342,15 @@
         <image name="5523b3f1cf47c" width="358" height="269"/>
         <image name="Paulosauto-2" width="1280" height="905"/>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="doc.text" catalog="system" width="56" height="64"/>
-        <image name="doc.text.fill" catalog="system" width="56" height="64"/>
+        <image name="doc" width="25" height="25"/>
+        <image name="doc_fill" width="25" height="25"/>
         <image name="dot" width="300" height="250"/>
-        <image name="exclamationmark.triangle" catalog="system" width="64" height="56"/>
-        <image name="exclamationmark.triangle.fill" catalog="system" width="64" height="56"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="exclamationmark_triangle" width="25" height="25"/>
+        <image name="exclamationmark_triangle_fill" width="25" height="25"/>
+        <image name="house" width="25" height="25"/>
         <image name="multiply" catalog="system" width="64" height="54"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="person_alt_circle" width="25" height="25"/>
+        <image name="person_alt_circle_fill" width="25" height="25"/>
         <image name="xmark.circle" catalog="system" width="64" height="60"/>
     </resources>
     <color key="tintColor" red="0.84091449873096447" green="0.016488519582960121" blue="0.016488519582960121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

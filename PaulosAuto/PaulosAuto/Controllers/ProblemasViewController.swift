@@ -17,6 +17,7 @@ class ProblemasViewController: ViewController {
         
         super.viewDidLoad()
         super.addNavBarLogo()
+        tabBarItem.image = UIImage(named: "exclamationmark.triangle.fill")
     }
     
     

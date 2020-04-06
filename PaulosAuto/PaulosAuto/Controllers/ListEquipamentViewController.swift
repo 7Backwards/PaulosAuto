@@ -53,6 +53,7 @@ class ListEquipmentViewController: ViewController {
         
         super.viewDidLoad()
         setupEquipmentoController()
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
     }
     
 
