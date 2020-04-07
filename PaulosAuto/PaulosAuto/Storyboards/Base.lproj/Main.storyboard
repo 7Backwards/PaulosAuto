@@ -1312,6 +1312,7 @@
                         <outlet property="problemDescriptionTextField" destination="0zD-Db-v35" id="JEH-h5-jKH"/>
                         <outlet property="reportProblemButton" destination="fHJ-38-vWR" id="bWJ-Kb-O48"/>
                         <outlet property="serialNumberLabel" destination="ebx-OR-peq" id="IRG-oO-JKt"/>
+                        <outlet property="stackViewBottomConstraint" destination="VBh-oh-ipd" id="Q4I-Nm-biH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdB-OO-ZdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -21,6 +21,7 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var problemDescriptionTextField: UITextField!
     @IBOutlet weak var handlerView: UIView!
+    @IBOutlet weak var stackViewBottomConstraint: NSLayoutConstraint!
     
     
     // MARK: - Properties
@@ -60,6 +61,8 @@ class ReportProblemViewController: ViewController {
         super.viewDidLoad()
         setupView()
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
@@ -67,6 +70,18 @@ class ReportProblemViewController: ViewController {
     func dismisspopup() {
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            print("Notification: Keyboard will show")
+            stackViewBottomConstraint.constant = keyboardHeight + 10
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        print("Notification: Keyboard will hide")
+        stackViewBottomConstraint.constant = 0
     }
     
    
