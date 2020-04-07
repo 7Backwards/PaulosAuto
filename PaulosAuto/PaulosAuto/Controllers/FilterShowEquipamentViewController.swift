@@ -17,6 +17,7 @@ class FilterShowEquipmentViewController: ViewController {
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
     }
     
 }

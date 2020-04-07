@@ -56,7 +56,7 @@ class ListEquipmentViewController: ViewController {
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
     }
     
-
+    
     override func viewWillAppear(_ animated: Bool) { // As soon as vc appears
         super.viewWillAppear(true)
         showTabBar()
@@ -66,7 +66,7 @@ class ListEquipmentViewController: ViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -97,27 +97,32 @@ class ListEquipmentViewController: ViewController {
     }
     
     @objc func rightButtonAction() {
-
-         guard let FilterShowEquipmentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipmentoViewController")
-         as? FilterShowEquipmentViewController else {
-             assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
-             return
-         }
-         
-         // set the modal presentation to full screen, in iOS 13, its no longer full screen by default
-         FilterShowEquipmentoVC.modalPresentationStyle = .popover
-         
-      
-
-         // present the view controller modally without animation
-         self.present(FilterShowEquipmentoVC, animated: true, completion: nil)
+        
+        guard let FilterShowEquipmentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipmentoViewController")
+            as? FilterShowEquipmentViewController else {
+                assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
+                return
+        }
+        
+        if #available(iOS 13, *) {
+            
+            FilterShowEquipmentoVC.modalPresentationStyle = .popover
+        } else {
+            
+            FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
+        }
+        
+        
+        
+        // present the view controller modally without animation
+        self.present(FilterShowEquipmentoVC, animated: true, completion: nil)
         
         
     }
     
-
     
-
+    
+    
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
@@ -147,7 +152,7 @@ class ListEquipmentViewController: ViewController {
             collectionViewBottomConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         print("Notification: Keyboard will hide")
         collectionViewBottomConstraint.constant = 0

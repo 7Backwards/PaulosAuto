@@ -129,10 +129,20 @@ class ShowEquipmentViewController: ViewController {
         
         if (segue.identifier == "RegisterHoursSegue") {
             let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
+            
+           
             destinationVC.Equipmento = self.equipment
+            
         }
         if (segue.identifier == "ReportProblemSegue") {
             let destinationVC = segue.destination as! ReportProblemViewController
+            if #available(iOS 13, *) {
+                           
+                           destinationVC.modalPresentationStyle = .popover
+                       } else {
+                           
+                           destinationVC.modalPresentationStyle = .overCurrentContext
+                       }
             destinationVC.Equipment = self.equipment
         }
     }

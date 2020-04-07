@@ -59,6 +59,7 @@ class ReportProblemViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
         
     }
     
@@ -67,5 +68,7 @@ class ReportProblemViewController: ViewController {
         
         dismiss(animated: true, completion: nil)
     }
+    
+   
     
 }
