@@ -96,6 +96,7 @@ class ViewController: UIViewController {
            return min(max(value, minimum), maximum)
        }
     
+    
 
     
 }
