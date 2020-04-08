@@ -17,17 +17,17 @@ class ReportProblemViewController: ViewController {
     
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var serialNumberLabel: UILabel!
-    @IBOutlet weak var currentHourTextField: UITextField!
     @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var problemDescriptionTextField: UITextField!
     @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var currentHoursTextView: UITextView!
+    @IBOutlet weak var problemDescriptionTextView: UITextView!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
     
     // MARK: - Properties
     
     var Equipment : Equipment!
-    var activeField: UITextField?
     
     
     // MARK: - Private
@@ -38,19 +38,20 @@ class ReportProblemViewController: ViewController {
         
         serialNumberLabel.text = Equipment.serialNumber
         
-        currentHourTextField.layer.masksToBounds = true
-        currentHourTextField.layer.borderWidth = 0.6
-        currentHourTextField.layer.cornerRadius = 10
+        currentHoursTextView.layer.masksToBounds = true
+        currentHoursTextView.layer.borderWidth = 0.6
+        currentHoursTextView.layer.cornerRadius = 10
+        currentHoursTextView.isScrollEnabled = false
         
-        problemDescriptionTextField.layer.masksToBounds = true
-        problemDescriptionTextField.layer.borderWidth = 0.6
-        problemDescriptionTextField.layer.cornerRadius = 10
+        problemDescriptionTextView.layer.masksToBounds = true
+        problemDescriptionTextView.layer.borderWidth = 0.6
+        problemDescriptionTextView.layer.cornerRadius = 10
+        problemDescriptionTextView.isScrollEnabled = false
         
         modelLabel.text = Equipment.model
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
-        
     }
     
     
@@ -61,6 +62,7 @@ class ReportProblemViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
+        self.scrollView.isScrollEnabled = true
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -82,8 +84,7 @@ class ReportProblemViewController: ViewController {
         let contentInsets = UIEdgeInsets.zero
         
         self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        
+        self.scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -92,16 +93,9 @@ class ReportProblemViewController: ViewController {
         let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
         
-        scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: 1.1 * keyboardViewEndFrame.height, right : 0)
+        scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: 1.2 * keyboardViewEndFrame.height, right : 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset
-        
-        
     }
-    
-   
-    
-    
-    
     
     
     
