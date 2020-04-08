@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportProblemViewController: ViewController,UITextFieldDelegate {
+class ReportProblemViewController: ViewController {
     
     
     // MARK: - Outlets
@@ -24,13 +24,10 @@ class ReportProblemViewController: ViewController,UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
-    
     // MARK: - Properties
-    
     
     var Equipment : Equipment!
     var activeField: UITextField?
-
     
     
     // MARK: - Private
@@ -53,6 +50,7 @@ class ReportProblemViewController: ViewController,UITextFieldDelegate {
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
+        
     }
     
     
@@ -63,62 +61,52 @@ class ReportProblemViewController: ViewController,UITextFieldDelegate {
         
         super.viewDidLoad()
         setupView()
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
-      currentHourTextField.delegate = self
-      problemDescriptionTextField.delegate = self
-       
-       
-        
     }
     
     override func viewWillAppear(_ animated:Bool) {
-
-         super.viewWillAppear(animated)
-
-    //1  Add this observers to observe keyboard shown and hidden events
-          NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-          NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        
+        super.viewWillAppear(animated)
+        
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-
     
-
-
+    
+    // MARK: - Action
+    
     
     @objc func keyboardWillHide(notification: NSNotification) {
-
-         let contentInsets = UIEdgeInsets.zero
-         self.scrollView.contentInset = contentInsets
-         self.scrollView.scrollIndicatorInsets = contentInsets
-
+        
+        let contentInsets = UIEdgeInsets.zero
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-
-        let userInfo = notification.userInfo!
         
+        let userInfo = notification.userInfo!
         let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
         scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: 1.1 * keyboardViewEndFrame.height, right : 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset
         
-
-    }
-    
-    
-    func dismisspopup() {
         
-        dismiss(animated: true, completion: nil)
     }
-    
-  
-    
-    
-
-
-}
     
    
     
+    
+    
+    
+    
+    
+}
+
+
+
 

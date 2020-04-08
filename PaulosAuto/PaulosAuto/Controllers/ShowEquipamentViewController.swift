@@ -32,8 +32,8 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     
-    
     // MARK: - Properties
+    
     
     var serialNumberID: String!
     var equipment : Equipment!
@@ -41,10 +41,48 @@ class ShowEquipmentViewController: ViewController {
     
     // MARK: - Private
     
+    
     private func setupEquipmentoViewController() {
         
         super.addNavBarLogo()
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+    }
+    
+    private func setupInfo() {
+        
+        modelLabel.text = equipment.model
+        equipmentTypeLabel.text = equipment.type
+        serialNumberLabel.text = equipment.serialNumber
+        equipmentImageView.image = UIImage(named: equipment.image!)
+        dateAgreementLabel.text = equipment.dateAssignment
+        dateStartAgreementLabel.text = equipment.dateStartAssignment
+        dateEndAgreementLabel.text = equipment.dateEndAssignment
+        modelLabel.text = equipment.brand
+        plateLabel.text = equipment.plate
+        currentHoursLabel.text = "\(equipment.currentHours!)"
+        if (equipment.smp == true) {
+            
+             smpImageView.tintColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 54/255.0, alpha: 1)
+            if #available(iOS 13.0, *) {
+                
+                smpImageView.image = UIImage(systemName: "checkmark.circle")
+            } else {
+                
+                smpImageView.image = UIImage(named: "checkmark_circle")
+            }
+        }
+        else {
+            
+            smpImageView.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            if #available(iOS 13.0, *) {
+                
+                smpImageView.image = UIImage(systemName: "xmark.circle")
+            } else {
+                
+                smpImageView.image = UIImage(named: "multiply")
+            }
+        }
+        
     }
     
     
@@ -60,45 +98,15 @@ class ShowEquipmentViewController: ViewController {
         setupInfo()
     }
     
-    override func viewWillAppear(_ animated: Bool) { 
+    override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(true)
         hideTabBar()
-        
     }
     
     
     
-    func setupInfo() {
-        
-        
-        modelLabel.text = equipment.model
-        equipmentTypeLabel.text = equipment.type
-        serialNumberLabel.text = equipment.serialNumber
-        equipmentImageView.image = UIImage(named: equipment.image!)
-        dateAgreementLabel.text = equipment.dateAssignment
-        dateStartAgreementLabel.text = equipment.dateStartAssignment
-        dateEndAgreementLabel.text = equipment.dateEndAssignment
-        modelLabel.text = equipment.brand
-        plateLabel.text = equipment.plate
-        currentHoursLabel.text = "\(equipment.currentHours!)"
-        if (equipment.smp == true) {
-            
-            if #available(iOS 13.0, *) {
-                smpImageView.image = UIImage(systemName: "checkmark.circle")
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        else {
-            
-            if #available(iOS 13.0, *) {
-                smpImageView.image = UIImage(systemName: "xmark.circle")
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        
-    }
+
     
     
     
@@ -128,13 +136,12 @@ class ShowEquipmentViewController: ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "RegisterHoursSegue") {
+            
             let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
-            
-           
             destinationVC.Equipmento = self.equipment
-            
         }
         if (segue.identifier == "ReportProblemSegue") {
+            
             let destinationVC = segue.destination as! ReportProblemViewController
             if #available(iOS 13, *) {
                            

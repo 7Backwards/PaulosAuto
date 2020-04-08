@@ -10,8 +10,15 @@ import UIKit
 
 class FilterShowEquipmentViewController: ViewController {
     
-   
+    
+    // MARK: - Outlets
+    
+    
     @IBOutlet weak var handlerView: UIView!
+    
+    
+    // MARK: - Public
+    
     
     override func viewDidLoad() {
         
