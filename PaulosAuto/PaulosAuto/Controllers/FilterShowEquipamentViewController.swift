@@ -16,9 +16,96 @@ class FilterShowEquipmentViewController: ViewController {
     
     @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var orderByView: UIView!
-    @IBOutlet weak var CategoryView: UIView!
+    @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var dateContractView: UIView!
+    @IBOutlet weak var dateContractLabel: UILabel!
+    @IBOutlet weak var dateContractCheckImageView: UIImageView!
+    @IBOutlet weak var hoursUtilizationView: UIView!
+    @IBOutlet weak var hoursUtilizationLabel: UILabel!
+    @IBOutlet weak var hoursUtilizationCheckImageView: UIImageView!
+    @IBOutlet weak var modelView: UIView!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var modelCheckImageView: UIImageView!
+    @IBOutlet weak var serialNumberView: UIView!
+    @IBOutlet weak var serialNumberLabel: UILabel!
+    @IBOutlet weak var serialNumberCheckImageView: UIImageView!
     
+    // MARK: - Properties
+    
+    var activeFilter = 0
+    
+    
+    // MARK: - Private
+    
+    
+    private func setSelected() {
+        
+        switch (activeFilter) {
+            
+        case 0:
+            
+            dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+            dateContractLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            dateContractCheckImageView.isHidden = false
+            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationLabel.textColor = .black
+            hoursUtilizationCheckImageView.isHidden = true
+            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelLabel.textColor = .black
+            modelCheckImageView.isHidden = true
+            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberLabel.textColor = .black
+            serialNumberCheckImageView.isHidden = true
+            
+        case 1:
+            
+            hoursUtilizationView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+            hoursUtilizationLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            hoursUtilizationCheckImageView.isHidden = false
+            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelLabel.textColor = .black
+            modelCheckImageView.isHidden = true
+            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberLabel.textColor = .black
+            serialNumberCheckImageView.isHidden = true
+            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractLabel.textColor = .black
+            dateContractCheckImageView.isHidden = true
+            
+        case 2:
+            
+            modelView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+            modelLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            modelCheckImageView.isHidden = false
+            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberLabel.textColor = .black
+            serialNumberCheckImageView.isHidden = true
+            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractLabel.textColor = .black
+            dateContractCheckImageView.isHidden = true
+            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationLabel.textColor = .black
+            hoursUtilizationCheckImageView.isHidden = true
+            
+        case 3:
+            
+            serialNumberView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+            serialNumberLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            serialNumberCheckImageView.isHidden = false
+            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractLabel.textColor = .black
+            dateContractCheckImageView.isHidden = true
+            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationLabel.textColor = .black
+            hoursUtilizationCheckImageView.isHidden = true
+            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelLabel.textColor = .black
+            modelCheckImageView.isHidden = true
+        default: break
+            
+        }
+    }
     
     // MARK: - Public
     
@@ -28,6 +115,42 @@ class FilterShowEquipmentViewController: ViewController {
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+        dateContractView.layer.masksToBounds = true
+        dateContractView.layer.cornerRadius = 20
+        
+        dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+        hoursUtilizationView.layer.masksToBounds = true
+        hoursUtilizationView.layer.cornerRadius = 20
+        hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        modelView.layer.masksToBounds = true
+        modelView.layer.cornerRadius = 20
+        modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        serialNumberView.layer.masksToBounds = true
+        serialNumberView.layer.cornerRadius = 20
+        serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        if touch.view?.tag == 100 {
+            
+            activeFilter = 0
+        }
+        else if touch.view?.tag == 200 {
+            
+            activeFilter = 1
+        }
+        else if touch.view?.tag == 300 {
+            
+            activeFilter = 2
+        }
+        else if touch.view?.tag == 400 {
+            
+            activeFilter = 3
+        }
+        self.setSelected()
+        
     }
     
     // MARK: - Action
@@ -40,15 +163,17 @@ class FilterShowEquipmentViewController: ViewController {
         switch (getIndex) {
             
         case 0:
-            self.CategoryView.fadeIn()
+            self.categoryView.fadeIn()
             self.orderByView.fadeOut()
             
         case 1:
-            self.CategoryView.fadeOut()
+            self.categoryView.fadeOut()
             self.orderByView.fadeIn()
             
         default: break
         }
     }
+    
+    
     
 }
