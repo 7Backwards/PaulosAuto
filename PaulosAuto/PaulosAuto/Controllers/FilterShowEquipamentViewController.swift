@@ -15,6 +15,9 @@ class FilterShowEquipmentViewController: ViewController {
     
     
     @IBOutlet weak var handlerView: UIView!
+    @IBOutlet weak var orderByView: UIView!
+    @IBOutlet weak var CategoryView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     
     // MARK: - Public
@@ -25,6 +28,27 @@ class FilterShowEquipmentViewController: ViewController {
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+    }
+    
+    // MARK: - Action
+    
+    
+    @IBAction func segmentControlAction(_ sender: Any) {
+        
+        let getIndex = segmentControl.selectedSegmentIndex
+        
+        switch (getIndex) {
+            
+        case 0:
+            self.CategoryView.fadeIn()
+            self.orderByView.fadeOut()
+            
+        case 1:
+            self.CategoryView.fadeOut()
+            self.orderByView.fadeIn()
+            
+        default: break
+        }
     }
     
 }
