@@ -30,6 +30,8 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var serialNumberView: UIView!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var serialNumberCheckImageView: UIImageView!
+    @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -128,7 +130,11 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.layer.masksToBounds = true
         serialNumberView.layer.cornerRadius = 20
         serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        outerView.setCardViewOverContext(view: outerView)
+        outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
     }
+    
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -163,11 +169,21 @@ class FilterShowEquipmentViewController: ViewController {
         switch (getIndex) {
             
         case 0:
-            self.categoryView.fadeIn()
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.categoryView.fadeIn()
+                self.outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
+                self.view.layoutIfNeeded()
+            })
             self.orderByView.fadeOut()
             
         case 1:
-            self.categoryView.fadeOut()
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.categoryView.fadeOut()
+                self.outerViewHeightConstraint.constant = self.view.frame.size.height * 0.95
+                self.view.layoutIfNeeded()
+            })
             self.orderByView.fadeIn()
             
         default: break

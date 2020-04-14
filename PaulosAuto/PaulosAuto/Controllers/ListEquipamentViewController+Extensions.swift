@@ -22,10 +22,12 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
         if(searchActive && !searchFilteredEquipments.isEmpty) {
             
             if(smpActive) {
+                
                 smpAndSearchFilter()
                 return smpAndSearchFilterArray.count
             }
             else {
+                
                 return searchFilteredEquipments.count
             }
             
@@ -33,10 +35,12 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
         else {
             
             if(smpActive) {
+                
                 smpfilterArray()
                 return smpFilterArray.count
             }
             else {
+                
                 return equipments.count
             }
         }

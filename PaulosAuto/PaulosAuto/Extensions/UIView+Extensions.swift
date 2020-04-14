@@ -19,6 +19,14 @@ extension UIView {
         view.layer.masksToBounds = false
     }
     
+    func setCardViewOverContext(view : UIView){
+        
+        view.layer.cornerRadius = 30
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+        view.layer.masksToBounds = false
+    }
+    
     func fadeIn(Duration: TimeInterval? = 0.5) {
         
         UIView.animate(withDuration: Duration ?? 0.5) {

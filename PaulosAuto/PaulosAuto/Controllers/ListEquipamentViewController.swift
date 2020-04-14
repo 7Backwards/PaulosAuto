@@ -54,6 +54,7 @@ class ListEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupEquipmentoController()
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        
     }
     
     
@@ -103,19 +104,11 @@ class ListEquipmentViewController: ViewController {
                 assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
                 return
         }
-        
-        if #available(iOS 13, *) {
-            
-            FilterShowEquipmentoVC.modalPresentationStyle = .popover
-        } else {
-            
-            FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
-        }
-        
+        FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
         
         
         // present the view controller modally without animation
-        self.present(FilterShowEquipmentoVC, animated: true, completion: nil)
+        tabBarController?.present(FilterShowEquipmentoVC, animated: true, completion: nil)
         
         
     }
@@ -147,13 +140,16 @@ class ListEquipmentViewController: ViewController {
     }
     
     @objc func keyboardWillShow(notification: Notification) {
+        
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            
             print("Notification: Keyboard will show")
             collectionViewBottomConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
+        
         print("Notification: Keyboard will hide")
         collectionViewBottomConstraint.constant = 0
     }
