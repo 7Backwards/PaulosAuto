@@ -55,6 +55,8 @@ class ReportProblemViewController: ViewController {
         handlerView.layer.cornerRadius = 3
         
         outerView.setCardViewOverContext(view: outerView)
+        
+        
     }
     
     
@@ -80,6 +82,9 @@ class ReportProblemViewController: ViewController {
     
     
     // MARK: - Action
+    
+    
+    
     
     
     @objc func keyboardWillHide(notification: NSNotification) {

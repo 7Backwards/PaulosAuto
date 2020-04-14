@@ -13,30 +13,29 @@ class FilterShowEquipmentViewController: ViewController {
     
     // MARK: - Outlets
     
-    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var orderByView: UIView!
     @IBOutlet weak var categoryView: UIView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var dateContractView: UIView!
-    @IBOutlet weak var dateContractLabel: UILabel!
-    @IBOutlet weak var dateContractCheckImageView: UIImageView!
     @IBOutlet weak var hoursUtilizationView: UIView!
-    @IBOutlet weak var hoursUtilizationLabel: UILabel!
-    @IBOutlet weak var hoursUtilizationCheckImageView: UIImageView!
     @IBOutlet weak var modelView: UIView!
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var modelCheckImageView: UIImageView!
     @IBOutlet weak var serialNumberView: UIView!
-    @IBOutlet weak var serialNumberLabel: UILabel!
-    @IBOutlet weak var serialNumberCheckImageView: UIImageView!
     @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var dateContractCheckImageView: UIImageView!
+    @IBOutlet weak var hoursUtilizationCheckImageView: UIImageView!
+    @IBOutlet weak var serialNumberCheckImageView: UIImageView!
+    @IBOutlet weak var modelCheckImageView: UIImageView!
+    @IBOutlet weak var dateContractLabel: UILabel!
+    @IBOutlet weak var hoursUtilizationLabel: UILabel!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var barView: UIView!
     
     // MARK: - Properties
     
     var activeFilter = 0
-    
     
     // MARK: - Private
     
@@ -109,32 +108,56 @@ class FilterShowEquipmentViewController: ViewController {
         }
     }
     
+    private func setupView() {
+        
+        handlerView.layer.masksToBounds = true
+        handlerView.layer.cornerRadius = 3
+        
+        dateContractView.layer.masksToBounds = true
+        dateContractView.layer.cornerRadius = 20
+        dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+        
+        hoursUtilizationView.layer.masksToBounds = true
+        hoursUtilizationView.layer.cornerRadius = 20
+        hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        
+        modelView.layer.masksToBounds = true
+        modelView.layer.cornerRadius = 20
+        modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        
+        serialNumberView.layer.masksToBounds = true
+        serialNumberView.layer.cornerRadius = 20
+        serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        
+        outerView.setCardViewOverContext(view: outerView)
+        outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
+        
+        fixBackgroundSegmentControl(segmentControl)
+        segmentControl.backgroundColor = .clear
+        segmentControl.tintColor = .clear
+        segmentControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
+        ], for: .normal)
+        segmentControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ], for: .selected)
+        
+        barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
+        
+    }
     // MARK: - Public
     
     
     override func viewDidLoad() {
         
-        handlerView.layer.masksToBounds = true
-        handlerView.layer.cornerRadius = 3
+        super.viewDidLoad()
+        setupView()
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
-        dateContractView.layer.masksToBounds = true
-        dateContractView.layer.cornerRadius = 20
-        
-        dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-        hoursUtilizationView.layer.masksToBounds = true
-        hoursUtilizationView.layer.cornerRadius = 20
-        hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-        modelView.layer.masksToBounds = true
-        modelView.layer.cornerRadius = 20
-        modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-        serialNumberView.layer.masksToBounds = true
-        serialNumberView.layer.cornerRadius = 20
-        serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-        outerView.setCardViewOverContext(view: outerView)
-        outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
     }
     
-
+   
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -157,13 +180,22 @@ class FilterShowEquipmentViewController: ViewController {
         }
         else if touch.view?.tag == 0{
             
-            self.dismiss(animated: true) //Perform dismiss
+            self.dismiss(animated: true)
         }
         self.setSelected()
         
     }
     
     // MARK: - Action
+    
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+           
+           UIView.animate(withDuration: 0.3) {
+               
+               self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
+               
+           }
+       }
     
     
     @IBAction func segmentControlAction(_ sender: Any) {
@@ -175,20 +207,26 @@ class FilterShowEquipmentViewController: ViewController {
         case 0:
             UIView.animate(withDuration: 0.5, animations: {
                 
+                self.categoryView.isHidden = true
                 self.categoryView.fadeIn()
                 self.outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
                 self.view.layoutIfNeeded()
             })
+            self.orderByView.isHidden = false
             self.orderByView.fadeOut()
+            self.segmentedControlValueChanged(self.segmentControl)
             
         case 1:
             UIView.animate(withDuration: 0.5, animations: {
                 
-                self.categoryView.fadeOut()
+                self.orderByView.fadeIn()
+                self.orderByView.isHidden = true
                 self.outerViewHeightConstraint.constant = self.view.frame.size.height
                 self.view.layoutIfNeeded()
             })
-            self.orderByView.fadeIn()
+            self.categoryView.isHidden = false
+            self.categoryView.fadeOut()
+            self.segmentedControlValueChanged(self.segmentControl)
             
         default: break
         }

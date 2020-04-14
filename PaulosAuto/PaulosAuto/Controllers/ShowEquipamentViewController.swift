@@ -30,6 +30,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var registerHoursButton: UIButton!
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var barView: UIView!
     
     
     // MARK: - Properties
@@ -41,12 +42,6 @@ class ShowEquipmentViewController: ViewController {
     
     // MARK: - Private
     
-    
-    private func setupEquipmentoViewController() {
-        
-        super.addNavBarLogo()
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
-    }
     
     private func setupInfo() {
         
@@ -85,16 +80,37 @@ class ShowEquipmentViewController: ViewController {
         
     }
     
+    private func setupView() {
+        
+        super.addNavBarLogo()
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+        fixBackgroundSegmentControl(segmentControl)
+        segmentControl.backgroundColor = .clear
+        segmentControl.tintColor = .clear
+        segmentControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 20) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
+        ], for: .normal)
+        segmentControl.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 20) as Any,
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ], for: .selected)
+        
+        barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
+        
+        informationView.setCardView(view: informationView)
+        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
+        registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
+    }
+    
     
     // MARK: - Public
+    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupEquipmentoViewController()
-        informationView.setCardView(view: informationView)
-        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
-        registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
+        setupView()
         setupInfo()
     }
     
@@ -105,12 +121,17 @@ class ShowEquipmentViewController: ViewController {
     }
     
     
-    
-    
-    
-    
-    
     // MARK: - Action
+    
+    
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
+        UIView.animate(withDuration: 0.3) {
+            
+            self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
+            
+        }
+    }
     
     
     @IBAction func segmentControlAction(_ sender: Any) {
@@ -122,10 +143,12 @@ class ShowEquipmentViewController: ViewController {
         case 0:
             self.historyView.fadeIn()
             self.informationView.fadeOut()
+            self.segmentedControlValueChanged(self.segmentControl)
             
         case 1:
             self.historyView.fadeOut()
             self.informationView.fadeIn()
+            self.segmentedControlValueChanged(self.segmentControl)
             
         default: break
         }
