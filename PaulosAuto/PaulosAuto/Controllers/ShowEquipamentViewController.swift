@@ -62,7 +62,7 @@ class ShowEquipmentViewController: ViewController {
         currentHoursLabel.text = "\(equipment.currentHours!)"
         if (equipment.smp == true) {
             
-             smpImageView.tintColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 54/255.0, alpha: 1)
+            smpImageView.tintColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 54/255.0, alpha: 1)
             if #available(iOS 13.0, *) {
                 
                 smpImageView.image = UIImage(systemName: "checkmark.circle")
@@ -106,7 +106,7 @@ class ShowEquipmentViewController: ViewController {
     
     
     
-
+    
     
     
     
@@ -143,13 +143,7 @@ class ShowEquipmentViewController: ViewController {
         if (segue.identifier == "ReportProblemSegue") {
             
             let destinationVC = segue.destination as! ReportProblemViewController
-            if #available(iOS 13, *) {
-                           
-                           destinationVC.modalPresentationStyle = .popover
-                       } else {
-                           
-                           destinationVC.modalPresentationStyle = .overCurrentContext
-                       }
+            destinationVC.modalPresentationStyle = .overCurrentContext
             destinationVC.Equipment = self.equipment
         }
     }

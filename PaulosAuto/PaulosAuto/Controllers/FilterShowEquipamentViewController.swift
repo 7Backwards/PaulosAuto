@@ -155,6 +155,10 @@ class FilterShowEquipmentViewController: ViewController {
             
             activeFilter = 3
         }
+        else if touch.view?.tag == 0{
+            
+            self.dismiss(animated: true) //Perform dismiss
+        }
         self.setSelected()
         
     }
@@ -181,7 +185,7 @@ class FilterShowEquipmentViewController: ViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 
                 self.categoryView.fadeOut()
-                self.outerViewHeightConstraint.constant = self.view.frame.size.height * 0.95
+                self.outerViewHeightConstraint.constant = self.view.frame.size.height
                 self.view.layoutIfNeeded()
             })
             self.orderByView.fadeIn()

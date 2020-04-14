@@ -23,6 +23,7 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var currentHoursTextView: UITextView!
     @IBOutlet weak var problemDescriptionTextView: UITextView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var outerView: UIView!
     
     
     // MARK: - Properties
@@ -52,6 +53,8 @@ class ReportProblemViewController: ViewController {
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
+        
+        outerView.setCardViewOverContext(view: outerView)
     }
     
     
