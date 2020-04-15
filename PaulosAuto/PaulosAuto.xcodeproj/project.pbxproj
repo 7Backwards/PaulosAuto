@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */; };
+		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
 		B02A3A972429011A0008DDC6 /* ListEquipamentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipamentViewController+Extensions.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedController+Extensions.swift"; sourceTree = "<group>"; };
+		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		B02A3A962429011A0008DDC6 /* ListEquipamentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEquipamentViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */,
 				B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */,
 				B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */,
+				B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B09FE975242B81BC00EE2FA1 /* ListFlowLayout.swift in Sources */,
+				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipamentViewController.swift in Sources */,

@@ -31,6 +31,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var barView: UIView!
+    @IBOutlet weak var barViewLeadingConstraint: NSLayoutConstraint!
     
     
     // MARK: - Properties
@@ -38,7 +39,7 @@ class ShowEquipmentViewController: ViewController {
     
     var serialNumberID: String!
     var equipment : Equipment!
-    
+    var isAnimated = false
     
     // MARK: - Private
     
@@ -87,12 +88,13 @@ class ShowEquipmentViewController: ViewController {
         
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
 
-        barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
-        
         informationView.setCardView(view: informationView)
         
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
+        
+        
+
     }
     
     
@@ -104,12 +106,29 @@ class ShowEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupView()
         setupInfo()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
         hideTabBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        if isAnimated == false {
+        
+            super.viewDidLayoutSubviews()
+
+            UIView.animate(withDuration: 1.0, animations: {
+                
+                self.barView.frame.origin.x = self.segmentControl.frame.origin.x
+            }, completion: { _ in
+                self.isAnimated = true
+            })
+        }
+        
     }
     
     

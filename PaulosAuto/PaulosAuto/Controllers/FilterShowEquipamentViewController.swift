@@ -135,7 +135,7 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
         
         outerView.setCardViewOverContext(view: outerView)
-        outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
+    
         
         segmentControl.setLayoutSegmentControl(segmentControl)
         
@@ -260,7 +260,7 @@ class FilterShowEquipmentViewController: ViewController {
                 
                 self.categoryView.isHidden = true
                 self.categoryView.fadeIn()
-                self.outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
+                self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 0.5)
                 self.view.layoutIfNeeded()
             })
             self.orderByView.isHidden = false
@@ -273,7 +273,7 @@ class FilterShowEquipmentViewController: ViewController {
                 
                 self.orderByView.fadeIn()
                 self.orderByView.isHidden = true
-                self.outerViewHeightConstraint.constant = self.view.frame.size.height
+                self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 0.95)
                 self.view.layoutIfNeeded()
             })
             self.categoryView.isHidden = false
