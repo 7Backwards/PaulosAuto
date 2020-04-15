@@ -91,7 +91,12 @@ class RegisterEquipmentHoursViewController: ViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
         
-        self.popUpView.frame.origin.y = view.safeAreaInsets.top + 10
+        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            
+            self.popUpView.frame.origin.y = UIScreen.main.bounds.height - keyboardHeight - self.popUpView.frame.height - 10
+        }
+        
+        
     }
     
     @objc func keyboardWillHide(notification: Notification) {
