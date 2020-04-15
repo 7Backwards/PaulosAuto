@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         debugPrint("viewDidLoad")
-        
     }
     
     func addNavBarLogo() {
@@ -30,8 +29,8 @@ class ViewController: UIViewController {
         titleView.backgroundColor = .clear
         self.navigationItem.titleView = titleView
     }
-
-
+    
+    
     
     func setSearchBarStyle(searchBar: UISearchBar) {
         
@@ -39,79 +38,73 @@ class ViewController: UIViewController {
         searchBar.layer.cornerRadius = 10
         searchBar.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
         searchBar.layer.masksToBounds = false
-        
     }
     
     func hideTabBar() {
+        
         var frame = self.tabBarController?.tabBar.frame
         frame!.origin.y = self.view.frame.size.height + (frame?.size.height)!
         UIView.animate(withDuration: 0.5, animations: {
+            
             self.tabBarController?.tabBar.frame = frame!
             self.tabBarController?.tabBar.isHidden = true
         })
-        
     }
     
     func showTabBar() {
+        
         var frame = self.tabBarController?.tabBar.frame
         frame!.origin.y = self.view.frame.size.height - (frame?.size.height)!
         UIView.animate(withDuration: 0.5, animations: {
+            
             self.tabBarController?.tabBar.frame = frame!
             self.tabBarController?.tabBar.isHidden = false
         })
-        
     }
     
     @objc func onDrage(_ sender:UIPanGestureRecognizer) {
-              let percentThreshold:CGFloat = 0.3
-              let translation = sender.translation(in: view)
-
-           let newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.maxY)
-              let progress = progressAlongAxis(newY, view.bounds.width)
-
-              view.frame.origin.y = newY //Move view to new position
-
-              if sender.state == .ended {
-                  let velocity = sender.velocity(in: view)
-                 if velocity.y >= 300 || progress > percentThreshold {
-                     self.dismiss(animated: true) //Perform dismiss
-                 } else {
-                     UIView.animate(withDuration: 0.2, animations: {
-                         self.view.frame.origin.y = 0 // Revert animation
-                     })
-                }
-             }
-
-             sender.setTranslation(.zero, in: view)
-          }
-
-       func progressAlongAxis(_ pointOnAxis: CGFloat, _ axisLength: CGFloat) -> CGFloat {
-           let movementOnAxis = pointOnAxis / axisLength
-           let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
-           let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
-           return CGFloat(positiveMovementOnAxisPercent)
-       }
-
-       func ensureRange<T>(value: T, minimum: T, maximum: T) -> T where T : Comparable {
-           return min(max(value, minimum), maximum)
-       }
-    
-    func fixBackgroundSegmentControl( _ segmentControl: UISegmentedControl){
-        if #available(iOS 13.0, *) {
-            //just to be sure it is full loaded
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                for i in 0...(segmentControl.numberOfSegments-1)  {
-                    let backgroundSegmentView = segmentControl.subviews[i]
-                    //it is not enogh changing the background color. It has some kind of shadow layer
-                    backgroundSegmentView.isHidden = true
-                }
+        
+        let percentThreshold:CGFloat = 0.3
+        let translation = sender.translation(in: view)
+        let newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.maxY)
+        let progress = progressAlongAxis(newY, view.bounds.width)
+        view.frame.origin.y = newY //Move view to new position
+        
+        if sender.state == .ended {
+            
+            let velocity = sender.velocity(in: view)
+            if velocity.y >= 300 || progress > percentThreshold {
+                
+                self.dismiss(animated: true) //Perform dismiss
+            } else {
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    
+                    self.view.frame.origin.y = 0 // Revert animation
+                })
             }
         }
+        sender.setTranslation(.zero, in: view)
     }
-
+    
+    func progressAlongAxis(_ pointOnAxis: CGFloat, _ axisLength: CGFloat) -> CGFloat {
+        
+        let movementOnAxis = pointOnAxis / axisLength
+        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
+        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
+        return CGFloat(positiveMovementOnAxisPercent)
+    }
+    
+    func ensureRange<T>(value: T, minimum: T, maximum: T) -> T where T : Comparable {
+        
+        return min(max(value, minimum), maximum)
+    }
+    
+    
+    
     
 }
 
 
-    
+
 

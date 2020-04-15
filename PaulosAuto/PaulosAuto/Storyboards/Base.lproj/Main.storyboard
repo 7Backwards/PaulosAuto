@@ -192,7 +192,7 @@
         <scene sceneID="Zvr-Ky-A1u">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Cj8-e4-kw8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Página inicial" image="house" id="EcI-IZ-tbz">
+                    <tabBarItem key="tabBarItem" title="Página inicial" image="house" selectedImage="house_fill" id="EcI-IZ-tbz">
                         <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOd-qP-LyW">
@@ -1551,6 +1551,7 @@
         <image name="exclamationmark_triangle" width="25" height="25"/>
         <image name="exclamationmark_triangle_fill" width="25" height="25"/>
         <image name="house" width="25" height="25"/>
+        <image name="house_fill" width="25" height="25"/>
         <image name="multiply" width="20" height="20"/>
         <image name="person_alt_circle" width="25" height="25"/>
         <image name="person_alt_circle_fill" width="25" height="25"/>

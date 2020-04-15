@@ -45,7 +45,6 @@ class FilterShowEquipmentViewController: ViewController {
         switch (activeFilter) {
             
         case 0:
-            
             dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
             dateContractLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
             dateContractCheckImageView.isHidden = false
@@ -59,8 +58,8 @@ class FilterShowEquipmentViewController: ViewController {
             serialNumberLabel.textColor = .black
             serialNumberCheckImageView.isHidden = true
             
-        case 1:
             
+        case 1:
             hoursUtilizationView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
             hoursUtilizationLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
             hoursUtilizationCheckImageView.isHidden = false
@@ -74,8 +73,8 @@ class FilterShowEquipmentViewController: ViewController {
             dateContractLabel.textColor = .black
             dateContractCheckImageView.isHidden = true
             
-        case 2:
             
+        case 2:
             modelView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
             modelLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
             modelCheckImageView.isHidden = false
@@ -89,8 +88,8 @@ class FilterShowEquipmentViewController: ViewController {
             hoursUtilizationLabel.textColor = .black
             hoursUtilizationCheckImageView.isHidden = true
             
-        case 3:
             
+        case 3:
             serialNumberView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
             serialNumberLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
             serialNumberCheckImageView.isHidden = false
@@ -103,6 +102,8 @@ class FilterShowEquipmentViewController: ViewController {
             modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
             modelLabel.textColor = .black
             modelCheckImageView.isHidden = true
+            
+            
         default: break
             
         }
@@ -132,20 +133,9 @@ class FilterShowEquipmentViewController: ViewController {
         outerView.setCardViewOverContext(view: outerView)
         outerViewHeightConstraint.constant = self.view.frame.size.height * 0.5
         
-        fixBackgroundSegmentControl(segmentControl)
-        segmentControl.backgroundColor = .clear
-        segmentControl.tintColor = .clear
-        segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
-            NSAttributedString.Key.foregroundColor: UIColor.lightGray
-        ], for: .normal)
-        segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18) as Any,
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ], for: .selected)
+        segmentControl.setLayoutSegmentControl(segmentControl)
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
-        
     }
     // MARK: - Public
     
@@ -193,9 +183,8 @@ class FilterShowEquipmentViewController: ViewController {
            UIView.animate(withDuration: 0.3) {
                
                self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
-               
            }
-       }
+    }
     
     
     @IBAction func segmentControlAction(_ sender: Any) {
@@ -231,7 +220,4 @@ class FilterShowEquipmentViewController: ViewController {
         default: break
         }
     }
-    
-    
-    
 }

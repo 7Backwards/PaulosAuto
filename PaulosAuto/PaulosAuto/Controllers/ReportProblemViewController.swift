@@ -55,8 +55,6 @@ class ReportProblemViewController: ViewController {
         handlerView.layer.cornerRadius = 3
         
         outerView.setCardViewOverContext(view: outerView)
-        
-        
     }
     
     
@@ -67,7 +65,6 @@ class ReportProblemViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
-        self.scrollView.isScrollEnabled = true
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -80,13 +77,17 @@ class ReportProblemViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        view.removeGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+        NotificationCenter.default.removeObserver(self)
+        
+    }
     
     // MARK: - Action
     
-    
-    
-    
-    
+
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInsets = UIEdgeInsets.zero
@@ -101,7 +102,7 @@ class ReportProblemViewController: ViewController {
         let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
         
-        scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: 1.2 * keyboardViewEndFrame.height, right : 0)
+        scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: keyboardViewEndFrame.height, right : 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     

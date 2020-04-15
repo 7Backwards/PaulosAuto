@@ -54,11 +54,11 @@ class ListEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupEquipmentoController()
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
-        
     }
     
     
-    override func viewWillAppear(_ animated: Bool) { // As soon as vc appears
+    override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(true)
         showTabBar()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -66,8 +66,8 @@ class ListEquipmentViewController: ViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
     

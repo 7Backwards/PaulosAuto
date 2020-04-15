@@ -83,22 +83,14 @@ class ShowEquipmentViewController: ViewController {
     private func setupView() {
         
         super.addNavBarLogo()
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
-        fixBackgroundSegmentControl(segmentControl)
-        segmentControl.backgroundColor = .clear
-        segmentControl.tintColor = .clear
-        segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 20) as Any,
-            NSAttributedString.Key.foregroundColor: UIColor.lightGray
-        ], for: .normal)
-        segmentControl.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 20) as Any,
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ], for: .selected)
+        segmentControl.setLayoutSegmentControl(segmentControl)
         
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
         
         informationView.setCardView(view: informationView)
+        
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
     }
