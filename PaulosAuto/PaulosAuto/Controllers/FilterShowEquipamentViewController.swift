@@ -13,6 +13,7 @@ class FilterShowEquipmentViewController: ViewController {
     
     // MARK: - Outlets
     
+    
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var orderByView: UIView!
@@ -33,9 +34,12 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var barView: UIView!
     
+    
     // MARK: - Properties
     
+    
     var activeFilter = 0
+    
     
     // MARK: - Private
     
@@ -137,6 +141,8 @@ class FilterShowEquipmentViewController: ViewController {
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
     }
+    
+    
     // MARK: - Public
     
     
@@ -144,10 +150,65 @@ class FilterShowEquipmentViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
     }
     
-   
+    @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
+        
+        let percentThreshold:CGFloat = 0.3
+        let translation = sender.translation(in: view)
+        
+        let getIndex = segmentControl.selectedSegmentIndex
+               
+               switch (getIndex) {
+                   
+               case 0:
+                   let newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
+                   let progress = progressAlongAxis(newY, view.bounds.width)
+                   view.frame.origin.y = newY
+                   
+                   if sender.state == .ended {
+                       
+                       let velocity = sender.velocity(in: view)
+                       if velocity.y >= 300 || progress > percentThreshold {
+                           
+                           self.dismiss(animated: true)
+                       } else {
+                           
+                           UIView.animate(withDuration: 0.2, animations: {
+                               
+                               self.view.frame.origin.y = 0
+                           })
+                       }
+                   }
+                   sender.setTranslation(.zero, in: view)
+                   
+                
+               case 1:
+                   let newY = ensureRange(value: outerView.frame.minY + translation.y, minimum: 0, maximum: outerView.frame.size.height)
+                   let progress = progressAlongAxis(newY, outerView.bounds.width)
+                   outerView.frame.origin.y = newY
+                   
+                   if sender.state == .ended {
+                       
+                       let velocity = sender.velocity(in: view)
+                       if velocity.y >= 300 || progress > percentThreshold {
+                           
+                           self.dismiss(animated: true)
+                       } else {
+                           
+                           UIView.animate(withDuration: 0.2, animations: {
+                               
+                               self.view.frame.origin.y = 0
+                           })
+                       }
+                   }
+                   sender.setTranslation(.zero, in: outerView)
+                   
+               default: break
+               }
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -176,7 +237,9 @@ class FilterShowEquipmentViewController: ViewController {
         
     }
     
+    
     // MARK: - Action
+    
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
            
@@ -185,7 +248,6 @@ class FilterShowEquipmentViewController: ViewController {
                self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
            }
     }
-    
     
     @IBAction func segmentControlAction(_ sender: Any) {
         
@@ -205,6 +267,7 @@ class FilterShowEquipmentViewController: ViewController {
             self.orderByView.fadeOut()
             self.segmentedControlValueChanged(self.segmentControl)
             
+            
         case 1:
             UIView.animate(withDuration: 0.5, animations: {
                 
@@ -216,6 +279,7 @@ class FilterShowEquipmentViewController: ViewController {
             self.categoryView.isHidden = false
             self.categoryView.fadeOut()
             self.segmentedControlValueChanged(self.segmentControl)
+            
             
         default: break
         }

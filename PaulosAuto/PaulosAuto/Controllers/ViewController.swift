@@ -66,21 +66,21 @@ class ViewController: UIViewController {
         
         let percentThreshold:CGFloat = 0.3
         let translation = sender.translation(in: view)
-        let newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.maxY)
+        let newY = ensureRange(value: view.frame.minY + translation.y, minimum: view.safeAreaInsets.top, maximum: view.frame.size.height)
         let progress = progressAlongAxis(newY, view.bounds.width)
-        view.frame.origin.y = newY //Move view to new position
+        view.frame.origin.y = newY
         
         if sender.state == .ended {
             
             let velocity = sender.velocity(in: view)
             if velocity.y >= 300 || progress > percentThreshold {
                 
-                self.dismiss(animated: true) //Perform dismiss
+                self.dismiss(animated: true)
             } else {
                 
                 UIView.animate(withDuration: 0.2, animations: {
                     
-                    self.view.frame.origin.y = 0 // Revert animation
+                    self.view.frame.origin.y = 0
                 })
             }
         }

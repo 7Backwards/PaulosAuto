@@ -14,7 +14,6 @@ class ReportProblemViewController: ViewController {
     // MARK: - Outlets
     
     
-    
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
@@ -32,6 +31,7 @@ class ReportProblemViewController: ViewController {
     
     
     // MARK: - Private
+    
     
     private func setupView() {
         

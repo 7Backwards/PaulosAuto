@@ -814,7 +814,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SNG-hX-P2v">
-                                <rect key="frame" x="15" y="61" width="290" height="4"/>
+                                <rect key="frame" x="15" y="61" width="290" height="14"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Informações"/>
@@ -828,7 +828,7 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP6-mv-kpA">
-                                <rect key="frame" x="15" y="69" width="290" height="5"/>
+                                <rect key="frame" x="15" y="79" width="290" height="5"/>
                                 <color key="backgroundColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="GfI-jK-S1c"/>
@@ -1104,7 +1104,7 @@
                             <constraint firstItem="IgL-vQ-os4" firstAttribute="trailing" secondItem="zEe-ai-ktO" secondAttribute="trailing" constant="15" id="8ht-nx-GXa"/>
                             <constraint firstItem="tNp-Tq-mvI" firstAttribute="width" secondItem="zEe-ai-ktO" secondAttribute="width" id="DK6-bV-9G2"/>
                             <constraint firstItem="tNp-Tq-mvI" firstAttribute="centerX" secondItem="zEe-ai-ktO" secondAttribute="centerX" id="Hyb-cv-vBG"/>
-                            <constraint firstItem="zEe-ai-ktO" firstAttribute="top" secondItem="eP6-mv-kpA" secondAttribute="bottom" constant="10" id="OBl-Hh-112"/>
+                            <constraint firstItem="zEe-ai-ktO" firstAttribute="top" secondItem="eP6-mv-kpA" secondAttribute="bottom" id="OBl-Hh-112"/>
                             <constraint firstItem="ejE-EN-fcc" firstAttribute="top" secondItem="zEe-ai-ktO" secondAttribute="bottom" constant="10" id="Om9-XC-Qum"/>
                             <constraint firstItem="tNp-Tq-mvI" firstAttribute="height" secondItem="zEe-ai-ktO" secondAttribute="height" id="OzZ-Te-sMd"/>
                             <constraint firstItem="IgL-vQ-os4" firstAttribute="trailing" secondItem="SNG-hX-P2v" secondAttribute="trailing" constant="15" id="UcE-qK-8a9"/>

@@ -14,15 +14,12 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Outlets
     
     
-    
-    
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var submitHoursButton: UIButton!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var lastRegistHoursLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var currentHoursTextField: UITextField!
-    
     
     
     // MARK: - Properties
