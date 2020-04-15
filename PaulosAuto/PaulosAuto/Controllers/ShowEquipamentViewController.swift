@@ -88,13 +88,10 @@ class ShowEquipmentViewController: ViewController {
         
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
 
-        informationView.setCardView(view: informationView)
+        informationView.setCardViewBottomCorners(view: informationView)
         
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
-        
-        
-
     }
     
     

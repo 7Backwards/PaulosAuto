@@ -54,7 +54,7 @@ class ReportProblemViewController: ViewController {
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
         
-        outerView.setCardViewOverContext(view: outerView)
+        outerView.setCardView(view: outerView)
     }
     
     

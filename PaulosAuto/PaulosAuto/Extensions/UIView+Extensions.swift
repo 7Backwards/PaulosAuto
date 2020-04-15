@@ -19,10 +19,18 @@ extension UIView {
         view.layer.masksToBounds = false
     }
     
-    func setCardViewOverContext(view : UIView){
+    func setCardViewTopCorners(view : UIView){
         
         view.layer.cornerRadius = 30
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+        view.layer.masksToBounds = false
+    }
+    
+    func setCardViewBottomCorners(view : UIView){
+        
+        view.layer.cornerRadius = 30
+        view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
         view.layer.masksToBounds = false
     }

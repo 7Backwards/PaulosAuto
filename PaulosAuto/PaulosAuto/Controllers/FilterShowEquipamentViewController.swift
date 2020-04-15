@@ -134,7 +134,7 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.layer.cornerRadius = 20
         serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
         
-        outerView.setCardViewOverContext(view: outerView)
+        outerView.setCardViewTopCorners(view: outerView)
     
         
         segmentControl.setLayoutSegmentControl(segmentControl)
