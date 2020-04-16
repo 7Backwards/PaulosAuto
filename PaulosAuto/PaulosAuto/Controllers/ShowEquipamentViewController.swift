@@ -31,7 +31,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var barView: UIView!
-    @IBOutlet weak var barViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topView: UIView!
     
     
     // MARK: - Properties
@@ -88,10 +88,13 @@ class ShowEquipmentViewController: ViewController {
         
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
 
-        informationView.setCardViewBottomCorners(view: informationView)
+        informationView.setCardView(view: informationView)
         
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
+        topView.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 0.1, blur: 6, spread: 0)
+        topView.layer.masksToBounds = false
+        
     }
     
     

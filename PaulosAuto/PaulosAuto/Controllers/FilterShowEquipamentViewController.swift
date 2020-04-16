@@ -33,6 +33,7 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var barView: UIView!
+    @IBOutlet weak var topView: UIView!
     
     
     // MARK: - Properties
@@ -134,7 +135,7 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.layer.cornerRadius = 20
         serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
         
-        outerView.setCardViewTopCorners(view: outerView)
+        topView.setCardViewTopCorners(view: topView)
     
         
         segmentControl.setLayoutSegmentControl(segmentControl)
