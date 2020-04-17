@@ -33,7 +33,7 @@ class ListEquipmentViewController: ViewController {
     var searchFilteredEquipments = [Equipment]()
     var smpFilteredEquipments = [Equipment]()
     var smpAndSearchFilteredEquipments = [Equipment]()
-    var equipments: [Equipment] = [Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "6878123A", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true),Equipment(brand: "Catterpillar", model: "CB14B", type: "Compactador Rápido", serialNumber: "FTR00957", plate: "34-XM-88", currentHours: 1700, image: "CB14B", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Rígido", serialNumber: "7897234GV", plate: "34-XM-88", currentHours: 1700, image: "5523b4949693d", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "G76532JF", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "770G", type: "Dumper Rígido", serialNumber: "8743891A", plate: "34-XM-88", currentHours: 1700, image: "5523b4949693d", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "645G6543", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "7846512S", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "4732642B", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "5678212J", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "67623423D", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "676894GF", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "1237512G", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "123675C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "6954F723", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "8127343D", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "9781237E", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "587401C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "873215Z", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "894723V", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "494853X", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "47345678C", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false)]
+    var equipments: [Equipment] = [Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "6878123A", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "6/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true),Equipment(brand: "Catterpillar", model: "CB14B", type: "Compactador Rápido", serialNumber: "FTR00957", plate: "34-XM-88", currentHours: 1235, image: "CB14B", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Rígido", serialNumber: "7897234GV", plate: "34-XM-88", currentHours: 45, image: "5523b4949693d", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "G76532JF", plate: "34-XM-88", currentHours: 6785, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "770G", type: "Dumper Rígido", serialNumber: "8743891A", plate: "34-XM-88", currentHours: 54, image: "5523b4949693d", year: 2007, dateAssignment: "16/02/2020", dateStartAssignment: "20/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "645G6543", plate: "34-XM-88", currentHours: 4, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "7846512S", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "4732642B", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "5678212J", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "67623423D", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "676894GF", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "1237512G", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "123675C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "6954F723", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "8127343D", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "9781237E", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "587401C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "873215Z", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "894723V", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "494853X", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "47345678C", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false)]
     
     
     // MARK: - Private
@@ -50,6 +50,52 @@ class ListEquipmentViewController: ViewController {
         smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
     
+    private func filterOrderBy( equipmentArray : [Equipment])-> [Equipment] {
+        
+        switch activeOrderByFiltered {
+            
+        case 0:
+            return equipmentArray.sorted {
+                var isSorted = false
+                if let first = $0.dateAssignment, let second = $1.dateAssignment {
+                    isSorted = first > second
+                }
+                return isSorted
+            }
+        
+        case 1:
+            return equipmentArray.sorted {
+                var isSorted = false
+                if let first = $0.currentHours, let second = $1.currentHours {
+                    isSorted = first < second
+                }
+                return isSorted
+            }
+            
+        case 2:
+            return equipmentArray.sorted {
+                var isSorted = false
+                if let first = $0.model, let second = $1.model {
+                    isSorted = first < second
+                }
+                return isSorted
+            }
+            
+        case 3:
+            return equipmentArray.sorted {
+                var isSorted = false
+                if let first = $0.serialNumber, let second = $1.serialNumber {
+                    isSorted = first < second
+                }
+                return isSorted
+            }
+            
+        default: return equipmentArray
+    }
+    }
+    
+    
+    
     // MARK: - Public
     
     override func viewDidLoad() {
@@ -57,6 +103,8 @@ class ListEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupEquipmentoController()
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+
     }
     
     
@@ -99,6 +147,27 @@ class ListEquipmentViewController: ViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: self, action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
     }
+        
+    func filtercategory( equipmentArray : [Equipment])-> [Equipment] {
+        
+        var newEquipmentArray : [Equipment] = []
+        
+        if activeCategoryFiltered == nil {
+            
+            return self.filterOrderBy(equipmentArray: equipmentArray)
+        }
+        else {
+            for item in equipmentArray {
+                
+                if item.type == activeCategoryFiltered {
+                    
+                    newEquipmentArray.append(item)
+                }
+            }
+            return self.filterOrderBy(equipmentArray: newEquipmentArray)
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         
@@ -147,11 +216,15 @@ class ListEquipmentViewController: ViewController {
         FilterShowEquipmentoVC.activeCategoryFiltered = self.activeCategoryFiltered
         FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
         
-        print(FilterShowEquipmentoVC.activeCategoryFiltered ?? "nil")
-        print(FilterShowEquipmentoVC.activeOrderByFiltered ?? "nil")
+
         tabBarController?.present(FilterShowEquipmentoVC, animated: true, completion: nil)
     }
     
+     @objc func refresh() {
+
+        self.collectionView.reloadData() // a refresh the tableView.
+
+    }
     
     
 }

@@ -174,6 +174,9 @@ class FilterShowEquipmentViewController: ViewController {
         collectionView.delegate = self
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
         self.getCategories()
+        self.setSelectedOrderBy()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+
     }
     
     @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
@@ -241,13 +244,16 @@ class FilterShowEquipmentViewController: ViewController {
             activeOrderByFiltered = 0
             if let delegate = self.delegate {
                 delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
             }
+            
         }
         else if touch.view?.tag == 200 {
             
             activeOrderByFiltered = 1
             if let delegate = self.delegate {
                 delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
             }
         }
         else if touch.view?.tag == 300 {
@@ -255,6 +261,7 @@ class FilterShowEquipmentViewController: ViewController {
             activeOrderByFiltered = 2
             if let delegate = self.delegate {
                 delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
             }
         }
         else if touch.view?.tag == 400 {
@@ -262,6 +269,7 @@ class FilterShowEquipmentViewController: ViewController {
             activeOrderByFiltered = 3
             if let delegate = self.delegate {
                 delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
             }
         }
         else if touch.view?.tag == 0{

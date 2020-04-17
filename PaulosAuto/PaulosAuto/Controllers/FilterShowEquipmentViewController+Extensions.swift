@@ -58,11 +58,20 @@ extension FilterShowEquipmentViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.activeCategoryFiltered = categoryEquipments[indexPath.row]
+        if self.activeCategoryFiltered == categoryEquipments[indexPath.row] {
+            
+            self.activeCategoryFiltered = nil
+        }
+        else {
+            
+            self.activeCategoryFiltered = categoryEquipments[indexPath.row]
+        }
         self.collectionView.reloadData()
-
+        
         if let delegate = self.delegate {
-            delegate.updateActiveCategoryFiltered(newActiveCategory: categoryEquipments[indexPath.row])
+            
+            delegate.updateActiveCategoryFiltered(newActiveCategory: self.activeCategoryFiltered)
+            delegate.reloadCollectionView()
         }
         
         

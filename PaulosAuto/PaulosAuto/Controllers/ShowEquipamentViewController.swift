@@ -50,10 +50,10 @@ class ShowEquipmentViewController: ViewController {
         equipmentTypeLabel.text = equipment.type
         serialNumberLabel.text = equipment.serialNumber
         equipmentImageView.image = UIImage(named: equipment.image!)
-        dateAgreementLabel.text = equipment.dateAssignment
-        dateStartAgreementLabel.text = equipment.dateStartAssignment
-        dateEndAgreementLabel.text = equipment.dateEndAssignment
-        modelLabel.text = equipment.brand
+        dateAgreementLabel.text = getFormattedDate(date: equipment.dateAssignment!, format: "dd/MM/yyyy")
+        dateStartAgreementLabel.text = getFormattedDate(date: equipment.dateStartAssignment!, format: "dd/MM/yyyy")
+        dateEndAgreementLabel.text = getFormattedDate(date: equipment.dateEndAssignment!, format: "dd/MM/yyyy")
+        brandLabel.text = equipment.brand
         plateLabel.text = equipment.plate
         currentHoursLabel.text = "\(equipment.currentHours!)"
         if (equipment.smp == true) {
