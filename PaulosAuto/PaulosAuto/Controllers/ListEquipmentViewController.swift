@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ListEquipmentViewController: ViewController {
     
     // MARK: - Outlets
@@ -20,16 +21,18 @@ class ListEquipmentViewController: ViewController {
     
     // MARK: - Constants
     
-    let listFlowLayout = ListFlowLayout()
+    let cellLayout = ListEquipmentLayoutCell()
     
     
     // MARK: - Properties
     
     var searchActive = false
     var smpActive = false
+    var activeCategoryFiltered : String?
+    var activeOrderByFiltered : Int = 0
     var searchFilteredEquipments = [Equipment]()
-    var smpFilterArray = [Equipment]()
-    var smpAndSearchFilterArray = [Equipment]()
+    var smpFilteredEquipments = [Equipment]()
+    var smpAndSearchFilteredEquipments = [Equipment]()
     var equipments: [Equipment] = [Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "6878123A", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true),Equipment(brand: "Catterpillar", model: "CB14B", type: "Compactador Rápido", serialNumber: "FTR00957", plate: "34-XM-88", currentHours: 1700, image: "CB14B", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Rígido", serialNumber: "7897234GV", plate: "34-XM-88", currentHours: 1700, image: "5523b4949693d", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "G76532JF", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "770G", type: "Dumper Rígido", serialNumber: "8743891A", plate: "34-XM-88", currentHours: 1700, image: "5523b4949693d", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "645G6543", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "7846512S", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "4732642B", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "5678212J", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "67623423D", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "676894GF", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "1237512G", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "123675C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "6954F723", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "8127343D", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "9781237E", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "587401C", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "873215Z", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Compactador Rápido", serialNumber: "894723V", plate: "34-XM-88", currentHours: 1700, image: "5523b3f1cf47c", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: true), Equipment(brand: "Catterpillar", model: "CB10", type: "Dumper Articulado", serialNumber: "494853X", plate: "34-XM-88", currentHours: 1700, image: "5523b505b7b72", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false), Equipment(brand: "Catterpillar", model: "CP44B", type: "Compactador Vibratório de Solos", serialNumber: "47345678C", plate: "34-XM-88", currentHours: 1700, image: "5523b531e09ab", year: 2007, dateAssignment: "11/02/2020", dateStartAssignment: "12/02/2020", dateEndAssignment: "20/02/2021", smp: false)]
     
     
@@ -43,7 +46,7 @@ class ListEquipmentViewController: ViewController {
         collectionView.dataSource = self
         searchBar.delegate = self
         addNavBarFilter()
-        collectionView.collectionViewLayout = listFlowLayout
+        collectionView.collectionViewLayout = cellLayout
         smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
     }
     
@@ -74,7 +77,7 @@ class ListEquipmentViewController: ViewController {
     
     func smpfilterArray() {
         
-        smpFilterArray = equipments.filter { (Equipmento) -> Bool in
+        smpFilteredEquipments = equipments.filter { (Equipmento) -> Bool in
             return Equipmento.smp == true
         }
         
@@ -83,7 +86,7 @@ class ListEquipmentViewController: ViewController {
     
     func smpAndSearchFilter() {
         
-        smpAndSearchFilterArray = searchFilteredEquipments.filter { (Equipmento) -> Bool in
+        smpAndSearchFilteredEquipments = searchFilteredEquipments.filter { (Equipmento) -> Bool in
             return Equipmento.smp == true
         }
         
@@ -138,11 +141,14 @@ class ListEquipmentViewController: ViewController {
                 assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
                 return
         }
+        FilterShowEquipmentoVC.delegate = self
         FilterShowEquipmentoVC.equipments = self.equipments
+        FilterShowEquipmentoVC.activeOrderByFiltered = self.activeOrderByFiltered
+        FilterShowEquipmentoVC.activeCategoryFiltered = self.activeCategoryFiltered
         FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
         
-        
-        // present the view controller modally without animation
+        print(FilterShowEquipmentoVC.activeCategoryFiltered ?? "nil")
+        print(FilterShowEquipmentoVC.activeOrderByFiltered ?? "nil")
         tabBarController?.present(FilterShowEquipmentoVC, animated: true, completion: nil)
     }
     

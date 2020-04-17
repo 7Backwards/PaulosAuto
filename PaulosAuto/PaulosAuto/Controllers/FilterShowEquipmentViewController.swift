@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+    
 class FilterShowEquipmentViewController: ViewController {
     
     
@@ -39,17 +41,20 @@ class FilterShowEquipmentViewController: ViewController {
     
     // MARK: - Properties
     
-    
-    var activeFilter = 0
+    var delegate: DataDelegate?  
+    var activeOrderByFiltered : Int?
+    var activeCategoryFiltered : String?
     var equipments: [Equipment] = []
-    
+    var categoryEquipments: [String] = []
+    let cellLayout = CategoriesEquipmentCellLayout()
+    let listEquipmentViewController = ListEquipmentViewController()
     
     // MARK: - Private
     
     
-    private func setSelected() {
+    private func setSelectedOrderBy() {
         
-        switch (activeFilter) {
+        switch (activeOrderByFiltered) {
             
         case 0:
             dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
@@ -116,6 +121,7 @@ class FilterShowEquipmentViewController: ViewController {
         }
     }
     
+    
     private func setupView() {
         
         handlerView.layer.masksToBounds = true
@@ -142,6 +148,18 @@ class FilterShowEquipmentViewController: ViewController {
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
+        
+        collectionView.collectionViewLayout = cellLayout
+    }
+    
+    private func getCategories() {
+        
+        for item in equipments {
+            if !(categoryEquipments.contains(item.type!)) {
+                
+                categoryEquipments.append(item.type!)
+            }
+        }
     }
     
     
@@ -152,9 +170,10 @@ class FilterShowEquipmentViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
-        collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.delegate = self
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
+        self.getCategories()
     }
     
     @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
@@ -176,7 +195,7 @@ class FilterShowEquipmentViewController: ViewController {
                        let velocity = sender.velocity(in: view)
                        if velocity.y >= 300 || progress > percentThreshold {
                            
-                           self.dismiss(animated: true)
+                           dismiss(animated: true, completion: nil)
                        } else {
                            
                            UIView.animate(withDuration: 0.2, animations: {
@@ -198,7 +217,7 @@ class FilterShowEquipmentViewController: ViewController {
                        let velocity = sender.velocity(in: view)
                        if velocity.y >= 300 || progress > percentThreshold {
                            
-                           self.dismiss(animated: true)
+                        dismiss(animated: true, completion: nil)
                        } else {
                            
                            UIView.animate(withDuration: 0.2, animations: {
@@ -219,25 +238,38 @@ class FilterShowEquipmentViewController: ViewController {
         let touch = touches.first!
         if touch.view?.tag == 100 {
             
-            activeFilter = 0
+            activeOrderByFiltered = 0
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+            }
         }
         else if touch.view?.tag == 200 {
             
-            activeFilter = 1
+            activeOrderByFiltered = 1
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+            }
         }
         else if touch.view?.tag == 300 {
             
-            activeFilter = 2
+            activeOrderByFiltered = 2
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+            }
         }
         else if touch.view?.tag == 400 {
             
-            activeFilter = 3
+            activeOrderByFiltered = 3
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+            }
         }
         else if touch.view?.tag == 0{
             
             self.dismiss(animated: true)
         }
-        self.setSelected()
+        
+        self.setSelectedOrderBy()
         
     }
     

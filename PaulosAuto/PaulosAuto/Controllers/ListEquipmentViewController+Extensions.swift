@@ -6,11 +6,25 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 
-extension ListEquipmentViewController: UICollectionViewDataSource {
+extension ListEquipmentViewController : DataDelegate {
+
+    func updateActiveOrderByFiltered(newOrderBy: Int) {
+        
+        self.activeOrderByFiltered = newOrderBy
+    }
+    
+    
+    func updateActiveCategoryFiltered(newActiveCategory: String ) {
+    
+        self.activeCategoryFiltered = newActiveCategory
+    }
+    
+}
+    
+extension ListEquipmentViewController : UICollectionViewDataSource {
     
     
     // MARK: - Public
@@ -24,7 +38,7 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
             if(smpActive) {
                 
                 smpAndSearchFilter()
-                return smpAndSearchFilterArray.count
+                return smpAndSearchFilteredEquipments.count
             }
             else {
                 
@@ -37,7 +51,7 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
             if(smpActive) {
                 
                 smpfilterArray()
-                return smpFilterArray.count
+                return smpFilteredEquipments.count
             }
             else {
                 
@@ -58,31 +72,31 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
             
             if smpActive {
                 
-                if let imageName = smpAndSearchFilterArray[indexPath.row].image {
+                if let imageName = smpAndSearchFilteredEquipments[indexPath.row].image {
                     
                     cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
-                if let plateEquipment = smpAndSearchFilterArray[indexPath.row].plate {
+                if let plateEquipment = smpAndSearchFilteredEquipments[indexPath.row].plate {
                     
                     cell.plateEquipmentLabel.text = plateEquipment
                 }
                 
-                if let yearequipment = smpAndSearchFilterArray[indexPath.row].year {
+                if let yearequipment = smpAndSearchFilteredEquipments[indexPath.row].year {
                     
                     cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
-                if let modelText = smpAndSearchFilterArray[indexPath.row].model {
+                if let modelText = smpAndSearchFilteredEquipments[indexPath.row].model {
                     
                     cell.modelEquipmentLabel.text = modelText
                 }
-                if let currentHoursText = smpAndSearchFilterArray[indexPath.row].currentHours {
+                if let currentHoursText = smpAndSearchFilteredEquipments[indexPath.row].currentHours {
                     
                     cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
-                if let numeroSerieText = smpAndSearchFilterArray[indexPath.row].serialNumber {
+                if let numeroSerieText = smpAndSearchFilteredEquipments[indexPath.row].serialNumber {
                     
                     cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
@@ -130,31 +144,31 @@ extension ListEquipmentViewController: UICollectionViewDataSource {
         else {
             if smpActive {
                 
-                if let imageName = smpFilterArray[indexPath.row].image {
+                if let imageName = smpFilteredEquipments[indexPath.row].image {
                     
                     cell.EquipmentImageView.image = UIImage(named: imageName)
                 }
                 
-                if let plateEquipment = smpFilterArray[indexPath.row].plate {
+                if let plateEquipment = smpFilteredEquipments[indexPath.row].plate {
                     
                     cell.plateEquipmentLabel.text = plateEquipment
                 }
                 
-                if let yearequipment = smpFilterArray[indexPath.row].year {
+                if let yearequipment = smpFilteredEquipments[indexPath.row].year {
                     
                     cell.yearEquipmentLabel.text = "\(yearequipment)"
                 }
                 
-                if let modelText = smpFilterArray[indexPath.row].model {
+                if let modelText = smpFilteredEquipments[indexPath.row].model {
                     
                     cell.modelEquipmentLabel.text = modelText
                 }
-                if let currentHoursText = smpFilterArray[indexPath.row].currentHours {
+                if let currentHoursText = smpFilteredEquipments[indexPath.row].currentHours {
                     
                     cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
                 }
                 
-                if let numeroSerieText = smpFilterArray[indexPath.row].serialNumber {
+                if let numeroSerieText = smpFilteredEquipments[indexPath.row].serialNumber {
                     
                     cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
                 }
@@ -226,7 +240,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = smpAndSearchFilterArray[index.row]
+                    destination.equipment = smpAndSearchFilteredEquipments[index.row]
                     
                 }
             }
@@ -248,7 +262,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = smpFilterArray[index.row]
+                    destination.equipment = smpFilteredEquipments[index.row]
                     
                 }
             }
