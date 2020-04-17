@@ -34,12 +34,14 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     // MARK: - Properties
     
     
     var activeFilter = 0
+    var equipments: [Equipment] = []
     
     
     // MARK: - Private
@@ -137,7 +139,6 @@ class FilterShowEquipmentViewController: ViewController {
         
         topView.setCardViewTopCorners(view: topView)
     
-        
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
@@ -151,6 +152,8 @@ class FilterShowEquipmentViewController: ViewController {
         
         super.viewDidLoad()
         setupView()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
     }
     

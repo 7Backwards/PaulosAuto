@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class ListFlowLayout: UICollectionViewFlowLayout {
+class listEquipmentLayoutCell: UICollectionViewFlowLayout {
     
     // MARK: - Constants
     

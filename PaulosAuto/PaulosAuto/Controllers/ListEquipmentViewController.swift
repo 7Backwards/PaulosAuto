@@ -96,37 +96,14 @@ class ListEquipmentViewController: ViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: self, action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
     }
-    
-    @objc func rightButtonAction() {
-        
-        guard let FilterShowEquipmentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipmentoViewController")
-            as? FilterShowEquipmentViewController else {
-                assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
-                return
-        }
-        FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
-        
-        
-        // present the view controller modally without animation
-        tabBarController?.present(FilterShowEquipmentoVC, animated: true, completion: nil)
-        
-        
-    }
-    
-    
-    
-    
+
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
-    
+
     // MARK: - Action
     
     
@@ -152,6 +129,21 @@ class ListEquipmentViewController: ViewController {
         
         print("Notification: Keyboard will hide")
         collectionViewBottomConstraint.constant = 0
+    }
+    
+    @objc func rightButtonAction() {
+        
+        guard let FilterShowEquipmentoVC = storyboard?.instantiateViewController(withIdentifier: "FilterShowEquipmentoViewController")
+            as? FilterShowEquipmentViewController else {
+                assertionFailure("No view controller ID FilterShowEquipmentoViewController in storyboard")
+                return
+        }
+        FilterShowEquipmentoVC.equipments = self.equipments
+        FilterShowEquipmentoVC.modalPresentationStyle = .overCurrentContext
+        
+        
+        // present the view controller modally without animation
+        tabBarController?.present(FilterShowEquipmentoVC, animated: true, completion: nil)
     }
     
     
