@@ -40,15 +40,16 @@ class CategoriesEquipmentCellLayout : UICollectionViewFlowLayout {
         return collectionView!.frame.width
     }
     
-    override var itemSize: CGSize {
-        
-        set {
-            self.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        }
-        get {
-            return CGSize(width: itemWidth, height: itemHeight)
-        }
-    }
+    
+//    override var itemSize: CGSize {
+//        
+//        set {
+//            self.itemSize = CGSize(width: itemWidth, height: itemHeight)
+//        }
+//        get {
+//            return CGSize(width: itemWidth, height: itemHeight)
+//        }
+//    }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         

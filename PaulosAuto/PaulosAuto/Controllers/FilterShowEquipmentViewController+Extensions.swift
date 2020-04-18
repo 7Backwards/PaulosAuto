@@ -73,15 +73,22 @@ extension FilterShowEquipmentViewController : UICollectionViewDelegate {
             delegate.updateActiveCategoryFiltered(newActiveCategory: self.activeCategoryFiltered)
             delegate.reloadCollectionView()
         }
-        
-        
 
     }
+}
+
+extension FilterShowEquipmentViewController : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        if ( heightCell == 0) {
+            
+            heightCell = (self.collectionView!.frame.height - 3 * 10)/4
+        }
         
-        
-        
-        
-        
-        
+        let width  = self.collectionView!.frame.width
+        return CGSize(width: width, height: heightCell)
+    }
+    
 }
 

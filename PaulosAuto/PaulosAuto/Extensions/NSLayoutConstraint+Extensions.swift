@@ -12,7 +12,7 @@ extension NSLayoutConstraint {
 
     func changeMultiplier(_ constraint: NSLayoutConstraint, multiplier: CGFloat) -> NSLayoutConstraint {
       let newConstraint = NSLayoutConstraint(
-        item: constraint.firstItem as Any,
+        item: constraint.firstItem,
         attribute: constraint.firstAttribute,
         relatedBy: constraint.relation,
         toItem: constraint.secondItem,

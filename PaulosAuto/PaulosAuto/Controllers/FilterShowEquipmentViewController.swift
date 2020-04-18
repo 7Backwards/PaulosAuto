@@ -9,7 +9,7 @@
 import UIKit
 
 
-    
+
 class FilterShowEquipmentViewController: ViewController {
     
     
@@ -37,6 +37,7 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var orderByStackView: UIStackView!
     
     
     // MARK: - Properties
@@ -48,6 +49,7 @@ class FilterShowEquipmentViewController: ViewController {
     var categoryEquipments: [String] = []
     let cellLayout = CategoriesEquipmentCellLayout()
     let listEquipmentViewController = ListEquipmentViewController()
+    var heightCell : CGFloat = 0
     
     // MARK: - Private
     
@@ -144,12 +146,11 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
         
         topView.setCardViewTopCorners(view: topView)
-    
+        
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
         
-        collectionView.collectionViewLayout = cellLayout
     }
     
     private func getCategories() {
@@ -176,63 +177,58 @@ class FilterShowEquipmentViewController: ViewController {
         self.getCategories()
         self.setSelectedOrderBy()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
+        
     }
     
     @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
         
         let percentThreshold:CGFloat = 0.3
         let translation = sender.translation(in: view)
-        
+        var newY : CGFloat
+        var progress : CGFloat = 0
         let getIndex = segmentControl.selectedSegmentIndex
-               
-               switch (getIndex) {
-                   
-               case 0:
-                   let newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
-                   let progress = progressAlongAxis(newY, view.bounds.width)
-                   view.frame.origin.y = newY
-                   
-                   if sender.state == .ended {
-                       
-                       let velocity = sender.velocity(in: view)
-                       if velocity.y >= 300 || progress > percentThreshold {
-                           
-                           dismiss(animated: true, completion: nil)
-                       } else {
-                           
-                           UIView.animate(withDuration: 0.2, animations: {
-                               
-                               self.view.frame.origin.y = 0
-                           })
-                       }
-                   }
-                   sender.setTranslation(.zero, in: view)
-                   
+        
+        switch (getIndex) {
+            
+        case 0:
+            newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
+            progress = progressAlongAxis(newY, view.bounds.width)
+            view.frame.origin.y = newY
+            
+        case 1:
+            if self.outerViewHeightConstraint.multiplier < 1 {
                 
-               case 1:
-                   let newY = ensureRange(value: outerView.frame.minY + translation.y, minimum: 0, maximum: outerView.frame.size.height)
-                   let progress = progressAlongAxis(newY, outerView.bounds.width)
-                   outerView.frame.origin.y = newY
-                   
-                   if sender.state == .ended {
-                       
-                       let velocity = sender.velocity(in: view)
-                       if velocity.y >= 300 || progress > percentThreshold {
-                           
-                        dismiss(animated: true, completion: nil)
-                       } else {
-                           
-                           UIView.animate(withDuration: 0.2, animations: {
-                               
-                               self.view.frame.origin.y = 0
-                           })
-                       }
-                   }
-                   sender.setTranslation(.zero, in: outerView)
-                   
-               default: break
-               }
+                newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
+                progress = progressAlongAxis(newY, view.bounds.width)
+                view.frame.origin.y = newY
+                
+            }
+            else {
+                newY = ensureRange(value: outerView.frame.minY + translation.y, minimum: 0, maximum: outerView.frame.size.height)
+                progress = progressAlongAxis(newY, outerView.bounds.width)
+                outerView.frame.origin.y = newY
+            }
+        default: break
+            }
+            
+            if sender.state == .ended {
+                
+                let velocity = sender.velocity(in: view)
+                if velocity.y >= 300 || progress > percentThreshold {
+                    
+                    dismiss(animated: true, completion: nil)
+                } else {
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                        
+                        self.view.frame.origin.y = 0
+                    })
+                }
+            }
+            sender.setTranslation(.zero, in: view)
+            sender.setTranslation(.zero, in: outerView)
+            
+        
         
     }
     
@@ -286,11 +282,11 @@ class FilterShowEquipmentViewController: ViewController {
     
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-           
-           UIView.animate(withDuration: 0.3) {
-               
-               self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
-           }
+        
+        UIView.animate(withDuration: 0.3) {
+            
+            self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
+        }
     }
     
     @IBAction func segmentControlAction(_ sender: Any) {
@@ -317,7 +313,18 @@ class FilterShowEquipmentViewController: ViewController {
                 
                 self.orderByView.fadeIn()
                 self.orderByView.isHidden = true
-                self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 0.95)
+                if self.collectionView.numberOfItems(inSection: 0) <= 4 {
+                    
+                    self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 0.5)
+                }
+                else if self.collectionView.numberOfItems(inSection: 0) <= 6 {
+                    
+                    self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 0.71)
+                }
+                else {
+                    
+                    self.outerViewHeightConstraint = self.outerViewHeightConstraint.changeMultiplier(self.outerViewHeightConstraint, multiplier: 1)
+                }
                 self.view.layoutIfNeeded()
             })
             self.categoryView.isHidden = false
