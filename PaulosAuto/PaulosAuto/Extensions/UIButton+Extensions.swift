@@ -1,5 +1,5 @@
 //
-//  Button+CardStyle.swift
+//  UIButton+Extensions.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 23/03/2020.
@@ -8,12 +8,14 @@
 
 import UIKit
 
+
 extension UIButton {
+
     
-    // MARK: - Functions
+    // MARK: - Public
+    
     
     func setButtonStyle(Button: UIButton,
-                        
                         cornerRadius: Int = 15
     ) {
         

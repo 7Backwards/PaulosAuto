@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 
 extension UISegmentedControl {
 

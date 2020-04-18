@@ -38,16 +38,15 @@ class RegisterEquipmentHoursViewController: ViewController {
     
     private func setupView() {
         
+        let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
         popUpView.setCardView(view: popUpView)
         submitHoursButton.setButtonStyle(Button: submitHoursButton, cornerRadius: 10)
         lastRegistHoursLabel.text = "\(Equipmento.currentHours!) H"
-        let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
         serialNumberLabel.text = Equipmento.serialNumber
         submitHoursButton.layer.masksToBounds = true
         submitHoursButton.layer.borderColor = textFieldBorderColor.cgColor
         submitHoursButton.layer.borderWidth = 1.0
         submitHoursButton.layer.cornerRadius = 10
-        
     }
     
     
@@ -66,10 +65,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    
-    
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first!
@@ -77,7 +73,6 @@ class RegisterEquipmentHoursViewController: ViewController {
             
             dismisspopup()
         }
-        
     }
     
     
@@ -95,17 +90,10 @@ class RegisterEquipmentHoursViewController: ViewController {
             
             self.popUpView.frame.origin.y = UIScreen.main.bounds.height - keyboardHeight - self.popUpView.frame.height - 10
         }
-        
-        
     }
     
     @objc func keyboardWillHide(notification: Notification) {
         
         self.popUpView.center.y = self.view.center.y
-        
     }
-    
-    
-    
-    
 }

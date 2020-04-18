@@ -1,5 +1,5 @@
 //
-//  FaturasViewController.swift
+//  InvoiceViewController.swift
 //  PaulosAuto
 //
 //  Created by Neves on 11/03/2020.
@@ -10,6 +10,7 @@ import UIKit
 
 class InvoiceViewController: ViewController {
     
+    
     // MARK: - Functions
     
     
@@ -18,8 +19,4 @@ class InvoiceViewController: ViewController {
         super.viewDidLoad()
         super.addNavBarLogo()
     }
-    
-    
-    
-    
 }

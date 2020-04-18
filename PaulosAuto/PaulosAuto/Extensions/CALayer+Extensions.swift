@@ -1,5 +1,5 @@
 //
-//  CALayer+SketchShadow.swift
+//  CALayer+Extensions.swift
 //  PaulosAuto
 //
 //  Created by Neves on 17/03/2020.
@@ -10,6 +10,10 @@ import UIKit
 
 
 extension CALayer {
+    
+    
+    // MARK: - Public
+    
     
     func applySketchShadow(
         

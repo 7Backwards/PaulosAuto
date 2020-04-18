@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Functions
+    
+    // MARK: - Public
     
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     }
     
     func getFormattedDate(date: Date, format: String) -> String {
+        
             let dateformat = DateFormatter()
             dateformat.dateFormat = format
             return dateformat.string(from: date)
@@ -104,11 +106,7 @@ class ViewController: UIViewController {
     func ensureRange<T>(value: T, minimum: T, maximum: T) -> T where T : Comparable {
         
         return min(max(value, minimum), maximum)
-    }
-    
-    
-    
-    
+    } 
 }
 
 

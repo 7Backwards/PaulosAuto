@@ -11,13 +11,10 @@ import UIKit
 class CollectionViewCategoriesCell: UICollectionViewCell {
   
 
-    
     // MARK: - Outlets
 
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var checkImageView: UIImageView!
-    
-
 }

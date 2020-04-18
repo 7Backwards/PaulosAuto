@@ -8,11 +8,26 @@
 
 import UIKit
 
+
 extension NSLayoutConstraint {
 
+    
+    // MARK: - Properties
+    
+    
+    override public var description: String {
+        let id = identifier ?? ""
+        return "id: \(id), constant: \(constant)" //you may print whatever you want here
+    }
+    
+    
+    // MARK: - Public
+    
+    
     func changeMultiplier(_ constraint: NSLayoutConstraint, multiplier: CGFloat) -> NSLayoutConstraint {
+        
       let newConstraint = NSLayoutConstraint(
-        item: constraint.firstItem,
+        item: constraint.firstItem as Any,
         attribute: constraint.firstAttribute,
         relatedBy: constraint.relation,
         toItem: constraint.secondItem,
@@ -26,10 +41,5 @@ extension NSLayoutConstraint {
       NSLayoutConstraint.activate([newConstraint])
 
       return newConstraint
-    }
-    
-    override public var description: String {
-        let id = identifier ?? ""
-        return "id: \(id), constant: \(constant)" //you may print whatever you want here
     }
 }

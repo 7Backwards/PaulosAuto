@@ -1,5 +1,5 @@
 //
-//  ListarequipmentController+Extensions.swift
+//  ListEquipmentViewController+Extensions.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 23/03/2020.
@@ -10,6 +10,10 @@ import UIKit
 
 
 extension ListEquipmentViewController : DataDelegate {
+    
+
+    // MARK: - Public
+    
     
     func updateActiveOrderByFiltered(newOrderBy: Int) {
         
@@ -26,14 +30,13 @@ extension ListEquipmentViewController : DataDelegate {
         
         self.collectionView.reloadData()
     }
-    
 }
+
 
 extension ListEquipmentViewController : UICollectionViewDataSource {
     
     
     // MARK: - Public
-    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,13 +70,9 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipmentsCell", for: indexPath) as! CollectionViewEquipmentsCell
-        
         
         if (searchActive && !searchFilteredEquipments.isEmpty) {
             
@@ -152,6 +151,7 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
                     cell.smpLabel.alpha = 1
                 }
                 else {
+                    
                     cell.smpLabel.alpha = 0
                 }
             }
@@ -234,28 +234,24 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
                     cell.smpLabel.alpha = 1
                 }
                 else {
+                    
                     cell.smpLabel.alpha = 0
                 }
-                
             }
-            
-            
         }
         cell.cellView.setCardView(view: cell.cellView)
         return cell
-        
     }
-    
-    
-    
-    
 }
+
+
 extension ListEquipmentViewController: UICollectionViewDelegate {
+    
     
     // MARK: - Public
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         
         if(searchActive && !searchFilteredEquipments.isEmpty) {
             
@@ -268,8 +264,8 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                     
+                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                 }
             }
             else {
@@ -281,12 +277,10 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                     
+                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                 }
-                
             }
-            
         }
         else {
             
@@ -299,8 +293,8 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                     
+                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                 }
             }
             else {
@@ -312,20 +306,20 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
                 if let destination = segue.destination as?
                     ShowEquipmentViewController, let index =
                     collectionView.indexPathsForSelectedItems?.first {
-                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                     
+                    destination.equipment = equipmentsFilteredAndOrdered[index.row]
                 }
             }
         }
-        
     }
-    
-    
 }
+
 
 extension ListEquipmentViewController: UISearchBarDelegate {
     
+    
     // MARK: - Public
+    
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;

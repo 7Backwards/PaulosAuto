@@ -11,9 +11,9 @@ import UIKit
 class CollectionViewEquipmentsCell: UICollectionViewCell {
   
 
-    
     // MARK: - Outlets
 
+    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var modelEquipmentLabel: UILabel!
     @IBOutlet weak var EquipmentImageView: UIImageView!
@@ -22,6 +22,4 @@ class CollectionViewEquipmentsCell: UICollectionViewCell {
     @IBOutlet weak var yearEquipmentLabel: UILabel!
     @IBOutlet weak var smpLabel: UILabel!
     @IBOutlet weak var plateEquipmentLabel: UILabel!
-    
-
 }

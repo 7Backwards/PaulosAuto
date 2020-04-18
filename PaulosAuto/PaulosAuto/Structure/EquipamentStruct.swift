@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 struct Equipment: Decodable {
     
@@ -43,24 +45,22 @@ struct Equipment: Decodable {
         self.year = year
         self.smp = smp
         
-        // Set the date formatter and optionally set the formatted date from string
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
+        
         if let date = dateFormatter.date(from: dateAssignment) {
+            
             self.dateAssignment = date
-            
         }
+        
         if let date = dateFormatter.date(from: dateStartAssignment) {
+            
             self.dateStartAssignment = date
-            
         }
+        
         if let date = dateFormatter.date(from: dateEndAssignment) {
-            self.dateEndAssignment = date
             
+            self.dateEndAssignment = date
         }
-        
-        
     }
-    
-    
 }

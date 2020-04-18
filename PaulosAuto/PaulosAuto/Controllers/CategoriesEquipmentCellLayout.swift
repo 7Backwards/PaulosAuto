@@ -8,13 +8,28 @@
 
 import Foundation
 import UIKit
+
+
 class CategoriesEquipmentCellLayout : UICollectionViewFlowLayout {
+
     
     // MARK: - Constants
+  
     
     let itemHeight: CGFloat = 80
     
+    
+    // MARK: - Properties
+    
+    
+    var itemWidth: CGFloat {
+        
+        return collectionView!.frame.width
+    }
+    
+    
     // MARK: - Functions
+    
     
     override init() {
         
@@ -34,23 +49,7 @@ class CategoriesEquipmentCellLayout : UICollectionViewFlowLayout {
         minimumLineSpacing = 10
         scrollDirection = .vertical
     }
-    
-    var itemWidth: CGFloat {
-        
-        return collectionView!.frame.width
-    }
-    
-    
-//    override var itemSize: CGSize {
-//        
-//        set {
-//            self.itemSize = CGSize(width: itemWidth, height: itemHeight)
-//        }
-//        get {
-//            return CGSize(width: itemWidth, height: itemHeight)
-//        }
-//    }
-    
+
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         
         return collectionView!.contentOffset

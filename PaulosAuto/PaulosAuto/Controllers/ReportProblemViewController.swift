@@ -1,5 +1,5 @@
 //
-//  ReportarProblemaViewController.swift
+//  ReportProblemViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 26/03/2020.
@@ -85,6 +85,7 @@ class ReportProblemViewController: ViewController {
         
     }
     
+    
     // MARK: - Action
     
 
@@ -105,9 +106,6 @@ class ReportProblemViewController: ViewController {
         scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: keyboardViewEndFrame.height, right : 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
-    
-    
-    
 }
 
 

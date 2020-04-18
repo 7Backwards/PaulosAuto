@@ -10,7 +10,9 @@ import UIKit
 
 extension UIView {
     
-    // MARK: - Functions
+    
+    // MARK: - Public
+    
     
     func setCardView(view : UIView){
         
@@ -26,8 +28,6 @@ extension UIView {
         view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: -0.1, blur: 6, spread: 0)
         view.layer.masksToBounds = false
     }
-    
-   
     
     func fadeIn(Duration: TimeInterval? = 0.5) {
         
@@ -45,7 +45,5 @@ extension UIView {
             
             self.alpha = 1
         }
-        
     }
-    
 }

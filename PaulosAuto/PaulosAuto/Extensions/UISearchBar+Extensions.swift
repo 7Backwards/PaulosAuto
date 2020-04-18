@@ -6,11 +6,15 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 
 extension UISearchBar {
 
+    
+    // MARK: - Properties
+    
+    
     var textField : UITextField? {
         
         if #available(iOS 13.0, *) {
@@ -18,7 +22,6 @@ extension UISearchBar {
             return self.searchTextField
         } else {
             
-            // Fallback on earlier versions
             for view : UIView in (self.subviews[0]).subviews {
                 if let textField = view as? UITextField {
                     return textField

@@ -1,5 +1,5 @@
 //
-//  ShowEquipmentoViewController.swift
+//  ShowEquipmentViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 23/03/2020.
@@ -41,6 +41,7 @@ class ShowEquipmentViewController: ViewController {
     var equipment : Equipment!
     var isAnimated = false
     
+    
     // MARK: - Private
     
     
@@ -56,9 +57,11 @@ class ShowEquipmentViewController: ViewController {
         brandLabel.text = equipment.brand
         plateLabel.text = equipment.plate
         currentHoursLabel.text = "\(equipment.currentHours!)"
+        
         if (equipment.smp == true) {
             
             smpImageView.tintColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 54/255.0, alpha: 1)
+            
             if #available(iOS 13.0, *) {
                 
                 smpImageView.image = UIImage(systemName: "checkmark.circle")
@@ -70,6 +73,7 @@ class ShowEquipmentViewController: ViewController {
         else {
             
             smpImageView.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            
             if #available(iOS 13.0, *) {
                 
                 smpImageView.image = UIImage(systemName: "xmark.circle")
@@ -78,7 +82,6 @@ class ShowEquipmentViewController: ViewController {
                 smpImageView.image = UIImage(named: "multiply")
             }
         }
-        
     }
     
     private func setupView() {
@@ -144,7 +147,6 @@ class ShowEquipmentViewController: ViewController {
         }
     }
     
-    
     @IBAction func segmentControlAction(_ sender: Any) {
         
         let getIndex = segmentControl.selectedSegmentIndex
@@ -165,8 +167,6 @@ class ShowEquipmentViewController: ViewController {
         }
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "RegisterHoursSegue") {
@@ -181,10 +181,4 @@ class ShowEquipmentViewController: ViewController {
             destinationVC.Equipment = self.equipment
         }
     }
-    
-    
-    
-    
-    
-    
 }

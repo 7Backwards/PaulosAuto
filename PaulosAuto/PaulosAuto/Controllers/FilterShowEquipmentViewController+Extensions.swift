@@ -1,5 +1,5 @@
 //
-//  ListarequipmentController+Extensions.swift
+//  FilterShowEquipmentViewController+Extensions.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 23/03/2020.

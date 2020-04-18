@@ -1,5 +1,5 @@
 //
-//  ListarEquipmentoController.swift
+//  ListEquipmentViewController.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 12/03/2020.
@@ -58,6 +58,7 @@ class ListEquipmentViewController: ViewController {
             return equipmentArray.sorted {
                 var isSorted = false
                 if let first = $0.dateAssignment, let second = $1.dateAssignment {
+                    
                     isSorted = first > second
                 }
                 return isSorted
@@ -67,6 +68,7 @@ class ListEquipmentViewController: ViewController {
             return equipmentArray.sorted {
                 var isSorted = false
                 if let first = $0.currentHours, let second = $1.currentHours {
+                    
                     isSorted = first < second
                 }
                 return isSorted
@@ -76,6 +78,7 @@ class ListEquipmentViewController: ViewController {
             return equipmentArray.sorted {
                 var isSorted = false
                 if let first = $0.model, let second = $1.model {
+                    
                     isSorted = first < second
                 }
                 return isSorted
@@ -85,18 +88,20 @@ class ListEquipmentViewController: ViewController {
             return equipmentArray.sorted {
                 var isSorted = false
                 if let first = $0.serialNumber, let second = $1.serialNumber {
+                    
                     isSorted = first < second
                 }
                 return isSorted
             }
             
         default: return equipmentArray
-    }
+        }
     }
     
     
     
     // MARK: - Public
+    
     
     override func viewDidLoad() {
         
@@ -104,9 +109,7 @@ class ListEquipmentViewController: ViewController {
         setupEquipmentoController()
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -122,7 +125,6 @@ class ListEquipmentViewController: ViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    
     func smpfilterArray() {
         
         smpFilteredEquipments = equipments.filter { (Equipmento) -> Bool in
@@ -131,18 +133,14 @@ class ListEquipmentViewController: ViewController {
         
     }
     
-    
     func smpAndSearchFilter() {
         
         smpAndSearchFilteredEquipments = searchFilteredEquipments.filter { (Equipmento) -> Bool in
             return Equipmento.smp == true
         }
-        
     }
     
-    
     func addNavBarFilter() {
-        
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: self, action: #selector(rightButtonAction))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
@@ -167,7 +165,6 @@ class ListEquipmentViewController: ViewController {
             return self.filterOrderBy(equipmentArray: newEquipmentArray)
         }
     }
-
 
     override func didReceiveMemoryWarning() {
         
@@ -225,8 +222,6 @@ class ListEquipmentViewController: ViewController {
         self.collectionView.reloadData() // a refresh the tableView.
 
     }
-    
-    
 }
 
 
