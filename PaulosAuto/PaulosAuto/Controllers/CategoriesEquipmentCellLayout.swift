@@ -28,7 +28,7 @@ class CategoriesEquipmentCellLayout : UICollectionViewFlowLayout {
     }
     
     
-    // MARK: - Functions
+    // MARK: - Public
     
     
     override init() {

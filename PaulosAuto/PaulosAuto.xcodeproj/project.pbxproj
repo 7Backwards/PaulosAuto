@@ -19,13 +19,13 @@
 		B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B382429189300FBBD4B /* ShowEquipmentViewController.swift */; };
 		B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */; };
 		B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */; };
-		B09FE975242B81BC00EE2FA1 /* ListEquipmentLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE974242B81BC00EE2FA1 /* ListEquipmentLayoutCell.swift */; };
 		B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */; };
 		B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */; };
 		B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */; };
 		B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */; };
 		B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */; };
 		B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D3724493CD9009F9008 /* DataDelegate.swift */; };
+		B0B74E04244DB0C00069C352 /* ListEquipmentLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */; };
 		B0CFA3F5243E3C1D00E2BAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CFA3F3243E3C1D00E2BAD0 /* Main.storyboard */; };
 		FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */; };
 		FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0D242064020033B901 /* UIView+Extensions.swift */; };
@@ -51,13 +51,13 @@
 		B08B3B382429189300FBBD4B /* ShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentViewController.swift; sourceTree = "<group>"; };
 		B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
-		B09FE974242B81BC00EE2FA1 /* ListEquipmentLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentLayoutCell.swift; path = PaulosAuto/Extensions/ListEquipmentLayoutCell.swift; sourceTree = SOURCE_ROOT; };
 		B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEquipmentHoursViewController.swift; sourceTree = "<group>"; };
 		B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemViewController.swift; sourceTree = "<group>"; };
 		B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterShowEquipmentViewController.swift; sourceTree = "<group>"; };
 		B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCategoriesCell.swift; sourceTree = "<group>"; };
 		B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesEquipmentCellLayout.swift; path = PaulosAuto/Controllers/CategoriesEquipmentCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B0B32D3724493CD9009F9008 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
+		B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentLayoutCell.swift; path = PaulosAuto/Controllers/ListEquipmentLayoutCell.swift; sourceTree = SOURCE_ROOT; };
 		B0CFA3F4243E3C1D00E2BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		FA05FB0D242064020033B901 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		FA05FB0924204BE50033B901 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				B09FE974242B81BC00EE2FA1 /* ListEquipmentLayoutCell.swift */,
 				B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */,
+				B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -313,9 +313,9 @@
 				B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */,
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
-				B09FE975242B81BC00EE2FA1 /* ListEquipmentLayoutCell.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
+				B0B74E04244DB0C00069C352 /* ListEquipmentLayoutCell.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
