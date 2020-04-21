@@ -24,6 +24,8 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var modelView: UIView!
     @IBOutlet weak var serialNumberView: UIView!
     @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var barView: UIView!
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var dateContractCheckImageView: UIImageView!
     @IBOutlet weak var hoursUtilizationCheckImageView: UIImageView!
     @IBOutlet weak var serialNumberCheckImageView: UIImageView!
@@ -33,8 +35,6 @@ class FilterShowEquipmentViewController: ViewController {
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var outerViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var barView: UIView!
-    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var orderByStackView: UIStackView!
     

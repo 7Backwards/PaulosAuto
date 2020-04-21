@@ -17,15 +17,16 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var reportProblemButton: UIButton!
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var currentHoursTextView: UITextView!
     @IBOutlet weak var problemDescriptionTextView: UITextView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var handlerView: UIView!
     
     
     // MARK: - Properties
+    
     
     var Equipment : Equipment!
     
@@ -82,7 +83,6 @@ class ReportProblemViewController: ViewController {
         super.viewWillDisappear(animated)
         view.removeGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onDrage(_:))))
         NotificationCenter.default.removeObserver(self)
-        
     }
     
     
