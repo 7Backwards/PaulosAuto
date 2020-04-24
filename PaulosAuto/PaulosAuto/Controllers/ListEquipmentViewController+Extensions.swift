@@ -11,7 +11,7 @@ import UIKit
 
 extension ListEquipmentViewController : DataDelegate {
     
-
+    
     // MARK: - Public
     
     
@@ -36,6 +36,67 @@ extension ListEquipmentViewController : DataDelegate {
 extension ListEquipmentViewController : UICollectionViewDataSource {
     
     
+    private func setCell(equipmentArray: [EquipmentModel], indexPath: IndexPath) -> CollectionViewEquipmentsCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipmentsCell", for: indexPath) as! CollectionViewEquipmentsCell
+        
+        if !equipmentArray.isEmpty {
+            
+            if let imageName = equipmentArray[indexPath.row].image {
+                
+                let decodedData = NSData(base64Encoded: imageName, options: [])
+                if let data = decodedData {
+                    
+                    let decodedimage = UIImage(data: data as Data)
+                    cell.EquipmentImageView.image = decodedimage
+                } else {
+                    
+                    print("error with decodedData")
+                }
+            } else {
+                
+                print("error with base64String")
+            }
+            
+            if let plateEquipment = equipmentArray[indexPath.row].plate {
+                
+                cell.plateEquipmentLabel.text = plateEquipment
+            }
+            
+            if let yearequipment = equipmentArray[indexPath.row].year {
+                
+                cell.yearEquipmentLabel.text = "\(yearequipment)"
+            }
+            
+            if let modelText = equipmentArray[indexPath.row].model {
+                
+                cell.modelEquipmentLabel.text = modelText
+            }
+            if let currentHoursText = equipmentArray[indexPath.row].currentHours {
+                
+                cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
+            }
+            
+            if let numeroSerieText = equipmentArray[indexPath.row].serialNumber {
+                
+                cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
+            }
+            
+            if let smpActive = equipmentArray[indexPath.row].smp {
+                
+                if smpActive {
+                    
+                    cell.smpLabel.alpha = 1
+                }
+                else {
+                    
+                    cell.smpLabel.alpha = 0
+                }
+            }
+        }
+        return cell
+        
+    }
     // MARK: - Public
     
     
@@ -61,7 +122,6 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
                 
                 smpfilterArray()
                 return self.filtercategory(equipmentArray: smpFilteredEquipments).count
-                
             }
             else {
                 
@@ -72,215 +132,33 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewEquipmentsCell", for: indexPath) as! CollectionViewEquipmentsCell
+        let cell: CollectionViewEquipmentsCell
+        var equipmentsFilteredAndOrdered : [EquipmentModel]
         
         if (searchActive && !searchFilteredEquipments.isEmpty) {
             
             if smpActive {
                 
-                var equipmentsFilteredAndOrdered : [EquipmentModel]
-                
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpAndSearchFilteredEquipments)
-                
-                if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
-                        
-                    let decodedData = NSData(base64Encoded: imageName, options: [])
-                        if let data = decodedData {
-                            
-                            let decodedimage = UIImage(data: data as Data)
-                            cell.EquipmentImageView.image = decodedimage
-                        } else {
-                            
-                            print("error with decodedData")
-                        }
-                    } else {
-                        
-                        print("error with base64String")
-                    }
-                
-                if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
-                    
-                    cell.plateEquipmentLabel.text = plateEquipment
-                }
-                
-                if let yearequipment = equipmentsFilteredAndOrdered[indexPath.row].year {
-                    
-                    cell.yearEquipmentLabel.text = "\(yearequipment)"
-                }
-                
-                if let modelText = equipmentsFilteredAndOrdered[indexPath.row].model {
-                    
-                    cell.modelEquipmentLabel.text = modelText
-                }
-                if let currentHoursText = equipmentsFilteredAndOrdered[indexPath.row].currentHours {
-                    
-                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
-                }
-                
-                if let numeroSerieText = equipmentsFilteredAndOrdered[indexPath.row].serialNumber {
-                    
-                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
-                }
-                cell.smpLabel.alpha = 1
+                cell = self.setCell(equipmentArray: equipmentsFilteredAndOrdered, indexPath: indexPath)
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [EquipmentModel]
-                
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: searchFilteredEquipments)
-                
-                if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
-                    
-                    let decodedData = NSData(base64Encoded: imageName, options: [])
-                        if let data = decodedData {
-                            
-                            let decodedimage = UIImage(data: data as Data)
-                            cell.EquipmentImageView.image = decodedimage
-                        } else {
-                            
-                            print("error with decodedData")
-                        }
-                    } else {
-                        
-                        print("error with base64String")
-                    }
-                
-                if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
-                    
-                    cell.plateEquipmentLabel.text = plateEquipment
-                }
-                
-                if let yearequipment = equipmentsFilteredAndOrdered[indexPath.row].year {
-                    
-                    cell.yearEquipmentLabel.text = "\(yearequipment)"
-                }
-                
-                if let modelText = equipmentsFilteredAndOrdered[indexPath.row].model {
-                    
-                    cell.modelEquipmentLabel.text = modelText
-                }
-                if let currentHoursText = equipmentsFilteredAndOrdered[indexPath.row].currentHours {
-                    
-                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
-                }
-                
-                if let numeroSerieText = equipmentsFilteredAndOrdered[indexPath.row].serialNumber {
-                    
-                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
-                }
-                if equipmentsFilteredAndOrdered[indexPath.row].smp == true {
-                    
-                    cell.smpLabel.alpha = 1
-                }
-                else {
-                    
-                    cell.smpLabel.alpha = 0
-                }
+                cell = self.setCell(equipmentArray: equipmentsFilteredAndOrdered, indexPath: indexPath)
             }
         }
         else {
+            
             if smpActive {
                 
-                var equipmentsFilteredAndOrdered : [EquipmentModel]
-                
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpFilteredEquipments)
-                
-                if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
-                    
-                   let decodedData = NSData(base64Encoded: imageName, options: [])
-                        if let data = decodedData {
-                            
-                            let decodedimage = UIImage(data: data as Data)
-                            cell.EquipmentImageView.image = decodedimage
-                        } else {
-                            
-                            print("error with decodedData")
-                        }
-                    } else {
-                        
-                        print("error with base64String")
-                }
-                
-                if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
-                    
-                    cell.plateEquipmentLabel.text = plateEquipment
-                }
-                
-                if let yearequipment = equipmentsFilteredAndOrdered[indexPath.row].year {
-                    
-                    cell.yearEquipmentLabel.text = "\(yearequipment)"
-                }
-                
-                if let modelText = equipmentsFilteredAndOrdered[indexPath.row].model {
-                    
-                    cell.modelEquipmentLabel.text = modelText
-                }
-                if let currentHoursText = equipmentsFilteredAndOrdered[indexPath.row].currentHours {
-                    
-                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
-                }
-                
-                if let numeroSerieText = equipmentsFilteredAndOrdered[indexPath.row].serialNumber {
-                    
-                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
-                }
-                cell.smpLabel.alpha = 1
-                
+                cell = self.setCell(equipmentArray: equipmentsFilteredAndOrdered, indexPath: indexPath)
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [EquipmentModel]
-                
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: equipments)
-                
-                
-                if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
-                    
-                    let decodedData = NSData(base64Encoded: imageName, options: [])
-                        if let data = decodedData {
-                            
-                            let decodedimage = UIImage(data: data as Data)
-                            cell.EquipmentImageView.image = decodedimage
-                        } else {
-                            
-                            print("error with decodedData")
-                        }
-                    } else {
-                        
-                        print("error with base64String")
-                }
-                
-                if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
-                    
-                    cell.plateEquipmentLabel.text = plateEquipment
-                }
-                
-                if let yearequipment = equipmentsFilteredAndOrdered[indexPath.row].year {
-                    
-                    cell.yearEquipmentLabel.text = "\(yearequipment)"
-                }
-                
-                if let modelText = equipmentsFilteredAndOrdered[indexPath.row].model {
-                    
-                    cell.modelEquipmentLabel.text = modelText
-                }
-                if let currentHoursText = equipmentsFilteredAndOrdered[indexPath.row].currentHours {
-                    
-                    cell.currenthoursEquipmentLabel.text = "\(currentHoursText) H"
-                }
-                
-                if let numeroSerieText = equipmentsFilteredAndOrdered[indexPath.row].serialNumber {
-                    
-                    cell.serialNumberEquipmentLabel.text = "\(numeroSerieText)"
-                }
-                if equipmentsFilteredAndOrdered[indexPath.row].smp == true {
-                    
-                    cell.smpLabel.alpha = 1
-                }
-                else {
-                    
-                    cell.smpLabel.alpha = 0
-                }
+                cell = self.setCell(equipmentArray: equipmentsFilteredAndOrdered, indexPath: indexPath)
             }
         }
         cell.cellView.setCardView(view: cell.cellView)
