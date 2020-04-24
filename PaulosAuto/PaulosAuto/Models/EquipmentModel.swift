@@ -25,7 +25,8 @@ class EquipmentModel: Codable {
     case plate = "plate"
     case type = "type"
     case dateAssignment = "dateAssignment"
-    case dateStartAssignment = "dateStartASsignment"
+    case dateStartAssignment = "dateStartAssignment"
+    case dateEndAssignment = "dateEndAssignment"
     case image = "image"
   }
 
@@ -37,12 +38,12 @@ class EquipmentModel: Codable {
   var brand: String?
   var plate: String?
   var type: String?
-  var dateAssignment: String?
-  var dateStartAssignment: String?
-  var dateEndAssignment: String?
+  var dateAssignment: Date?
+  var dateStartAssignment: Date?
+  var dateEndAssignment: Date?
   var image: String?
 
-    init (model: String?, serialNumber: String?, year: Int?, currentHours: Int?, smp: Bool?, brand: String?, plate: String?, type: String?, dateAssignment: String, dateStartAssignment: String,image: String?) {
+    init (model: String?, serialNumber: String?, year: Int?, currentHours: Int?, smp: Bool?, brand: String?, plate: String?, type: String?, dateAssignment: String?, dateStartAssignment: String?, dateEndAssignment: String?, image: String?) {
     
     self.model = model
     self.serialNumber = serialNumber
@@ -52,43 +53,64 @@ class EquipmentModel: Codable {
     self.brand = brand
     self.plate = plate
     self.type = type
-        self.dateAssignment = dateAssignment
-        self.dateStartAssignment = dateStartAssignment
     self.image = image
         
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
+      dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     
-//    if let date = dateFormatter.date(from: dateAssignment) {
-//
-//        self.dateAssignment = date
-//    }
-//
-//    if let date = dateFormatter.date(from: dateStartAssignment) {
-//
-//        self.dateStartAssignment = date
-//    }
-//
-//        if let date = dateFormatter.date(from:  "01/01/2100") {
-//
-//        self.dateEndAssignment = date
-//    }
+        if let dateAssignment = dateAssignment {
+            
+            if let date = dateFormatter.date(from: dateAssignment) {
+
+                self.dateAssignment = date
+            }
+        }
+    
+
+    if let dateStartAssignment = dateStartAssignment {
+        
+        if let date = dateFormatter.date(from: dateStartAssignment) {
+
+            self.dateStartAssignment = date
+        }
+    }
+        
+    if let dateEndAssignment = dateEndAssignment {
+        
+        if let date = dateFormatter.date(from: dateEndAssignment) {
+
+            self.dateEndAssignment = date
+        }
+    }
     
   }
 
-  required init(from decoder: Decoder) throws {
+    static let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter
+    }()
+    
+    required convenience init(from decoder: Decoder) throws {
+        
+
+        
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    model = try container.decodeIfPresent(String.self, forKey: .model)
-    serialNumber = try container.decodeIfPresent(String.self, forKey: .serialNumber)
-    year = try container.decodeIfPresent(Int.self, forKey: .year)
-    currentHours = try container.decodeIfPresent(Int.self, forKey: .currentHours)
-    smp = try container.decodeIfPresent(Bool.self, forKey: .smp)
-    brand = try container.decodeIfPresent(String.self, forKey: .brand)
-    plate = try container.decodeIfPresent(String.self, forKey: .plate)
-    type = try container.decodeIfPresent(String.self, forKey: .type)
-    dateAssignment = try container.decodeIfPresent(String.self, forKey: .dateAssignment)
-    dateStartAssignment = try container.decodeIfPresent(String.self, forKey: .dateStartAssignment)
-    image = try container.decodeIfPresent(String.self, forKey: .image)
+    let model = try container.decodeIfPresent(String.self, forKey: .model)
+    let serialNumber = try container.decodeIfPresent(String.self, forKey: .serialNumber)
+    let year = try container.decodeIfPresent(Int.self, forKey: .year)
+    let currentHours = try container.decodeIfPresent(Int.self, forKey: .currentHours)
+    let smp = try container.decodeIfPresent(Bool.self, forKey: .smp)
+    let brand = try container.decodeIfPresent(String.self, forKey: .brand)
+    let plate = try container.decodeIfPresent(String.self, forKey: .plate)
+    let type = try container.decodeIfPresent(String.self, forKey: .type)
+    let dateAssignmentString = try container.decodeIfPresent(String.self, forKey: .dateAssignment)
+    let dateStartAssignmentString = (try container.decodeIfPresent(String.self, forKey: .dateStartAssignment))
+    let dateEndAssignmentString = (try container.decodeIfPresent(String.self, forKey: .dateEndAssignment))
+    let image = try container.decodeIfPresent(String.self, forKey: .image)
+    self.init(model: model, serialNumber: serialNumber, year: year, currentHours: currentHours, smp: smp, brand: brand, plate: plate, type: type, dateAssignment: dateAssignmentString, dateStartAssignment: dateStartAssignmentString, dateEndAssignment: dateEndAssignmentString, image: image)
   }
+    
+    
 
 }

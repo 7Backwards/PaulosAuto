@@ -26,17 +26,11 @@ class RQ_ListEquipments {
                 print(result)
                 completion(dataEquipments,nil)
 
-            
-                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
             }
         }
-       
-            
-        
-        
     }
 }

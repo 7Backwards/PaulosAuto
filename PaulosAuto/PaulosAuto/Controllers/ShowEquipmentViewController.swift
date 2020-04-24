@@ -61,12 +61,20 @@ class ShowEquipmentViewController: ViewController {
         } else {
             print("error with base64String")
         }
-        dateAgreementLabel.text = equipment.dateAssignment
-        dateStartAgreementLabel.text = equipment.dateStartAssignment
-        dateEndAgreementLabel.text = equipment.dateEndAssignment
-//        dateAgreementLabel.text = getFormattedDate(date: equipment.dateAssignment!, format: "dd/MM/yyyy")
-//        dateStartAgreementLabel.text = getFormattedDate(date: equipment.dateStartAssignment!, format: "dd/MM/yyyy")
-//        dateEndAgreementLabel.text = getFormattedDate(date: equipment.dateEndAssignment!, format: "dd/MM/yyyy")
+        if let dataStartAssignment = equipment.dateAssignment {
+             dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+        }
+        
+        if let dataStartAssignment = equipment.dateStartAssignment {
+             dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+        }
+        
+        if let dataEndAssignment = equipment.dateEndAssignment {
+             dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
+        }
+       
+        
+        
         brandLabel.text = equipment.brand
         plateLabel.text = equipment.plate
         currentHoursLabel.text = "\(equipment.currentHours!)"

@@ -100,10 +100,9 @@ class ListEquipmentViewController: ViewController {
     }
     
     
-    
     // MARK: - Public
     
-    private let RQ_listEquipments = RQ_ListEquipments()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -111,7 +110,7 @@ class ListEquipmentViewController: ViewController {
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         let id = 1
-        RQ_listEquipments.repos(username: id, { (equipmentData,error) in
+        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
             if let equipmentData = equipmentData {
                 
                 DispatchQueue.main.async {
