@@ -3,20 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */; };
 		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
 		B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */; };
-		B01CA8D1244E3C84000228A5 /* ClientNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* ClientNetworking.swift */; };
+		B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* Networking.swift */; };
 		B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */; };
 		B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */; };
 		B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D7244F81F7000228A5 /* ApiConstants.swift */; };
 		B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */; };
 		B01CA8DC244F8227000228A5 /* RQ_EquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8DB244F8227000228A5 /* RQ_EquipmentHistory.swift */; };
-		B01CA8DF244F82EF000228A5 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = B01CA8DE244F82EF000228A5 /* ObjectMapper */; };
 		B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
@@ -40,14 +39,13 @@
 		FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* InvoiceViewController.swift */; };
 		FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListEquipmentViewController.swift */; };
 		FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */; };
-		FACD1823241D35F10085574C /* EquipamentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD1822241D35F10085574C /* EquipamentStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedController+Extensions.swift"; sourceTree = "<group>"; };
 		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterShowEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B01CA8D0244E3C84000228A5 /* ClientNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientNetworking.swift; sourceTree = "<group>"; };
+		B01CA8D0244E3C84000228A5 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipments.swift; sourceTree = "<group>"; };
 		B01CA8D7244F81F7000228A5 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 		FACD18172419AF880085574C /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEquipmentViewController.swift; sourceTree = "<group>"; };
 		FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipmentsCell.swift; sourceTree = "<group>"; };
-		FACD1822241D35F10085574C /* EquipamentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipamentStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01CA8DF244F82EF000228A5 /* ObjectMapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +92,7 @@
 		B01CA8CF244E3C64000228A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B01CA8D0244E3C84000228A5 /* ClientNetworking.swift */,
+				B01CA8D0244E3C84000228A5 /* Networking.swift */,
 				B01CA8D4244F8193000228A5 /* Requests */,
 			);
 			path = Network;
@@ -257,7 +253,6 @@
 		FACD1821241D35DA0085574C /* Structure */ = {
 			isa = PBXGroup;
 			children = (
-				FACD1822241D35F10085574C /* EquipamentStruct.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -279,7 +274,6 @@
 			);
 			name = PaulosAuto;
 			packageProductDependencies = (
-				B01CA8DE244F82EF000228A5 /* ObjectMapper */,
 			);
 			productName = PaulosAuto;
 			productReference = B0658A9E2417E55500245732 /* PaulosAuto.app */;
@@ -310,7 +304,6 @@
 			);
 			mainGroup = B0658A952417E55500245732;
 			packageReferences = (
-				B01CA8DD244F82EF000228A5 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = B0658A9F2417E55500245732 /* Products */;
 			projectDirPath = "";
@@ -348,11 +341,10 @@
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
-				B01CA8D1244E3C84000228A5 /* ClientNetworking.swift in Sources */,
+				B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
-				FACD1823241D35F10085574C /* EquipamentStruct.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
 				B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */,
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,
@@ -566,25 +558,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B01CA8DD244F82EF000228A5 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.5.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B01CA8DE244F82EF000228A5 /* ObjectMapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B01CA8DD244F82EF000228A5 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
-			productName = ObjectMapper;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0658A962417E55500245732 /* Project object */;
 }
