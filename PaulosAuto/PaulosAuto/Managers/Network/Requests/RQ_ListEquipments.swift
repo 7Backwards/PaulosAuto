@@ -12,12 +12,9 @@ class RQ_ListEquipments {
     
     
     func repos(username: Int, _ completion: @escaping ([EquipmentModel]?, Error?) -> Void ) {
-
-        let request = URLRequest(url: ApiConstants.base.appendingPathComponent("equipamentos/1"))
         
-
+        let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent("1"))!)
         let url = request.url
-
         
         Networking.fetchAPIData(url: url!) { (result: Result<[EquipmentModel], Error>) in
             switch result {

@@ -51,30 +51,29 @@ class ShowEquipmentViewController: ViewController {
         equipmentTypeLabel.text = equipment.type
         serialNumberLabel.text = equipment.serialNumber
         if equipment.image != nil {
+            
             let decodedData = NSData(base64Encoded: equipment.image!, options: [])
             if let data = decodedData {
+                
                 let decodedimage = UIImage(data: data as Data)
                 equipmentImageView.image = decodedimage
-            } else {
-                print("error with decodedData")
             }
-        } else {
-            print("error with base64String")
         }
         if let dataStartAssignment = equipment.dateAssignment {
+            
              dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
         }
         
         if let dataStartAssignment = equipment.dateStartAssignment {
+            
              dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
         }
         
         if let dataEndAssignment = equipment.dateEndAssignment {
+            
              dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
         }
        
-        
-        
         brandLabel.text = equipment.brand
         plateLabel.text = equipment.plate
         currentHoursLabel.text = "\(equipment.currentHours!)"

@@ -37,7 +37,7 @@ class Networking: NSObject {
             
             guard error == nil else {
                 completion(.failure(error!))
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 return
             }
             guard response != nil else {

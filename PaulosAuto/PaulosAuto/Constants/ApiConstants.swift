@@ -8,8 +8,18 @@
 
 import Foundation
 
+
+
 struct ApiConstants {
     
-    static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")!
+    static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")
+    static let listEquipmentURL = base?.appendingPathComponent("equipamentos/")
+    static let dateFormatter : DateFormatter = {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return dateFormatter
+    }()
+    
 }
 
