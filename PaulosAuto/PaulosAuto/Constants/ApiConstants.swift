@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct ApiConstants {
+    
+    static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")!
+}
+
