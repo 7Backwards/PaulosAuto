@@ -44,7 +44,7 @@ class FilterShowEquipmentViewController: ViewController {
     var delegate: DataDelegate?  
     var activeOrderByFiltered : Int?
     var activeCategoryFiltered : String?
-    var equipments: [Equipment] = []
+    var equipments: [EquipmentModel] = []
     var categoryEquipments: [String] = []
     let cellLayout = CategoriesEquipmentCellLayout()
     let listEquipmentViewController = ListEquipmentViewController()

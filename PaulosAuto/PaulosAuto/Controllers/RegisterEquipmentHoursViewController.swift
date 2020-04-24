@@ -25,7 +25,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Properties
     
     
-    var Equipmento : Equipment!
+    var Equipmento : EquipmentModel!
     
     
     // MARK: - Private

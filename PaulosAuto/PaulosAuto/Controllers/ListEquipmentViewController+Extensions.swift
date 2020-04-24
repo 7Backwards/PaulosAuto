@@ -78,14 +78,25 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
             
             if smpActive {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpAndSearchFilteredEquipments)
                 
                 if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
-                    
-                    cell.EquipmentImageView.image = UIImage(named: imageName)
-                }
+                        
+                    let decodedData = NSData(base64Encoded: imageName, options: [])
+                        if let data = decodedData {
+                            
+                            let decodedimage = UIImage(data: data as Data)
+                            cell.EquipmentImageView.image = decodedimage
+                        } else {
+                            
+                            print("error with decodedData")
+                        }
+                    } else {
+                        
+                        print("error with base64String")
+                    }
                 
                 if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
                     
@@ -114,14 +125,25 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: searchFilteredEquipments)
                 
                 if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
                     
-                    cell.EquipmentImageView.image = UIImage(named: imageName)
-                }
+                    let decodedData = NSData(base64Encoded: imageName, options: [])
+                        if let data = decodedData {
+                            
+                            let decodedimage = UIImage(data: data as Data)
+                            cell.EquipmentImageView.image = decodedimage
+                        } else {
+                            
+                            print("error with decodedData")
+                        }
+                    } else {
+                        
+                        print("error with base64String")
+                    }
                 
                 if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
                     
@@ -159,13 +181,24 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         else {
             if smpActive {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpFilteredEquipments)
                 
                 if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
                     
-                    cell.EquipmentImageView.image = UIImage(named: imageName)
+                   let decodedData = NSData(base64Encoded: imageName, options: [])
+                        if let data = decodedData {
+                            
+                            let decodedimage = UIImage(data: data as Data)
+                            cell.EquipmentImageView.image = decodedimage
+                        } else {
+                            
+                            print("error with decodedData")
+                        }
+                    } else {
+                        
+                        print("error with base64String")
                 }
                 
                 if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
@@ -196,14 +229,25 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: equipments)
                 
                 
                 if let imageName = equipmentsFilteredAndOrdered[indexPath.row].image {
                     
-                    cell.EquipmentImageView.image = UIImage(named: imageName)
+                    let decodedData = NSData(base64Encoded: imageName, options: [])
+                        if let data = decodedData {
+                            
+                            let decodedimage = UIImage(data: data as Data)
+                            cell.EquipmentImageView.image = decodedimage
+                        } else {
+                            
+                            print("error with decodedData")
+                        }
+                    } else {
+                        
+                        print("error with base64String")
                 }
                 
                 if let plateEquipment = equipmentsFilteredAndOrdered[indexPath.row].plate {
@@ -257,7 +301,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
             
             if(smpActive) {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpAndSearchFilteredEquipments)
                 
@@ -270,7 +314,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: searchFilteredEquipments)
                 
@@ -286,7 +330,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
             
             if(smpActive) {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: smpFilteredEquipments)
                 
@@ -299,7 +343,7 @@ extension ListEquipmentViewController: UICollectionViewDelegate {
             }
             else {
                 
-                var equipmentsFilteredAndOrdered : [Equipment]
+                var equipmentsFilteredAndOrdered : [EquipmentModel]
                 
                 equipmentsFilteredAndOrdered = self.filtercategory(equipmentArray: equipments)
                 

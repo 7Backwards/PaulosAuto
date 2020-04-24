@@ -28,7 +28,7 @@ class ReportProblemViewController: ViewController {
     // MARK: - Properties
     
     
-    var Equipment : Equipment!
+    var Equipment : EquipmentModel!
     
     
     // MARK: - Private

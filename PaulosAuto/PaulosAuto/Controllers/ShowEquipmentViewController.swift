@@ -38,7 +38,7 @@ class ShowEquipmentViewController: ViewController {
     
     
     var serialNumberID: String!
-    var equipment : Equipment!
+    var equipment : EquipmentModel!
     var isAnimated = false
     
     
@@ -50,10 +50,23 @@ class ShowEquipmentViewController: ViewController {
         modelLabel.text = equipment.model
         equipmentTypeLabel.text = equipment.type
         serialNumberLabel.text = equipment.serialNumber
-        equipmentImageView.image = UIImage(named: equipment.image!)
-        dateAgreementLabel.text = getFormattedDate(date: equipment.dateAssignment!, format: "dd/MM/yyyy")
-        dateStartAgreementLabel.text = getFormattedDate(date: equipment.dateStartAssignment!, format: "dd/MM/yyyy")
-        dateEndAgreementLabel.text = getFormattedDate(date: equipment.dateEndAssignment!, format: "dd/MM/yyyy")
+        if equipment.image != nil {
+            let decodedData = NSData(base64Encoded: equipment.image!, options: [])
+            if let data = decodedData {
+                let decodedimage = UIImage(data: data as Data)
+                equipmentImageView.image = decodedimage
+            } else {
+                print("error with decodedData")
+            }
+        } else {
+            print("error with base64String")
+        }
+        dateAgreementLabel.text = equipment.dateAssignment
+        dateStartAgreementLabel.text = equipment.dateStartAssignment
+        dateEndAgreementLabel.text = equipment.dateEndAssignment
+//        dateAgreementLabel.text = getFormattedDate(date: equipment.dateAssignment!, format: "dd/MM/yyyy")
+//        dateStartAgreementLabel.text = getFormattedDate(date: equipment.dateStartAssignment!, format: "dd/MM/yyyy")
+//        dateEndAgreementLabel.text = getFormattedDate(date: equipment.dateEndAssignment!, format: "dd/MM/yyyy")
         brandLabel.text = equipment.brand
         plateLabel.text = equipment.plate
         currentHoursLabel.text = "\(equipment.currentHours!)"
