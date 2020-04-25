@@ -13,15 +13,15 @@ class RQ_ListEquipments {
     
     func repos(username: Int, _ completion: @escaping ([EquipmentModel]?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent("1"))!)
+        let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent(String(username)))!)
         let url = request.url
         
         Networking.fetchAPIData(url: url!) { (result: Result<[EquipmentModel], Error>) in
             switch result {
                 
-            case .success(let dataEquipments):
+            case .success(let data):
                 print(result)
-                completion(dataEquipments,nil)
+                completion(data,nil)
 
             case .failure(let error):
                 print(result)

@@ -14,6 +14,8 @@ struct ApiConstants {
     
     static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")
     static let listEquipmentURL = base?.appendingPathComponent("equipamentos/")
+    static let listEquipmentHistoryURL = base?.appendingPathComponent("intervencoes/")
+    static let listInvoicesURL = base?.appendingPathComponent("faturas/")
     static let dateFormatter : DateFormatter = {
         
         let dateFormatter = DateFormatter()

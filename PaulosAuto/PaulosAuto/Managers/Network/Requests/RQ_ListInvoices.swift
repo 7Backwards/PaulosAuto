@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+class RQ_ListInvoices {
+    
+    
+    func repos(username: Int, _ completion: @escaping ([EquipmentHistoryModel]?, Error?) -> Void ) {
+        
+        let request = URLRequest(url: (ApiConstants.listInvoicesURL?.appendingPathComponent(String(username)))!)
+        let url = request.url
+        
+        Networking.fetchAPIData(url: url!) { (result: Result<[EquipmentHistoryModel], Error>) in
+            switch result {
+                
+            case .success(let data):
+                print(result)
+                completion(data,nil)
+
+            case .failure(let error):
+                print(result)
+                completion(nil,error)
+
+            }
+        }
+    }
+}
