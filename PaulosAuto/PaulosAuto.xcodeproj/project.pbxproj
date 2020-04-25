@@ -32,6 +32,7 @@
 		B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */; };
 		B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D3724493CD9009F9008 /* DataDelegate.swift */; };
 		B0B74E04244DB0C00069C352 /* ListEquipmentLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */; };
+		B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7E2092454B85F005995A3 /* InvoiceModel.swift */; };
 		B0CFA3F5243E3C1D00E2BAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CFA3F3243E3C1D00E2BAD0 /* Main.storyboard */; };
 		B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */; };
 		FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */; };
@@ -70,6 +71,7 @@
 		B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesEquipmentCellLayout.swift; path = PaulosAuto/Controllers/CategoriesEquipmentCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B0B32D3724493CD9009F9008 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
 		B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentLayoutCell.swift; path = PaulosAuto/Controllers/ListEquipmentLayoutCell.swift; sourceTree = SOURCE_ROOT; };
+		B0C7E2092454B85F005995A3 /* InvoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvoiceModel.swift; path = ../../../../../../Desktop/InvoiceModel.swift; sourceTree = "<group>"; };
 		B0CFA3F4243E3C1D00E2BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquipmentHistoryModel.swift; path = ../../../../../../Desktop/EquipmentHistoryModel.swift; sourceTree = "<group>"; };
 		FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */,
 				B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */,
+				B0C7E2092454B85F005995A3 /* InvoiceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */,
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */,
+				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
 				B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
