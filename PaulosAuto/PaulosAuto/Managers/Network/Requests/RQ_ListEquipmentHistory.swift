@@ -1,5 +1,5 @@
 //
-//  RQ_EquipmentHistory.swift
+//  RQ_ListEquipmentHistory.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 21/04/2020.
