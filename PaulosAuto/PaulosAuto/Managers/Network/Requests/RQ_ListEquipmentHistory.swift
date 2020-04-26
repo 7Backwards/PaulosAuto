@@ -13,7 +13,7 @@ class RQ_ListEquipmentHistory {
     
     func repos(serialNumber: String, _ completion: @escaping ([EquipmentHistoryModel]?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent(serialNumber))!)
+        let request = URLRequest(url: (ApiConstants.listEquipmentHistoryURL?.appendingPathComponent(serialNumber))!)
         let url = request.url
         
         Networking.fetchAPIData(url: url!) { (result: Result<[EquipmentHistoryModel], Error>) in

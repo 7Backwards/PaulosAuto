@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ShowEquipmentViewController: ViewController {
     
     
@@ -32,6 +33,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var historyCollectionView: UICollectionView!
     
     
     // MARK: - Properties
@@ -40,6 +42,13 @@ class ShowEquipmentViewController: ViewController {
     var serialNumberID: String!
     var equipment : EquipmentModel!
     var isAnimated = false
+    var historyEquipment = [EquipmentHistoryModel]()
+    
+    
+    // MARK: - Constants
+    
+    
+    let cellLayout = ListEquipmentHistoryCellLayout()
     
     
     // MARK: - Private
@@ -102,6 +111,25 @@ class ShowEquipmentViewController: ViewController {
                 smpImageView.image = UIImage(named: "multiply")
             }
         }
+        
+        if let serialNumber = equipment.serialNumber {
+            
+            RQ_ListEquipmentHistory().repos(serialNumber: serialNumber, { (historyData,error) in
+                if let historyData = historyData {
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.historyEquipment = historyData
+                        self.historyCollectionView.reloadData()
+                        
+                    }
+                }
+                else if let error = error {
+                    print(error)
+                }
+            })
+        }
+        
     }
     
     private func setupView() {
@@ -117,7 +145,9 @@ class ShowEquipmentViewController: ViewController {
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
         topView.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 0.1, blur: 6, spread: 0)
         topView.layer.masksToBounds = false
-        
+        historyCollectionView.collectionViewLayout = cellLayout
+        historyCollectionView.delegate = self
+        historyCollectionView.dataSource = self
     }
     
     

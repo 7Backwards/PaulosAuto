@@ -6,4 +6,53 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+extension ShowEquipmentViewController: UICollectionViewDelegate {
+    
+    
+    
+}
+
+extension ShowEquipmentViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = historyCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewHistoryEquipmentCell", for: indexPath) as! CollectionViewHistoryEquipmentCell
+        
+        if let description = historyEquipment[indexPath.row].description {
+         
+            cell.descriptionIncidentLabel.text = description
+        }
+        
+        if let date = historyEquipment[indexPath.row].date {
+         
+            cell.dateIncidentLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
+            
+        }
+        
+        if let description = historyEquipment[indexPath.row].endedState {
+            
+            if description {
+                cell.endedLabel.text = "Finalizado"
+            }
+            else {
+                
+            }
+            
+        }
+        
+        cell.cellView.setCardView(view: cell.cellView)
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+            return self.historyEquipment.count
+            
+        }
+    }
+

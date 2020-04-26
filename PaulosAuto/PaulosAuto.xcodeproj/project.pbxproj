@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */; };
 		B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */; };
 		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
 		B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */; };
@@ -31,8 +32,10 @@
 		B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */; };
 		B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */; };
 		B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D3724493CD9009F9008 /* DataDelegate.swift */; };
-		B0B74E04244DB0C00069C352 /* ListEquipmentLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */; };
+		B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B74E03244DB0C00069C352 /* ListEquipmentCellLayout.swift */; };
 		B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7E2092454B85F005995A3 /* InvoiceModel.swift */; };
+		B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7E20B2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift */; };
+		B0C7E20E2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7E20D2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift */; };
 		B0CFA3F5243E3C1D00E2BAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CFA3F3243E3C1D00E2BAD0 /* Main.storyboard */; };
 		B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */; };
 		FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */; };
@@ -44,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentHistoryCellLayout.swift; path = PaulosAuto/Controllers/ListEquipmentHistoryCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedController+Extensions.swift"; sourceTree = "<group>"; };
 		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterShowEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -70,8 +74,10 @@
 		B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCategoriesCell.swift; sourceTree = "<group>"; };
 		B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesEquipmentCellLayout.swift; path = PaulosAuto/Controllers/CategoriesEquipmentCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B0B32D3724493CD9009F9008 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
-		B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentLayoutCell.swift; path = PaulosAuto/Controllers/ListEquipmentLayoutCell.swift; sourceTree = SOURCE_ROOT; };
+		B0B74E03244DB0C00069C352 /* ListEquipmentCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentCellLayout.swift; path = PaulosAuto/Controllers/ListEquipmentCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B0C7E2092454B85F005995A3 /* InvoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvoiceModel.swift; path = ../../../../../../Desktop/InvoiceModel.swift; sourceTree = "<group>"; };
+		B0C7E20B2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHistoryEquipmentCell.swift; sourceTree = "<group>"; };
+		B0C7E20D2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B0CFA3F4243E3C1D00E2BAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquipmentHistoryModel.swift; path = ../../../../../../Desktop/EquipmentHistoryModel.swift; sourceTree = "<group>"; };
 		FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 				FACD181D241AFF980085574C /* ListEquipmentViewController.swift */,
 				B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */,
 				B08B3B382429189300FBBD4B /* ShowEquipmentViewController.swift */,
+				B0C7E20D2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift */,
+				B0C7E20B2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift */,
 				B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */,
 				B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */,
 				B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */,
@@ -238,7 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */,
-				B0B74E03244DB0C00069C352 /* ListEquipmentLayoutCell.swift */,
+				B0B74E03244DB0C00069C352 /* ListEquipmentCellLayout.swift */,
+				B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -341,11 +350,13 @@
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
 				B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */,
+				B0C7E20E2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift in Sources */,
 				B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */,
 				B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */,
 				B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */,
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */,
+				B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */,
 				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
 				B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */,
@@ -362,8 +373,9 @@
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
-				B0B74E04244DB0C00069C352 /* ListEquipmentLayoutCell.swift in Sources */,
+				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
+				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
