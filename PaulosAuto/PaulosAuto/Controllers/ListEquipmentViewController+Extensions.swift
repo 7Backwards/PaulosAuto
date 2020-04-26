@@ -97,6 +97,8 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         return cell
         
     }
+    
+    
     // MARK: - Public
     
     

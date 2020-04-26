@@ -65,6 +65,7 @@ class ListEquipmentViewController: ViewController {
                 print(error)
             }
         })
+        
     }
     
     private func filterOrderBy( equipmentArray : [EquipmentModel])-> [EquipmentModel] {

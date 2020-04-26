@@ -55,8 +55,8 @@ class ListEquipmentCellLayout: UICollectionViewFlowLayout {
     
     func setupLayout() {
         
-        minimumInteritemSpacing = 0
-        minimumLineSpacing = 1
+        minimumInteritemSpacing = 1
+        minimumLineSpacing = 10
         scrollDirection = .vertical
     }
     
