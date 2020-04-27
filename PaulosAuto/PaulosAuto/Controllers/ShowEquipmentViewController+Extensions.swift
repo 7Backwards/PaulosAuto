@@ -38,7 +38,7 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
                 cell.endedLabel.text = "Finalizado"
             }
             else {
-                
+                cell.endedLabel.text = "A decorrer"
             }
             
         }

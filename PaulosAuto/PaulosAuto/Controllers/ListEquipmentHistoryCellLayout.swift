@@ -24,7 +24,7 @@ class ListEquipmentHistoryCellLayout: UICollectionViewFlowLayout {
       
     var itemWidth: CGFloat {
           
-        return collectionView!.frame.width - 20
+        return collectionView!.frame.width
     }
     
     override var itemSize: CGSize {
