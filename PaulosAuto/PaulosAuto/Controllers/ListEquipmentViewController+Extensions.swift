@@ -21,7 +21,7 @@ extension ListEquipmentViewController : DataDelegate {
     }
     
     
-    func updateActiveCategoryFiltered(newActiveCategory: String? ) {
+    func updateActiveCategoryFiltered(newActiveCategory: [String] ) {
         
         self.activeCategoryFiltered = newActiveCategory
     }

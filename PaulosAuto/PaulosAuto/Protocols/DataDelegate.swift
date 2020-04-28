@@ -12,7 +12,7 @@ import UIKit
 
 protocol DataDelegate {
     
-    func updateActiveCategoryFiltered(newActiveCategory: String?)
+    func updateActiveCategoryFiltered(newActiveCategory: [String])
     func updateActiveOrderByFiltered(newOrderBy: Int)
     func reloadCollectionView()
 }

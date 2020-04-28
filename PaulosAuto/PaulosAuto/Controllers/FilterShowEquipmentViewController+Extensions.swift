@@ -28,54 +28,53 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
         
         cell.categoryLabel.text = categoryEquipments[indexPath.row]
         
-        if categoryEquipments[indexPath.row] == activeCategoryFiltered {
+        for category in activeCategoryFiltered {
             
-            cell.cellView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-            cell.cellView.layer.masksToBounds = true
-            cell.cellView.layer.cornerRadius = 20
-            cell.categoryLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
-            cell.checkImageView.isHidden = false
+            if categoryEquipments[indexPath.row] == category {
+                
+                cell.cellView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+                cell.cellView.layer.masksToBounds = true
+                cell.cellView.layer.cornerRadius = 20
+                cell.categoryLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+                cell.checkImageView.isHidden = false
+                return cell
+            }
         }
-        else {
-            
             cell.cellView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
             cell.cellView.layer.masksToBounds = true
             cell.cellView.layer.cornerRadius = 20
             cell.categoryLabel.textColor = .black
             cell.checkImageView.isHidden = true
-        }
-        
-        
-        return cell
+            return cell
     }
-    
-    
-    
-    
 }
 
 extension FilterShowEquipmentViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if self.activeCategoryFiltered == categoryEquipments[indexPath.row] {
+        var i = 0
+        for category in activeCategoryFiltered {
             
-            self.activeCategoryFiltered = nil
+            if categoryEquipments[indexPath.row] == category {
+                
+                activeCategoryFiltered.remove(at: i)
+                self.collectionView.reloadData()
+                refreshListEquipmentCollectionView()
+                return
+            }
+            i+=1
         }
-        else {
-            
-            self.activeCategoryFiltered = categoryEquipments[indexPath.row]
-        }
-        self.collectionView.reloadData()
         
-        if let delegate = self.delegate {
-            
-            delegate.updateActiveCategoryFiltered(newActiveCategory: self.activeCategoryFiltered)
-            delegate.reloadCollectionView()
-        }
+        self.activeCategoryFiltered.append(categoryEquipments[indexPath.row])
+        self.collectionView.reloadData()
+        refreshListEquipmentCollectionView()
+        
 
     }
 }
+
+
 
 extension FilterShowEquipmentViewController : UICollectionViewDelegateFlowLayout {
     

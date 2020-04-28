@@ -43,7 +43,7 @@ class FilterShowEquipmentViewController: ViewController {
     
     var delegate: DataDelegate?  
     var activeOrderByFiltered : Int?
-    var activeCategoryFiltered : String?
+    var activeCategoryFiltered : [String] = []
     var equipments: [EquipmentModel] = []
     var categoryEquipments: [String] = []
     let cellLayout = CategoriesEquipmentCellLayout()
@@ -274,6 +274,15 @@ class FilterShowEquipmentViewController: ViewController {
         
         self.setSelectedOrderBy()
         
+    }
+    
+    func refreshListEquipmentCollectionView() {
+        
+        if let delegate = self.delegate {
+            
+            delegate.updateActiveCategoryFiltered(newActiveCategory: self.activeCategoryFiltered)
+            delegate.reloadCollectionView()
+        }
     }
     
     

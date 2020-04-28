@@ -8,7 +8,12 @@
 
 import UIKit
 
-
+extension ViewController {
+    
+    func showHUD() {
+        
+    }
+}
 class ListEquipmentViewController: ViewController {
     
     // MARK: - Outlets
@@ -28,7 +33,7 @@ class ListEquipmentViewController: ViewController {
     
     var searchActive = false
     var smpActive = false
-    var activeCategoryFiltered : String?
+    var activeCategoryFiltered : [String] = []
     var activeOrderByFiltered : Int = 0
     var equipments_DB: [EquipmentModel] = [EquipmentModel]()
     var searchFilteredEquipments = [EquipmentModel]()
@@ -169,21 +174,26 @@ class ListEquipmentViewController: ViewController {
         
         var newEquipmentArray : [EquipmentModel] = []
         
-        if activeCategoryFiltered == nil {
+        if activeCategoryFiltered.isEmpty {
             
             return self.filterOrderBy(equipmentArray: equipmentArray)
         }
         else {
             for item in equipmentArray {
                 
-                if item.type == activeCategoryFiltered {
+                for category in activeCategoryFiltered {
                     
-                    newEquipmentArray.append(item)
+                    if item.type == category {
+                        
+                       newEquipmentArray.append(item)
+                    }
                 }
             }
             return self.filterOrderBy(equipmentArray: newEquipmentArray)
         }
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         
