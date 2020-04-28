@@ -56,23 +56,7 @@ class ListEquipmentViewController: ViewController {
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         
        
-        addHUDLoadingOverCollectionView(collectionView: collectionView)
-        let id = 1
-        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
-            if let equipmentData = equipmentData {
-                
-                DispatchQueue.main.async {
-                    
-                    self.equipments = equipmentData
-                    self.collectionView?.reloadData()
-                    self.removeHUDLoadingOverCollectionView(collectionView: self.collectionView)
-                    
-                }
-            }
-            else if let error = error {
-                print(error)
-            }
-        })
+        
     }
     
     private func filterOrderBy( equipmentArray : [EquipmentModel])-> [EquipmentModel] {
@@ -140,6 +124,24 @@ class ListEquipmentViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        addHUDLoadingOverCollectionView(point: collectionView.center)
+        let id = 1
+        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
+            if let equipmentData = equipmentData {
+                
+                DispatchQueue.main.async {
+                    
+                    self.equipments = equipmentData
+                    self.collectionView?.reloadData()
+                    self.removeHUDLoadingOverCollectionView()
+                    
+                }
+            }
+            else if let error = error {
+                print(error)
+            }
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {

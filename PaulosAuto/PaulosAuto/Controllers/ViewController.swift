@@ -23,18 +23,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        debugPrint("viewDidLoad")
     }
     
-    func addHUDLoadingOverCollectionView(collectionView: UICollectionView) {
+    func addHUDLoadingOverCollectionView(point: CGPoint) {
         
-        
-        activityView.center = collectionView.center
+        activityView.center = point
         view.addSubview(activityView)
         activityView.startAnimating()
     }
     
-    func removeHUDLoadingOverCollectionView(collectionView: UICollectionView) {
+    func removeHUDLoadingOverCollectionView() {
         
         self.activityView.stopAnimating()
         activityView.removeFromSuperview()
