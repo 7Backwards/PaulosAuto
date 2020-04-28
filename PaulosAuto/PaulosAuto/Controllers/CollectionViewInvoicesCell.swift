@@ -10,4 +10,10 @@ import UIKit
 
 class CollectionViewInvoicesCell: UICollectionViewCell {
     
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var issueDateLabel: UILabel!
+    @IBOutlet weak var paidAmountLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var cellView: UIView!
+    
 }
