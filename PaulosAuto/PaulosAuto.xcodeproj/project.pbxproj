@@ -18,6 +18,8 @@
 		B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */; };
 		B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */; };
 		B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */; };
+		B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */; };
+		B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListInvoices.swift; sourceTree = "<group>"; };
 		B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipmentHistory.swift; sourceTree = "<group>"; };
 		B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInvoicesCell.swift; sourceTree = "<group>"; };
+		B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvoiceViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				B0658AA52417E55500245732 /* ViewController.swift */,
 				FACD18152419AEEE0085574C /* ProblemasViewController.swift */,
 				FACD18172419AF880085574C /* InvoiceViewController.swift */,
+				B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */,
 				FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */,
 				FACD181D241AFF980085574C /* ListEquipmentViewController.swift */,
 				B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */,
@@ -170,6 +175,7 @@
 				B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */,
 				B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */,
 				B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */,
+				B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -365,11 +371,13 @@
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
 				B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */,
+				B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */,
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,
 				B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */,
 				B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */,
 				B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */,
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
+				B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
