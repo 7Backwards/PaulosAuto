@@ -29,7 +29,6 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
         if let date = historyEquipment[indexPath.row].date {
          
             cell.dateIncidentLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
-            
         }
         
         if let description = historyEquipment[indexPath.row].endedState {
@@ -44,7 +43,6 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
         }
         
         cell.cellView.setCardView(view: cell.cellView)
-        
         return cell
     }
     
@@ -52,7 +50,6 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
             return self.historyEquipment.count
-            
         }
     }
 

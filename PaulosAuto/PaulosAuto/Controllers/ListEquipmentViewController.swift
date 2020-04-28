@@ -8,15 +8,11 @@
 
 import UIKit
 
-extension ViewController {
-    
-    func showHUD() {
-        
-    }
-}
 class ListEquipmentViewController: ViewController {
     
+    
     // MARK: - Outlets
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,10 +22,12 @@ class ListEquipmentViewController: ViewController {
     
     // MARK: - Constants
     
+    
     let cellLayout = ListEquipmentCellLayout()
     
-    
+
     // MARK: - Properties
+    
     
     var searchActive = false
     var smpActive = false
@@ -41,7 +39,9 @@ class ListEquipmentViewController: ViewController {
     var smpAndSearchFilteredEquipments = [EquipmentModel]()
     var equipments =  [EquipmentModel]()
     
+    
     // MARK: - Private
+    
     
     private func setupEquipmentoController() {
         
@@ -55,6 +55,8 @@ class ListEquipmentViewController: ViewController {
         smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         
+       
+        addHUDLoadingOverCollectionView(collectionView: collectionView)
         let id = 1
         RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
             if let equipmentData = equipmentData {
@@ -62,7 +64,8 @@ class ListEquipmentViewController: ViewController {
                 DispatchQueue.main.async {
                     
                     self.equipments = equipmentData
-                    self.collectionView.reloadData()
+                    self.collectionView?.reloadData()
+                    self.removeHUDLoadingOverCollectionView(collectionView: self.collectionView)
                     
                 }
             }
@@ -70,7 +73,6 @@ class ListEquipmentViewController: ViewController {
                 print(error)
             }
         })
-        
     }
     
     private func filterOrderBy( equipmentArray : [EquipmentModel])-> [EquipmentModel] {
@@ -129,9 +131,6 @@ class ListEquipmentViewController: ViewController {
         
         super.viewDidLoad()
         setupEquipmentoController()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,7 +153,6 @@ class ListEquipmentViewController: ViewController {
         smpFilteredEquipments = equipments.filter { (Equipmento) -> Bool in
             return Equipmento.smp == true
         }
-        
     }
     
     func smpAndSearchFilter() {
@@ -198,7 +196,6 @@ class ListEquipmentViewController: ViewController {
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     

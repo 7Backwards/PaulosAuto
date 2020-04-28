@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    // MARK: - Constants
+    
+    
+    let activityView = UIActivityIndicatorView(style: .gray)
+    
+    
     // MARK: - Public
     
     
@@ -20,11 +26,25 @@ class ViewController: UIViewController {
         debugPrint("viewDidLoad")
     }
     
+    func addHUDLoadingOverCollectionView(collectionView: UICollectionView) {
+        
+        
+        activityView.center = collectionView.center
+        view.addSubview(activityView)
+        activityView.startAnimating()
+    }
+    
+    func removeHUDLoadingOverCollectionView(collectionView: UICollectionView) {
+        
+        self.activityView.stopAnimating()
+        activityView.removeFromSuperview()
+    }
+    
     func getFormattedDate(date: Date, format: String) -> String {
         
-            let dateformat = DateFormatter()
-            dateformat.dateFormat = format
-            return dateformat.string(from: date)
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: date)
     }
     
     func addNavBarLogo() {

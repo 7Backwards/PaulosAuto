@@ -129,7 +129,6 @@ class ShowEquipmentViewController: ViewController {
                 }
             })
         }
-        
     }
     
     private func setupView() {
@@ -159,7 +158,6 @@ class ShowEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupView()
         setupInfo()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,7 +179,6 @@ class ShowEquipmentViewController: ViewController {
                 self.isAnimated = true
             })
         }
-        
     }
     
     
