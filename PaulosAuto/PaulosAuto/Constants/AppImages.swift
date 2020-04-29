@@ -6,4 +6,12 @@
 //  Copyright © 2020 Gonçalo Neves. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public struct CustomImage {
+    
+    struct NavBar {
+        
+        public static let navBarLogo = #imageLiteral(resourceName: "Paulosauto-2")
+    }
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B005B4A4245A2E1500C000AC /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005B4A3245A2E1500C000AC /* AppImages.swift */; };
+		B005B4A6245A2FCC00C000AC /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005B4A5245A2FCC00C000AC /* AppColors.swift */; };
 		B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */; };
 		B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */; };
 		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
@@ -20,6 +22,7 @@
 		B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */; };
 		B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */; };
 		B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */; };
+		B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -49,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B005B4A3245A2E1500C000AC /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		B005B4A5245A2FCC00C000AC /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListEquipmentHistoryCellLayout.swift; path = PaulosAuto/Controllers/ListEquipmentHistoryCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedController+Extensions.swift"; sourceTree = "<group>"; };
 		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInvoicesCell.swift; sourceTree = "<group>"; };
 		B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvoiceViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendEquipmentUtilization.swift; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B005B4A7245A35D700C000AC /* SubControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0658AA52417E55500245732 /* ViewController.swift */,
+			);
+			path = SubControllers;
+			sourceTree = "<group>";
+		};
 		B01CA8CF244E3C64000228A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +132,7 @@
 				B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */,
 				B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */,
 				B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */,
+				B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -148,6 +163,7 @@
 				B0DA34D9243253BC00F81E1B /* Managers */,
 				B0DA34DA243253CD00F81E1B /* Models */,
 				B0658AB52417E6A300245732 /* Controllers */,
+				B005B4A7245A35D700C000AC /* SubControllers */,
 				FA05FB0A24204D460033B901 /* Extensions */,
 				FA05FB0924204BE50033B901 /* Layout */,
 				FACD1821241D35DA0085574C /* Structure */,
@@ -160,7 +176,6 @@
 		B0658AB52417E6A300245732 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B0658AA52417E55500245732 /* ViewController.swift */,
 				FACD18152419AEEE0085574C /* ProblemasViewController.swift */,
 				FACD18172419AF880085574C /* InvoiceViewController.swift */,
 				B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */,
@@ -226,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				B01CA8D7244F81F7000228A5 /* ApiConstants.swift */,
+				B005B4A3245A2E1500C000AC /* AppImages.swift */,
+				B005B4A5245A2FCC00C000AC /* AppColors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -356,17 +373,20 @@
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
 				B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */,
+				B005B4A6245A2FCC00C000AC /* AppColors.swift in Sources */,
 				B0C7E20E2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift in Sources */,
 				B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */,
 				B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */,
 				B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */,
 				B0658AA62417E55500245732 /* ViewController.swift in Sources */,
 				B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */,
+				B005B4A4245A2E1500C000AC /* AppImages.swift in Sources */,
 				B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */,
 				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
 				B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
+				B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
