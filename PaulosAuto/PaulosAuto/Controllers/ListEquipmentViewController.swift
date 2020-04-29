@@ -25,7 +25,7 @@ class ListEquipmentViewController: ViewController {
     
     let cellLayout = ListEquipmentCellLayout()
     
-
+    
     // MARK: - Properties
     
     
@@ -38,7 +38,7 @@ class ListEquipmentViewController: ViewController {
     var smpFilteredEquipments = [EquipmentModel]()
     var smpAndSearchFilteredEquipments = [EquipmentModel]()
     var equipments =  [EquipmentModel]()
-    
+    var collectionViewCenterPoint: CGPoint?
     
     // MARK: - Private
     
@@ -55,7 +55,7 @@ class ListEquipmentViewController: ViewController {
         smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         
-       
+        
         
     }
     
@@ -108,7 +108,7 @@ class ListEquipmentViewController: ViewController {
     }
     
     
-    // MARK: - Public
+    // MARK: - Override inherited funcions
     
     
     override func viewDidLoad() {
@@ -125,7 +125,9 @@ class ListEquipmentViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        addHUDLoadingOverCollectionView(point: collectionView.center)
+        
+            self.addHUDLoading(cgPoint: collectionView.center)
+        
         let id = 1
         RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
             if let equipmentData = equipmentData {
@@ -185,7 +187,7 @@ class ListEquipmentViewController: ViewController {
                     
                     if item.type == category {
                         
-                       newEquipmentArray.append(item)
+                        newEquipmentArray.append(item)
                     }
                 }
             }
@@ -201,7 +203,7 @@ class ListEquipmentViewController: ViewController {
     }
     
     
-    // MARK: - Action
+    // MARK: - Objc functions
     
     
     @IBAction func smpSwitchAction(_ sender: Any) {

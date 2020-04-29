@@ -58,61 +58,61 @@ class FilterShowEquipmentViewController: ViewController {
         switch (activeOrderByFiltered) {
             
         case 0:
-            dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-            dateContractLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            dateContractView.backgroundColor = .RedPaulosAuto
+            dateContractLabel.textColor = .RedPaulosAuto
             dateContractCheckImageView.isHidden = false
-            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationView.backgroundColor = .blackTransparent
             hoursUtilizationLabel.textColor = .black
             hoursUtilizationCheckImageView.isHidden = true
-            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelView.backgroundColor = .blackTransparent
             modelLabel.textColor = .black
             modelCheckImageView.isHidden = true
-            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberView.backgroundColor = .blackTransparent
             serialNumberLabel.textColor = .black
             serialNumberCheckImageView.isHidden = true
             
             
         case 1:
-            hoursUtilizationView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-            hoursUtilizationLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            hoursUtilizationView.backgroundColor = .RedPaulosAuto
+            hoursUtilizationLabel.textColor = .RedPaulosAuto
             hoursUtilizationCheckImageView.isHidden = false
-            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelView.backgroundColor = .blackTransparent
             modelLabel.textColor = .black
             modelCheckImageView.isHidden = true
-            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberView.backgroundColor = .blackTransparent
             serialNumberLabel.textColor = .black
             serialNumberCheckImageView.isHidden = true
-            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractView.backgroundColor = .blackTransparent
             dateContractLabel.textColor = .black
             dateContractCheckImageView.isHidden = true
             
             
         case 2:
-            modelView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-            modelLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            modelView.backgroundColor = .RedPaulosAuto
+            modelLabel.textColor = .RedPaulosAuto
             modelCheckImageView.isHidden = false
-            serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            serialNumberView.backgroundColor = .blackTransparent
             serialNumberLabel.textColor = .black
             serialNumberCheckImageView.isHidden = true
-            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractView.backgroundColor = .blackTransparent
             dateContractLabel.textColor = .black
             dateContractCheckImageView.isHidden = true
-            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationView.backgroundColor = .blackTransparent
             hoursUtilizationLabel.textColor = .black
             hoursUtilizationCheckImageView.isHidden = true
             
             
         case 3:
-            serialNumberView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
-            serialNumberLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            serialNumberView.backgroundColor = .RedPaulosAuto
+            serialNumberLabel.textColor = .RedPaulosAuto
             serialNumberCheckImageView.isHidden = false
-            dateContractView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            dateContractView.backgroundColor = .blackTransparent
             dateContractLabel.textColor = .black
             dateContractCheckImageView.isHidden = true
-            hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            hoursUtilizationView.backgroundColor = .blackTransparent
             hoursUtilizationLabel.textColor = .black
             hoursUtilizationCheckImageView.isHidden = true
-            modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+            modelView.backgroundColor = .blackTransparent
             modelLabel.textColor = .black
             modelCheckImageView.isHidden = true
             
@@ -130,19 +130,19 @@ class FilterShowEquipmentViewController: ViewController {
         
         dateContractView.layer.masksToBounds = true
         dateContractView.layer.cornerRadius = 20
-        dateContractView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+        dateContractView.backgroundColor = .RedPaulosAuto
         
         hoursUtilizationView.layer.masksToBounds = true
         hoursUtilizationView.layer.cornerRadius = 20
-        hoursUtilizationView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        hoursUtilizationView.backgroundColor = .blackTransparent
         
         modelView.layer.masksToBounds = true
         modelView.layer.cornerRadius = 20
-        modelView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        modelView.backgroundColor = .blackTransparent
         
         serialNumberView.layer.masksToBounds = true
         serialNumberView.layer.cornerRadius = 20
-        serialNumberView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        serialNumberView.backgroundColor = .blackTransparent
         
         topView.setCardViewTopCorners(view: topView)
         

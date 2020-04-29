@@ -32,7 +32,7 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
             
             if categoryEquipments[indexPath.row] == category {
                 
-                cell.cellView.backgroundColor = UIColor(red: 222/255.0, green: 63/255.0, blue: 63/255.0, alpha: 0.05)
+                cell.cellView.backgroundColor = .redTransparent
                 cell.cellView.layer.masksToBounds = true
                 cell.cellView.layer.cornerRadius = 20
                 cell.categoryLabel.textColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)

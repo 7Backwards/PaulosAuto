@@ -51,7 +51,6 @@ class Networking: NSObject {
             DispatchQueue.main.async {
                 
                 completion(.success(responseObject))
-
             }
         }
         dataTask.resume()

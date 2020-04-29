@@ -101,7 +101,7 @@ class ShowEquipmentViewController: ViewController {
         }
         else {
             
-            smpImageView.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+            smpImageView.tintColor = .RedPaulosAuto
             
             if #available(iOS 13.0, *) {
                 
@@ -136,7 +136,7 @@ class ShowEquipmentViewController: ViewController {
         super.addNavBarLogo()
         segmentControl.setLayoutSegmentControl(segmentControl)
         
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = .RedPaulosAuto
 
         informationView.setCardView(view: informationView)
         
