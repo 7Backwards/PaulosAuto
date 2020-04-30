@@ -126,7 +126,7 @@ class ListEquipmentViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
-            self.addHUDLoading(cgPoint: collectionView.center)
+            self.addHUDLoading()
         
         let id = 1
         RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
@@ -136,7 +136,7 @@ class ListEquipmentViewController: ViewController {
                     
                     self.equipments = equipmentData
                     self.collectionView?.reloadData()
-                    self.removeHUDLoadingOverCollectionView()
+                    self.removeHUDLoading()
                     
                 }
             }

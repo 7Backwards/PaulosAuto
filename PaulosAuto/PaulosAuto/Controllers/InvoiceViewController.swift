@@ -52,7 +52,7 @@ class InvoiceViewController: ViewController {
 
                     self.invoices = invoicesData
                     self.collectionView?.reloadData()
-                    self.removeHUDLoadingOverCollectionView()
+                    self.removeHUDLoading()
                 }
             }
             else if let error = error {

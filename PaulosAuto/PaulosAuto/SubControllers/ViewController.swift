@@ -14,39 +14,77 @@ class ViewController: UIViewController {
     // MARK: - Constants
     
     
-    let activityView = UIActivityIndicatorView(style: .white)
-    let fadeView:UIView = UIView()
+    
+    
+    
+    
+    // MARK: - Properties
+    
+    
+    var activityView = UIActivityIndicatorView()
+    var loadingView = UIView()
+    var fullscreenView = UIView()
     
     // MARK: - Public
     
     
-    override func viewDidLoad() {
+    func addHUDLoading() {
         
-        super.viewDidLoad()
-    }
-    
-    func addHUDLoading(cgPoint: CGPoint) {
+        fullscreenView.backgroundColor = .white
+        fullscreenView.alpha = 0.4
         
-        fadeView.center = cgPoint
-        fadeView.frame.size.width = 0.10 * self.view.frame.size.width
-        fadeView.frame.size.height = fadeView.frame.size.width
-        fadeView.backgroundColor = UIColor.gray
-        fadeView.alpha = 0.2
-        fadeView.setCardView(view: fadeView)
-
-        self.view.addSubview(fadeView)
-
-        self.view.addSubview(activityView)
+        self.view.addSubview(fullscreenView)
+        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let leftConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
+        
+        let rightConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -0)
+        
+        let bottomConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: -0)
+        
+        view.addConstraints([leftConstraint,rightConstraint,bottomConstraint,topConstraint])
+        
+        self.fullscreenView.addSubview(loadingView)
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        let constraintWidth = NSLayoutConstraint(item: loadingView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 80)
+        
+        let constraintHeight = NSLayoutConstraint(item: loadingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 80)
+        
+        let constraintCenterX = NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: fullscreenView, attribute: .centerX, multiplier: 1, constant: 0)
+        
+        let constraintCenterY = NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: fullscreenView, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        view.addConstraints([constraintWidth,constraintHeight,constraintCenterX,constraintCenterY])
+        
+        loadingView.addSubview(activityView)
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constraintCenterX_1 = NSLayoutConstraint(item: activityView, attribute: .centerX, relatedBy: .equal, toItem: loadingView, attribute: .centerX, multiplier: 1, constant: 0)
+        
+        let constraintCenterY_1 = NSLayoutConstraint(item: activityView, attribute: .centerY, relatedBy: .equal, toItem: loadingView, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        view.addConstraints([constraintCenterX_1,constraintCenterY_1])
+        activityView.style = .whiteLarge
+        activityView.color = .RedPaulosAuto
         activityView.hidesWhenStopped = true
-        activityView.center = fadeView.center
         activityView.startAnimating()
+        
+        
+        
+        
     }
     
-    func removeHUDLoadingOverCollectionView() {
+    func removeHUDLoading() {
         
         self.activityView.stopAnimating()
         activityView.removeFromSuperview()
-        fadeView.removeFromSuperview()
+        loadingView.removeFromSuperview()
+        fullscreenView.removeFromSuperview()
     }
     
     func getFormattedDate(date: Date, format: String) -> String {
