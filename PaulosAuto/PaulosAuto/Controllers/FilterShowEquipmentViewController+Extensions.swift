@@ -40,12 +40,12 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
                 return cell
             }
         }
-            cell.cellView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
-            cell.cellView.layer.masksToBounds = true
-            cell.cellView.layer.cornerRadius = 20
-            cell.categoryLabel.textColor = .black
-            cell.checkImageView.isHidden = true
-            return cell
+        cell.cellView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+        cell.cellView.layer.masksToBounds = true
+        cell.cellView.layer.cornerRadius = 20
+        cell.categoryLabel.textColor = .black
+        cell.checkImageView.isHidden = true
+        return cell
     }
 }
 
@@ -70,7 +70,7 @@ extension FilterShowEquipmentViewController : UICollectionViewDelegate {
         self.collectionView.reloadData()
         refreshListEquipmentCollectionView()
         
-
+        
     }
 }
 

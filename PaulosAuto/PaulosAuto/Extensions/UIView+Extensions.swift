@@ -13,6 +13,7 @@ extension UIView {
     
     // MARK: - Public
     
+    
     func leftConstraint( constant: CGFloat ) {
         
         let constaint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: self.superview, attribute: .leading, multiplier: 1, constant: constant)
@@ -66,21 +67,21 @@ extension UIView {
     }
     
     
-    func setCardView(view : UIView){
+    func setCardView(){
         
-        view.layer.cornerRadius = 10
-        view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
-        view.layer.masksToBounds = false
-        view.clipsToBounds = false
+        layer.cornerRadius = 10
+        layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 3, blur: 6, spread: 0)
+        layer.masksToBounds = false
+        clipsToBounds = false
         
     }
     
-    func setCardViewTopCorners(view : UIView){
+    func setCardViewTopCorners(){
         
-        view.layer.cornerRadius = 30
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        view.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: -0.1, blur: 6, spread: 0)
-        view.layer.masksToBounds = false
+        layer.cornerRadius = 30
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: -0.1, blur: 6, spread: 0)
+        layer.masksToBounds = false
     }
     
     func fadeIn(Duration: TimeInterval? = 0.5) {

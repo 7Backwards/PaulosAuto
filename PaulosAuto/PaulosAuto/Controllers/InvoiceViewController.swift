@@ -29,7 +29,7 @@ class InvoiceViewController: ViewController {
     var invoices =  [InvoiceModel]()
     
     
-    // MARK: - Functions
+    // MARK: - Override inherited functions
     
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class InvoiceViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
-        //addHUDLoadingOverCollectionView(cgRect: collectionView.frame)
+        addHUDLoading()
         let id = 1
         RQ_ListInvoices().repos(username: id, { (invoicesData,error) in
             if let invoicesData = invoicesData {

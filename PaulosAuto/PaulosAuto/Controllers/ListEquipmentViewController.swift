@@ -40,6 +40,51 @@ class ListEquipmentViewController: ViewController {
     var equipments =  [EquipmentModel]()
     var collectionViewCenterPoint: CGPoint?
     
+    
+    // MARK: - Override inherited functions
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        setupEquipmentoController()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        showTabBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+            self.addHUDLoading()
+        
+        let id = 1
+        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
+            if let equipmentData = equipmentData {
+                
+                DispatchQueue.main.async {
+                    
+                    self.equipments = equipmentData
+                    self.collectionView?.reloadData()
+                    self.removeHUDLoading()
+                    
+                }
+            }
+            else if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Private
     
     
@@ -106,51 +151,10 @@ class ListEquipmentViewController: ViewController {
         default: return equipmentArray
         }
     }
+
     
+    // MARK: - Public
     
-    // MARK: - Override inherited funcions
-    
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        setupEquipmentoController()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(true)
-        showTabBar()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-            self.addHUDLoading()
-        
-        let id = 1
-        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
-            if let equipmentData = equipmentData {
-                
-                DispatchQueue.main.async {
-                    
-                    self.equipments = equipmentData
-                    self.collectionView?.reloadData()
-                    self.removeHUDLoading()
-                    
-                }
-            }
-            else if let error = error {
-                print(error)
-            }
-        })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
-    }
     
     func smpfilterArray() {
         
@@ -196,25 +200,9 @@ class ListEquipmentViewController: ViewController {
     }
     
     
-    
-    override func didReceiveMemoryWarning() {
-        
-        super.didReceiveMemoryWarning()
-    }
-    
-    
     // MARK: - Objc functions
     
-    
-    @IBAction func smpSwitchAction(_ sender: Any) {
-        
-        smpActive = smpSwitch.isOn
-        DispatchQueue.main.async {
-            
-            self.collectionView.reloadData()
-        }
-    }
-    
+
     @objc func keyboardWillShow(notification: Notification) {
         
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
@@ -250,7 +238,19 @@ class ListEquipmentViewController: ViewController {
     @objc func refresh() {
         
         self.collectionView.reloadData()
+    }
+    
+    
+    // MARK: - Actions
+    
+    
+    @IBAction func smpSwitchAction(_ sender: Any) {
         
+        smpActive = smpSwitch.isOn
+        DispatchQueue.main.async {
+            
+            self.collectionView.reloadData()
+        }
     }
 }
 

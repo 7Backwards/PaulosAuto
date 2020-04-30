@@ -10,6 +10,10 @@ import UIKit
 
 class CollectionViewInvoicesCell: UICollectionViewCell {
     
+    
+    // MARK: - Outlets
+    
+    
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var issueDateLabel: UILabel!
     @IBOutlet weak var paidAmountLabel: UILabel!

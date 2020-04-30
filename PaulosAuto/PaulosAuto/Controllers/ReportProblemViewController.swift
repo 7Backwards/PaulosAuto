@@ -31,35 +31,7 @@ class ReportProblemViewController: ViewController {
     var Equipment : EquipmentModel!
     
     
-    // MARK: - Private
-    
-    
-    private func setupView() {
-        
-        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
-        
-        serialNumberLabel.text = Equipment.serialNumber
-        
-        currentHoursTextView.layer.masksToBounds = true
-        currentHoursTextView.layer.borderWidth = 0.6
-        currentHoursTextView.layer.cornerRadius = 10
-        currentHoursTextView.isScrollEnabled = false
-        
-        problemDescriptionTextView.layer.masksToBounds = true
-        problemDescriptionTextView.layer.borderWidth = 0.6
-        problemDescriptionTextView.layer.cornerRadius = 10
-        problemDescriptionTextView.isScrollEnabled = false
-        
-        modelLabel.text = Equipment.model
-        
-        handlerView.layer.masksToBounds = true
-        handlerView.layer.cornerRadius = 3
-        
-        outerView.setCardView(view: outerView)
-    }
-    
-    
-    // MARK: - Public
+    // MARK: - Override inherited functions
     
     
     override func viewDidLoad() {
@@ -86,7 +58,35 @@ class ReportProblemViewController: ViewController {
     }
     
     
-    // MARK: - Action
+    // MARK: - Private
+    
+    
+    private func setupView() {
+        
+        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
+        
+        serialNumberLabel.text = Equipment.serialNumber
+        
+        currentHoursTextView.layer.masksToBounds = true
+        currentHoursTextView.layer.borderWidth = 0.6
+        currentHoursTextView.layer.cornerRadius = 10
+        currentHoursTextView.isScrollEnabled = false
+        
+        problemDescriptionTextView.layer.masksToBounds = true
+        problemDescriptionTextView.layer.borderWidth = 0.6
+        problemDescriptionTextView.layer.cornerRadius = 10
+        problemDescriptionTextView.isScrollEnabled = false
+        
+        modelLabel.text = Equipment.model
+        
+        handlerView.layer.masksToBounds = true
+        handlerView.layer.cornerRadius = 3
+        
+        outerView.setCardView()
+    }
+    
+    
+    // MARK: - Objc functions
     
 
     @objc func keyboardWillHide(notification: NSNotification) {

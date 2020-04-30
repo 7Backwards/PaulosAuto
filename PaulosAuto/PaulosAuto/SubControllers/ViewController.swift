@@ -15,15 +15,13 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
     // MARK: - Properties
     
     
     var activityView = UIActivityIndicatorView()
     var loadingView = UIView()
     var fullscreenView = UIView()
+    
     
     // MARK: - Public
     
@@ -117,6 +115,23 @@ class ViewController: UIViewController {
         })
     }
     
+    func progressAlongAxis(_ pointOnAxis: CGFloat, _ axisLength: CGFloat) -> CGFloat {
+        
+        let movementOnAxis = pointOnAxis / axisLength
+        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
+        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
+        return CGFloat(positiveMovementOnAxisPercent)
+    }
+    
+    func ensureRange<T>(value: T, minimum: T, maximum: T) -> T where T : Comparable {
+        
+        return min(max(value, minimum), maximum)
+    }
+    
+    
+    // MARK: - Objc functions
+    
+    
     @objc func onDrage(_ sender:UIPanGestureRecognizer) {
         
         let percentThreshold:CGFloat = 0.3
@@ -141,19 +156,6 @@ class ViewController: UIViewController {
         }
         sender.setTranslation(.zero, in: view)
     }
-    
-    func progressAlongAxis(_ pointOnAxis: CGFloat, _ axisLength: CGFloat) -> CGFloat {
-        
-        let movementOnAxis = pointOnAxis / axisLength
-        let positiveMovementOnAxis = fmaxf(Float(movementOnAxis), 0.0)
-        let positiveMovementOnAxisPercent = fminf(positiveMovementOnAxis, 1.0)
-        return CGFloat(positiveMovementOnAxisPercent)
-    }
-    
-    func ensureRange<T>(value: T, minimum: T, maximum: T) -> T where T : Comparable {
-        
-        return min(max(value, minimum), maximum)
-    } 
 }
 
 

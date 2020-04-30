@@ -51,6 +51,53 @@ class ShowEquipmentViewController: ViewController {
     let cellLayout = ListEquipmentHistoryCellLayout()
     
     
+    // MARK: - Override inherited functions
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        setupView()
+        setupInfo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        hideTabBar()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        if isAnimated == false {
+        
+            super.viewDidLayoutSubviews()
+
+            UIView.animate(withDuration: 1.0, animations: {
+                
+                self.barView.frame.origin.x = self.segmentControl.frame.origin.x
+            }, completion: { _ in
+                self.isAnimated = true
+            })
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "RegisterHoursSegue") {
+            
+            let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
+            destinationVC.Equipmento = self.equipment
+        }
+        if (segue.identifier == "ReportProblemSegue") {
+            
+            let destinationVC = segue.destination as! ReportProblemViewController
+            destinationVC.modalPresentationStyle = .overCurrentContext
+            destinationVC.Equipment = self.equipment
+        }
+    }
+    
+    
     // MARK: - Private
     
     
@@ -138,7 +185,7 @@ class ShowEquipmentViewController: ViewController {
         
         navigationItem.leftBarButtonItem?.tintColor = .RedPaulosAuto
 
-        informationView.setCardView(view: informationView)
+        informationView.setCardView()
         
         reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
         registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
@@ -150,39 +197,7 @@ class ShowEquipmentViewController: ViewController {
     }
     
     
-    // MARK: - Public
-    
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        setupView()
-        setupInfo()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(true)
-        hideTabBar()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-        if isAnimated == false {
-        
-            super.viewDidLayoutSubviews()
-
-            UIView.animate(withDuration: 1.0, animations: {
-                
-                self.barView.frame.origin.x = self.segmentControl.frame.origin.x
-            }, completion: { _ in
-                self.isAnimated = true
-            })
-        }
-    }
-    
-    
-    // MARK: - Action
+    // MARK: - Objc functions
     
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -193,6 +208,10 @@ class ShowEquipmentViewController: ViewController {
             
         }
     }
+
+    
+    // MARK: - Actions
+    
     
     @IBAction func segmentControlAction(_ sender: Any) {
         
@@ -214,18 +233,5 @@ class ShowEquipmentViewController: ViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "RegisterHoursSegue") {
-            
-            let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
-            destinationVC.Equipmento = self.equipment
-        }
-        if (segue.identifier == "ReportProblemSegue") {
-            
-            let destinationVC = segue.destination as! ReportProblemViewController
-            destinationVC.modalPresentationStyle = .overCurrentContext
-            destinationVC.Equipment = self.equipment
-        }
-    }
+    
 }

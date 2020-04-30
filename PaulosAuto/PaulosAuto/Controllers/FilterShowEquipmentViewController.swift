@@ -41,6 +41,7 @@ class FilterShowEquipmentViewController: ViewController {
     
     // MARK: - Properties
     
+    
     var delegate: DataDelegate?  
     var activeOrderByFiltered : Int?
     var activeCategoryFiltered : [String] = []
@@ -49,6 +50,121 @@ class FilterShowEquipmentViewController: ViewController {
     let cellLayout = CategoriesEquipmentCellLayout()
     let listEquipmentViewController = ListEquipmentViewController()
     var heightCell : CGFloat = 0
+    
+    
+    // MARK: - Override inherited functions
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        setupView()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
+        self.getCategories()
+        self.setSelectedOrderBy()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        
+    }
+    
+    @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
+        
+        let percentThreshold:CGFloat = 0.3
+        let translation = sender.translation(in: view)
+        var newY : CGFloat
+        var progress : CGFloat = 0
+        let getIndex = segmentControl.selectedSegmentIndex
+        
+        switch (getIndex) {
+            
+        case 0:
+            newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
+            progress = progressAlongAxis(newY, view.bounds.width)
+            view.frame.origin.y = newY
+            
+        case 1:
+            if self.outerViewHeightConstraint.multiplier < 1 {
+                
+                newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
+                progress = progressAlongAxis(newY, view.bounds.width)
+                view.frame.origin.y = newY
+                
+            }
+            else {
+                newY = ensureRange(value: outerView.frame.minY + translation.y, minimum: 0, maximum: outerView.frame.size.height)
+                progress = progressAlongAxis(newY, outerView.bounds.width)
+                outerView.frame.origin.y = newY
+            }
+        default: break
+        }
+        
+        if sender.state == .ended {
+            
+            let velocity = sender.velocity(in: view)
+            if velocity.y >= 300 || progress > percentThreshold {
+                
+                dismiss(animated: true, completion: nil)
+            } else {
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    
+                    self.view.frame.origin.y = 0
+                })
+            }
+        }
+        sender.setTranslation(.zero, in: view)
+        sender.setTranslation(.zero, in: outerView)
+        
+        
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        if touch.view?.tag == 100 {
+            
+            activeOrderByFiltered = 0
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
+            }
+            
+        }
+        else if touch.view?.tag == 200 {
+            
+            activeOrderByFiltered = 1
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
+            }
+        }
+        else if touch.view?.tag == 300 {
+            
+            activeOrderByFiltered = 2
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
+            }
+        }
+        else if touch.view?.tag == 400 {
+            
+            activeOrderByFiltered = 3
+            if let delegate = self.delegate {
+                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
+                delegate.reloadCollectionView()
+            }
+        }
+        else if touch.view?.tag == 0{
+            
+            self.dismiss(animated: true)
+        }
+        
+        self.setSelectedOrderBy()
+        
+    }
+    
     
     // MARK: - Private
     
@@ -144,7 +260,7 @@ class FilterShowEquipmentViewController: ViewController {
         serialNumberView.layer.cornerRadius = 20
         serialNumberView.backgroundColor = .blackTransparent
         
-        topView.setCardViewTopCorners(view: topView)
+        topView.setCardViewTopCorners()
         
         segmentControl.setLayoutSegmentControl(segmentControl)
         
@@ -166,116 +282,6 @@ class FilterShowEquipmentViewController: ViewController {
     // MARK: - Public
     
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        setupView()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
-        self.getCategories()
-        self.setSelectedOrderBy()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-        
-    }
-    
-    @objc override func onDrage(_ sender:UIPanGestureRecognizer) {
-        
-        let percentThreshold:CGFloat = 0.3
-        let translation = sender.translation(in: view)
-        var newY : CGFloat
-        var progress : CGFloat = 0
-        let getIndex = segmentControl.selectedSegmentIndex
-        
-        switch (getIndex) {
-            
-        case 0:
-            newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
-            progress = progressAlongAxis(newY, view.bounds.width)
-            view.frame.origin.y = newY
-            
-        case 1:
-            if self.outerViewHeightConstraint.multiplier < 1 {
-                
-                newY = ensureRange(value: view.frame.minY + translation.y, minimum: 0, maximum: view.frame.size.height)
-                progress = progressAlongAxis(newY, view.bounds.width)
-                view.frame.origin.y = newY
-                
-            }
-            else {
-                newY = ensureRange(value: outerView.frame.minY + translation.y, minimum: 0, maximum: outerView.frame.size.height)
-                progress = progressAlongAxis(newY, outerView.bounds.width)
-                outerView.frame.origin.y = newY
-            }
-        default: break
-            }
-            
-            if sender.state == .ended {
-                
-                let velocity = sender.velocity(in: view)
-                if velocity.y >= 300 || progress > percentThreshold {
-                    
-                    dismiss(animated: true, completion: nil)
-                } else {
-                    
-                    UIView.animate(withDuration: 0.2, animations: {
-                        
-                        self.view.frame.origin.y = 0
-                    })
-                }
-            }
-            sender.setTranslation(.zero, in: view)
-            sender.setTranslation(.zero, in: outerView)
-            
-        
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let touch = touches.first!
-        if touch.view?.tag == 100 {
-            
-            activeOrderByFiltered = 0
-            if let delegate = self.delegate {
-                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
-                delegate.reloadCollectionView()
-            }
-            
-        }
-        else if touch.view?.tag == 200 {
-            
-            activeOrderByFiltered = 1
-            if let delegate = self.delegate {
-                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
-                delegate.reloadCollectionView()
-            }
-        }
-        else if touch.view?.tag == 300 {
-            
-            activeOrderByFiltered = 2
-            if let delegate = self.delegate {
-                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
-                delegate.reloadCollectionView()
-            }
-        }
-        else if touch.view?.tag == 400 {
-            
-            activeOrderByFiltered = 3
-            if let delegate = self.delegate {
-                delegate.updateActiveOrderByFiltered(newOrderBy: activeOrderByFiltered ?? 0)
-                delegate.reloadCollectionView()
-            }
-        }
-        else if touch.view?.tag == 0{
-            
-            self.dismiss(animated: true)
-        }
-        
-        self.setSelectedOrderBy()
-        
-    }
-    
     func refreshListEquipmentCollectionView() {
         
         if let delegate = self.delegate {
@@ -286,7 +292,7 @@ class FilterShowEquipmentViewController: ViewController {
     }
     
     
-    // MARK: - Action
+    // MARK: - Objc functions
     
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -296,6 +302,10 @@ class FilterShowEquipmentViewController: ViewController {
             self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
         }
     }
+    
+    
+    // MARK: - Actions
+    
     
     @IBAction func segmentControlAction(_ sender: Any) {
         

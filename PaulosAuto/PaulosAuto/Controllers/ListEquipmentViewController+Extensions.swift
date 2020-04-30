@@ -163,7 +163,7 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
                 cell = self.setCell(equipmentArray: equipmentsFilteredAndOrdered, indexPath: indexPath)
             }
         }
-        cell.cellView.setCardView(view: cell.cellView)
+        cell.cellView.setCardView()
         return cell
     }
 }

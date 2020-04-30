@@ -14,7 +14,6 @@ class CollectionViewHistoryEquipmentCell: UICollectionViewCell {
     // MARK: - Outlets
     
     
-    
     @IBOutlet weak var dateIncidentLabel: UILabel!
     @IBOutlet weak var descriptionIncidentLabel: UILabel!
     @IBOutlet weak var endedLabel: UILabel!

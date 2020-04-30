@@ -42,7 +42,7 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
             
         }
         
-        cell.cellView.setCardView(view: cell.cellView)
+        cell.cellView.setCardView()
         return cell
     }
     
