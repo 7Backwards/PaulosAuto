@@ -30,53 +30,33 @@ class ViewController: UIViewController {
     
     func addHUDLoading() {
         
+        self.view.addSubview(fullscreenView)
+        
         fullscreenView.backgroundColor = .white
         fullscreenView.alpha = 0.4
-        
-        self.view.addSubview(fullscreenView)
         fullscreenView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        let leftConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
-        
-        let rightConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -0)
-        
-        let bottomConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
-        
-        let topConstraint = NSLayoutConstraint(item: fullscreenView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: -0)
-        
-        view.addConstraints([leftConstraint,rightConstraint,bottomConstraint,topConstraint])
+        fullscreenView.leftConstraint(constant: 0)
+        fullscreenView.rightConstraint(constant: 0)
+        fullscreenView.topConstraint(constant: 0)
+        fullscreenView.bottomConstraint(constant: 0)
         
         self.fullscreenView.addSubview(loadingView)
+        
         loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.widthConstraint(constant: 80)
+        loadingView.heightConstraint(constant: 80)
+        loadingView.centerXConstraint(constant: 0)
+        loadingView.centerYConstraint(constant: 0)
         
+        self.loadingView.addSubview(activityView)
         
-        let constraintWidth = NSLayoutConstraint(item: loadingView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 80)
-        
-        let constraintHeight = NSLayoutConstraint(item: loadingView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 80)
-        
-        let constraintCenterX = NSLayoutConstraint(item: loadingView, attribute: .centerX, relatedBy: .equal, toItem: fullscreenView, attribute: .centerX, multiplier: 1, constant: 0)
-        
-        let constraintCenterY = NSLayoutConstraint(item: loadingView, attribute: .centerY, relatedBy: .equal, toItem: fullscreenView, attribute: .centerY, multiplier: 1, constant: 0)
-        
-        view.addConstraints([constraintWidth,constraintHeight,constraintCenterX,constraintCenterY])
-        
-        loadingView.addSubview(activityView)
         activityView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let constraintCenterX_1 = NSLayoutConstraint(item: activityView, attribute: .centerX, relatedBy: .equal, toItem: loadingView, attribute: .centerX, multiplier: 1, constant: 0)
-        
-        let constraintCenterY_1 = NSLayoutConstraint(item: activityView, attribute: .centerY, relatedBy: .equal, toItem: loadingView, attribute: .centerY, multiplier: 1, constant: 0)
-        
-        view.addConstraints([constraintCenterX_1,constraintCenterY_1])
+        activityView.centerXConstraint(constant: 0)
+        activityView.centerYConstraint(constant: 0)
         activityView.style = .whiteLarge
         activityView.color = .RedPaulosAuto
         activityView.hidesWhenStopped = true
         activityView.startAnimating()
-        
-        
-        
-        
     }
     
     func removeHUDLoading() {
