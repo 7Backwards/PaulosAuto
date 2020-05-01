@@ -14,6 +14,7 @@
 		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
 		B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */; };
 		B01A800E245B7C9B004EC603 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A800D245B7C9B004EC603 /* String+Extensions.swift */; };
+		B01A8010245BA492004EC603 /* EquipmentUtilizationPOST.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A800F245BA492004EC603 /* EquipmentUtilizationPOST.swift */; };
 		B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* Networking.swift */; };
 		B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */; };
 		B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */; };
@@ -60,6 +61,7 @@
 		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterShowEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B01A800D245B7C9B004EC603 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B01A800F245BA492004EC603 /* EquipmentUtilizationPOST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentUtilizationPOST.swift; sourceTree = "<group>"; };
 		B01CA8D0244E3C84000228A5 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipments.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */,
 				B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */,
 				B0C7E2092454B85F005995A3 /* InvoiceModel.swift */,
+				B01A800F245BA492004EC603 /* EquipmentUtilizationPOST.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
+				B01A8010245BA492004EC603 /* EquipmentUtilizationPOST.swift in Sources */,
 				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,

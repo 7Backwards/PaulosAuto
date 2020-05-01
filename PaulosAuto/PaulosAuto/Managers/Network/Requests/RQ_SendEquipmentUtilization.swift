@@ -15,12 +15,9 @@ class RQ_SendEquipmentUtilization {
         
         let request = URLRequest(url: (ApiConstants.sendEquipmentUtilization)!)
         let url = request.url
-        let parameters: [String: Any]? = [
-                    "serialNumber" : String(serialNumber),
-                    "horasAtuais": currentHours
-        ]
+        let equipmentUtilization = EquipmentUtilizationPOST(horasAtuais: currentHours, serialNumber: String(serialNumber))
+        let parameters = equipmentUtilization.convertToDictionary()
 
-        
         Networking.fetchAPIData_Object(url: url!, method: "POST", params: parameters) { (result: Result<EquipmentModel, Error>) in
             switch result {
                 
