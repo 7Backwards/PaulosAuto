@@ -134,6 +134,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         RQ_SendEquipmentUtilization().repos(serialNumber: Equipmento.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
             if let equipmentData = equipmentData {
                 
+                AppConstants.requestDone = true
                 DispatchQueue.main.async {
                     
                     
