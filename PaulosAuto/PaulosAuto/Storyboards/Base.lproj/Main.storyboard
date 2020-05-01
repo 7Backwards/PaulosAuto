@@ -849,7 +849,7 @@
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-Ym-CUa">
                                                     <rect key="frame" x="8" y="8" width="378" height="114"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Yl3-Ks-YSC">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yl3-Ks-YSC">
                                                             <rect key="frame" x="0.0" y="5" width="368" height="104"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lVu-Ed-OCw">
@@ -1112,7 +1112,7 @@
                                             <stackView opaque="NO" contentMode="center" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-d8-58L">
                                                 <rect key="frame" x="0.0" y="227.66666666666669" width="364" height="55.666666666666686"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u33-bx-bEV">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u33-bx-bEV">
                                                         <rect key="frame" x="15" y="8" width="341" height="39.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VQ6-P4-Bf0">
