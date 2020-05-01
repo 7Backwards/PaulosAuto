@@ -174,7 +174,7 @@ class FilterShowEquipmentViewController: ViewController {
         switch (activeOrderByFiltered) {
             
         case 0:
-            dateContractView.backgroundColor = .RedPaulosAuto
+            dateContractView.backgroundColor = .redTransparent
             dateContractLabel.textColor = .RedPaulosAuto
             dateContractCheckImageView.isHidden = false
             hoursUtilizationView.backgroundColor = .blackTransparent
@@ -189,7 +189,7 @@ class FilterShowEquipmentViewController: ViewController {
             
             
         case 1:
-            hoursUtilizationView.backgroundColor = .RedPaulosAuto
+            hoursUtilizationView.backgroundColor = .redTransparent
             hoursUtilizationLabel.textColor = .RedPaulosAuto
             hoursUtilizationCheckImageView.isHidden = false
             modelView.backgroundColor = .blackTransparent
@@ -204,7 +204,7 @@ class FilterShowEquipmentViewController: ViewController {
             
             
         case 2:
-            modelView.backgroundColor = .RedPaulosAuto
+            modelView.backgroundColor = .redTransparent
             modelLabel.textColor = .RedPaulosAuto
             modelCheckImageView.isHidden = false
             serialNumberView.backgroundColor = .blackTransparent
@@ -219,7 +219,7 @@ class FilterShowEquipmentViewController: ViewController {
             
             
         case 3:
-            serialNumberView.backgroundColor = .RedPaulosAuto
+            serialNumberView.backgroundColor = .redTransparent
             serialNumberLabel.textColor = .RedPaulosAuto
             serialNumberCheckImageView.isHidden = false
             dateContractView.backgroundColor = .blackTransparent
@@ -246,7 +246,7 @@ class FilterShowEquipmentViewController: ViewController {
         
         dateContractView.layer.masksToBounds = true
         dateContractView.layer.cornerRadius = 20
-        dateContractView.backgroundColor = .RedPaulosAuto
+        dateContractView.backgroundColor = .redTransparent
         
         hoursUtilizationView.layer.masksToBounds = true
         hoursUtilizationView.layer.cornerRadius = 20
