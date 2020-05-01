@@ -11,12 +11,17 @@ import Foundation
 class RQ_SendEquipmentUtilization {
     
     
-    func repos(serialNumber: String, _ completion: @escaping ([String]?, Error?) -> Void ) {
+    func repos(serialNumber: String, currentHours: Int, _ completion: @escaping (EquipmentModel?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.listEquipmentHistoryURL?.appendingPathComponent(serialNumber))!)
+        let request = URLRequest(url: (ApiConstants.sendEquipmentUtilization)!)
         let url = request.url
+        let parameters: [String: Any]? = [
+                    "serialNumber" : String(serialNumber),
+                    "horasAtuais": currentHours
+        ]
+
         
-        Networking.fetchAPIData(url: url!) { (result: Result<[String], Error>) in
+        Networking.fetchAPIData_Object(url: url!, method: "POST", params: parameters) { (result: Result<EquipmentModel, Error>) in
             switch result {
                 
             case .success(let data):

@@ -13,6 +13,7 @@
 		B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */; };
 		B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */; };
 		B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */; };
+		B01A800E245B7C9B004EC603 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A800D245B7C9B004EC603 /* String+Extensions.swift */; };
 		B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* Networking.swift */; };
 		B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */; };
 		B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */; };
@@ -58,6 +59,7 @@
 		B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedController+Extensions.swift"; sourceTree = "<group>"; };
 		B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterShowEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B01A800D245B7C9B004EC603 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B01CA8D0244E3C84000228A5 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipments.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */,
 				B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */,
 				B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */,
+				B01A800D245B7C9B004EC603 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
+				B01A800E245B7C9B004EC603 /* String+Extensions.swift in Sources */,
 				B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */,
 				B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */,
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,

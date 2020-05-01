@@ -17,7 +17,7 @@ struct ApiConstants {
     static let listEquipmentHistoryURL = base?.appendingPathComponent("intervencoes/")
     static let listInvoicesURL = base?.appendingPathComponent("faturas/")
     static let sendEquipmentUtilization =
-        base?.appendingPathComponent("utilizacao/")
+        base?.appendingPathComponent("utilizacao")
     static let dateFormatter : DateFormatter = {
         
         let dateFormatter = DateFormatter()

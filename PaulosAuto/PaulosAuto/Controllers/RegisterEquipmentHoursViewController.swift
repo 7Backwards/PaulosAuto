@@ -42,6 +42,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        [currentHoursTextField].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -73,6 +74,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         submitHoursButton.layer.borderColor = textFieldBorderColor.cgColor
         submitHoursButton.layer.borderWidth = 1.0
         submitHoursButton.layer.cornerRadius = 10
+        submitHoursButton.isEnabled = false
     }
     
     
@@ -92,12 +94,56 @@ class RegisterEquipmentHoursViewController: ViewController {
         self.popUpView.center.y = self.view.center.y
     }
     
+    @objc func editingChanged(_ textField: UITextField) {
+        
+        guard
+            let currentHours = currentHoursTextField.text, !currentHours.isEmpty
+        else {
+            submitHoursButton.isEnabled = false
+            return
+        }
+        if currentHours.isInt {
+            
+            if let currentHoursInt = Int(currentHours) {
+                
+                if let lastRecordedHours = Equipmento.currentHours {
+                    
+                    if currentHoursInt > lastRecordedHours {
+                        
+                        submitHoursButton.isEnabled = true
+                    }
+                }
+                
+            }
+        }
+    }
+    
     
     // MARK: - Actions
     
     
     @IBAction func closeButtonAction(_ sender: Any) {
         
+        dismisspopup()
+    }
+    
+    @IBAction func submitButtonAction(_ sender: Any) {
+        
+        print("Enabled")
+        
+        RQ_SendEquipmentUtilization().repos(serialNumber: Equipmento.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
+            if let equipmentData = equipmentData {
+                
+                DispatchQueue.main.async {
+                    
+                    
+                    
+                }
+            }
+            else if let error = error {
+                print(error)
+            }
+        })
         dismisspopup()
     }
 }
