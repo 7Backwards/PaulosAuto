@@ -75,6 +75,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         submitHoursButton.layer.borderWidth = 1.0
         submitHoursButton.layer.cornerRadius = 10
         submitHoursButton.isEnabled = false
+        submitHoursButton.alpha = 0.7
     }
     
     
@@ -100,6 +101,7 @@ class RegisterEquipmentHoursViewController: ViewController {
             let currentHours = currentHoursTextField.text, !currentHours.isEmpty
         else {
             submitHoursButton.isEnabled = false
+            submitHoursButton.alpha = 0.7
             return
         }
         if currentHours.isInt {
@@ -111,6 +113,7 @@ class RegisterEquipmentHoursViewController: ViewController {
                     if currentHoursInt > lastRecordedHours {
                         
                         submitHoursButton.isEnabled = true
+                        submitHoursButton.alpha = 1
                     }
                 }
                 

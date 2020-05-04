@@ -16,7 +16,13 @@ extension UIView {
     
     func leftConstraint( constant: CGFloat ) {
         
-        let constaint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: self.superview, attribute: .leading, multiplier: 1, constant: constant)
+        let constaint = NSLayoutConstraint(item: self,
+                                           attribute: .leading,
+                                           relatedBy: .equal,
+                                           toItem: self.superview,
+                                           attribute: .leading,
+                                           multiplier: 1,
+                                           constant: constant)
         self.superview?.addConstraint(constaint)
     }
     

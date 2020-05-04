@@ -1605,10 +1605,10 @@
                                                         <rect key="frame" x="0.0" y="160.99999999999994" width="312" height="60.333333333333343"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-MN-aHu">
-                                                                <rect key="frame" x="50" y="15" width="212" height="30"/>
+                                                                <rect key="frame" x="50" y="10" width="212" height="40"/>
                                                                 <color key="backgroundColor" red="0.1206811662" green="0.46739643990000002" blue="0.2104541814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="Ffx-cC-NKc"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="Ffx-cC-NKc"/>
                                                                 </constraints>
                                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <state key="normal" title="Submeter">

@@ -28,3 +28,7 @@ class EquipmentUtilizationPOST: Codable {
     }
     
 }
+
+struct Wrapper<T: Decodable>: Decodable {
+    let items: [T]
+}
