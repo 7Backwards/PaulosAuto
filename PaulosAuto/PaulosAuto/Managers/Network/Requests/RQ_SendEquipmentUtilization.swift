@@ -19,7 +19,10 @@ class RQ_SendEquipmentUtilization {
         let parameters = equipmentUtilization.convertToDictionary()
         
         
-        Networking.fetchAPIData(url: url!, method: "POST", params: parameters, headers: nil) { (result: Result<EquipmentModel, Error>) in
+        NetworkManager.fetchAPIData(url: url!,
+                                    method: "POST",
+                                    params: parameters,
+                                    headers: nil) { (result: Result<EquipmentModel, Error>) in
             switch result {
 
             case .success(let data):

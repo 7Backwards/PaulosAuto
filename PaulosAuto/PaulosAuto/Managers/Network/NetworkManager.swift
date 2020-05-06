@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 
-class Networking: NSObject {
+class NetworkManager: NSObject {
     
     
     // MARK: - Singleton
     
     
-    let sharedInstance = Networking()
+    let sharedInstance = NetworkManager()
     
     private override init() {
         

@@ -16,7 +16,7 @@ class RQ_ListEquipmentHistory {
         let request = URLRequest(url: (ApiConstants.listEquipmentHistoryURL?.appendingPathComponent(serialNumber))!)
         let url = request.url
         
-        Networking.fetchAPIData(url: url!, method: "GET", params: nil, headers: nil) { (result: Result<[EquipmentHistoryModel], Error>) in
+        NetworkManager.fetchAPIData(url: url!) { (result: Result<[EquipmentHistoryModel], Error>) in
             switch result {
 
             case .success(let data):

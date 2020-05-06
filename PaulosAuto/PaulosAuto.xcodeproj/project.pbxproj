@@ -16,7 +16,7 @@
 		B01A800E245B7C9B004EC603 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A800D245B7C9B004EC603 /* String+Extensions.swift */; };
 		B01A8010245BA492004EC603 /* EquipmentUtilizationPOST.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A800F245BA492004EC603 /* EquipmentUtilizationPOST.swift */; };
 		B01A8012245BAB0D004EC603 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A8011245BAB0D004EC603 /* AppConstants.swift */; };
-		B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* Networking.swift */; };
+		B01CA8D1244E3C84000228A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D0244E3C84000228A5 /* NetworkManager.swift */; };
 		B01CA8D3244F3FC0000228A5 /* EquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */; };
 		B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */; };
 		B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D7244F81F7000228A5 /* ApiConstants.swift */; };
@@ -64,7 +64,7 @@
 		B01A800D245B7C9B004EC603 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		B01A800F245BA492004EC603 /* EquipmentUtilizationPOST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentUtilizationPOST.swift; sourceTree = "<group>"; };
 		B01A8011245BAB0D004EC603 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		B01CA8D0244E3C84000228A5 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B01CA8D0244E3C84000228A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B01CA8D2244F3FC0000228A5 /* EquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentModel.swift; sourceTree = "<group>"; };
 		B01CA8D5244F81B3000228A5 /* RQ_ListEquipments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipments.swift; sourceTree = "<group>"; };
 		B01CA8D7244F81F7000228A5 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		B01CA8CF244E3C64000228A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B01CA8D0244E3C84000228A5 /* Networking.swift */,
+				B01CA8D0244E3C84000228A5 /* NetworkManager.swift */,
 				B01CA8D4244F8193000228A5 /* Requests */,
 			);
 			path = Network;
@@ -393,7 +393,7 @@
 				B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */,
 				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
-				B01CA8D1244E3C84000228A5 /* Networking.swift in Sources */,
+				B01CA8D1244E3C84000228A5 /* NetworkManager.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
 				B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,

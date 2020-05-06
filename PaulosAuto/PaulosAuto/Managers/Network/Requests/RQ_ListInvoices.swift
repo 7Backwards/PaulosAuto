@@ -16,7 +16,7 @@ class RQ_ListInvoices {
         let request = URLRequest(url: (ApiConstants.listInvoicesURL?.appendingPathComponent(String(username)))!)
         let url = request.url
         
-        Networking.fetchAPIData(url: url!) { (result: Result<[InvoiceModel], Error>) in
+        NetworkManager.fetchAPIData(url: url!) { (result: Result<[InvoiceModel], Error>) in
             switch result {
                 
             case .success(let data):
