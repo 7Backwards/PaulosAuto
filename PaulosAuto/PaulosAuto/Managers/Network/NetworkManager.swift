@@ -13,15 +13,21 @@ import UIKit
 class NetworkManager: NSObject {
     
     
-    // MARK: - Singleton
+    // MARK: - Constants
     
     
     let sharedInstance = NetworkManager()
+    
+    
+    // MARK: - Override inherited functions
+    
     
     private override init() {
         
         super.init()
     }
+    
+    // MARK: - Public
     
     class func fetchAPIData<T: Codable>( url: URL,
                                          method: String? = nil,
@@ -60,7 +66,7 @@ class NetworkManager: NSObject {
                 return
             }
             DispatchQueue.main.async {
-
+                
                 let response = try! JSONDecoder().decode(T.self, from: data)
                 completion(.success(response))
             }
