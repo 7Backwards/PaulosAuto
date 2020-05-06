@@ -17,10 +17,11 @@ class RQ_SendEquipmentUtilization {
         let url = request.url
         let equipmentUtilization = EquipmentUtilizationPOST(horasAtuais: currentHours, serialNumber: String(serialNumber))
         let parameters = equipmentUtilization.convertToDictionary()
-
-        Networking.fetchAPIData_Object(url: url!, method: "POST", params: parameters) { (result: Result<EquipmentModel, Error>) in
+        
+        
+        Networking.fetchAPIData(url: url!, method: "POST", params: parameters, headers: nil) { (result: Result<EquipmentModel, Error>) in
             switch result {
-                
+
             case .success(let data):
                 print(result)
                 completion(data,nil)
@@ -32,4 +33,5 @@ class RQ_SendEquipmentUtilization {
             }
         }
     }
+
 }
