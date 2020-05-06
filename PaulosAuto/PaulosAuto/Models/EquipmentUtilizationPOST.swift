@@ -26,9 +26,4 @@ class EquipmentUtilizationPOST: Codable {
         let dic: [String: Any] = [CodingKeys.horasAtuais.stringValue : self.horasAtuais, CodingKeys.serialNumber.stringValue : self.serialNumber]
         return dic
     }
-    
-}
-
-struct Wrapper<T: Decodable>: Decodable {
-    let items: [T]
 }
