@@ -19,5 +19,6 @@ class CollectionViewInvoicesCell: UICollectionViewCell {
     @IBOutlet weak var paidAmountLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var button: UIButton!
     
 }

@@ -46,6 +46,10 @@ extension InvoiceViewController : UICollectionViewDataSource {
             
         }
         
+        cell.button.tintColor = .RedPaulosAuto
+        
+        
+        
         cell.cellView.setCardView()
         return cell
     }
