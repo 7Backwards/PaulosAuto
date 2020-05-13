@@ -42,6 +42,7 @@
 		B0B10511246B803C003960BC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10510246B803C003960BC /* UserModel.swift */; };
 		B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10512246B80C9003960BC /* RQ_LogIn.swift */; };
 		B0B10515246B81F0003960BC /* LogInPOSTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10514246B81F0003960BC /* LogInPOSTModel.swift */; };
+		B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */; };
 		B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */; };
 		B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */; };
 		B0B32D3824493CD9009F9008 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B32D3724493CD9009F9008 /* DataDelegate.swift */; };
@@ -97,6 +98,7 @@
 		B0B10510246B803C003960BC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B0B10512246B80C9003960BC /* RQ_LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_LogIn.swift; sourceTree = "<group>"; };
 		B0B10514246B81F0003960BC /* LogInPOSTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPOSTModel.swift; sourceTree = "<group>"; };
+		B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDownloadModel.swift; sourceTree = "<group>"; };
 		B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCategoriesCell.swift; sourceTree = "<group>"; };
 		B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesEquipmentCellLayout.swift; path = PaulosAuto/Controllers/CategoriesEquipmentCellLayout.swift; sourceTree = SOURCE_ROOT; };
 		B0B32D3724493CD9009F9008 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B01A800F245BA492004EC603 /* EquipmentUtilizationPOSTModel.swift */,
 				B0B10510246B803C003960BC /* UserModel.swift */,
 				B0B10514246B81F0003960BC /* LogInPOSTModel.swift */,
+				B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
+				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
 				B0B10511246B803C003960BC /* UserModel.swift in Sources */,
