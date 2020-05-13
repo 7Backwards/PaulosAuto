@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EquipmentUtilizationPOST: Codable {
+class EquipmentUtilizationPOSTModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case horasAtuais = "horasAtuais"
