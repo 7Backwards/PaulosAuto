@@ -62,6 +62,14 @@ class LogInViewController: ViewController {
                         
                         self.performSegue(withIdentifier: "LogInSegue", sender: self)
                     }
+                    else {
+                        
+                        let alert = UIAlertController(title: "Inicio de Sessão sem sucesso", message: "Credenciais incorretas, Por favor tente novamente", preferredStyle: UIAlertController.Style.alert)
+
+                        alert.addAction(UIAlertAction(title: "Tentar Novamente", style: UIAlertAction.Style.default, handler: nil))
+
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 }
             }
             else if let error = error {
