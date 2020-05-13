@@ -64,11 +64,7 @@ class LogInViewController: ViewController {
                     }
                     else {
                         
-                        let alert = UIAlertController(title: "Inicio de Sessão sem sucesso", message: "Credenciais incorretas, Por favor tente novamente", preferredStyle: UIAlertController.Style.alert)
-
-                        alert.addAction(UIAlertAction(title: "Tentar Novamente", style: UIAlertAction.Style.default, handler: nil))
-
-                        self.present(alert, animated: true, completion: nil)
+                        super.addInformativeAlert(alertControllerTitle: "Inicio de Sessão sem sucesso", message: "Credenciais incorretas, por favor tente novamente", alertActionTitle: "Tentar Novamente")
                     }
                 }
             }

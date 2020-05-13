@@ -128,6 +128,17 @@ class ViewController: UIViewController {
         return min(max(value, minimum), maximum)
     }
     
+    func addInformativeAlert(alertControllerTitle: String, message: String,alertActionTitle: String) {
+        
+        let alert = UIAlertController(title: alertControllerTitle, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
+        
+        alert.view.tintColor = UIColor.RedPaulosAuto
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     // MARK: - Objc functions
     
