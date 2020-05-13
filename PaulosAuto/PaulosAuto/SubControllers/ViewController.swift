@@ -134,7 +134,6 @@ class ViewController: UIViewController {
 
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         
-        alert.view.tintColor = UIColor.RedPaulosAuto
         
         self.present(alert, animated: true, completion: nil)
     }
