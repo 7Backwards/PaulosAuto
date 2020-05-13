@@ -23,7 +23,7 @@ class LogInPOSTModel: Codable {
     }
     
     func convertToDictionary() -> [String : Any] {
-        let dic: [String: Any] = [CodingKeys.email.stringValue : self.email, CodingKeys.email.stringValue : self.email]
+        let dic: [String: Any] = [CodingKeys.email.stringValue : self.email, CodingKeys.password.stringValue : self.password]
         return dic
     }
 }
