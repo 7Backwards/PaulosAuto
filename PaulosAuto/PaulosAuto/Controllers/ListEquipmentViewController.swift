@@ -177,7 +177,7 @@ class ListEquipmentViewController: ViewController {
     func addNavBarFilter() {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filtrar", style:.plain, target: self, action: #selector(rightButtonAction))
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 214/255.0, green: 4/255.0, blue: 3/255.0, alpha: 1)
+        self.navigationItem.rightBarButtonItem?.tintColor = .RedPaulosAuto
     }
     
     func filtercategory( equipmentArray : [EquipmentModel])-> [EquipmentModel] {

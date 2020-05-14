@@ -65,7 +65,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     
     private func setupView() {
         
-        let textFieldBorderColor : UIColor = UIColor( red: 31/255.00, green: 119/255.0, blue:54/255.00, alpha: 1.0 )
+        let textFieldBorderColor : UIColor = .green
         popUpView.setCardView()
         submitHoursButton.setButtonStyle(Button: submitHoursButton, cornerRadius: 10)
         lastRegistHoursLabel.text = "\(Equipmento.currentHours!) H"

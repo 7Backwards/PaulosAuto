@@ -136,7 +136,7 @@ class ShowEquipmentViewController: ViewController {
         
         if (equipment.smp == true) {
             
-            smpImageView.tintColor = UIColor(red: 31/255.0, green: 119/255.0, blue: 54/255.0, alpha: 1)
+            smpImageView.tintColor = .green
             
             if #available(iOS 13.0, *) {
                 
