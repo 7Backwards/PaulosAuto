@@ -64,7 +64,7 @@ class LogInViewController: ViewController {
                     }
                     else {
                         
-                        super.addInformativeAlert(alertControllerTitle: "Inicio de Sessão sem sucesso", message: "Credenciais incorretas, por favor tente novamente", alertActionTitle: "Tentar Novamente")
+                  super.addInformativeAlert(alertControllerTitle: "Inicio de Sessão sem sucesso", message: "Credenciais incorretas, por favor tente novamente", alertActionTitle: "Tentar Novamente")
                     }
                 }
             }

@@ -26,7 +26,7 @@ extension InvoiceViewController : UICollectionViewDataSource {
         
         if let  totalAmount = invoices[indexPath.row].totalAmount {
             
-                cell.totalAmountLabel.text = String(totalAmount)
+            cell.totalAmountLabel.text = String(totalAmount)
             
         }
         
@@ -48,13 +48,14 @@ extension InvoiceViewController : UICollectionViewDataSource {
         
         cell.button.tintColor = .RedPaulosAuto
         
-        
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(didTapMyButton), for: .touchUpInside)
         
         cell.cellView.setCardView()
         return cell
     }
     
-    
+
     
 }
 

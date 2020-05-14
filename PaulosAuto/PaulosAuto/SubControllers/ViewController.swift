@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PDFKit
 
 class ViewController: UIViewController {
     
@@ -21,7 +22,8 @@ class ViewController: UIViewController {
     var activityView = UIActivityIndicatorView()
     var loadingView = UIView()
     var fullscreenView = UIView()
-    
+    var pdfview : PDFView?
+    var backgroundView = UIView()
     
     // MARK: - Public
     
@@ -131,16 +133,39 @@ class ViewController: UIViewController {
     func addInformativeAlert(alertControllerTitle: String, message: String,alertActionTitle: String) {
         
         let alert = UIAlertController(title: alertControllerTitle, message: message, preferredStyle: UIAlertController.Style.alert)
-
+        
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         
         
         self.present(alert, animated: true, completion: nil)
     }
     
+    func displayPDF(pdfFileURL : URL) {
     
+        backgroundView.backgroundColor = .white
+        backgroundView.frame = self.view.bounds
+        self.view.addSubview(backgroundView)
+        pdfview = PDFView(frame:self.view.bounds)
+        pdfview!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        pdfview!.autoScales = true
+        let doc = PDFDocument(url: pdfFileURL)
+        self.pdfview!.document = doc
+        self.hideTabBar()
+        backgroundView.addSubview(self.pdfview!)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backButtonPressed))
+        
+    }
+    
+
     // MARK: - Objc functions
     
+    
+    @objc func backButtonPressed() {
+        self.pdfview?.removeFromSuperview()
+        self.backgroundView.removeFromSuperview()
+        self.navigationItem.leftBarButtonItem = nil
+        self.showTabBar()
+    }
     
     @objc func onDrage(_ sender:UIPanGestureRecognizer) {
         

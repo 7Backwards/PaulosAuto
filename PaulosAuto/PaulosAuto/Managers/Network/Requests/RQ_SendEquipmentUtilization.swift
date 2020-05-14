@@ -13,9 +13,9 @@ class RQ_SendEquipmentUtilization {
     
     func repos(serialNumber: String, currentHours: Int, _ completion: @escaping (EquipmentModel?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.sendEquipmentUtilization)!)
+        let request = URLRequest(url: (ApiConstants.sendEquipmentUtilizationURL)!)
         let url = request.url
-        let equipmentUtilization = EquipmentUtilizationPOST(horasAtuais: currentHours, serialNumber: String(serialNumber))
+        let equipmentUtilization = EquipmentUtilizationPOSTModel(horasAtuais: currentHours, serialNumber: String(serialNumber))
         let parameters = equipmentUtilization.convertToDictionary()
         
         

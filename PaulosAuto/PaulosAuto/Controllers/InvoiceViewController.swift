@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PDFKit
+
 
 class InvoiceViewController: ViewController {
     
@@ -60,4 +62,41 @@ class InvoiceViewController: ViewController {
             }
         })
     }
+    
+    @objc func didTapMyButton(sender:UIButton!) {
+
+        let id = 24395
+        self.addHUDLoading()
+        RQ_DownloadInvoice().repos(id: id, { (invoicesDownloadData,error) in
+            if let invoicesDownloadData = invoicesDownloadData {
+
+               let pdfurl = URL(string:"https://www.apeth.com/rez/release.pdf")!
+               let pdffileurl : URL = {
+                   let fm = FileManager.default
+                   let docsurl = try! fm.url(
+                       for: .documentDirectory, in: .userDomainMask,
+                       appropriateFor: nil, create: true)
+                   return docsurl.appendingPathComponent("mypdf.pdf")
+               }()
+                let sess = URLSession.shared
+                sess.downloadTask(with: pdfurl) { (url, resp, err) in
+                    if let url = url {
+                        let fm = FileManager.default
+                        try? fm.removeItem(at: pdffileurl)
+                        try? fm.moveItem(at: url, to: pdffileurl)
+                        DispatchQueue.main.async {
+                            self.removeHUDLoading()
+                            self.displayPDF(pdfFileURL: pdffileurl)
+                        }
+                    }
+                }.resume()
+                
+            }
+            else if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    
 }

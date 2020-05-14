@@ -54,7 +54,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-SY-SFW">
                                                                 <rect key="frame" x="0.0" y="277.66666666666669" width="374" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POn-xJ-Kdi">
                                                                 <rect key="frame" x="0.0" y="331.66666666666669" width="374" height="33"/>
@@ -98,7 +98,7 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="KjN-8O-Pr9"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="qfs-Qx-L74" firstAttribute="topMargin" secondItem="6oz-Jv-bZi" secondAttribute="top" id="9pk-Jn-Jsy"/>
                                     <constraint firstAttribute="trailing" secondItem="qfs-Qx-L74" secondAttribute="trailing" id="MNJ-EI-Tnr"/>
@@ -121,7 +121,7 @@
                         <outlet property="emailTextField" destination="pZr-Mo-Sh1" id="wsY-0K-Yzz"/>
                         <outlet property="logInButton" destination="POn-xJ-Kdi" id="xrp-BZ-NJd"/>
                         <outlet property="passwordTextField" destination="Xb1-SY-SFW" id="ZjF-vw-iAe"/>
-                        <outlet property="scrollView" destination="qfs-Qx-L74" id="Ev3-kV-NZH"/>
+                        <outlet property="scrollView" destination="qfs-Qx-L74" id="W18-KZ-efu"/>
                         <segue destination="8Pe-Jh-ChU" kind="show" identifier="LogInSegue" id="JVH-7D-TB8"/>
                     </connections>
                 </viewController>
