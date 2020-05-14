@@ -40,7 +40,7 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
                 return cell
             }
         }
-        cell.cellView.backgroundColor = .redTransparent
+        cell.cellView.backgroundColor = .blackTransparent
         cell.cellView.layer.masksToBounds = true
         cell.cellView.layer.cornerRadius = 20
         cell.categoryLabel.textColor = .black
