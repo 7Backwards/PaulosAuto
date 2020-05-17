@@ -33,6 +33,7 @@ class LogInViewController: ViewController {
         
         super.viewWillAppear(animated)
         
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -61,6 +62,17 @@ class LogInViewController: ViewController {
                     if self.user?.token != nil {
                         
                         UserDefaults.standard.set(try? PropertyListEncoder().encode(self.user), forKey:"user")
+                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                        let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarViewController
+
+                        // setting the login status to true
+                        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                        UserDefaults.standard.synchronize()
+                        appDel.window!.rootViewController = centerVC
+                        appDel.window!.makeKeyAndVisible()
+                        print("set isUserLoggedIn = true")
                         self.performSegue(withIdentifier: "LogInSegue", sender: self)
                     }
                     else {

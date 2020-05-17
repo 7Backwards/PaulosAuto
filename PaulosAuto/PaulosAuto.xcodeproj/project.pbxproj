@@ -32,6 +32,7 @@
 		B0658AAB2417E55700245732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0658AAA2417E55700245732 /* Assets.xcassets */; };
 		B0658AAE2417E55700245732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0658AAC2417E55700245732 /* LaunchScreen.storyboard */; };
 		B06A0CFD2470711E00074AE1 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A0CFC2470711E00074AE1 /* PerfilViewController.swift */; };
+		B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A0D002470C78A00074AE1 /* TabBarViewController.swift */; };
 		B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B382429189300FBBD4B /* ShowEquipmentViewController.swift */; };
 		B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */; };
 		B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */; };
@@ -89,6 +90,7 @@
 		B0658AAD2417E55700245732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0658AAF2417E55700245732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06A0CFC2470711E00074AE1 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		B06A0D002470C78A00074AE1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B08B3B382429189300FBBD4B /* ShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentViewController.swift; sourceTree = "<group>"; };
 		B08B3B3A24294FC400FBBD4B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		B092911F243B6E09003F097F /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */,
 				B0B1050E246B7BBE003960BC /* LogInViewController.swift */,
 				B06A0CFC2470711E00074AE1 /* PerfilViewController.swift */,
+				B06A0D002470C78A00074AE1 /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
+				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,

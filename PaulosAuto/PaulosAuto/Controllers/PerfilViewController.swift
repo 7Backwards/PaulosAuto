@@ -9,15 +9,20 @@
 import UIKit
 
 class PerfilViewController: ViewController {
-
     
-    var user : UserModel?
     
     // MARK: - Outlets
     
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var signOutStackView: UIStackView!
+    
+    
+    // MARK: - Properties
+    
+    
+    var user : UserModel?
     
     
     // MARK: - Override inherited functions
@@ -27,15 +32,15 @@ class PerfilViewController: ViewController {
         
         super.viewDidLoad()
         SetupView()
-        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
-            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
-        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if let name = user?.name {
-            nameLabel.text = "\(name)"
+        let touch = touches.first!
+        if touch.view?.tag == 400 {
             
+            signout()
         }
-        
     }
     
     // MARK: - Private
@@ -45,6 +50,32 @@ class PerfilViewController: ViewController {
         
         super.addNavBarLogo()
         cardView.setCardView()
+        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+        }
+        if let name = user?.name {
+            
+            nameLabel.text = "\(name)"
+        }
     }
+    
+    private func signout() {
+        
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
 
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
+
+        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        appDel.window?.rootViewController = loginVC
+        print("set isUserLoggedIn = false")
+        UserDefaults.standard.removeObject(forKey: "user")
+        let LoginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
+        navigationController?.pushViewController(LoginVC, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
 }

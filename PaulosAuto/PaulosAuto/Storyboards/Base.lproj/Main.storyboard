@@ -12,7 +12,7 @@
         <!--Log In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LogInViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LogInViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,7 +414,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="yQP-kc-lB4">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="8Pe-Jh-ChU" customClass="TabBarViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" modalPresentationStyle="fullScreen" id="8Pe-Jh-ChU" customClass="TabBarViewController" customModule="PaulosAuto" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="daY-dX-JVE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zxY-Oa-aDa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -817,7 +817,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="CKD-36-5kA"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nfk-Lj-SCQ">
+                                            <stackView opaque="NO" tag="400" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nfk-Lj-SCQ">
                                                 <rect key="frame" x="0.0" y="157.33333333333334" width="354" height="93"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="IcA-rR-rvr">
@@ -884,6 +884,7 @@
                     <connections>
                         <outlet property="cardView" destination="32i-iS-dcA" id="i15-fC-uy1"/>
                         <outlet property="nameLabel" destination="jmG-a5-MZb" id="Qam-34-wjR"/>
+                        <outlet property="signOutStackView" destination="Nfk-Lj-SCQ" id="xz0-N1-7ai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hu1-Xy-hQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
