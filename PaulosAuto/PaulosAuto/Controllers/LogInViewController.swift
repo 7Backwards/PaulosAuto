@@ -60,6 +60,7 @@ class LogInViewController: ViewController {
                     self.removeHUDLoading()
                     if self.user?.token != nil {
                         
+                        UserDefaults.standard.set(try? PropertyListEncoder().encode(self.user), forKey:"user")
                         self.performSegue(withIdentifier: "LogInSegue", sender: self)
                     }
                     else {
