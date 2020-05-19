@@ -25,6 +25,14 @@ class ViewController: UIViewController {
     var pdfview : PDFView?
     var backgroundView = UIView()
     
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        UINavigationBar.appearance().tintColor = UIColor.RedPaulosAuto
+    }
+    
+    
     // MARK: - Public
     
     
