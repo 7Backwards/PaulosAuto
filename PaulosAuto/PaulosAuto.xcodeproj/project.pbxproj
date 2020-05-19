@@ -26,6 +26,8 @@
 		B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */; };
 		B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */; };
 		B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */; };
+		B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AB24736DA200959B9C /* PreviewController.swift */; };
+		B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AD2473718800959B9C /* PreviewItem.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -82,6 +84,8 @@
 		B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInvoicesCell.swift; sourceTree = "<group>"; };
 		B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvoiceViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendEquipmentUtilization.swift; sourceTree = "<group>"; };
+		B055F2AB24736DA200959B9C /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		B055F2AD2473718800959B9C /* PreviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewItem.swift; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				B0B1050E246B7BBE003960BC /* LogInViewController.swift */,
 				B06A0CFC2470711E00074AE1 /* PerfilViewController.swift */,
 				B06A0D002470C78A00074AE1 /* TabBarViewController.swift */,
+				B055F2AB24736DA200959B9C /* PreviewController.swift */,
+				B055F2AD2473718800959B9C /* PreviewItem.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
 				B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */,
+				B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */,
 				B005B4A6245A2FCC00C000AC /* AppColors.swift in Sources */,
 				B0C7E20E2454C7F3005995A3 /* ShowEquipmentViewController+Extensions.swift in Sources */,
 				B016A9892448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift in Sources */,
@@ -435,6 +442,7 @@
 				B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */,
 				B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */,
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
+				B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */,
 				B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */,
 				B06A0CFD2470711E00074AE1 /* PerfilViewController.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuickLook
 
 
 extension InvoiceViewController : UICollectionViewDataSource {
@@ -54,10 +55,53 @@ extension InvoiceViewController : UICollectionViewDataSource {
         cell.cellView.setCardView()
         return cell
     }
-    
-
-    
 }
+
+
+extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewControllerDelegate {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        
+        return previewItem
+    }
+    
+    func previewFile(fileName: String) {
+        
+        var fileFound : Bool = false
+        
+        do {
+            let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
+            for url in contents {
+                if url.description.contains(fileName) {
+                    
+                    fileFound = true
+                    let previewController = PreviewController()
+                    self.previewItem = PreviewItem(url:url)
+                    previewController.dataSource = self
+                    UINavigationBar.appearance().tintColor = UIColor.RedPaulosAuto
+                    removeHUDLoading()
+                    self.present(previewController,animated: true, completion: nil)
+                }
+            }
+            
+            if !fileFound {
+                removeHUDLoading()
+                addInformativeAlert(alertControllerTitle: "Ficheiro não encontrado", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+            }
+            
+            return
+            
+        } catch {
+            addInformativeAlert(alertControllerTitle: "Erro no acesso à diretoria", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+        }
+    }
+}
+
 
 
 
