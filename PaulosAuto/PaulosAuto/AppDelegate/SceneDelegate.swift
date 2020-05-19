@@ -11,7 +11,7 @@ import UIKit
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window!.rootViewController = centerVC
             window!.makeKeyAndVisible()
         }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

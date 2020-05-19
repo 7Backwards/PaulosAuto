@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Add this if you only want to change Selected Image color
         // and/or selected image text
         
+        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+
+        if(userLoginStatus)
+        {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarViewController
+            window!.rootViewController = centerVC
+            window!.makeKeyAndVisible()
+        }
+        
         return true
         
     }
