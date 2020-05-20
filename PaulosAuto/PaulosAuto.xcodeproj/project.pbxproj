@@ -28,6 +28,7 @@
 		B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */; };
 		B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AB24736DA200959B9C /* PreviewController.swift */; };
 		B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AD2473718800959B9C /* PreviewItem.swift */; };
+		B055F2B2247576FA00959B9C /* ReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -86,6 +87,7 @@
 		B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendEquipmentUtilization.swift; sourceTree = "<group>"; };
 		B055F2AB24736DA200959B9C /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		B055F2AD2473718800959B9C /* PreviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewItem.swift; sourceTree = "<group>"; };
+		B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B0C7E20B2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift */,
 				B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */,
 				B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */,
+				B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */,
 				B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */,
 				B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */,
 				B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */,
@@ -444,6 +447,7 @@
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,
 				B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */,
 				B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */,
+				B055F2B2247576FA00959B9C /* ReportProblemViewController+Extensions.swift in Sources */,
 				B06A0CFD2470711E00074AE1 /* PerfilViewController.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,

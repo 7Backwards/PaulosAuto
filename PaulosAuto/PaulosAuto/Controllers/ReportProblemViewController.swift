@@ -23,12 +23,14 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var handlerView: UIView!
+    @IBOutlet weak var profileImgView: UIImageView!
     
     
     // MARK: - Properties
     
     
     var Equipment : EquipmentModel!
+    var photosArray : [UIImage]?
     
     
     // MARK: - Override inherited functions
@@ -83,6 +85,7 @@ class ReportProblemViewController: ViewController {
         handlerView.layer.cornerRadius = 3
         
         outerView.setCardViewTopCorners()
+        
     }
     
     
@@ -105,6 +108,10 @@ class ReportProblemViewController: ViewController {
         
         scrollView.contentInset = UIEdgeInsets(top : 0, left : 0, bottom: keyboardViewEndFrame.height, right : 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset
+    }
+    
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        showAlert()
     }
 }
 

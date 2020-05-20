@@ -83,8 +83,6 @@ extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewContro
                     let previewController = PreviewController()
                     self.previewItem = PreviewItem(url:url)
                     previewController.dataSource = self
-                    UINavigationBar.appearance().tintColor = UIColor.RedPaulosAuto
-                    removeHUDLoading()
                     self.present(previewController,animated: true, completion: nil)
                 }
             }
