@@ -23,14 +23,16 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var handlerView: UIView!
-    @IBOutlet weak var profileImgView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    let cellLayout = ListAttachmentsCellLayout()
     
     // MARK: - Properties
     
     
     var Equipment : EquipmentModel!
-    var photosArray : [UIImage]?
+    var attachmentArray : [AttachmentReportProblemStruct?] = []
     
     
     // MARK: - Override inherited functions
@@ -84,6 +86,9 @@ class ReportProblemViewController: ViewController {
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.collectionViewLayout = cellLayout
         outerView.setCardViewTopCorners()
         
     }
@@ -111,7 +116,12 @@ class ReportProblemViewController: ViewController {
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
-        showAlert()
+        
+        if attachmentArray.count < 5 {
+            
+            showAlert()
+        }
+        addInformativeAlert(alertControllerTitle: "Aviso", message: "Número máximo de ficheiros atingido", alertActionTitle: "Compreendo")
     }
 }
 

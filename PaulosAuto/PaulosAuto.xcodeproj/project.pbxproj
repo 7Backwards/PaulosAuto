@@ -29,6 +29,9 @@
 		B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AB24736DA200959B9C /* PreviewController.swift */; };
 		B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AD2473718800959B9C /* PreviewItem.swift */; };
 		B055F2B2247576FA00959B9C /* ReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */; };
+		B055F561247586A90011B1ED /* CollectionViewReportProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */; };
+		B055F56324758FB90011B1ED /* ListAttachmentsCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F56224758FB90011B1ED /* ListAttachmentsCellLayout.swift */; };
+		B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
 		B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA32417E55500245732 /* SceneDelegate.swift */; };
 		B0658AA62417E55500245732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA52417E55500245732 /* ViewController.swift */; };
@@ -88,6 +91,9 @@
 		B055F2AB24736DA200959B9C /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		B055F2AD2473718800959B9C /* PreviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewItem.swift; sourceTree = "<group>"; };
 		B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewReportProblemCell.swift; sourceTree = "<group>"; };
+		B055F56224758FB90011B1ED /* ListAttachmentsCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAttachmentsCellLayout.swift; sourceTree = "<group>"; };
+		B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentReportProblemStruct.swift; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0658AA12417E55500245732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0658AA32417E55500245732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,7 +202,6 @@
 				FA05FB0A24204D460033B901 /* Extensions */,
 				B005B4A7245A35D700C000AC /* SubControllers */,
 				FA05FB0924204BE50033B901 /* Layout */,
-				FACD1821241D35DA0085574C /* Structure */,
 				B0658AB82417E74C00245732 /* Resources */,
 				B0658AB92417E76200245732 /* Configurations */,
 			);
@@ -218,6 +223,7 @@
 				B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */,
 				B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */,
 				B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */,
+				B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */,
 				B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */,
 				B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */,
 				B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */,
@@ -302,6 +308,7 @@
 				B0B10510246B803C003960BC /* UserModel.swift */,
 				B0B10514246B81F0003960BC /* LogInPOSTModel.swift */,
 				B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */,
+				B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +319,7 @@
 				B0B32D332448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift */,
 				B0B74E03244DB0C00069C352 /* ListEquipmentCellLayout.swift */,
 				B015B8B324551E37002E83AA /* ListEquipmentHistoryCellLayout.swift */,
+				B055F56224758FB90011B1ED /* ListAttachmentsCellLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -328,13 +336,6 @@
 				B01A800D245B7C9B004EC603 /* String+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FACD1821241D35DA0085574C /* Structure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Structure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +434,7 @@
 				B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,
 				B0B1050D246B7723003960BC /* RQ_DownloadInvoice.swift in Sources */,
+				B055F56324758FB90011B1ED /* ListAttachmentsCellLayout.swift in Sources */,
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
 				B01A800E245B7C9B004EC603 /* String+Extensions.swift in Sources */,
@@ -455,6 +457,7 @@
 				B01A8010245BA492004EC603 /* EquipmentUtilizationPOSTModel.swift in Sources */,
 				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
+				B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
@@ -462,6 +465,7 @@
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
+				B055F561247586A90011B1ED /* CollectionViewReportProblemCell.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
 				B0B10511246B803C003960BC /* UserModel.swift in Sources */,
 				B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */,

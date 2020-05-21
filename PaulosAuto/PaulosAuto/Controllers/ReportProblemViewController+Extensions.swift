@@ -26,11 +26,12 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     func openCamera()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
+            let Picker = UIImagePickerController()
+            Picker.delegate = self
+            Picker.mediaTypes = ["public.image", "public.movie"]
+            Picker.sourceType = UIImagePickerController.SourceType.camera
+            Picker.allowsEditing = false
+            self.present(Picker, animated: true, completion: nil)
         }
         else
         {
@@ -43,11 +44,12 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     func openGallery()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
+            let Picker = UIImagePickerController()
+            Picker.delegate = self
+            Picker.mediaTypes = ["public.image", "public.movie"]
+            Picker.allowsEditing = true
+            Picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(Picker, animated: true, completion: nil)
         }
         else
         {
@@ -61,17 +63,84 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     //MARK:-- ImagePicker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        
+        
+        
+        
+        
         picker.dismiss(animated: true) { [weak self] in
             
             guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-            //Setting image to your image view
-            self?.photosArray?.append(image)
+
+            var imageData = AttachmentReportProblemStruct()
+            imageData.image = image
+            
+            self?.attachmentArray.append(imageData)
+                
+            self?.collectionView.reloadData()
+            return
         }
+        
+        picker.dismiss(animated: true) { [weak self] in
+            
+            guard let video = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL else { return }
+            //Setting image to your image view
+            var videoData = AttachmentReportProblemStruct()
+            videoData.video = video.absoluteURL!
+            
+            self?.attachmentArray.append(videoData)
+            self?.collectionView.reloadData()
+            return
+        }
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+}
 
+extension ReportProblemViewController : UICollectionViewDataSource {
+    
+    // MARK: - Public
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return attachmentArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemCell", for: indexPath) as! CollectionViewReportProblemCell
+        
+        if let image = attachmentArray[indexPath.row]?.image {
+            
+            cell.previewImageView.image = image
+        }
+        else if let video = attachmentArray[indexPath.row]?.video {
+            
+            self.getThumbnailFromUrl(video.absoluteString) { [weak self] (img) in
+                
+                guard let _ = self else { return }
+                if let img = img {
+                    cell.previewImageView.contentMode = .scaleAspectFit
+                    
+                    cell.previewImageView.image = img
+                }
+            }
+        }
+        return cell
+    }
+}
+
+
+extension ReportProblemViewController: UICollectionViewDelegate {
+    
+    
+    // MARK: - Public
+    
+    
+    
 }
 
