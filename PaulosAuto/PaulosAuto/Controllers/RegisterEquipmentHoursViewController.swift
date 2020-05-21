@@ -25,7 +25,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Properties
     
     
-    var Equipmento : EquipmentModel!
+    var Equipment : EquipmentModel!
     
     
     // MARK: - Override inherited functions
@@ -67,15 +67,14 @@ class RegisterEquipmentHoursViewController: ViewController {
         
         let textFieldBorderColor : UIColor = .green
         popUpView.setCardView()
-        submitHoursButton.setButtonStyle(Button: submitHoursButton, cornerRadius: 10)
-        lastRegistHoursLabel.text = "\(Equipmento.currentHours!) H"
-        serialNumberLabel.text = Equipmento.serialNumber
+        submitHoursButton.setButtonStyle(cornerRadius: 10)
+        lastRegistHoursLabel.text = "\(Equipment.currentHours!) H"
+        serialNumberLabel.text = Equipment.serialNumber
         submitHoursButton.layer.masksToBounds = true
         submitHoursButton.layer.borderColor = textFieldBorderColor.cgColor
         submitHoursButton.layer.borderWidth = 1.0
         submitHoursButton.layer.cornerRadius = 10
-        submitHoursButton.isEnabled = false
-        submitHoursButton.alpha = 0.7
+        submitHoursButton.disableButton()
     }
     
     
@@ -100,20 +99,18 @@ class RegisterEquipmentHoursViewController: ViewController {
         guard
             let currentHours = currentHoursTextField.text, !currentHours.isEmpty
         else {
-            submitHoursButton.isEnabled = false
-            submitHoursButton.alpha = 0.7
+            submitHoursButton.disableButton()
             return
         }
         if currentHours.isInt {
             
             if let currentHoursInt = Int(currentHours) {
                 
-                if let lastRecordedHours = Equipmento.currentHours {
+                if let lastRecordedHours = Equipment.currentHours {
                     
                     if currentHoursInt > lastRecordedHours {
                         
-                        submitHoursButton.isEnabled = true
-                        submitHoursButton.alpha = 1
+                        submitHoursButton.enableButton()
                     }
                 }
                 
@@ -134,7 +131,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         
         print("Enabled")
         
-        RQ_SendEquipmentUtilization().repos(serialNumber: Equipmento.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
+        RQ_SendEquipmentUtilization().repos(serialNumber: Equipment.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
             if let equipmentData = equipmentData {
                 
                 AppConstants.requestDone = true

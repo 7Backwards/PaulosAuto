@@ -66,8 +66,8 @@ class ReportProblemViewController: ViewController {
     
     
     private func setupView() {
-        
-        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
+    
+        reportProblemButton.setButtonStyle(cornerRadius: 10)
         
         serialNumberLabel.text = Equipment.serialNumber
         
@@ -89,6 +89,9 @@ class ReportProblemViewController: ViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = cellLayout
+        
+        reportProblemButton.disableButton()
+        
         outerView.setCardViewTopCorners()
         
     }
@@ -96,7 +99,7 @@ class ReportProblemViewController: ViewController {
     
     // MARK: - Objc functions
     
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInsets = UIEdgeInsets.zero
@@ -115,13 +118,48 @@ class ReportProblemViewController: ViewController {
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
+    @objc func editingChanged(_ textField: UITextField) {
+        
+        guard let problemDescription = problemDescriptionTextView.text, !problemDescription.isEmpty
+            else {
+                reportProblemButton.disableButton()
+                return
+        }
+        guard let currentHours = currentHoursTextView.text, !currentHours.isEmpty
+            else {
+                reportProblemButton.disableButton()
+                return
+        }
+        if currentHours.isInt {
+            
+            if let currentHoursInt = Int(currentHours) {
+                
+                if let lastRecordedHours = Equipment.currentHours {
+                    
+                    if currentHoursInt > lastRecordedHours {
+                        
+                        reportProblemButton.enableButton()
+                    }
+                }
+            }
+        }
+    }
+    
     @IBAction func cameraButtonPressed(_ sender: Any) {
         
         if attachmentArray.count < 5 {
             
             showAlert()
         }
-        addInformativeAlert(alertControllerTitle: "Aviso", message: "Número máximo de ficheiros atingido", alertActionTitle: "Compreendo")
+        else {
+            
+            addInformativeAlert(alertControllerTitle: "Aviso", message: "Número máximo de ficheiros atingido", alertActionTitle: "Compreendo")
+        }
+    }
+    
+    @IBAction func reportProblemButtonPressed(_ sender: Any) {
+        
+        
     }
 }
 

@@ -19,8 +19,11 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
         alert.addAction(UIAlertAction(title: "Galeria", style: .default, handler: {(action: UIAlertAction) in
             self.openGallery()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
+
+        
         self.present(alert, animated: true, completion: nil)
+        
     }
     
     func openCamera()
@@ -62,11 +65,6 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     
     //MARK:-- ImagePicker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        
-        
-        
-        
         
         picker.dismiss(animated: true) { [weak self] in
             

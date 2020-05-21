@@ -87,7 +87,7 @@ class ShowEquipmentViewController: ViewController {
         if (segue.identifier == "RegisterHoursSegue") {
             
             let destinationVC = segue.destination as! RegisterEquipmentHoursViewController
-            destinationVC.Equipmento = self.equipment
+            destinationVC.Equipment = self.equipment
         }
         if (segue.identifier == "ReportProblemSegue") {
             
@@ -187,8 +187,8 @@ class ShowEquipmentViewController: ViewController {
 
         informationView.setCardView()
         
-        reportProblemButton.setButtonStyle(Button: reportProblemButton, cornerRadius: 10)
-        registerHoursButton.setButtonStyle(Button: registerHoursButton, cornerRadius: 10)
+        reportProblemButton.setButtonStyle(cornerRadius: 10)
+        registerHoursButton.setButtonStyle(cornerRadius: 10)
         topView.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 0.1, blur: 6, spread: 0)
         topView.layer.masksToBounds = false
         historyCollectionView.collectionViewLayout = cellLayout
