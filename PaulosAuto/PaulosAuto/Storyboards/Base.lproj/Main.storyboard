@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,6 +32,7 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paulosauto-2" translatesAutoresizingMaskIntoConstraints="NO" id="9H0-w3-wZq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                                                <color key="tintColor" name="RedPaulosAuto"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="150" id="r9S-xc-WeV"/>
                                                                 </constraints>
@@ -58,9 +60,9 @@
                                                             </textField>
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POn-xJ-Kdi">
                                                                 <rect key="frame" x="0.0" y="331.66666666666669" width="374" height="33"/>
-                                                                <color key="backgroundColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="RedPaulosAuto"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <color key="tintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="tintColor" name="RedPaulosAuto"/>
                                                                 <size key="titleShadowOffset" width="4" height="6"/>
                                                                 <state key="normal" title="Iniciar Sessão">
                                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -134,7 +136,7 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="eiI-UB-oRC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Faturas" image="doc" selectedImage="doc_fill" id="HOh-Vk-THa">
-                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" name="RedPaulosAuto"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RPz-3g-QMD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -350,7 +352,7 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="11P-IL-OB4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Problemas" image="exclamationmark_triangle" selectedImage="exclamationmark_triangle_fill" id="63n-JJ-jw1">
-                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" name="RedPaulosAuto"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k4-Ti-HcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -397,7 +399,7 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Cj8-e4-kw8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Página inicial" image="house" selectedImage="house_fill" id="EcI-IZ-tbz">
-                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" name="RedPaulosAuto"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOd-qP-LyW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -421,7 +423,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" name="RedPaulosAuto"/>
                     </tabBar>
                     <connections>
                         <outlet property="tabBar" destination="zxY-Oa-aDa" id="Kjf-xe-WaC"/>
@@ -458,7 +460,7 @@
                                                 <subviews>
                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-5f-JhB">
                                                         <rect key="frame" x="165.66666666666666" y="5" width="82.666666666666657" height="6"/>
-                                                        <color key="backgroundColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="RedPaulosAuto"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="6" id="iFb-Yi-S5z"/>
                                                         </constraints>
@@ -481,8 +483,8 @@
                                                     </segmentedControl>
                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79d-GE-3l4">
                                                         <rect key="frame" x="0.0" y="55" width="207" height="3"/>
-                                                        <color key="backgroundColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="RedPaulosAuto"/>
+                                                        <color key="tintColor" name="RedPaulosAuto"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="lOV-HA-G1s"/>
                                                         </constraints>
@@ -640,12 +642,12 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="Data de Contrato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JFj-uU-61x">
                                                                             <rect key="frame" x="9.9999999999999929" y="15.333333333333334" width="124.33333333333331" height="19.333333333333329"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                            <color key="textColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" name="RedPaulosAuto"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-PN-yaT">
                                                                             <rect key="frame" x="20" y="5" width="20" height="40"/>
-                                                                            <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -741,7 +743,7 @@
             <objects>
                 <navigationController id="f01-eS-Kde" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfil" image="person_alt_circle" selectedImage="person_alt_circle_fill" id="JIi-A4-tNY">
-                        <color key="badgeColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" name="RedPaulosAuto"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4gk-g8-4Yq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -954,7 +956,8 @@
                                     </stackView>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-j2-Yzw">
                                         <rect key="frame" x="8" y="45" width="378" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="RedPaulosAuto"/>
+                                        <color key="tintColor" name="RedPaulosAuto"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="udv-gi-tXa"/>
                                         </constraints>
@@ -1203,14 +1206,15 @@
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP6-mv-kpA">
                                         <rect key="frame" x="0.0" y="47" width="207" height="3"/>
-                                        <color key="backgroundColor" red="0.94430422780000001" green="0.013613672" blue="0.01322687138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.94430422780000001" green="0.013613672" blue="0.01322687138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="RedPaulosAuto"/>
+                                        <color key="tintColor" name="RedPaulosAuto"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="RUN-5N-dw9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" name="RedPaulosAuto"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="eP6-mv-kpA" secondAttribute="bottom" id="4Dw-Pi-OC0"/>
                                     <constraint firstItem="eP6-mv-kpA" firstAttribute="leading" secondItem="xHl-0H-a0W" secondAttribute="leading" id="Lju-EI-SFS"/>
@@ -1235,10 +1239,10 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0wk-Ta-6Cl">
                                                         <rect key="frame" x="0.0" y="0.0" width="364" height="44.333333333333336"/>
-                                                        <color key="tintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" name="RedPaulosAuto"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <color key="textColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="highlightedColor" red="0.83921568627450982" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="RedPaulosAuto"/>
+                                                        <color key="highlightedColor" name="RedPaulosAuto"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -1561,7 +1565,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdX-43-K6I">
                                         <rect key="frame" x="197" y="0.0" width="187" height="45"/>
-                                        <color key="backgroundColor" red="0.84091449873096447" green="0.016488519582960121" blue="0.016488519582960121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="RedPaulosAuto"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Reportar Problema">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1929,7 +1933,7 @@
                                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cp9-ex-niz">
                                                                         <rect key="frame" x="0.0" y="410.66666666666669" width="354" height="25"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="tintColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="tintColor" name="RedPaulosAuto"/>
                                                                         <state key="normal" image="Camera_fill"/>
                                                                         <connections>
                                                                             <action selector="cameraButtonPressed:" destination="fj5-O6-C37" eventType="touchUpInside" id="GSk-ti-y5r"/>
@@ -1983,7 +1987,7 @@
                                                                     </view>
                                                                     <button opaque="NO" tag="801" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-Ll-HSK">
                                                                         <rect key="frame" x="0.0" y="614" width="354" height="40"/>
-                                                                        <color key="backgroundColor" red="0.84062653779999996" green="0.015664219859999998" blue="0.012815239839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" name="RedPaulosAuto"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="Q54-26-qWw"/>
                                                                         </constraints>
@@ -2093,6 +2097,9 @@
         <image name="person_alt_circle" width="25" height="25"/>
         <image name="person_alt_circle_fill" width="25" height="25"/>
         <image name="square_arrow_right" width="25" height="25"/>
+        <namedColor name="RedPaulosAuto">
+            <color red="0.8410000205039978" green="0.016000000759959221" blue="0.013000000268220901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <color key="tintColor" name="RedPaulosAuto"/>
 </document>
