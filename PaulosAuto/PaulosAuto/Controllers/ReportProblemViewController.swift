@@ -24,6 +24,7 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var handlerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewBackgroundView: UIView!
     
     
     let cellLayout = ListAttachmentsCellLayout()
@@ -93,7 +94,6 @@ class ReportProblemViewController: ViewController {
         reportProblemButton.disableButton()
         
         outerView.setCardViewTopCorners()
-        
     }
     
     
@@ -143,6 +143,12 @@ class ReportProblemViewController: ViewController {
                 }
             }
         }
+    }
+    
+    @objc func deleteAttachment(sender:UIButton!) {
+        
+        attachmentArray.remove(at: sender.tag)
+        collectionView.reloadData()
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {

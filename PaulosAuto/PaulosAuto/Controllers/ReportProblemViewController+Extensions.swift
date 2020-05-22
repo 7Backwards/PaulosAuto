@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 extension ReportProblemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -20,7 +21,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             self.openGallery()
         }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
-
+        
         
         self.present(alert, animated: true, completion: nil)
         
@@ -33,12 +34,12 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             Picker.delegate = self
             Picker.mediaTypes = ["public.image", "public.movie"]
             Picker.sourceType = UIImagePickerController.SourceType.camera
-            Picker.allowsEditing = false
+            Picker.allowsEditing = true
             self.present(Picker, animated: true, completion: nil)
         }
         else
         {
-            let alert  = UIAlertController(title: "Warning", message: "Câmara inexistente", preferredStyle: .alert)
+            let alert  = UIAlertController(title: "Warning", message: "Câmera inexistente", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -66,37 +67,45 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     //MARK:-- ImagePicker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        
         picker.dismiss(animated: true) { [weak self] in
             
-            guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-
-            var imageData = AttachmentReportProblemStruct()
-            imageData.image = image
-            
-            self?.attachmentArray.append(imageData)
+            guard
+                let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else { return }
+            if mediaType == (kUTTypeMovie as String) {
                 
-            self?.collectionView.reloadData()
+                let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL
+                
+                var videoData = AttachmentReportProblemStruct()
+                videoData.video = url
+                
+                self?.attachmentArray.append(videoData)
+                self?.collectionView.reloadData()
+                return
+            }
+            if mediaType == (kUTTypeImage as String) {
+                
+                let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+                var imageData = AttachmentReportProblemStruct()
+                
+                imageData.image = image
+                
+                self?.attachmentArray.append(imageData)
+                
+                self?.collectionView.reloadData()
+                return
+                
+            }
             return
-        }
-        
-        picker.dismiss(animated: true) { [weak self] in
             
-            guard let video = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL else { return }
-            //Setting image to your image view
-            var videoData = AttachmentReportProblemStruct()
-            videoData.video = video.absoluteURL!
-            
-            self?.attachmentArray.append(videoData)
-            self?.collectionView.reloadData()
-            return
         }
-        
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
     }
 }
+
+func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.dismiss(animated: true, completion: nil)
+}
+
 
 extension ReportProblemViewController : UICollectionViewDataSource {
     
@@ -128,6 +137,9 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                 }
             }
         }
+        cell.deleteButton.layer.cornerRadius = 10
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deleteAttachment), for: .touchUpInside)
         return cell
     }
 }
