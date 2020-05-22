@@ -103,7 +103,7 @@ class ReportProblemViewController: ViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInsets = UIEdgeInsets.zero
-        
+
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
@@ -167,6 +167,8 @@ class ReportProblemViewController: ViewController {
         
         
     }
+    
+    
 }
 
 

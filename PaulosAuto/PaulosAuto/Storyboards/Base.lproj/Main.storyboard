@@ -1843,7 +1843,7 @@
                                                     <constraint firstAttribute="height" constant="1" identifier="100" id="HgC-F4-T1e"/>
                                                 </constraints>
                                             </view>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-8v-XPp">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-8v-XPp">
                                                 <rect key="frame" x="20" y="85" width="374" height="622"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-v8-GWV">
@@ -1900,7 +1900,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s1q-ej-2kW">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s1q-ej-2kW">
                                                                                 <rect key="frame" x="0.0" y="47.000000000000028" width="354" height="40"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                 <constraints>
@@ -1921,7 +1921,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="75N-Uf-Lgj">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75N-Uf-Lgj">
                                                                                 <rect key="frame" x="0.0" y="47" width="354" height="80"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
