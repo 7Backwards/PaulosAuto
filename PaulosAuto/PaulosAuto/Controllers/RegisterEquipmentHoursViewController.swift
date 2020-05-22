@@ -27,7 +27,6 @@ class RegisterEquipmentHoursViewController: ViewController {
     
     var Equipment : EquipmentModel!
     
-    
     // MARK: - Override inherited functions
     
     
@@ -41,7 +40,6 @@ class RegisterEquipmentHoursViewController: ViewController {
         
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         [currentHoursTextField].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
     }
     
@@ -77,21 +75,28 @@ class RegisterEquipmentHoursViewController: ViewController {
         submitHoursButton.disableButton()
     }
     
+    private func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+
+        UIView.beginAnimations("animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
     
     // MARK: - Objc functions
     
     
     @objc func keyboardWillShow(notification: Notification) {
         
-        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height) != nil {
             
-            self.popUpView.frame.origin.y = UIScreen.main.bounds.height - keyboardHeight - self.popUpView.frame.height - 10
+            animateViewMoving(up: true, moveValue: ( view.safeAreaLayoutGuide.layoutFrame.size.height - self.popUpView.frame.height)/2 - 10)
         }
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        
-        self.popUpView.center.y = self.view.center.y
     }
     
     @objc func editingChanged(_ textField: UITextField) {
@@ -111,12 +116,16 @@ class RegisterEquipmentHoursViewController: ViewController {
                     if currentHoursInt > lastRecordedHours {
                         
                         submitHoursButton.enableButton()
+                        return
                     }
                 }
                 
             }
         }
+        return
     }
+    
+    
     
     
     // MARK: - Actions
