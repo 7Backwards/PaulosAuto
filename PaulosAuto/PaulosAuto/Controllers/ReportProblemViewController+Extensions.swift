@@ -134,6 +134,17 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                     cell.previewImageView.contentMode = .scaleAspectFit
                     
                     cell.previewImageView.image = img
+                    let image: UIImage = UIImage(named: "play_circle")!
+                    let imageView = UIImageView(image: image)
+                    imageView.contentMode = .scaleAspectFit
+                    imageView.translatesAutoresizingMaskIntoConstraints = false
+                    imageView.tintColor = .redTransparent60
+                    //add to sub view
+                    cell.cellView.addSubview(imageView)
+                    let centerXConst = NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+                    let centerYConst = NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+                    NSLayoutConstraint.activate([centerXConst, centerYConst])
+                    
                 }
             }
         }
