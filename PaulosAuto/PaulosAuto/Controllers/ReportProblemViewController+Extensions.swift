@@ -124,8 +124,6 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         if let image = attachmentArray[indexPath.row]?.image {
             
             cell.previewImageView.image = image
-            cell.mediaTypeButton.layer.cornerRadius = 10
-            cell.mediaTypeButton.imageView?.image = UIImage(named: "picture")
         }
         else if let video = attachmentArray[indexPath.row]?.video {
             
@@ -137,8 +135,6 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                     
                     cell.previewImageView.image = img
                 }
-               cell.mediaTypeButton.layer.cornerRadius = 10
-                cell.mediaTypeButton.imageView?.image = UIImage(named: "movie")
             }
         }
         

@@ -1843,7 +1843,7 @@
                                                     <constraint firstAttribute="height" constant="1" identifier="100" id="HgC-F4-T1e"/>
                                                 </constraints>
                                             </view>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-8v-XPp">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="PZr-8v-XPp">
                                                 <rect key="frame" x="20" y="85" width="374" height="622"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-v8-GWV">
@@ -1900,7 +1900,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s1q-ej-2kW">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s1q-ej-2kW">
                                                                                 <rect key="frame" x="0.0" y="47.000000000000028" width="354" height="40"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                 <constraints>
@@ -1908,7 +1908,7 @@
                                                                                 </constraints>
                                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                                                             </textView>
                                                                         </subviews>
                                                                     </stackView>
@@ -1926,7 +1926,7 @@
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                                             </textView>
                                                                         </subviews>
                                                                     </stackView>
@@ -1986,19 +1986,11 @@
                                                                                                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                                                     <state key="normal" image="multiply"/>
                                                                                                                 </button>
-                                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ4-wd-XJ9">
-                                                                                                                    <rect key="frame" x="55" y="-14.666666666666671" width="20" height="22"/>
-                                                                                                                    <color key="backgroundColor" red="0.8410000205" green="0.016000000760000001" blue="0.013000000269999999" alpha="0.60003745720000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                                                    <state key="normal" image="movie"/>
-                                                                                                                </button>
                                                                                                             </subviews>
                                                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                                             <constraints>
                                                                                                                 <constraint firstItem="fvD-vT-eS7" firstAttribute="leading" secondItem="Nk3-VF-HIs" secondAttribute="leading" id="PBA-Vw-uRT"/>
                                                                                                                 <constraint firstAttribute="bottom" secondItem="fvD-vT-eS7" secondAttribute="bottom" id="jaO-Tn-auz"/>
-                                                                                                                <constraint firstAttribute="bottom" secondItem="lZ4-wd-XJ9" secondAttribute="bottom" id="rRj-2D-3Pc"/>
-                                                                                                                <constraint firstAttribute="trailing" secondItem="lZ4-wd-XJ9" secondAttribute="trailing" id="w5n-fz-B2j"/>
                                                                                                             </constraints>
                                                                                                         </view>
                                                                                                     </subviews>
@@ -2019,7 +2011,6 @@
                                                                                         <connections>
                                                                                             <outlet property="cellView" destination="gmM-br-7Sm" id="UWb-Ub-P97"/>
                                                                                             <outlet property="deleteButton" destination="fvD-vT-eS7" id="9rZ-k5-50X"/>
-                                                                                            <outlet property="mediaTypeButton" destination="lZ4-wd-XJ9" id="DQa-fh-54H"/>
                                                                                             <outlet property="previewImageView" destination="gGF-IW-0pK" id="xxE-hN-ywW"/>
                                                                                         </connections>
                                                                                     </collectionViewCell>
@@ -2146,7 +2137,6 @@
         <image name="greaterthan" catalog="system" width="64" height="54"/>
         <image name="house" width="25" height="25"/>
         <image name="house_fill" width="25" height="25"/>
-        <image name="movie" width="20" height="20"/>
         <image name="multiply" width="20" height="20"/>
         <image name="person_alt_circle" width="25" height="25"/>
         <image name="person_alt_circle_fill" width="25" height="25"/>
