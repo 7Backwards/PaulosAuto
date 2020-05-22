@@ -22,22 +22,15 @@ class ListAttachmentsCellLayout : UICollectionViewFlowLayout {
     }
 
 
-    var itemWidth: CGFloat {
-
-        var width : CGFloat
-
-        width = (collectionView!.frame.width / 4)
-        
-        return width
-    }
+    
 
     override var itemSize: CGSize {
 
        set {
-        self.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        self.itemSize = CGSize(width: itemHeight, height: itemHeight)
        }
        get {
-           return CGSize(width: itemWidth, height: itemHeight)
+           return CGSize(width: itemHeight, height: itemHeight)
        }
     }
     

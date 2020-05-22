@@ -1953,37 +1953,57 @@
                                                                                 </collectionViewFlowLayout>
                                                                                 <cells>
                                                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" restorationIdentifier="CollectionViewReportProblemCell" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionViewReportProblemCell" id="Izo-l0-Hf9" customClass="CollectionViewReportProblemCell" customModule="PaulosAuto" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="-593.33333333333337" width="240" height="1280"/>
+                                                                                        <rect key="frame" x="0.0" y="9" width="75" height="75"/>
                                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                                         <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="gmM-br-7Sm">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="1280"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                                             <subviews>
                                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GfP-zy-UJa">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="1280"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                                                     <subviews>
-                                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-IW-0pK">
-                                                                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="1152"/>
-                                                                                                        </imageView>
-                                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk3-VF-HIs">
-                                                                                                            <rect key="frame" x="0.0" y="1152" width="240" height="128"/>
+                                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-pa-4iy">
+                                                                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="67.666666666666671"/>
                                                                                                             <subviews>
-                                                                                                                <button opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvD-vT-eS7">
-                                                                                                                    <rect key="frame" x="0.0" y="106" width="20" height="22"/>
-                                                                                                                    <color key="backgroundColor" red="0.8410000205" green="0.016000000760000001" blue="0.013000000269999999" alpha="0.40140732019999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                                    <color key="tintColor" name="RedPaulosAuto"/>
+                                                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-IW-0pK">
+                                                                                                                    <rect key="frame" x="5" y="0.0" width="65" height="67.666666666666671"/>
+                                                                                                                </imageView>
+                                                                                                            </subviews>
+                                                                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                                                            <constraints>
+                                                                                                                <constraint firstAttribute="trailing" secondItem="gGF-IW-0pK" secondAttribute="trailing" constant="5" id="5v5-Kj-tA7"/>
+                                                                                                                <constraint firstAttribute="bottom" secondItem="gGF-IW-0pK" secondAttribute="bottom" id="EqY-Ly-14x"/>
+                                                                                                                <constraint firstItem="gGF-IW-0pK" firstAttribute="top" secondItem="PTb-pa-4iy" secondAttribute="top" id="Qa0-JS-o6g"/>
+                                                                                                                <constraint firstItem="gGF-IW-0pK" firstAttribute="leading" secondItem="PTb-pa-4iy" secondAttribute="leading" constant="5" id="ZUH-pK-WL3"/>
+                                                                                                            </constraints>
+                                                                                                        </view>
+                                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nk3-VF-HIs">
+                                                                                                            <rect key="frame" x="0.0" y="67.666666666666671" width="75" height="7.3333333333333286"/>
+                                                                                                            <subviews>
+                                                                                                                <button opaque="NO" clipsSubviews="YES" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvD-vT-eS7">
+                                                                                                                    <rect key="frame" x="0.0" y="-14.666666666666671" width="20" height="22"/>
+                                                                                                                    <color key="backgroundColor" red="0.8410000205" green="0.016000000760000001" blue="0.013000000269999999" alpha="0.60003745720000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                                                     <state key="normal" image="multiply"/>
+                                                                                                                </button>
+                                                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZ4-wd-XJ9">
+                                                                                                                    <rect key="frame" x="55" y="-14.666666666666671" width="20" height="22"/>
+                                                                                                                    <color key="backgroundColor" red="0.8410000205" green="0.016000000760000001" blue="0.013000000269999999" alpha="0.60003745720000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                                                    <state key="normal" image="movie"/>
                                                                                                                 </button>
                                                                                                             </subviews>
                                                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                                                             <constraints>
                                                                                                                 <constraint firstItem="fvD-vT-eS7" firstAttribute="leading" secondItem="Nk3-VF-HIs" secondAttribute="leading" id="PBA-Vw-uRT"/>
                                                                                                                 <constraint firstAttribute="bottom" secondItem="fvD-vT-eS7" secondAttribute="bottom" id="jaO-Tn-auz"/>
+                                                                                                                <constraint firstAttribute="bottom" secondItem="lZ4-wd-XJ9" secondAttribute="bottom" id="rRj-2D-3Pc"/>
+                                                                                                                <constraint firstAttribute="trailing" secondItem="lZ4-wd-XJ9" secondAttribute="trailing" id="w5n-fz-B2j"/>
                                                                                                             </constraints>
                                                                                                         </view>
                                                                                                     </subviews>
                                                                                                     <constraints>
-                                                                                                        <constraint firstItem="gGF-IW-0pK" firstAttribute="height" secondItem="GfP-zy-UJa" secondAttribute="height" multiplier="0.9" id="Z60-zr-gOx"/>
+                                                                                                        <constraint firstItem="PTb-pa-4iy" firstAttribute="height" secondItem="GfP-zy-UJa" secondAttribute="height" multiplier="0.9" id="NCc-yi-LFN"/>
                                                                                                     </constraints>
                                                                                                 </stackView>
                                                                                             </subviews>
@@ -1995,9 +2015,11 @@
                                                                                                 <constraint firstItem="GfP-zy-UJa" firstAttribute="top" secondItem="gmM-br-7Sm" secondAttribute="top" id="uNr-lV-F9L"/>
                                                                                             </constraints>
                                                                                         </collectionViewCellContentView>
+                                                                                        <size key="customSize" width="75" height="75"/>
                                                                                         <connections>
                                                                                             <outlet property="cellView" destination="gmM-br-7Sm" id="UWb-Ub-P97"/>
                                                                                             <outlet property="deleteButton" destination="fvD-vT-eS7" id="9rZ-k5-50X"/>
+                                                                                            <outlet property="mediaTypeButton" destination="lZ4-wd-XJ9" id="DQa-fh-54H"/>
                                                                                             <outlet property="previewImageView" destination="gGF-IW-0pK" id="xxE-hN-ywW"/>
                                                                                         </connections>
                                                                                     </collectionViewCell>
@@ -2124,6 +2146,7 @@
         <image name="greaterthan" catalog="system" width="64" height="54"/>
         <image name="house" width="25" height="25"/>
         <image name="house_fill" width="25" height="25"/>
+        <image name="movie" width="20" height="20"/>
         <image name="multiply" width="20" height="20"/>
         <image name="person_alt_circle" width="25" height="25"/>
         <image name="person_alt_circle_fill" width="25" height="25"/>
