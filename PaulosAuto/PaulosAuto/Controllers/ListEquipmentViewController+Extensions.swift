@@ -104,7 +104,7 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if(searchActive && !searchFilteredEquipments.isEmpty) {
+        if(searchActive) {
             
             if(smpActive) {
                 
@@ -137,7 +137,7 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         let cell: CollectionViewEquipmentsCell
         var equipmentsFilteredAndOrdered : [EquipmentModel]
         
-        if (searchActive && !searchFilteredEquipments.isEmpty) {
+        if (searchActive ) {
             
             if smpActive {
                 
@@ -266,7 +266,9 @@ extension ListEquipmentViewController: UISearchBarDelegate {
         searchFilteredEquipments = equipments.filter { (equipment) -> Bool in
             return equipment.serialNumber?.range(of: searchText, options: [ .caseInsensitive ]) != nil
         }
-        searchActive = !searchFilteredEquipments.isEmpty
+        
+        
+        searchActive = !searchText.isEmpty
         self.collectionView.reloadData()
     }
 }

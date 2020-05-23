@@ -18,6 +18,7 @@ class ListEquipmentViewController: ViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var smpSwitch: UISwitch!
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var noEquipmentsView: UIView!
     
     
     // MARK: - Constants
@@ -84,6 +85,10 @@ class ListEquipmentViewController: ViewController {
                     self.equipments = equipmentData
                     self.collectionView?.reloadData()
                     self.removeHUDLoading()
+                    if self.equipments.count == 0 {
+                        self.noEquipmentsView.isHidden = false
+                        self.collectionView.isHidden = true
+                    }
                     
                 }
             }

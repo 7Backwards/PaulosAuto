@@ -14,13 +14,11 @@ import PDFKit
 class InvoiceViewController: ViewController {
     
    
-    
-    
-    
     // MARK: - Outlets
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noInvoicesView: UIView!
     
     
     // MARK: - Constants
@@ -59,6 +57,16 @@ class InvoiceViewController: ViewController {
                     self.invoices = invoicesData
                     self.collectionView?.reloadData()
                     self.removeHUDLoading()
+                    if self.invoices.count == 0 {
+                        
+                        self.noInvoicesView.isHidden = false
+                        self.collectionView.isHidden = true
+                    }
+                    else {
+                        
+                        self.noInvoicesView.isHidden = true
+                        self.collectionView.isHidden = false
+                    }
                 }
             }
             else if let error = error {
