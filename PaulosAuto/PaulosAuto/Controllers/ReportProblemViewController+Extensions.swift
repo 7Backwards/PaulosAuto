@@ -141,30 +141,42 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemCell", for: indexPath) as! CollectionViewReportProblemCell
         
+        let theSubviews: Array = (cell.cellView.subviews)
+        for view in theSubviews
+        {
+            if view != cell.previewImageOuterView && view != cell.deleteButtonOuterView {
+                
+                view.removeFromSuperview()
+            }
+        }
+        
         if let imageData = attachmentArray[indexPath.row]?.image?.data {
             
             cell.previewImageView.image = UIImage(data:imageData)
+            cell.previewImageView.contentMode = .scaleAspectFit
         }
-        else if let video = attachmentArray[indexPath.row]?.video {
+        else if let videoUrl = attachmentArray[indexPath.row]?.video?.urlPath {
             
-            self.getThumbnailFromUrl(video.urlPath?.absoluteString) { [weak self] (img) in
+            
+            self.getThumbnailFromUrl(videoUrl.absoluteString) { [weak self] (img) in
                 
                 guard let _ = self else { return }
                 if let img = img {
                     cell.previewImageView.contentMode = .scaleAspectFit
                     
                     cell.previewImageView.image = img
-                    let image: UIImage = UIImage(named: "play_circle")!
-                    let imageView = UIImageView(image: image)
-                    imageView.contentMode = .scaleAspectFit
-                    imageView.translatesAutoresizingMaskIntoConstraints = false
-                    imageView.tintColor = .redTransparent60
-                    //add to sub view
-                    cell.cellView.addSubview(imageView)
-                    let centerXConst = NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
-                    let centerYConst = NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-                    NSLayoutConstraint.activate([centerXConst, centerYConst])
                     
+                    let playerPopUp: UIImage = UIImage(named: "play_circle")!
+                    let imageViewPlayerPopUp = UIImageView(image: playerPopUp)
+                    
+                    imageViewPlayerPopUp.contentMode = .scaleAspectFit
+                    imageViewPlayerPopUp.translatesAutoresizingMaskIntoConstraints = false
+                    imageViewPlayerPopUp.tintColor = .redTransparent60
+                    //add to sub view
+                    cell.cellView.addSubview(imageViewPlayerPopUp)
+                    let centerXConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+                    let centerYConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+                    NSLayoutConstraint.activate([centerXConst, centerYConst])
                 }
             }
         }
@@ -181,8 +193,6 @@ extension ReportProblemViewController: UICollectionViewDelegate {
     
     
     // MARK: - Public
-    
-    
     
 }
 

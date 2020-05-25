@@ -28,6 +28,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     
     
     let cellLayout = ListAttachmentsCellLayout()
+
     
     // MARK: - Properties
     
