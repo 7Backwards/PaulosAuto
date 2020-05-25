@@ -26,6 +26,7 @@ class ReportProblemResponseModel: Codable {
   var numeroCliente: Int?
 
   init (idRegisto: Int?, serialNumber: String?, imagens: [String]?, descricao: String?, videos: [String]?, numeroCliente: Int?) {
+    
     self.idRegisto = idRegisto
     self.serialNumber = serialNumber
     self.imagens = imagens
@@ -35,6 +36,7 @@ class ReportProblemResponseModel: Codable {
   }
 
   required init(from decoder: Decoder) throws {
+    
     let container = try decoder.container(keyedBy: CodingKeys.self)
     idRegisto = try container.decodeIfPresent(Int.self, forKey: .idRegisto)
     serialNumber = try container.decodeIfPresent(String.self, forKey: .serialNumber)

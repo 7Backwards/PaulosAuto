@@ -12,7 +12,6 @@ import UIKit
 
 struct VideoModel {
     
-    
     var urlPath: URL?
     var name: String?
     var data: Data?

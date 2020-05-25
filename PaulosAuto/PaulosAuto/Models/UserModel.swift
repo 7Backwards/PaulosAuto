@@ -24,6 +24,7 @@ class UserModel: Codable {
   var password: String?
 
   init (name: String?, roles: [String]?, email: String?, token: String?, password: String?) {
+    
     self.name = name
     self.roles = roles
     self.email = email
@@ -32,6 +33,7 @@ class UserModel: Codable {
   }
 
   required init(from decoder: Decoder) throws {
+    
     let container = try decoder.container(keyedBy: CodingKeys.self)
     name = try container.decodeIfPresent(String.self, forKey: .name)
     roles = try container.decodeIfPresent([String].self, forKey: .roles)

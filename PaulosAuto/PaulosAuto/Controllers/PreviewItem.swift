@@ -13,8 +13,14 @@ import QuickLook
 class PreviewItem: NSObject, QLPreviewItem {
     
     
+    // MARK: - Properties
+    
+    
     var previewItemURL: URL?
     var previewItemTitle: String?
+    
+    
+    // MARK: - Public
     
     
     init(url: URL?, title: String? = nil) {

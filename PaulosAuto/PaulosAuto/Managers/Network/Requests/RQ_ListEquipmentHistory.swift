@@ -11,6 +11,9 @@ import Foundation
 class RQ_ListEquipmentHistory {
     
     
+    // MARK: - Public
+    
+    
     func repos(serialNumber: String, _ completion: @escaping ([EquipmentHistoryModel]?, Error?) -> Void ) {
         
         let request = URLRequest(url: (ApiConstants.listEquipmentHistoryURL?.appendingPathComponent(serialNumber))!)
@@ -23,10 +26,12 @@ class RQ_ListEquipmentHistory {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

@@ -27,8 +27,11 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     @IBOutlet weak var collectionViewBackgroundView: UIView!
     
     
+    // MARK: - Constants
+    
+    
     let cellLayout = ListAttachmentsCellLayout()
-
+    
     
     // MARK: - Properties
     
@@ -54,7 +57,6 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         [currentHoursTextField].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
         
@@ -72,7 +74,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     
     
     private func setupView() {
-    
+        
         reportProblemButton.setButtonStyle(cornerRadius: 10)
         
         serialNumberLabel.text = Equipment.serialNumber
@@ -92,7 +94,6 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3
         
-        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = cellLayout
         
@@ -102,13 +103,22 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     }
     
     
+    // MARK: - Public
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        editingChanged()
+    }
+    
+    
     // MARK: - Objc functions
     
     
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInsets = UIEdgeInsets.zero
-
+        
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
@@ -127,11 +137,13 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
         
         guard let problemDescription = problemDescriptionTextView.text, !problemDescription.isEmpty
             else {
+                
                 reportProblemButton.disableButton()
                 return
         }
         guard let currentHours = currentHoursTextField.text, !currentHours.isEmpty
             else {
+                
                 reportProblemButton.disableButton()
                 return
         }
@@ -148,20 +160,19 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                 }
             }
         }
-        
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-
-        editingChanged()
-
-    }
     
     @objc func deleteAttachment(sender:UIButton!) {
         
         attachmentArray.remove(at: sender.tag)
         collectionView.reloadData()
     }
+    
+    
+    // MARK: - Actions
+    
+    
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
         
@@ -178,14 +189,14 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     @IBAction func reportProblemButtonPressed(_ sender: Any) {
         
         //É PRECISO GET USER ID mas neste momento a API nao está a dar essa informaçao
-//        var user : UserModel?
-//        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
-//            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
-//        }
-//        if let clientNumber = user?. {
-//
-//            nameLabel.text = "\(name)"
-//        }
+        //        var user : UserModel?
+        //        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+        //            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+        //        }
+        //        if let clientNumber = user?. {
+        //
+        //            nameLabel.text = "\(name)"
+        //        }
         
         var imagesPOST : [ImageModel] = []
         for i in attachmentArray {
@@ -203,41 +214,38 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                 
                 videoPOST.append((video))
             }
-                
-            
         }
+        
         let postModel = ReportProblemPOSTModel(serialNumber: Equipment.serialNumber, imagens: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST, numeroCliente: 1)
         
-        //var responseModel : ReportProblemResponseModel?
-        
         RQ_SendReportProblem().repos(reportProblemPOST: postModel, { (responseModel,error) in
-                if let response = responseModel {
-                    DispatchQueue.main.async {
+            if responseModel != nil {
+                
+                DispatchQueue.main.async {
                     
                     AppConstants.requestDone = true
-                        
-                        self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
-                    }
-                        
+                    
+                    self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
                 }
-                else if let error = error {
-                    DispatchQueue.main.async {
+            }
+            else if let error = error {
+                
+                DispatchQueue.main.async {
+                    
                     switch error {
                         
                     case APPError.requestEntityTooLarge:
-                        
                         self.addInformativeAlert(alertControllerTitle: "Erro", message: "Tamanho de ficheiros anexados demasiado grande", alertActionTitle: "Tentar novamente")
                         
                         
                     default:
                         self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno, contactar administrador", alertActionTitle: "Tentar novamente")
-                        
                     }
                 }
             }
-            })
-        }
+        })
     }
+}
 
 
 

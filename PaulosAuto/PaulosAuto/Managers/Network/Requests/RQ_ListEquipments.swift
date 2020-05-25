@@ -11,6 +11,9 @@ import Foundation
 class RQ_ListEquipments {
     
     
+    // MARK: - Public
+    
+    
     func repos(username: Int, _ completion: @escaping ([EquipmentModel]?, Error?) -> Void ) {
         
         let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent(String(username)))!)
@@ -23,10 +26,12 @@ class RQ_ListEquipments {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

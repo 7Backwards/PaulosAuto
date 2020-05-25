@@ -28,6 +28,7 @@ class InvoiceDownloadModel: Codable {
   var pathToDoc: String?
 
   init (ano: Int?, diario: String?, fileName: String?, diarioObra: String?, numero: Int?, numeroObra: Int?, pathToDoc: String?) {
+    
     self.ano = ano
     self.diario = diario
     self.fileName = fileName
@@ -38,6 +39,7 @@ class InvoiceDownloadModel: Codable {
   }
 
   required init(from decoder: Decoder) throws {
+    
     let container = try decoder.container(keyedBy: CodingKeys.self)
     ano = try container.decodeIfPresent(Int.self, forKey: .ano)
     diario = try container.decodeIfPresent(String.self, forKey: .diario)

@@ -11,6 +11,9 @@ import Foundation
 class RQ_SendEquipmentUtilization {
     
     
+    // MARK: - Public
+    
+    
     func repos(serialNumber: String, currentHours: Int, _ completion: @escaping (EquipmentModel?, Error?) -> Void ) {
         
         let request = URLRequest(url: (ApiConstants.sendEquipmentUtilizationURL)!)
@@ -29,10 +32,12 @@ class RQ_SendEquipmentUtilization {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

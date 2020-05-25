@@ -12,6 +12,10 @@ import Photos
 
 extension ReportProblemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    // MARK: - Public
+    
+    
     func showAlert() {
         
         let alert = UIAlertController(title: "Seleção de Imagem", message: "De onde pretende selecionar a imagem?", preferredStyle: .actionSheet)
@@ -23,7 +27,6 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
         }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         
-        
         self.present(alert, animated: true, completion: nil)
         
     }
@@ -31,6 +34,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     func openCamera()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            
             let Picker = UIImagePickerController()
             Picker.delegate = self
             Picker.mediaTypes = ["public.image", "public.movie"]
@@ -38,8 +42,8 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             Picker.allowsEditing = true
             self.present(Picker, animated: true, completion: nil)
         }
-        else
-        {
+        else {
+            
             let alert  = UIAlertController(title: "Warning", message: "Câmera inexistente", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -49,6 +53,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     func openGallery()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            
             let Picker = UIImagePickerController()
             Picker.delegate = self
             Picker.mediaTypes = ["public.image", "public.movie"]
@@ -58,14 +63,13 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
         }
         else
         {
+            
             let alert  = UIAlertController(title: "Erro", message: "Não existem permissões para aceder à Galeria.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    
-    //MARK:-- ImagePicker delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
@@ -84,6 +88,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 videoModel.name = url?.lastPathComponent
                 var dataVideo = Data()
                 do {
+                    
                     dataVideo = try Data(contentsOf: videoModel.urlPath!)
                 } catch _ {
                     
@@ -100,24 +105,19 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
                 var imageData = AttachmentReportProblemStruct()
                 var imageModel = ImageModel()
-                imageModel.data = image?.pngData()
                 
+                imageModel.data = image?.pngData()
                 if let imagePath = info[UIImagePickerController.InfoKey.imageURL] as? URL {
                     
                     imageModel.urlPath = imagePath
-                    
                     imageModel.name = imagePath.lastPathComponent
                 }
-                
                 imageData.image = imageModel
                 self?.attachmentArray.append(imageData)
-                
                 self?.collectionView.reloadData()
                 return
-                
             }
             return
-            
         }
     }
 }
@@ -129,9 +129,10 @@ func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 
 extension ReportProblemViewController : UICollectionViewDataSource {
     
+    
     // MARK: - Public
     
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return attachmentArray.count
@@ -141,8 +142,7 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemCell", for: indexPath) as! CollectionViewReportProblemCell
         
-        let theSubviews: Array = (cell.cellView.subviews)
-        for view in theSubviews
+        for view in cell.cellView.subviews
         {
             if view != cell.previewImageOuterView && view != cell.deleteButtonOuterView {
                 
@@ -157,22 +157,21 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         }
         else if let videoUrl = attachmentArray[indexPath.row]?.video?.urlPath {
             
-            
             self.getThumbnailFromUrl(videoUrl.absoluteString) { [weak self] (img) in
                 
                 guard let _ = self else { return }
                 if let img = img {
-                    cell.previewImageView.contentMode = .scaleAspectFit
                     
+                    cell.previewImageView.contentMode = .scaleAspectFit
                     cell.previewImageView.image = img
                     
                     let playerPopUp: UIImage = UIImage(named: "play_circle")!
                     let imageViewPlayerPopUp = UIImageView(image: playerPopUp)
                     
                     imageViewPlayerPopUp.contentMode = .scaleAspectFit
-                    imageViewPlayerPopUp.translatesAutoresizingMaskIntoConstraints = false
+                imageViewPlayerPopUp.translatesAutoresizingMaskIntoConstraints = false
                     imageViewPlayerPopUp.tintColor = .redTransparent60
-                    //add to sub view
+
                     cell.cellView.addSubview(imageViewPlayerPopUp)
                     let centerXConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
                     let centerYConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
@@ -180,19 +179,10 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                 }
             }
         }
-        
         cell.deleteButton.layer.cornerRadius = 10
         cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: #selector(deleteAttachment), for: .touchUpInside)
         return cell
     }
-}
-
-
-extension ReportProblemViewController: UICollectionViewDelegate {
-    
-    
-    // MARK: - Public
-    
 }
 

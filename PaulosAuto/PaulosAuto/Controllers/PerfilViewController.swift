@@ -51,6 +51,7 @@ class PerfilViewController: ViewController {
         super.addNavBarLogo()
         cardView.setCardView()
         if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            
             user = try? PropertyListDecoder().decode(UserModel.self, from: data)
         }
         if let name = user?.name {
@@ -76,6 +77,4 @@ class PerfilViewController: ViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         self.tabBarController?.tabBar.isHidden = true
     }
-    
-    
 }

@@ -33,6 +33,7 @@ class InvoiceViewController: ViewController {
     var invoices =  [InvoiceModel]()
     var previewItem: PreviewItem!
     
+    
     // MARK: - Override inherited functions
     
     
@@ -70,10 +71,15 @@ class InvoiceViewController: ViewController {
                 }
             }
             else if let error = error {
+                
                 print(error)
             }
         })
     }
+    
+    
+    // MARK: - Objc functions
+    
     
     @objc func didTapMyButton(sender:UIButton!) {
         
@@ -81,12 +87,14 @@ class InvoiceViewController: ViewController {
         self.addHUDLoading()
         RQ_DownloadInvoice().repos(id: id, { (invoicesDownloadData,error) in
             if let invoicesDownloadData = invoicesDownloadData {
+                
                 let fileName = "mypdf.pdf"
                 //let fileName = "\(String(describing: invoicesDownloadData[0].fileName))"
                 let pdfurl = URL(string:"https://www.apeth.com/rez/release.pdf")!
                 //let pdfurl = URL(string:"\(String(describing: invoicesDownloadData[0].pathToDoc))")!
                 print(invoicesDownloadData[0].pathToDoc!)
                 let pdffileurl : URL = {
+                    
                     let fm = FileManager.default
                     let docsurl = try! fm.url(
                         for: .documentDirectory, in: .userDomainMask,
@@ -96,6 +104,7 @@ class InvoiceViewController: ViewController {
                 let sess = URLSession.shared
                 sess.downloadTask(with: pdfurl) { (url, resp, err) in
                     if let url = url {
+                        
                         let fm = FileManager.default
                         try? fm.removeItem(at: pdffileurl)
                         try? fm.moveItem(at: url, to: pdffileurl)
@@ -104,12 +113,9 @@ class InvoiceViewController: ViewController {
                 self.previewFile(fileName: fileName)
             }
             else if let error = error {
+                
                 print(error)
             }
         })
-        
-       
     }
-    
-    
 }

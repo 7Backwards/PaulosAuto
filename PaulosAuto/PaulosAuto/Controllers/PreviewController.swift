@@ -12,8 +12,15 @@ import QuickLook
 
 class PreviewController: QLPreviewController {
     
+    
+    // MARK: - Properties
+    
+    
     var statusbarHidden: Bool = false
     var statusBarStyle: UIStatusBarStyle = .default
+    
+    
+    // MARK: - Override inherited properties
     
     
     override var prefersStatusBarHidden: Bool {

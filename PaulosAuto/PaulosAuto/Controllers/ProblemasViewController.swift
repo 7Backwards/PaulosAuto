@@ -11,7 +11,7 @@ import UIKit
 class ProblemasViewController: ViewController {
     
     
-    // MARK: - Functions
+    // MARK: - Override inherited functions
     
     
     override func viewDidLoad() {

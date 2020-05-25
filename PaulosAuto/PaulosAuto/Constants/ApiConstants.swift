@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 struct ApiConstants {
     
     static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")
@@ -37,6 +36,7 @@ struct ApiConstants {
 }
 
 enum APPError: Error {
+    
     case networkError(Error)
     case dataNotFound
     case jsonParsingError(Error)
@@ -44,8 +44,8 @@ enum APPError: Error {
     case requestEntityTooLarge
 }
 
-//Result enum to show success or failure
 enum Result<T,Error> {
+    
     case success(T)
     case failure(APPError)
 }

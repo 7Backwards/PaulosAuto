@@ -12,7 +12,6 @@ import UIKit
 
 struct ImageModel {
     
-    
     var urlPath: URL?
     var name: String?
     var data: Data?

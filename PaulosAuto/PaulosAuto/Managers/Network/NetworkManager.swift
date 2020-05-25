@@ -27,8 +27,6 @@ class NetworkManager: NSObject {
         super.init()
     }
     
-
-    
     
     // MARK: - Public
     
@@ -90,11 +88,15 @@ class NetworkManager: NSObject {
                         completion(.success(response))
                     }
                     
+                    
                 case 413:
                     completion(.failure(APPError.requestEntityTooLarge))
                     
+                    
                 case 500:
                     completion(.failure(APPError.dataNotFound))
+                    
+                    
                 default:
                     break
                 }

@@ -18,11 +18,13 @@ class LogInPOSTModel: Codable {
     var password: String
     
     init (email: String, password: String) {
+        
         self.email = email
         self.password = password
     }
     
     func convertToDictionary() -> [String : Any] {
+        
         let dic: [String: Any] = [CodingKeys.email.stringValue : self.email, CodingKeys.password.stringValue : self.password]
         return dic
     }

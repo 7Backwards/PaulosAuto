@@ -11,6 +11,9 @@ import Foundation
 class RQ_DownloadInvoice {
     
     
+    // MARK: - Public
+    
+    
     func repos(id: Int, _ completion: @escaping ([InvoiceDownloadModel]?, Error?) -> Void ) {
         
         let request = URLRequest(url: (ApiConstants.downloadInvoiceURL?.appendingPathComponent("\(id)"))!)
@@ -23,10 +26,12 @@ class RQ_DownloadInvoice {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

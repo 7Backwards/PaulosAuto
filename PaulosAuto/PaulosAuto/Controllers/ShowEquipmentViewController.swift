@@ -168,10 +168,10 @@ class ShowEquipmentViewController: ViewController {
                         
                         self.historyEquipment = historyData
                         self.historyCollectionView.reloadData()
-                        
                     }
                 }
                 else if let error = error {
+                    
                     print(error)
                 }
             })
@@ -192,7 +192,6 @@ class ShowEquipmentViewController: ViewController {
         topView.layer.applySketchShadow(color: .black, alpha: 0.16, x: 0, y: 0.1, blur: 6, spread: 0)
         topView.layer.masksToBounds = false
         historyCollectionView.collectionViewLayout = cellLayout
-        historyCollectionView.delegate = self
         historyCollectionView.dataSource = self
     }
     

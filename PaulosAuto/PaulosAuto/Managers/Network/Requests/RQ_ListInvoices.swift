@@ -11,6 +11,9 @@ import Foundation
 class RQ_ListInvoices {
     
     
+    // MARK: - Public
+    
+    
     func repos(username: Int, _ completion: @escaping ([InvoiceModel]?, Error?) -> Void ) {
         
         let request = URLRequest(url: (ApiConstants.listInvoicesURL?.appendingPathComponent(String(username)))!)
@@ -23,10 +26,12 @@ class RQ_ListInvoices {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

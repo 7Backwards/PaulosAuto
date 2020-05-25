@@ -127,6 +127,7 @@ class ListEquipmentViewController: ViewController {
                 return isSorted
             }
             
+            
         case 1:
             return equipmentArray.sorted {
                 var isSorted = false
@@ -136,6 +137,7 @@ class ListEquipmentViewController: ViewController {
                 }
                 return isSorted
             }
+            
             
         case 2:
             return equipmentArray.sorted {
@@ -147,6 +149,7 @@ class ListEquipmentViewController: ViewController {
                 return isSorted
             }
             
+            
         case 3:
             return equipmentArray.sorted {
                 var isSorted = false
@@ -157,7 +160,11 @@ class ListEquipmentViewController: ViewController {
                 return isSorted
             }
             
-        default: return equipmentArray
+            
+        default:
+            return equipmentArray
+            
+            
         }
     }
 
@@ -194,6 +201,7 @@ class ListEquipmentViewController: ViewController {
             return self.filterOrderBy(equipmentArray: equipmentArray)
         }
         else {
+            
             for item in equipmentArray {
                 
                 for category in activeCategoryFiltered {

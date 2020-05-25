@@ -11,6 +11,9 @@ import Foundation
 class RQ_SendReportProblem {
     
     
+    // MARK: - Public
+    
+    
     func repos(reportProblemPOST : ReportProblemPOSTModel, _ completion: @escaping (ReportProblemResponseModel?, Error?) -> Void ) {
         
         var requestData = Data()
@@ -33,10 +36,12 @@ class RQ_SendReportProblem {
                 print(result)
                 completion(data,nil)
 
+                
             case .failure(let error):
                 print(result)
                 completion(nil,error)
 
+                
             }
         }
     }

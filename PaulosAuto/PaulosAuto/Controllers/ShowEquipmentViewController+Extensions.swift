@@ -9,12 +9,6 @@
 import UIKit
 
 
-extension ShowEquipmentViewController: UICollectionViewDelegate {
-    
-    
-    
-}
-
 extension ShowEquipmentViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,14 +28,15 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
         if let description = historyEquipment[indexPath.row].endedState {
             
             if description {
+                
                 cell.endedLabel.text = "Finalizado"
             }
             else {
+                
                 cell.endedLabel.text = "A decorrer"
             }
             
         }
-        
         cell.cellView.setCardView()
         return cell
     }

@@ -61,6 +61,7 @@ extension InvoiceViewController : UICollectionViewDataSource {
 extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewControllerDelegate {
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        
         return 1
     }
     
@@ -74,9 +75,11 @@ extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewContro
         var fileFound : Bool = false
         
         do {
+            
             let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
             for url in contents {
+                
                 if url.description.contains(fileName) {
                     
                     fileFound = true
@@ -86,15 +89,14 @@ extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewContro
                     self.present(previewController,animated: true, completion: nil)
                 }
             }
-            
             if !fileFound {
+                
                 removeHUDLoading()
                 addInformativeAlert(alertControllerTitle: "Ficheiro não encontrado", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
             }
-            
             return
-            
         } catch {
+            
             addInformativeAlert(alertControllerTitle: "Erro no acesso à diretoria", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
         }
     }

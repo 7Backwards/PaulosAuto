@@ -11,6 +11,9 @@ import Foundation
 class RQ_LogIn {
     
     
+    // MARK: - Public
+    
+    
     func repos(email: String, password: String, _ completion: @escaping (UserModel?, Error?) -> Void ) {
         
         let request = URLRequest(url: ((ApiConstants.loginURL)!))
@@ -30,10 +33,12 @@ class RQ_LogIn {
                     print(result)
                     completion(data,nil)
 
+                
                 case .failure(let error):
                     print(result)
                     completion(nil,error)
 
+                
            }
         }
     }

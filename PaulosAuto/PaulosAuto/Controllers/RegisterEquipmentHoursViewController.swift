@@ -95,7 +95,9 @@ class RegisterEquipmentHoursViewController: ViewController {
         
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height) != nil {
             
-            animateViewMoving(up: true, moveValue: ( view.safeAreaLayoutGuide.layoutFrame.size.height - self.popUpView.frame.height)/2 - 10)
+            animateViewMoving(up: true, moveValue: (
+                
+                view.safeAreaLayoutGuide.layoutFrame.size.height - self.popUpView.frame.height)/2 - 10)
         }
     }
     
@@ -104,6 +106,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         guard
             let currentHours = currentHoursTextField.text, !currentHours.isEmpty
         else {
+            
             submitHoursButton.disableButton()
             return
         }
@@ -119,13 +122,10 @@ class RegisterEquipmentHoursViewController: ViewController {
                         return
                     }
                 }
-                
             }
         }
         return
     }
-    
-    
     
     
     // MARK: - Actions
@@ -141,16 +141,16 @@ class RegisterEquipmentHoursViewController: ViewController {
         print("Enabled")
         
         RQ_SendEquipmentUtilization().repos(serialNumber: Equipment.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
-            if let equipmentData = equipmentData {
+            if equipmentData != nil {
                 
                 AppConstants.requestDone = true
                 DispatchQueue.main.async {
                     
-                    
-                    
+                    self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Registo de horas de utilização efetuado com sucesso", alertActionTitle: "Ok")
                 }
             }
             else if let error = error {
+                
                 print(error)
             }
         })
