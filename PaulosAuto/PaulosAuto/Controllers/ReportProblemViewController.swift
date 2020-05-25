@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportProblemViewController: ViewController {
+class ReportProblemViewController: ViewController, UITextViewDelegate {
     
     
     // MARK: - Outlets
@@ -18,7 +18,7 @@ class ReportProblemViewController: ViewController {
     @IBOutlet weak var serialNumberLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var currentHoursTextView: UITextView!
+    @IBOutlet weak var currentHoursTextField: UITextField!
     @IBOutlet weak var problemDescriptionTextView: UITextView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var outerView: UIView!
@@ -53,6 +53,10 @@ class ReportProblemViewController: ViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        [currentHoursTextField].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,15 +76,15 @@ class ReportProblemViewController: ViewController {
         
         serialNumberLabel.text = Equipment.serialNumber
         
-        currentHoursTextView.layer.masksToBounds = true
-        currentHoursTextView.layer.borderWidth = 0.6
-        currentHoursTextView.layer.cornerRadius = 10
-        currentHoursTextView.isScrollEnabled = false
+        currentHoursTextField.layer.masksToBounds = true
+        currentHoursTextField.layer.borderWidth = 0.6
+        currentHoursTextField.layer.cornerRadius = 10
         
         problemDescriptionTextView.layer.masksToBounds = true
         problemDescriptionTextView.layer.borderWidth = 0.6
         problemDescriptionTextView.layer.cornerRadius = 10
         problemDescriptionTextView.isScrollEnabled = false
+        problemDescriptionTextView.delegate = self
         
         modelLabel.text = Equipment.model
         
@@ -118,14 +122,14 @@ class ReportProblemViewController: ViewController {
         scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
-    @objc func editingChanged(_ textField: UITextField) {
+    @objc func editingChanged() {
         
         guard let problemDescription = problemDescriptionTextView.text, !problemDescription.isEmpty
             else {
                 reportProblemButton.disableButton()
                 return
         }
-        guard let currentHours = currentHoursTextView.text, !currentHours.isEmpty
+        guard let currentHours = currentHoursTextField.text, !currentHours.isEmpty
             else {
                 reportProblemButton.disableButton()
                 return
@@ -143,6 +147,13 @@ class ReportProblemViewController: ViewController {
                 }
             }
         }
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        editingChanged()
+
     }
     
     @objc func deleteAttachment(sender:UIButton!) {
@@ -165,11 +176,68 @@ class ReportProblemViewController: ViewController {
     
     @IBAction func reportProblemButtonPressed(_ sender: Any) {
         
+        //É PRECISO GET USER ID mas neste momento a API nao está a dar essa informaçao
+//        var user : UserModel?
+//        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+//            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+//        }
+//        if let clientNumber = user?. {
+//
+//            nameLabel.text = "\(name)"
+//        }
         
+        var imagesPOST : [ImageModel] = []
+        for i in attachmentArray {
+            
+            if let image = i?.image {
+                
+                imagesPOST.append((image))
+            }
+        }
+        
+        var videoPOST : [VideoModel] = []
+        for i in attachmentArray {
+            
+            if let video = i?.video {
+                
+                videoPOST.append((video))
+            }
+                
+            
+        }
+        let postModel = ReportProblemPOSTModel(serialNumber: Equipment.serialNumber, imagens: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST, numeroCliente: 1)
+        
+        //var responseModel : ReportProblemResponseModel?
+        
+        RQ_SendReportProblem().repos(reportProblemPOST: postModel, { (responseModel,error) in
+                if let response = responseModel {
+                    DispatchQueue.main.async {
+                    
+                    AppConstants.requestDone = true
+                        
+                        self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
+                    }
+                        
+                }
+                else if let error = error {
+                    DispatchQueue.main.async {
+                    switch error {
+                        
+                    case APPError.requestEntityTooLarge:
+                        
+                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Tamanho de ficheiros anexados demasiado grande", alertActionTitle: "Tentar novamente")
+                        
+                        
+                    default:
+                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno, contactar administrador", alertActionTitle: "Tentar novamente")
+                        
+                    }
+                }
+            }
+            })
+        }
     }
-    
-    
-}
+
 
 
 

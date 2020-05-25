@@ -16,7 +16,7 @@ class RQ_DownloadInvoice {
         let request = URLRequest(url: (ApiConstants.downloadInvoiceURL?.appendingPathComponent("\(id)"))!)
         let url = request.url
         
-        NetworkManager.fetchAPIData(url: url!) { (result: Result<[InvoiceDownloadModel], Error>) in
+        NetworkManager.fetchAPIData(url: url!) { (result: Result<([InvoiceDownloadModel]), Error>) in
             switch result {
                 
             case .success(let data):

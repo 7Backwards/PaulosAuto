@@ -17,11 +17,12 @@ class RQ_LogIn {
         let url = request.url
         let logInPOST = LogInPOSTModel(email: email, password: password)
         let parameters = logInPOST.convertToDictionary()
+        let headers = "application/json"
         
         NetworkManager.fetchAPIData(url: url!,
                                     method: "POST",
                                     params: parameters,
-                                    headers: nil) {
+                                    headers: headers) {
                                     (result: Result<UserModel, Error>) in
             switch result {
 

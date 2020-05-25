@@ -11,6 +11,6 @@ import UIKit
 
 struct AttachmentReportProblemStruct {
 
-    var image: UIImage?
-    var video: URL?
+    var image: ImageModel?
+    var video: VideoModel?
 }

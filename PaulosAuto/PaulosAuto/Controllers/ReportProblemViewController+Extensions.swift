@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import Photos
 
 extension ReportProblemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -77,7 +78,18 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL
                 
                 var videoData = AttachmentReportProblemStruct()
-                videoData.video = url
+                var videoModel = VideoModel()
+                
+                videoModel.urlPath = url
+                videoModel.name = url?.lastPathComponent
+                var dataVideo = Data()
+                do {
+                    dataVideo = try Data(contentsOf: videoModel.urlPath!)
+                } catch _ {
+                    
+                }
+                videoModel.data = dataVideo
+                videoData.video = videoModel
                 
                 self?.attachmentArray.append(videoData)
                 self?.collectionView.reloadData()
@@ -87,9 +99,17 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 
                 let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
                 var imageData = AttachmentReportProblemStruct()
+                var imageModel = ImageModel()
+                imageModel.data = image?.pngData()
                 
-                imageData.image = image
+                if let imagePath = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+                    
+                    imageModel.urlPath = imagePath
+                    
+                    imageModel.name = imagePath.lastPathComponent
+                }
                 
+                imageData.image = imageModel
                 self?.attachmentArray.append(imageData)
                 
                 self?.collectionView.reloadData()
@@ -121,13 +141,13 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemCell", for: indexPath) as! CollectionViewReportProblemCell
         
-        if let image = attachmentArray[indexPath.row]?.image {
+        if let imageData = attachmentArray[indexPath.row]?.image?.data {
             
-            cell.previewImageView.image = image
+            cell.previewImageView.image = UIImage(data:imageData)
         }
         else if let video = attachmentArray[indexPath.row]?.video {
             
-            self.getThumbnailFromUrl(video.absoluteString) { [weak self] (img) in
+            self.getThumbnailFromUrl(video.urlPath?.absoluteString) { [weak self] (img) in
                 
                 guard let _ = self else { return }
                 if let img = img {

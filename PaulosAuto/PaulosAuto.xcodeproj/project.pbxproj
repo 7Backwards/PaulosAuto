@@ -23,6 +23,11 @@
 		B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */; };
 		B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */; };
 		B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */; };
+		B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */; };
+		B02B429524796DA500A22EAA /* RQ_SendReportProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */; };
+		B02B42972479783800A22EAA /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B42962479783800A22EAA /* ImageModel.swift */; };
+		B02B429924797AF500A22EAA /* ReportProblemResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */; };
+		B02B429B247ADC1F00A22EAA /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429A247ADC1F00A22EAA /* VideoModel.swift */; };
 		B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */; };
 		B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */; };
 		B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */; };
@@ -85,6 +90,11 @@
 		B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListInvoices.swift; sourceTree = "<group>"; };
 		B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipmentHistory.swift; sourceTree = "<group>"; };
 		B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemPOSTModel.swift; sourceTree = "<group>"; };
+		B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendReportProblem.swift; sourceTree = "<group>"; };
+		B02B42962479783800A22EAA /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemResponseModel.swift; sourceTree = "<group>"; };
+		B02B429A247ADC1F00A22EAA /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInvoicesCell.swift; sourceTree = "<group>"; };
 		B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvoiceViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendEquipmentUtilization.swift; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 				B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */,
 				B0B1050C246B7723003960BC /* RQ_DownloadInvoice.swift */,
 				B0B10512246B80C9003960BC /* RQ_LogIn.swift */,
+				B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -309,6 +320,10 @@
 				B0B10514246B81F0003960BC /* LogInPOSTModel.swift */,
 				B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */,
 				B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */,
+				B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */,
+				B02B42962479783800A22EAA /* ImageModel.swift */,
+				B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */,
+				B02B429A247ADC1F00A22EAA /* VideoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +443,7 @@
 				B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */,
 				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
+				B02B429B247ADC1F00A22EAA /* VideoModel.swift in Sources */,
 				B0B10515246B81F0003960BC /* LogInPOSTModel.swift in Sources */,
 				B01CA8D1244E3C84000228A5 /* NetworkManager.swift in Sources */,
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
@@ -441,6 +457,7 @@
 				B08B3B392429189300FBBD4B /* ShowEquipmentViewController.swift in Sources */,
 				B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */,
 				B0B1050F246B7BBE003960BC /* LogInViewController.swift in Sources */,
+				B02B429524796DA500A22EAA /* RQ_SendReportProblem.swift in Sources */,
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,
 				B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */,
 				B01A8012245BAB0D004EC603 /* AppConstants.swift in Sources */,
@@ -454,13 +471,16 @@
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
+				B02B42972479783800A22EAA /* ImageModel.swift in Sources */,
 				B01A8010245BA492004EC603 /* EquipmentUtilizationPOSTModel.swift in Sources */,
+				B02B429924797AF500A22EAA /* ReportProblemResponseModel.swift in Sources */,
 				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
 				B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
+				B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,

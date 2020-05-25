@@ -24,12 +24,29 @@ struct ApiConstants {
     static let testTokenURL = base?.appendingPathComponent("testeToken")
     static let testTokenAdmin = base?.appendingPathComponent("testeTokenAdministrador")
     static let testTokenOthers = base?.appendingPathComponent("testeTokenOutros")
-    static let problemReportURL = base?.appendingPathComponent("registoAvarias")
+    static let problemReportURL = base?.appendingPathComponent("registoAvaria")
     static let dateFormatter : DateFormatter = {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return dateFormatter
     }()
+    static let boundary = "------------------------\(UUID().uuidString)"
+    
+    
+}
+
+enum APPError: Error {
+    case networkError(Error)
+    case dataNotFound
+    case jsonParsingError(Error)
+    case invalidStatusCode(Int)
+    case requestEntityTooLarge
+}
+
+//Result enum to show success or failure
+enum Result<T,Error> {
+    case success(T)
+    case failure(APPError)
 }
 

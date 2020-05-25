@@ -17,12 +17,12 @@ class RQ_SendEquipmentUtilization {
         let url = request.url
         let equipmentUtilization = EquipmentUtilizationPOSTModel(horasAtuais: currentHours, serialNumber: String(serialNumber))
         let parameters = equipmentUtilization.convertToDictionary()
-        
+        let headers = "application/json"
         
         NetworkManager.fetchAPIData(url: url!,
                                     method: "POST",
                                     params: parameters,
-                                    headers: nil) { (result: Result<EquipmentModel, Error>) in
+                                    headers: headers) { (result: Result<EquipmentModel, Error>) in
             switch result {
 
             case .success(let data):
