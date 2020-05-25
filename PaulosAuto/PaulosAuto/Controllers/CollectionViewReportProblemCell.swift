@@ -16,9 +16,7 @@ class CollectionViewReportProblemCell: UICollectionViewCell {
     
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var previewImageOuterView: UIView!
-    @IBOutlet weak var deleteButtonOuterView: UIView!
     
     
 }

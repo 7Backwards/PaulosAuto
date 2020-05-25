@@ -96,6 +96,9 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
         
         collectionView.dataSource = self
         collectionView.collectionViewLayout = cellLayout
+        collectionViewBackgroundView.layer.masksToBounds = true
+        collectionViewBackgroundView.layer.cornerRadius = 10
+        collectionViewBackgroundView.layer.borderWidth = 0.6
         
         reportProblemButton.disableButton()
         

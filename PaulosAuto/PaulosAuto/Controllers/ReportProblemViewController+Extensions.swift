@@ -132,7 +132,7 @@ extension ReportProblemViewController : UICollectionViewDataSource {
     
     // MARK: - Public
     
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return attachmentArray.count
@@ -144,7 +144,7 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         
         for view in cell.cellView.subviews
         {
-            if view != cell.previewImageOuterView && view != cell.deleteButtonOuterView {
+            if view != cell.previewImageView && view != cell.previewImageOuterView {
                 
                 view.removeFromSuperview()
             }
@@ -169,19 +169,38 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                     let imageViewPlayerPopUp = UIImageView(image: playerPopUp)
                     
                     imageViewPlayerPopUp.contentMode = .scaleAspectFit
-                imageViewPlayerPopUp.translatesAutoresizingMaskIntoConstraints = false
+                    imageViewPlayerPopUp.translatesAutoresizingMaskIntoConstraints = false
                     imageViewPlayerPopUp.tintColor = .redTransparent60
-
+                    
                     cell.cellView.addSubview(imageViewPlayerPopUp)
                     let centerXConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
                     let centerYConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
                     NSLayoutConstraint.activate([centerXConst, centerYConst])
+                    
+                    
+                    
+                    
                 }
             }
         }
-        cell.deleteButton.layer.cornerRadius = 10
-        cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.addTarget(self, action: #selector(deleteAttachment), for: .touchUpInside)
+        
+        let deleteButton = UIButton()
+        deleteButton.setImage(UIImage(named: "multiply"), for: .normal)
+        deleteButton.backgroundColor = .redTransparent60
+        deleteButton.tintColor = .black
+        deleteButton.layer.cornerRadius = 10
+
+        
+        cell.previewImageOuterView.addSubview(deleteButton)
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.topConstraint(constant: 0)
+        deleteButton.rightConstraint(constant: 0)
+        deleteButton.frame.size.width = 20
+        deleteButton.frame.size.height = 20
+        
+        deleteButton.tag = indexPath.row
+        deleteButton.addTarget(self, action: #selector(deleteAttachment), for: .touchUpInside)
+        
         return cell
     }
 }
