@@ -106,7 +106,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     // MARK: - Public
     
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         
         editingChanged()
     }
