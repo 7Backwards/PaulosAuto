@@ -42,6 +42,8 @@ enum APPError: Error {
     case jsonParsingError(Error)
     case invalidStatusCode(Int)
     case requestEntityTooLarge
+    case unauthorized
+    case forbidden
 }
 
 enum Result<T,Error> {

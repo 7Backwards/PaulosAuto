@@ -34,6 +34,13 @@ class PerfilViewController: ViewController {
         SetupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        
+        authenticateToken()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first!
@@ -58,23 +65,5 @@ class PerfilViewController: ViewController {
             
             nameLabel.text = "\(name)"
         }
-    }
-    
-    private func signout() {
-        
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.synchronize()
-
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
-
-        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
-        appDel.window?.rootViewController = loginVC
-        print("set isUserLoggedIn = false")
-        UserDefaults.standard.removeObject(forKey: "user")
-        let LoginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
-        navigationController?.pushViewController(LoginVC, animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.tabBar.isHidden = true
     }
 }

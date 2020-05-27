@@ -67,6 +67,9 @@
 		B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */; };
 		FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */; };
 		FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0D242064020033B901 /* UIView+Extensions.swift */; };
+		FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543D247DED730079A646 /* TokenResponseModel.swift */; };
+		FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */; };
+		FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */; };
 		FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasViewController.swift */; };
 		FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* InvoiceViewController.swift */; };
 		FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListEquipmentViewController.swift */; };
@@ -136,6 +139,9 @@
 		B0D0E3142454B20700BE3A98 /* EquipmentHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentHistoryModel.swift; sourceTree = "<group>"; };
 		FA05FB0B24204ED40033B901 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		FA05FB0D242064020033B901 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FA29543D247DED730079A646 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
+		FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAuthentication.swift; sourceTree = "<group>"; };
+		FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAdminAuthentication.swift; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasViewController.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEquipmentViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 				B0B1050C246B7723003960BC /* RQ_DownloadInvoice.swift */,
 				B0B10512246B80C9003960BC /* RQ_LogIn.swift */,
 				B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */,
+				FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */,
+				FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				B02B42962479783800A22EAA /* ImageModel.swift */,
 				B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */,
 				B02B429A247ADC1F00A22EAA /* VideoModel.swift */,
+				FA29543D247DED730079A646 /* TokenResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +451,7 @@
 				B005B4A4245A2E1500C000AC /* AppImages.swift in Sources */,
 				B015B8B424551E37002E83AA /* ListEquipmentHistoryCellLayout.swift in Sources */,
 				B0C7E20A2454B85F005995A3 /* InvoiceModel.swift in Sources */,
+				FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */,
 				FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */,
 				B02B429B247ADC1F00A22EAA /* VideoModel.swift in Sources */,
 				B0B10515246B81F0003960BC /* LogInPOSTModel.swift in Sources */,
@@ -476,12 +486,14 @@
 				B02B429924797AF500A22EAA /* ReportProblemResponseModel.swift in Sources */,
 				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
+				FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */,
 				B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
 				B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
+				FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,

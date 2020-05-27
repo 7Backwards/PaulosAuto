@@ -48,6 +48,7 @@ class InvoiceViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
+        authenticateToken()
         addHUDLoading()
         let id = 1
         RQ_ListInvoices().repos(username: id, { (invoicesData,error) in

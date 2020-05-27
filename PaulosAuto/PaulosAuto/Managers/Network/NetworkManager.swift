@@ -35,11 +35,16 @@ class NetworkManager: NSObject {
                                          params: [String: Any]? = nil,
                                          multipartParams: Data? = nil,
                                          headers: String? = nil,
+                                         accessToken: String? = nil,
                                          completion: @escaping ((Result<T, Error>) -> ())) {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method
         
+        if accessToken != nil {
+            
+            urlRequest.addValue("Bearer \(String(accessToken!))", forHTTPHeaderField: "Authorization")
+        }
         
         if headers == "multipart/form-data" {
             
@@ -91,7 +96,13 @@ class NetworkManager: NSObject {
                     
                 case 413:
                     completion(.failure(APPError.requestEntityTooLarge))
+                
                     
+                case 401:
+                    completion(.failure(APPError.unauthorized))
+                
+                case 403:
+                    completion(.failure(APPError.forbidden))
                     
                 case 500:
                     completion(.failure(APPError.dataNotFound))

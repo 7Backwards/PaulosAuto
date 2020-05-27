@@ -1676,6 +1676,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y3b-1j-Trl"/>
                     <connections>
+                        <outlet property="RegisterAndReportButtonsStackView" destination="ejE-EN-fcc" id="TeU-vw-eRm"/>
                         <outlet property="barView" destination="eP6-mv-kpA" id="Bxx-Ty-Yzq"/>
                         <outlet property="brandLabel" destination="NBa-x3-ZnZ" id="J3U-zE-ZYH"/>
                         <outlet property="currentHoursLabel" destination="DeZ-Qk-BDz" id="ZSb-Ed-M2d"/>

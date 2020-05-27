@@ -34,6 +34,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var historyCollectionView: UICollectionView!
+    @IBOutlet weak var RegisterAndReportButtonsStackView: UIStackView!
     
     
     // MARK: - Properties
@@ -59,11 +60,25 @@ class ShowEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupView()
         setupInfo()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
+        authenticateToken()
+        
+        authenticateAdminToken({
+            result in
+            if result == true {
+                
+                
+            } else {
+               
+                
+            }
+        })
+        
         hideTabBar()
     }
     
