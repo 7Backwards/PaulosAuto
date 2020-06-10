@@ -1,7 +1,7 @@
 //
-//  User.swift
+//  UserModel.swift
 //
-//  Created by Gonçalo Neves on 13/05/2020
+//  Created by Neves on 10/06/2020
 //  Copyright (c) . All rights reserved.
 //
 
@@ -10,36 +10,34 @@ import Foundation
 class UserModel: Codable {
 
   enum CodingKeys: String, CodingKey {
-    case name
+    case equipamentos
     case roles
+    case name
     case email
     case token
-    case password
   }
 
-  var name: String?
+  var equipamentos: [String]?
   var roles: [String]?
+  var name: String?
   var email: String?
   var token: String?
-  var password: String?
 
-  init (name: String?, roles: [String]?, email: String?, token: String?, password: String?) {
-    
-    self.name = name
+  init (equipamentos: [String]?, roles: [String]?, name: String?, email: String?, token: String?) {
+    self.equipamentos = equipamentos
     self.roles = roles
+    self.name = name
     self.email = email
     self.token = token
-    self.password = password
   }
 
   required init(from decoder: Decoder) throws {
-    
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    name = try container.decodeIfPresent(String.self, forKey: .name)
+    equipamentos = try container.decodeIfPresent([String].self, forKey: .equipamentos)
     roles = try container.decodeIfPresent([String].self, forKey: .roles)
+    name = try container.decodeIfPresent(String.self, forKey: .name)
     email = try container.decodeIfPresent(String.self, forKey: .email)
     token = try container.decodeIfPresent(String.self, forKey: .token)
-    password = try container.decodeIfPresent(String.self, forKey: .password)
   }
 
 }

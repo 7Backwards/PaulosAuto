@@ -62,8 +62,11 @@ class ListEquipmentViewController: ViewController {
             
             self.refreshData()
         }
+
+            
+            self.authenticateToken()
         
-        authenticateToken()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
