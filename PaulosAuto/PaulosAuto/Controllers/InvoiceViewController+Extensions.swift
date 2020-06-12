@@ -27,7 +27,7 @@ extension InvoiceViewController : UICollectionViewDataSource {
         
         if let  totalAmount = invoices[indexPath.row].totalAmount {
             
-            cell.totalAmountLabel.text = String(totalAmount)
+            cell.totalAmountLabel.text = "\(String(totalAmount))" + " €"
             
         }
         
@@ -43,7 +43,7 @@ extension InvoiceViewController : UICollectionViewDataSource {
         
         if let paidAmount = invoices[indexPath.row].paidAmount {
             
-            cell.paidAmountLabel.text = String(paidAmount)
+            cell.paidAmountLabel.text = "\(String(paidAmount))" + " €"
             
         }
         

@@ -13,7 +13,7 @@ import PDFKit
 
 class InvoiceViewController: ViewController {
     
-   
+    
     // MARK: - Outlets
     
     
@@ -49,7 +49,7 @@ class InvoiceViewController: ViewController {
         
         super.viewWillAppear(true)
         addHUDLoading()
-        let id = 1
+        let id = 744
         RQ_ListInvoices().repos(username: id, { (invoicesData,error) in
             if let invoicesData = invoicesData {
                 
@@ -83,39 +83,36 @@ class InvoiceViewController: ViewController {
     
     @objc func didTapMyButton(sender:UIButton!) {
         
-        let id = 24395
         self.addHUDLoading()
-        RQ_DownloadInvoice().repos(id: id, { (invoicesDownloadData,error) in
-            if let invoicesDownloadData = invoicesDownloadData {
+        if let invoiceURL = invoices[sender.tag].docURL {
+            
+            let fileName = "\(invoices[sender.tag].diario ?? "")_\( invoices[sender.tag].ano ?? "").pdf"
+            
+            let pdffileurl : URL = {
                 
-                let fileName = "mypdf.pdf"
-                //let fileName = "\(String(describing: invoicesDownloadData[0].fileName))"
-                let pdfurl = URL(string:"https://www.apeth.com/rez/release.pdf")!
-                //let pdfurl = URL(string:"\(String(describing: invoicesDownloadData[0].pathToDoc))")!
-                print(invoicesDownloadData[0].pathToDoc!)
-                let pdffileurl : URL = {
+                let fm = FileManager.default
+                let docsurl = try! fm.url(
+                    for: .documentDirectory, in: .userDomainMask,
+                    appropriateFor: nil, create: true)
+                return docsurl.appendingPathComponent(fileName)
+            }()
+            let pdfurl = URL(string: invoiceURL)!
+            let sess = URLSession.shared
+            sess.downloadTask(with: pdfurl) { (url, resp, error) in
+                if let url = url {
                     
                     let fm = FileManager.default
-                    let docsurl = try! fm.url(
-                        for: .documentDirectory, in: .userDomainMask,
-                        appropriateFor: nil, create: true)
-                    return docsurl.appendingPathComponent(fileName)
-                }()
-                let sess = URLSession.shared
-                sess.downloadTask(with: pdfurl) { (url, resp, err) in
-                    if let url = url {
-                        
-                        let fm = FileManager.default
-                        try? fm.removeItem(at: pdffileurl)
-                        try? fm.moveItem(at: url, to: pdffileurl)
-                    }
-                }.resume()
-                self.previewFile(fileName: fileName)
-            }
-            else if let error = error {
+                    try? fm.removeItem(at: pdffileurl)
+                    try? fm.moveItem(at: url, to: pdffileurl)
+                    self.previewFile(fileName: fileName)
+                }
                 
-                print(error)
-            }
-        })
+                if error != nil {
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Ficheiro não encontrado", alertActionTitle: "Sair")
+                }
+            }.resume()
+            
+        }
     }
 }
+

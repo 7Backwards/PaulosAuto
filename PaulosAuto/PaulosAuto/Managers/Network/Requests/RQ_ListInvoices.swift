@@ -16,7 +16,8 @@ class RQ_ListInvoices {
     
     func repos(username: Int, _ completion: @escaping ([InvoiceModel]?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.listInvoicesURL?.appendingPathComponent(String(username)))!)
+        let urlWithClientID = ApiConstants.listInvoicesURL?.appendingPathComponent(String(username))
+        let request = URLRequest(url: (urlWithClientID?.appendingPathComponent("/divida"))!)
         let url = request.url
         
         NetworkManager.fetchAPIData(url: url!) { (result: Result<[InvoiceModel], Error>) in
