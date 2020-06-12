@@ -81,7 +81,7 @@ class InvoiceViewController: ViewController {
     // MARK: - Objc functions
     
     
-    @objc func didTapMyButton(sender:UIButton!) {
+    @objc func previewPDFButton(sender:UIButton!) {
         
         self.addHUDLoading()
         if let invoiceURL = invoices[sender.tag].docURL {
@@ -111,7 +111,6 @@ class InvoiceViewController: ViewController {
                     self.addInformativeAlert(alertControllerTitle: "Erro", message: "Ficheiro não encontrado", alertActionTitle: "Sair")
                 }
             }.resume()
-            
         }
     }
 }

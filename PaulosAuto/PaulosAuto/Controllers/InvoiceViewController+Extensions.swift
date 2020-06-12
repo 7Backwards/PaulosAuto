@@ -50,7 +50,7 @@ extension InvoiceViewController : UICollectionViewDataSource {
         cell.button.tintColor = .RedPaulosAuto
         
         cell.button.tag = indexPath.row
-        cell.button.addTarget(self, action: #selector(didTapMyButton), for: .touchUpInside)
+        cell.button.addTarget(self, action: #selector(previewPDFButton), for: .touchUpInside)
         
         cell.cellView.setCardView()
         return cell

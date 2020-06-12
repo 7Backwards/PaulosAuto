@@ -50,7 +50,6 @@
 		B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */; };
 		B09FE979242D6C2C00EE2FA1 /* ReportProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */; };
 		B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */; };
-		B0B1050D246B7723003960BC /* RQ_DownloadInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1050C246B7723003960BC /* RQ_DownloadInvoice.swift */; };
 		B0B1050F246B7BBE003960BC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1050E246B7BBE003960BC /* LogInViewController.swift */; };
 		B0B10511246B803C003960BC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10510246B803C003960BC /* UserModel.swift */; };
 		B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B10512246B80C9003960BC /* RQ_LogIn.swift */; };
@@ -123,7 +122,6 @@
 		B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEquipmentHoursViewController.swift; sourceTree = "<group>"; };
 		B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemViewController.swift; sourceTree = "<group>"; };
 		B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterShowEquipmentViewController.swift; sourceTree = "<group>"; };
-		B0B1050C246B7723003960BC /* RQ_DownloadInvoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_DownloadInvoice.swift; sourceTree = "<group>"; };
 		B0B1050E246B7BBE003960BC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		B0B10510246B803C003960BC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B0B10512246B80C9003960BC /* RQ_LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_LogIn.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */,
 				B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */,
 				B033BC5A2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift */,
-				B0B1050C246B7723003960BC /* RQ_DownloadInvoice.swift */,
 				B0B10512246B80C9003960BC /* RQ_LogIn.swift */,
 				B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */,
 				FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */,
@@ -462,7 +459,6 @@
 				FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */,
 				B033BC5B2459144900BE3C02 /* RQ_SendEquipmentUtilization.swift in Sources */,
 				FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */,
-				B0B1050D246B7723003960BC /* RQ_DownloadInvoice.swift in Sources */,
 				B055F56324758FB90011B1ED /* ListAttachmentsCellLayout.swift in Sources */,
 				FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */,
 				B016A98524468CAD002A07F6 /* SegmentedController+Extensions.swift in Sources */,
