@@ -236,34 +236,35 @@ class ViewController: UIViewController {
         
     }
     
-    func authenticateToken() {
-        
-        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
-            if TokenResponse != nil {
-                
-                return
-            }
-            else if error != nil {
-                
-                self.signout()
-            }
-        })
-    }
-    
-    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
-        
-        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
-            if TokenResponse != nil {
-                
-                completion(true)
-            }
-            else {
-                
-                completion(false)
-            }
-        })
-        
-    }
+//  Not used as the final version of the API doesnt have token authentication implemented
+//    func  {
+//
+//        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
+//            if TokenResponse != nil {
+//
+//                return
+//            }
+//            else if error != nil {
+//
+//                self.signout()
+//            }
+//        })
+//    }
+//
+//    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
+//
+//        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
+//            if TokenResponse != nil {
+//
+//                completion(true)
+//            }
+//            else {
+//
+//                completion(false)
+//            }
+//        })
+//
+//    }
         
 
     // MARK: - Objc functions

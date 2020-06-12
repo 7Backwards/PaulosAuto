@@ -22,4 +22,6 @@ class CollectionViewEquipmentsCell: UICollectionViewCell {
     @IBOutlet weak var yearEquipmentLabel: UILabel!
     @IBOutlet weak var smpLabel: UILabel!
     @IBOutlet weak var plateEquipmentLabel: UILabel!
+    @IBOutlet weak var plateEquipmentStackView: UIStackView!
+    
 }

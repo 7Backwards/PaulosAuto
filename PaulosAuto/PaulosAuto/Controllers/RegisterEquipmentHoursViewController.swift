@@ -116,7 +116,7 @@ class RegisterEquipmentHoursViewController: ViewController {
                 
                 if let lastRecordedHours = Equipment.currentHours {
                     
-                    if currentHoursInt > lastRecordedHours {
+                    if currentHoursInt > Int(lastRecordedHours) {
                         
                         submitHoursButton.enableButton()
                         return

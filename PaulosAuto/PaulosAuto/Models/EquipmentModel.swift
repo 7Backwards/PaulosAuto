@@ -9,38 +9,34 @@ import Foundation
 
 class EquipmentModel: Codable {
     
-    func isValid() -> Bool {
-        return true
-    }
     
     enum CodingKeys: String, CodingKey {
-        
-        case model = "model"
-        case serialNumber = "serialNumber"
-        case year = "year"
-        case currentHours = "currentHours"
-        case smp = "smp"
-        case brand = "brand"
-        case plate = "plate"
-        case type = "type"
-        case dateAssignment = "dateAssignment"
-        case dateStartAssignment = "dateStartAssignment"
-        case dateEndAssignment = "dateEndAssignment"
-        case image = "image"
+      case serialNumber = "serialNumber"
+      case brand = "brand"
+      case dateStartAssignment = "dateStartAssignment"
+      case year = "year"
+      case currentHours = "currentHours"
+      case type =  "type"
+      case plate = "plate"
+      case dateAssignment = "dateAssignment"
+      case smp = "smp"
+      case model = "model"
+      case image = "image"
+      case dateEndAssignment = "dateEndAssignment"
     }
-    
-    var model: String?
+
     var serialNumber: String?
+    var brand: String?
+    var dateStartAssignment: Date?
     var year: Int?
     var currentHours: Int?
-    var smp: Bool?
-    var brand: String?
-    var plate: String?
     var type: String?
+    var plate: String?
     var dateAssignment: Date?
-    var dateStartAssignment: Date?
-    var dateEndAssignment: Date?
+    var smp: Bool?
+    var model: String?
     var image: String?
+    var dateEndAssignment: Date?
     
     init (model: String?, serialNumber: String?, year: Int?, currentHours: Int?, smp: Bool?, brand: String?, plate: String?, type: String?, dateAssignment: String?, dateStartAssignment: String?, dateEndAssignment: String?, image: String?) {
         

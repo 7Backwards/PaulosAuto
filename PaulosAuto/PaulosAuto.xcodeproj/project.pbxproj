@@ -74,6 +74,7 @@
 		FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* InvoiceViewController.swift */; };
 		FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListEquipmentViewController.swift */; };
 		FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */; };
+		FACDD43A2493104B0042F6F7 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDD4392493104B0042F6F7 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		FACD18172419AF880085574C /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEquipmentViewController.swift; sourceTree = "<group>"; };
 		FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipmentsCell.swift; sourceTree = "<group>"; };
+		FACDD4392493104B0042F6F7 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				B016A98424468CAD002A07F6 /* SegmentedController+Extensions.swift */,
 				B016A986244756B4002A07F6 /* NSLayoutConstraint+Extensions.swift */,
 				B01A800D245B7C9B004EC603 /* String+Extensions.swift */,
+				FACDD4392493104B0042F6F7 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
 				B055F561247586A90011B1ED /* CollectionViewReportProblemCell.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
+				FACDD43A2493104B0042F6F7 /* UIImage+Extensions.swift in Sources */,
 				B0B10511246B803C003960BC /* UserModel.swift in Sources */,
 				B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ struct ApiConstants {
     
     static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")
     static let baseNewAPI = URL(string: "http://192.168.99.100:5080/")
-    static let listEquipmentURL = base?.appendingPathComponent("equipamentos/")
+    static let listEquipmentURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/clientes/equipamentos_v2/")
     static let listEquipmentHistoryURL = base?.appendingPathComponent("intervencoes/")
     static let listInvoicesURL = base?.appendingPathComponent("faturas/")
     static let sendEquipmentUtilizationURL =
