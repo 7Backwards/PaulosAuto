@@ -156,7 +156,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                 
                 if let lastRecordedHours = Equipment.currentHours {
                     
-                    if currentHoursInt > lastRecordedHours {
+                    if currentHoursInt > Int(lastRecordedHours) {
                         
                         reportProblemButton.enableButton()
                     }

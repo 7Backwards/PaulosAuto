@@ -62,8 +62,6 @@ class ListEquipmentViewController: ViewController {
             
             self.refreshData()
         }
-        
-        authenticateToken()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,7 +76,7 @@ class ListEquipmentViewController: ViewController {
     private func refreshData() {
         
         self.addHUDLoading()
-        let id = 1
+        let id = 744
         RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
             if let equipmentData = equipmentData {
                 

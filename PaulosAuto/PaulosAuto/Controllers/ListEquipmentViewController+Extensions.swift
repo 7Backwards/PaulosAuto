@@ -42,25 +42,20 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         
         if !equipmentArray.isEmpty {
             
-            if let imageName = equipmentArray[indexPath.row].image {
+            if let imageURL = equipmentArray[indexPath.row].image {
                 
-                let decodedData = NSData(base64Encoded: imageName, options: [])
-                if let data = decodedData {
-                    
-                    let decodedimage = UIImage(data: data as Data)
-                    cell.EquipmentImageView.image = decodedimage
-                } else {
-                    
-                    print("error with decodedData")
+                UIImage.loadFrom(url: URL(string:imageURL)!) { image in
+                    cell.EquipmentImageView.image = image
                 }
-            } else {
-                
-                print("error with base64String")
             }
             
             if let plateEquipment = equipmentArray[indexPath.row].plate {
                 
                 cell.plateEquipmentLabel.text = plateEquipment
+            }   
+            else {
+                
+                cell.plateEquipmentStackView.isHidden = true
             }
             
             if let yearequipment = equipmentArray[indexPath.row].year {

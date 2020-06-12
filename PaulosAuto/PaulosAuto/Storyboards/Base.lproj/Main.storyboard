@@ -546,7 +546,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-5w-wGQ">
-                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
                                                                         <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -570,7 +570,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-xv-jWP">
-                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
                                                                         <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -595,7 +595,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="E3p-fN-nqg">
-                                                                        <rect key="frame" x="354" y="27.333333333333371" width="20" height="20"/>
+                                                                        <rect key="frame" x="334" y="17.333333333333371" width="40" height="40"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -616,7 +616,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="400" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="4VR-TC-kv0">
-                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -673,7 +673,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-PN-yaT">
-                                                                            <rect key="frame" x="20" y="5" width="20" height="40"/>
+                                                                            <rect key="frame" x="0.0" y="5" width="40" height="40"/>
                                                                             <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -1203,6 +1203,7 @@
                                             <outlet property="currenthoursEquipmentLabel" destination="shv-tP-wXR" id="Ts5-RC-e1m"/>
                                             <outlet property="modelEquipmentLabel" destination="dLL-sK-maQ" id="ffK-Kf-fFF"/>
                                             <outlet property="plateEquipmentLabel" destination="cHj-u8-ePm" id="hn2-qO-Q8I"/>
+                                            <outlet property="plateEquipmentStackView" destination="p0U-xH-agR" id="7kp-aL-imy"/>
                                             <outlet property="serialNumberEquipmentLabel" destination="vgG-nQ-4C6" id="XvW-Dv-aEV"/>
                                             <outlet property="smpLabel" destination="Pcl-Ry-bY0" id="Qcu-Ag-EGi"/>
                                             <outlet property="yearEquipmentLabel" destination="9g2-aZ-Cyt" id="lUh-Co-dlQ"/>
@@ -1689,6 +1690,7 @@
                         <outlet property="historyView" destination="tNp-Tq-mvI" id="lfU-Yu-HJ4"/>
                         <outlet property="informationView" destination="zEe-ai-ktO" id="9dA-R4-rDb"/>
                         <outlet property="modelLabel" destination="0wk-Ta-6Cl" id="VDM-gf-geP"/>
+                        <outlet property="plateEquipmentStackView" destination="cPe-6l-ze8" id="J1m-2E-xki"/>
                         <outlet property="plateLabel" destination="cWp-g1-vSR" id="SFC-LG-pnR"/>
                         <outlet property="registerHoursButton" destination="630-RM-39w" id="NOL-TA-0bP"/>
                         <outlet property="reportProblemButton" destination="LdX-43-K6I" id="qHr-pd-yYP"/>

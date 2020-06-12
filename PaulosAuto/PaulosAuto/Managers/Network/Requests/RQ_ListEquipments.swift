@@ -19,6 +19,8 @@ class RQ_ListEquipments {
         let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent(String(username)))!)
         let url = request.url
         
+        print(url)
+        
         NetworkManager.fetchAPIData(url: url!) { (result: Result<[EquipmentModel], Error>) in
             switch result {
                 

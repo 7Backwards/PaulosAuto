@@ -35,6 +35,7 @@ class ShowEquipmentViewController: ViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var historyCollectionView: UICollectionView!
     @IBOutlet weak var RegisterAndReportButtonsStackView: UIStackView!
+    @IBOutlet weak var plateEquipmentStackView: UIStackView!
     
     
     // MARK: - Properties
@@ -66,18 +67,6 @@ class ShowEquipmentViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
-        authenticateToken()
-        
-        authenticateAdminToken({
-            result in
-            if result == true {
-                
-                
-            } else {
-               
-                
-            }
-        })
         
         hideTabBar()
     }
@@ -121,13 +110,10 @@ class ShowEquipmentViewController: ViewController {
         modelLabel.text = equipment.model
         equipmentTypeLabel.text = equipment.type
         serialNumberLabel.text = equipment.serialNumber
-        if equipment.image != nil {
+        if let imageURL = equipment.image  {
             
-            let decodedData = NSData(base64Encoded: equipment.image!, options: [])
-            if let data = decodedData {
-                
-                let decodedimage = UIImage(data: data as Data)
-                equipmentImageView.image = decodedimage
+            UIImage.loadFrom(url: URL(string:imageURL)!) { image in
+                self.equipmentImageView.image = image
             }
         }
         if let dataStartAssignment = equipment.dateAssignment {
@@ -146,7 +132,16 @@ class ShowEquipmentViewController: ViewController {
         }
        
         brandLabel.text = equipment.brand
-        plateLabel.text = equipment.plate
+        
+        if equipment.plate != nil {
+            
+            plateLabel.text = equipment.plate
+        }
+        else {
+            
+            plateEquipmentStackView.isHidden = true
+        }
+        
         currentHoursLabel.text = "\(equipment.currentHours!)"
         
         if (equipment.smp == true) {

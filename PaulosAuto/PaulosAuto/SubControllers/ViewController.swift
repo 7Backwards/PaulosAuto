@@ -214,47 +214,57 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
 
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
+        DispatchQueue.main.async {
+            
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
+            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDel.window?.rootViewController = loginVC
+            print("set isUserLoggedIn = false")
+            UserDefaults.standard.removeObject(forKey: "user")
+            let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
 
-        appDel.window?.rootViewController = loginVC
-        print("set isUserLoggedIn = false")
-        UserDefaults.standard.removeObject(forKey: "user")
-        let LoginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
-        navigationController?.pushViewController(LoginVC, animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.tabBar.isHidden = true
+                
+                self.navigationController?.pushViewController(LoginVC, animated: true)
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.tabBarController?.tabBar.isHidden = true
+        }
+        
+
+        
+        
+        
     }
     
-    func authenticateToken() {
-        
-        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
-            if TokenResponse != nil {
-                
-                return
-            }
-            else if error != nil {
-                
-                self.signout()
-            }
-        })
-    }
-    
-    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
-        
-        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
-            if TokenResponse != nil {
-                
-                completion(true)
-            }
-            else {
-                
-                completion(false)
-            }
-        })
-        
-    }
+//  Not used as the final version of the API doesnt have token authentication implemented
+//    func  {
+//
+//        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
+//            if TokenResponse != nil {
+//
+//                return
+//            }
+//            else if error != nil {
+//
+//                self.signout()
+//            }
+//        })
+//    }
+//
+//    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
+//
+//        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
+//            if TokenResponse != nil {
+//
+//                completion(true)
+//            }
+//            else {
+//
+//                completion(false)
+//            }
+//        })
+//
+//    }
         
 
     // MARK: - Objc functions
