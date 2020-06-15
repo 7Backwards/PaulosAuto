@@ -546,7 +546,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-5w-wGQ">
-                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
                                                                         <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -570,7 +570,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-xv-jWP">
-                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
                                                                         <color key="tintColor" red="0.84091449870000001" green="0.01648851958" blue="0.01648851958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -595,7 +595,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="E3p-fN-nqg">
-                                                                        <rect key="frame" x="334" y="17.333333333333371" width="40" height="40"/>
+                                                                        <rect key="frame" x="354" y="27.333333333333371" width="20" height="20"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -616,7 +616,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" tag="400" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="4VR-TC-kv0">
-                                                                        <rect key="frame" x="334" y="5" width="40" height="65.333333333333329"/>
+                                                                        <rect key="frame" x="354" y="5" width="20" height="65.333333333333329"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -673,7 +673,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-PN-yaT">
-                                                                            <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                            <rect key="frame" x="20" y="5" width="20" height="40"/>
                                                                             <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -838,16 +838,10 @@
                                                         <rect key="frame" x="106.33333333333336" y="0.0" width="247.66666666666663" height="87.333333333333329"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hFz-Je-tcg">
-                                                                <rect key="frame" x="20" y="19.666666666666657" width="207.66666666666666" height="48"/>
+                                                                <rect key="frame" x="20" y="31.666666666666657" width="207.66666666666666" height="24"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem vindo," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtP-V0-3Yf">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliseu &amp; Filhos, Lda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jmG-a5-MZb">
                                                                         <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliseu &amp; Filhos, Lda" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmG-a5-MZb">
-                                                                        <rect key="frame" x="0.0" y="24" width="207.66666666666666" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1964,7 +1958,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-N9-AgX">
-                                                                        <rect key="frame" x="0.0" y="86" width="354" height="87"/>
+                                                                        <rect key="frame" x="0.0" y="91" width="354" height="87"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="801" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Indique o número de horas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WBS-zY-rLn">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="21.666666666666668"/>
@@ -1980,7 +1974,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" tag="801" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BYo-hR-fq7">
-                                                                        <rect key="frame" x="0.0" y="196.66666666666669" width="354" height="142.66666666666669"/>
+                                                                        <rect key="frame" x="0.0" y="206.66666666666669" width="354" height="142.66666666666669"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="801" contentMode="left" verticalHuggingPriority="251" text="Descrição do Problema" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qQk-qy-SGK">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="21.666666666666668"/>
@@ -1998,7 +1992,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nOO-ol-Mxe">
-                                                                        <rect key="frame" x="0.0" y="363" width="354" height="81.666666666666686"/>
+                                                                        <rect key="frame" x="0.0" y="378" width="354" height="56.666666666666686"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="801" contentMode="left" verticalHuggingPriority="251" text="Anexo descritivo do Problema" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yMS-Db-rJw">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="21.666666666666668"/>
@@ -2007,7 +2001,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cp9-ex-niz">
-                                                                                <rect key="frame" x="0.0" y="31.666666666666629" width="354" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="31.666666666666629" width="354" height="25"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <color key="tintColor" name="RedPaulosAuto"/>
                                                                                 <state key="normal" image="Camera_fill"/>
@@ -2018,7 +2012,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbZ-Et-c61">
-                                                                        <rect key="frame" x="0.0" y="468.33333333333337" width="354" height="80"/>
+                                                                        <rect key="frame" x="0.0" y="463.33333333333337" width="354" height="80"/>
                                                                         <subviews>
                                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QJd-G7-dKC">
                                                                                 <rect key="frame" x="0.0" y="5" width="354" height="70"/>
