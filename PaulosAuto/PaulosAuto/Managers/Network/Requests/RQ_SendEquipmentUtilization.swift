@@ -16,30 +16,40 @@ class RQ_SendEquipmentUtilization {
     
     func repos(serialNumber: String, currentHours: Int, _ completion: @escaping (EquipmentModel?, Error?) -> Void ) {
         
+        
+        
         let request = URLRequest(url: (ApiConstants.sendEquipmentUtilizationURL)!)
         let url = request.url
-        let equipmentUtilization = EquipmentUtilizationPOSTModel(horasAtuais: currentHours, serialNumber: String(serialNumber))
-        let parameters = equipmentUtilization.convertToDictionary()
-        let headers = "application/json"
         
-        NetworkManager.fetchAPIData(url: url!,
-                                    method: "POST",
-                                    params: parameters,
-                                    headers: headers) { (result: Result<EquipmentModel, Error>) in
-            switch result {
-
-            case .success(let data):
-                print(result)
-                completion(data,nil)
-
+        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            
+            let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+            
+            if let email = user?.email {
                 
-            case .failure(let error):
-                print(result)
-                completion(nil,error)
+                let equipmentUtilization = EquipmentUtilizationPOSTModel(horasAtuais: currentHours, serialNumber: String(serialNumber), email: email)
+                               let parameters = equipmentUtilization.convertToDictionary()
+                               let headers = "application/json"
+                               
+                               NetworkManager.fetchAPIData(url: url!,
+                                                           method: "POST",
+                                                           params: parameters,
+                                                           headers: headers) { (result: Result<EquipmentModel, Error>) in
+                                   switch result {
 
-                
+                                   case .success(let data):
+                                       print(result)
+                                       completion(data,nil)
+
+                                       
+                                   case .failure(let error):
+                                       print(result)
+                                       completion(nil,error)
+
+                                       
+                                   }
+                               }
+                           }
+                       }
             }
-        }
-    }
-
 }

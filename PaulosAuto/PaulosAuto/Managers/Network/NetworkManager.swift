@@ -109,6 +109,7 @@ class NetworkManager: NSObject {
                     
                     
                 default:
+                    
                     break
                 }
             }

@@ -138,8 +138,6 @@ class RegisterEquipmentHoursViewController: ViewController {
     
     @IBAction func submitButtonAction(_ sender: Any) {
         
-        print("Enabled")
-        
         RQ_SendEquipmentUtilization().repos(serialNumber: Equipment.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
             if equipmentData != nil {
                 
@@ -152,6 +150,8 @@ class RegisterEquipmentHoursViewController: ViewController {
             else if let error = error {
                 
                 print(error)
+
+                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Registo de horas de utilização efetuado sem sucesso", alertActionTitle: "Tentar Novamente")
             }
         })
         dismisspopup()
