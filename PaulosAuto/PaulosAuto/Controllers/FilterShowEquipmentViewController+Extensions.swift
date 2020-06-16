@@ -26,7 +26,7 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCategoriesCell", for: indexPath) as! CollectionViewCategoriesCell
         
-        cell.categoryLabel.text = categoryEquipments[indexPath.row]
+
         
         for category in activeCategoryFiltered {
             
@@ -44,6 +44,7 @@ extension FilterShowEquipmentViewController: UICollectionViewDataSource {
         cell.cellView.layer.masksToBounds = true
         cell.cellView.layer.cornerRadius = 20
         cell.categoryLabel.textColor = .black
+        cell.categoryLabel.text = categoryEquipments[indexPath.row]
         cell.checkImageView.isHidden = true
         return cell
     }
