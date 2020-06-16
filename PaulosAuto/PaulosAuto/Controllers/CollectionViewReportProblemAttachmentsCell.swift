@@ -1,5 +1,5 @@
 //
-//  CollectionViewReportProblemCell.swift
+//  CollectionViewReportProblemAttachmentsCell.swift
 //  PaulosAuto
 //
 //  Created by Gonçalo Neves on 20/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewReportProblemCell: UICollectionViewCell {
+class CollectionViewReportProblemAttachmentsCell: UICollectionViewCell {
     
     
     // MARK: - Outlets

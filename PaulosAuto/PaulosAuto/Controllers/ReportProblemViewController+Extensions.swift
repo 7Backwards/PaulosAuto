@@ -140,7 +140,7 @@ extension ReportProblemViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemCell", for: indexPath) as! CollectionViewReportProblemCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewReportProblemAttachmentsCell", for: indexPath) as! CollectionViewReportProblemAttachmentsCell
         
         for view in cell.cellView.subviews
         {

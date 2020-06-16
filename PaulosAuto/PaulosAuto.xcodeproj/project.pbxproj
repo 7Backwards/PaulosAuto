@@ -26,7 +26,7 @@
 		B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */; };
 		B02B429524796DA500A22EAA /* RQ_SendReportProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */; };
 		B02B42972479783800A22EAA /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B42962479783800A22EAA /* ImageModel.swift */; };
-		B02B429924797AF500A22EAA /* ReportProblemResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */; };
+		B02B429924797AF500A22EAA /* ReportProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429824797AF500A22EAA /* ReportProblemModel.swift */; };
 		B02B429B247ADC1F00A22EAA /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429A247ADC1F00A22EAA /* VideoModel.swift */; };
 		B033BC572458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */; };
 		B033BC592458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */; };
@@ -34,7 +34,7 @@
 		B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AB24736DA200959B9C /* PreviewController.swift */; };
 		B055F2AE2473718800959B9C /* PreviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2AD2473718800959B9C /* PreviewItem.swift */; };
 		B055F2B2247576FA00959B9C /* ReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */; };
-		B055F561247586A90011B1ED /* CollectionViewReportProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */; };
+		B055F561247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F560247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift */; };
 		B055F56324758FB90011B1ED /* ListAttachmentsCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F56224758FB90011B1ED /* ListAttachmentsCellLayout.swift */; };
 		B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */; };
 		B0658AA22417E55500245732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0658AA12417E55500245732 /* AppDelegate.swift */; };
@@ -69,7 +69,10 @@
 		FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543D247DED730079A646 /* TokenResponseModel.swift */; };
 		FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */; };
 		FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */; };
-		FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ProblemasViewController.swift */; };
+		FA66F2BB2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */; };
+		FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */; };
+		FA66F2BF24981ACB005182F6 /* RQ_ListReportProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */; };
+		FACD18162419AEEE0085574C /* ListReportProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ListReportProblemViewController.swift */; };
 		FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* InvoiceViewController.swift */; };
 		FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListEquipmentViewController.swift */; };
 		FACD1820241C64ED0085574C /* CollectionViewEquipmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */; };
@@ -96,7 +99,7 @@
 		B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemPOSTModel.swift; sourceTree = "<group>"; };
 		B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendReportProblem.swift; sourceTree = "<group>"; };
 		B02B42962479783800A22EAA /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemResponseModel.swift; sourceTree = "<group>"; };
+		B02B429824797AF500A22EAA /* ReportProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemModel.swift; sourceTree = "<group>"; };
 		B02B429A247ADC1F00A22EAA /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		B033BC562458D1ED00BE3C02 /* CollectionViewInvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInvoicesCell.swift; sourceTree = "<group>"; };
 		B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvoiceViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -104,7 +107,7 @@
 		B055F2AB24736DA200959B9C /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		B055F2AD2473718800959B9C /* PreviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewItem.swift; sourceTree = "<group>"; };
 		B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewReportProblemCell.swift; sourceTree = "<group>"; };
+		B055F560247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewReportProblemAttachmentsCell.swift; sourceTree = "<group>"; };
 		B055F56224758FB90011B1ED /* ListAttachmentsCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAttachmentsCellLayout.swift; sourceTree = "<group>"; };
 		B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentReportProblemStruct.swift; sourceTree = "<group>"; };
 		B0658A9E2417E55500245732 /* PaulosAuto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaulosAuto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +144,10 @@
 		FA29543D247DED730079A646 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
 		FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAuthentication.swift; sourceTree = "<group>"; };
 		FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAdminAuthentication.swift; sourceTree = "<group>"; };
-		FACD18152419AEEE0085574C /* ProblemasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemasViewController.swift; sourceTree = "<group>"; };
+		FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListReportProblemCell.swift; sourceTree = "<group>"; };
+		FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListReportProblems.swift; sourceTree = "<group>"; };
+		FACD18152419AEEE0085574C /* ListReportProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReportProblemViewController.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEquipmentViewController.swift; sourceTree = "<group>"; };
 		FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewEquipmentsCell.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */,
 				FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */,
 				FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */,
+				FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -229,7 +236,8 @@
 		B0658AB52417E6A300245732 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FACD18152419AEEE0085574C /* ProblemasViewController.swift */,
+				FACD18152419AEEE0085574C /* ListReportProblemViewController.swift */,
+				FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */,
 				FACD18172419AF880085574C /* InvoiceViewController.swift */,
 				B033BC582458D8EF00BE3C02 /* InvoiceViewController+Extensions.swift */,
 				FACD181F241C64ED0085574C /* CollectionViewEquipmentsCell.swift */,
@@ -241,7 +249,7 @@
 				B09FE976242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift */,
 				B09FE978242D6C2C00EE2FA1 /* ReportProblemViewController.swift */,
 				B055F2B1247576FA00959B9C /* ReportProblemViewController+Extensions.swift */,
-				B055F560247586A90011B1ED /* CollectionViewReportProblemCell.swift */,
+				B055F560247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift */,
 				B09FE97A242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift */,
 				B016A9882448CE01002A07F6 /* FilterShowEquipmentViewController+Extensions.swift */,
 				B0B32D312448F2CE009F9008 /* CollectionViewCategoriesCell.swift */,
@@ -251,6 +259,7 @@
 				B06A0D002470C78A00074AE1 /* TabBarViewController.swift */,
 				B055F2AB24736DA200959B9C /* PreviewController.swift */,
 				B055F2AD2473718800959B9C /* PreviewItem.swift */,
+				FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,7 +338,7 @@
 				B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */,
 				B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */,
 				B02B42962479783800A22EAA /* ImageModel.swift */,
-				B02B429824797AF500A22EAA /* ReportProblemResponseModel.swift */,
+				B02B429824797AF500A22EAA /* ReportProblemModel.swift */,
 				B02B429A247ADC1F00A22EAA /* VideoModel.swift */,
 				FA29543D247DED730079A646 /* TokenResponseModel.swift */,
 			);
@@ -439,6 +448,7 @@
 			files = (
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
+				FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */,
 				B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */,
 				B055F2AC24736DA200959B9C /* PreviewController.swift in Sources */,
 				B005B4A6245A2FCC00C000AC /* AppColors.swift in Sources */,
@@ -482,11 +492,13 @@
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
 				B02B42972479783800A22EAA /* ImageModel.swift in Sources */,
 				B01A8010245BA492004EC603 /* EquipmentUtilizationPOSTModel.swift in Sources */,
-				B02B429924797AF500A22EAA /* ReportProblemResponseModel.swift in Sources */,
+				B02B429924797AF500A22EAA /* ReportProblemModel.swift in Sources */,
 				B0B74E04244DB0C00069C352 /* ListEquipmentCellLayout.swift in Sources */,
 				FA05FB0C24204ED40033B901 /* CALayer+Extensions.swift in Sources */,
+				FA66F2BF24981ACB005182F6 /* RQ_ListReportProblems.swift in Sources */,
 				FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */,
 				B055F5652475C6DA0011B1ED /* AttachmentReportProblemStruct.swift in Sources */,
+				FA66F2BB2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift in Sources */,
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
@@ -495,8 +507,8 @@
 				FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
-				FACD18162419AEEE0085574C /* ProblemasViewController.swift in Sources */,
-				B055F561247586A90011B1ED /* CollectionViewReportProblemCell.swift in Sources */,
+				FACD18162419AEEE0085574C /* ListReportProblemViewController.swift in Sources */,
+				B055F561247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
 				FACDD43A2493104B0042F6F7 /* UIImage+Extensions.swift in Sources */,
 				B0B10511246B803C003960BC /* UserModel.swift in Sources */,

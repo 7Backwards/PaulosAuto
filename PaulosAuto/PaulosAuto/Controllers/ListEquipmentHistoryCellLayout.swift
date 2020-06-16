@@ -56,7 +56,7 @@ class ListEquipmentHistoryCellLayout: UICollectionViewFlowLayout {
     func setupLayout() {
         
         minimumInteritemSpacing = 1
-        minimumLineSpacing = 20
+        minimumLineSpacing = 10
         scrollDirection = .vertical
     }
     

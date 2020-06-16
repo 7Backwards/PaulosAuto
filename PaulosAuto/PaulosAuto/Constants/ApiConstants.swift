@@ -16,6 +16,7 @@ struct ApiConstants {
     static let listEquipmentURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/clientes/equipamentos_v2/")
     static let listEquipmentHistoryURL = base?.appendingPathComponent("intervencoes/")
     static let listInvoicesURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/clientes/faturas/")
+    static let listReportProblemURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias/")
     static let sendEquipmentUtilizationURL =
         baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/utilizacao")
     static let downloadInvoiceURL =

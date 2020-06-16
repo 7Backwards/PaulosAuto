@@ -8,19 +8,19 @@
 
 import Foundation
 
-class RQ_ListEquipments {
+class RQ_ListReportProblems {
     
     
     // MARK: - Public
     
     
-    func repos(username: Int, _ completion: @escaping ([EquipmentModel]?, Error?) -> Void ) {
+    func repos(serialNumber: String, _ completion: @escaping ([ReportProblemModel]?, Error?) -> Void ) {
         
-        let request = URLRequest(url: (ApiConstants.listEquipmentURL?.appendingPathComponent(String(username)))!)
+        let request = URLRequest(url: ((ApiConstants.listReportProblemURL?.appendingPathComponent(serialNumber))!))
         let url = request.url
         
 
-        NetworkManager.fetchAPIData(url: url!) { (result: Result<[EquipmentModel], Error>) in
+        NetworkManager.fetchAPIData(url: url!) { (result: Result<[ReportProblemModel], Error>) in
             switch result {
                 
             case .success(let data):
