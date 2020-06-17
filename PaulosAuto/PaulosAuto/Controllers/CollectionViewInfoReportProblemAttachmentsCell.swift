@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import UIKit
+
+
+class CollectionViewInfoReportProblemAttachmentsCell: UICollectionViewCell {
+    
+    
+    // MARK: - Outlets
+    
+    
+    @IBOutlet weak var previewImageOuterView: UIView!
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var previewImageView: UIImageView!
+    
+    
+    
+    
+}

@@ -71,7 +71,6 @@ extension FilterShowEquipmentViewController : UICollectionViewDelegate {
         self.collectionView.reloadData()
         refreshListEquipmentCollectionView()
         
-        
     }
 }
 

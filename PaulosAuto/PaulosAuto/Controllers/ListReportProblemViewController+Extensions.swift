@@ -26,9 +26,9 @@ extension ListReportProblemViewController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewListReportProblemCell", for: indexPath) as! CollectionViewListReportProblemCell
         
         if let serialNumber = problemsReported[indexPath.row].serialNumber {
-
+            
             cell.serialNumberLabel.text = serialNumber
-
+            
         }
         
         if let date = problemsReported[indexPath.row].date {
@@ -36,7 +36,27 @@ extension ListReportProblemViewController : UICollectionViewDataSource {
             cell.dateLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
         }
         
+        
         cell.cellView.setCardView()
         return cell
     }
 }
+
+extension ListReportProblemViewController: UICollectionViewDelegate {
+    
+    
+    // MARK: - Public
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as?
+            ReportProblemInfoViewController, let index =
+            collectionView.indexPathsForSelectedItems?.first {
+            
+            destination.problemReported = problemsReported[index.row]
+        }
+    }
+}
+
+

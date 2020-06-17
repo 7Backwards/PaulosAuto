@@ -18,4 +18,5 @@ extension UIColor {
     class var blackTransparent: UIColor { return UIColor(named: "blackTransparent")!}
     class var redTransparent5: UIColor { return UIColor(named: "redTransparent5")!}
     class var redTransparent60: UIColor { return UIColor(named: "redTransparent60")!}
+    class var popUpBackground: UIColor { return UIColor(named: "popUpBackground")!}
 }

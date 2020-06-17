@@ -16,12 +16,12 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
         let cell = historyCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewHistoryEquipmentCell", for: indexPath) as! CollectionViewHistoryEquipmentCell
         
         if let description = historyEquipment[indexPath.row].description {
-         
+            
             cell.descriptionIncidentLabel.text = description
         }
         
         if let date = historyEquipment[indexPath.row].date {
-         
+            
             cell.dateIncidentLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
         }
         
@@ -43,8 +43,12 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-            return self.historyEquipment.count
-        }
+        
+        return self.historyEquipment.count
     }
+}
+
+
+
+
 

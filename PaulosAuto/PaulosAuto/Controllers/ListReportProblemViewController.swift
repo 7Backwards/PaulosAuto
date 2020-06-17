@@ -38,6 +38,7 @@ class ListReportProblemViewController: ViewController {
         super.addNavBarLogo()
         collectionView.collectionViewLayout = cellLayout
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
