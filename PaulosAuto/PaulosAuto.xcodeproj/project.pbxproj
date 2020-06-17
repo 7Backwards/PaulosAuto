@@ -69,6 +69,9 @@
 		FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543D247DED730079A646 /* TokenResponseModel.swift */; };
 		FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */; };
 		FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */; };
+		FA529CB724997F0F00D2255B /* ReportProblemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */; };
+		FA529CB9249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CB8249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift */; };
+		FA529CBB249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CBA249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift */; };
 		FA66F2BB2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */; };
 		FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */; };
 		FA66F2BF24981ACB005182F6 /* RQ_ListReportProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */; };
@@ -144,6 +147,9 @@
 		FA29543D247DED730079A646 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
 		FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAuthentication.swift; sourceTree = "<group>"; };
 		FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAdminAuthentication.swift; sourceTree = "<group>"; };
+		FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemInfoViewController.swift; sourceTree = "<group>"; };
+		FA529CB8249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportProblemInfoViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FA529CBA249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInfoReportProblemAttachmentsCell.swift; sourceTree = "<group>"; };
 		FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListReportProblemCell.swift; sourceTree = "<group>"; };
 		FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListReportProblems.swift; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 				B055F2AB24736DA200959B9C /* PreviewController.swift */,
 				B055F2AD2473718800959B9C /* PreviewItem.swift */,
 				FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */,
+				FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */,
+				FA529CB8249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift */,
+				FA529CBA249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -446,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA529CB724997F0F00D2255B /* ReportProblemInfoViewController.swift in Sources */,
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
 				FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */,
@@ -488,6 +498,7 @@
 				B055F2B2247576FA00959B9C /* ReportProblemViewController+Extensions.swift in Sources */,
 				B06A0CFD2470711E00074AE1 /* PerfilViewController.swift in Sources */,
 				B0658AA22417E55500245732 /* AppDelegate.swift in Sources */,
+				FA529CB9249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift in Sources */,
 				B016A987244756B5002A07F6 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				B09FE977242CFF2B00EE2FA1 /* RegisterEquipmentHoursViewController.swift in Sources */,
 				B02B42972479783800A22EAA /* ImageModel.swift in Sources */,
@@ -509,6 +520,7 @@
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
 				FACD18162419AEEE0085574C /* ListReportProblemViewController.swift in Sources */,
 				B055F561247586A90011B1ED /* CollectionViewReportProblemAttachmentsCell.swift in Sources */,
+				FA529CBB249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift in Sources */,
 				B0658AA42417E55500245732 /* SceneDelegate.swift in Sources */,
 				FACDD43A2493104B0042F6F7 /* UIImage+Extensions.swift in Sources */,
 				B0B10511246B803C003960BC /* UserModel.swift in Sources */,
