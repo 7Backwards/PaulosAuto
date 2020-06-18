@@ -91,7 +91,6 @@ extension InvoiceViewController : QLPreviewControllerDataSource, QLPreviewContro
             }
             if !fileFound {
                 
-                removeHUDLoading()
                 addInformativeAlert(alertControllerTitle: "Ficheiro não encontrado", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
             }
             return

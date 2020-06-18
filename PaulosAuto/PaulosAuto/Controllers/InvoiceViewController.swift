@@ -88,30 +88,17 @@ class InvoiceViewController: ViewController {
             
             let fileName = "\(invoices[sender.tag].diario ?? "")_\( invoices[sender.tag].ano ?? "").pdf"
             
-            let pdffileurl : URL = {
-                
-                let fm = FileManager.default
-                let docsurl = try! fm.url(
-                    for: .documentDirectory, in: .userDomainMask,
-                    appropriateFor: nil, create: true)
-                return docsurl.appendingPathComponent(fileName)
-            }()
-            let pdfurl = URL(string: invoiceURL)!
-            let sess = URLSession.shared
-            sess.downloadTask(with: pdfurl) { (url, resp, error) in
-                if let url = url {
+            saveURLFileLocally(fileName: fileName, url: invoiceURL) {(url, error)  in
+                if url != nil {
                     
-                    let fm = FileManager.default
-                    try? fm.removeItem(at: pdffileurl)
-                    try? fm.moveItem(at: url, to: pdffileurl)
                     self.previewFile(fileName: fileName)
+
                 }
-                
-                if error != nil {
-                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Ficheiro não encontrado", alertActionTitle: "Sair")
+                else if let error = error {
+                    
+                    print(error)
                 }
-            }.resume()
+            }
         }
     }
 }
-

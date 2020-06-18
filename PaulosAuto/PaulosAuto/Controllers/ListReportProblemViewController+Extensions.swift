@@ -57,6 +57,10 @@ extension ListReportProblemViewController: UICollectionViewDelegate {
             destination.problemReported = problemsReported[index.row]
         }
     }
+    
+
+    
+
 }
 
 

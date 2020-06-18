@@ -28,6 +28,7 @@ class ReportProblemInfoViewController: ViewController {
     
     var problemReported : ReportProblemModel?
     var problemAttachment = [AttachmentReportProblemStruct]()
+    var previewItem: PreviewItem!
     
     
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class ReportProblemInfoViewController: ViewController {
         
         popUpView.setCardView()
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func setupInfo() {
@@ -113,4 +115,48 @@ class ReportProblemInfoViewController: ViewController {
         
     }
     
+    // MARK: - Objc functions
+    
+    func previewAttachment(index: Int) {
+        
+        
+        if let image = problemAttachment[index].image {
+            
+            if let urlImage = image.urlPath {
+                
+                let fileName = "\(NSUUID().uuidString)" + ".jpg"
+                
+                saveURLFileLocally(fileName: fileName, url: urlImage.absoluteString) {(url, error)  in
+                    if url != nil {
+                        
+                        self.previewFile(fileName: fileName)
+                        
+                    }
+                    else if let error = error {
+                        
+                        print(error)
+                    }
+                }
+            }
+        }
+        else if let video = problemAttachment[index].video {
+            
+            if let urlVideo = video.urlPath {
+                
+                let fileName = "\(NSUUID().uuidString)" + ".mov"
+                
+                saveURLFileLocally(fileName: fileName, url: urlVideo.absoluteString) {(url, error)  in
+                    if url != nil {
+                        
+                        self.previewFile(fileName: fileName)
+                        
+                    }
+                    else if let error = error {
+                        
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
 }

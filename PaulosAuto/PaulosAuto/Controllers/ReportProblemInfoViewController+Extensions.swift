@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import QuickLook
 
 
 extension ReportProblemInfoViewController : UICollectionViewDataSource {
@@ -59,4 +60,59 @@ extension ReportProblemInfoViewController : UICollectionViewDataSource {
         }
         return cell
     }
+    
+
 }
+
+extension ReportProblemInfoViewController : UICollectionViewDelegate {
+ 
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.previewAttachment(index:indexPath.row)
+    }
+}
+
+extension ReportProblemInfoViewController : QLPreviewControllerDataSource, QLPreviewControllerDelegate {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        
+        return previewItem
+    }
+    
+    func previewFile(fileName: String) {
+        
+        var fileFound : Bool = false
+        
+        do {
+            
+            let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
+            for url in contents {
+                
+                if url.description.contains(fileName) {
+                    
+                    fileFound = true
+                    let previewController = PreviewController()
+                    self.previewItem = PreviewItem(url:url)
+                    previewController.dataSource = self
+                    self.present(previewController,animated: true, completion: nil)
+                }
+            }
+            if !fileFound {
+                
+                removeHUDLoading()
+                addInformativeAlert(alertControllerTitle: "Ficheiro não encontrado", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+            }
+            return
+        } catch {
+            
+            addInformativeAlert(alertControllerTitle: "Erro no acesso à diretoria", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+        }
+    }
+}
+

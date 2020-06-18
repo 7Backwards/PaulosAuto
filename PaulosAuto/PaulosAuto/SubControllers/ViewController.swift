@@ -12,7 +12,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-
+    
     // MARK: - Properties
     
     
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
     }
     
     func displayPDF(pdfFileURL : URL) {
-    
+        
         backgroundView.backgroundColor = .white
         backgroundView.frame = self.view.bounds
         self.view.addSubview(backgroundView)
@@ -165,13 +165,13 @@ class ViewController: UIViewController {
     }
     
     func getThumbnailFromUrl(_ url: String?, _ completion: @escaping ((_ image: UIImage?)->Void)) {
-
+        
         guard let url = URL(string: url ?? "") else { return }
         DispatchQueue.main.async {
             let asset = AVAsset(url: url)
             let assetImgGenerate = AVAssetImageGenerator(asset: asset)
             assetImgGenerate.appliesPreferredTrackTransform = true
-
+            
             let time = CMTimeMake(value: 2, timescale: 1)
             do {
                 let img = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
@@ -180,93 +180,121 @@ class ViewController: UIViewController {
             } catch {
                 print("Error :: ", error.localizedDescription)
                 completion(nil)
-                }
+            }
         }
     }
     
-//    func createVideoThumbnail(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
-//        DispatchQueue.global().async {
-//
-//            let asset = AVAsset(url: url)
-//            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-//            avAssetImageGenerator.appliesPreferredTrackTransform = true
-//            let thumnailTime = CMTimeMake(value: 2, timescale: 1)
-//            do {
-//
-//                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil)
-//                let thumbNailImage = UIImage(cgImage: cgThumbImage)
-//                DispatchQueue.main.async {
-//
-//                    completion(thumbNailImage)
-//                }
-//            } catch {
-//                print(error.localizedDescription)
-//                DispatchQueue.main.async {
-//
-//                    completion(nil)
-//                }
-//            }
-//        }
-//    }
+    //    func createVideoThumbnail(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
+    //        DispatchQueue.global().async {
+    //
+    //            let asset = AVAsset(url: url)
+    //            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+    //            avAssetImageGenerator.appliesPreferredTrackTransform = true
+    //            let thumnailTime = CMTimeMake(value: 2, timescale: 1)
+    //            do {
+    //
+    //                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil)
+    //                let thumbNailImage = UIImage(cgImage: cgThumbImage)
+    //                DispatchQueue.main.async {
+    //
+    //                    completion(thumbNailImage)
+    //                }
+    //            } catch {
+    //                print(error.localizedDescription)
+    //                DispatchQueue.main.async {
+    //
+    //                    completion(nil)
+    //                }
+    //            }
+    //        }
+    //    }
+    
+    func saveURLFileLocally(fileName : String, url : String, _ completion: @escaping (URL?, Error?) -> Void) {
+        
+        let filePath : URL = {
+            
+            let fm = FileManager.default
+            let docsurl = try! fm.url(
+                for: .documentDirectory, in: .userDomainMask,
+                appropriateFor: nil, create: true)
+            return docsurl.appendingPathComponent(fileName)
+        }()
+        let fileurl = URL(string: url)!
+        let sess = URLSession.shared
+        sess.downloadTask(with: fileurl) { (url, resp, error) in
+            if let url = url {
+                
+                let fm = FileManager.default
+                try? fm.removeItem(at: filePath)
+                try? fm.moveItem(at: url, to: filePath)
+                completion(url,nil)
+            }
+            
+            if error != nil {
+                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Ficheiro não encontrado", alertActionTitle: "Sair")
+                completion(nil,error)
+            }
+        }.resume()
+    }
     
     func signout() {
         
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
-
+        
         DispatchQueue.main.async {
             
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
             let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
+            
             appDel.window?.rootViewController = loginVC
             print("set isUserLoggedIn = false")
             UserDefaults.standard.removeObject(forKey: "user")
             let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
-
-                
-                self.navigationController?.pushViewController(LoginVC, animated: true)
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-                self.tabBarController?.tabBar.isHidden = true
+            
+            
+            self.navigationController?.pushViewController(LoginVC, animated: true)
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.tabBarController?.tabBar.isHidden = true
         }
         
-
+        
         
         
         
     }
     
-//  Not used as the final version of the API doesnt have token authentication implemented
-//    func  {
-//
-//        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
-//            if TokenResponse != nil {
-//
-//                return
-//            }
-//            else if error != nil {
-//
-//                self.signout()
-//            }
-//        })
-//    }
-//
-//    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
-//
-//        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
-//            if TokenResponse != nil {
-//
-//                completion(true)
-//            }
-//            else {
-//
-//                completion(false)
-//            }
-//        })
-//
-//    }
-        
-
+    //  Not used as the final version of the API doesnt have token authentication implemented
+    //    func  {
+    //
+    //        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
+    //            if TokenResponse != nil {
+    //
+    //                return
+    //            }
+    //            else if error != nil {
+    //
+    //                self.signout()
+    //            }
+    //        })
+    //    }
+    //
+    //    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
+    //
+    //        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
+    //            if TokenResponse != nil {
+    //
+    //                completion(true)
+    //            }
+    //            else {
+    //
+    //                completion(false)
+    //            }
+    //        })
+    //
+    //    }
+    
+    
     // MARK: - Objc functions
     
     
