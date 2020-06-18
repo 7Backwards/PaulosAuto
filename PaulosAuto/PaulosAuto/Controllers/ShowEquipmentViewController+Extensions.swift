@@ -18,6 +18,7 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
         if let description = historyEquipment[indexPath.row].description {
             
             cell.descriptionIncidentLabel.text = description
+            
         }
         
         if let date = historyEquipment[indexPath.row].date {
@@ -25,7 +26,7 @@ extension ShowEquipmentViewController: UICollectionViewDataSource {
             cell.dateIncidentLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
         }
         
-        if let description = historyEquipment[indexPath.row].endedState {
+        if let description = historyEquipment[indexPath.row].finalized {
             
             if description {
                 

@@ -44,7 +44,7 @@ class ShowEquipmentViewController: ViewController {
     var serialNumberID: String!
     var equipment : EquipmentModel!
     var isAnimated = false
-    var historyEquipment = [EquipmentHistoryModel]()
+    var historyEquipment = [EquipmentHistory]()
     
     
     // MARK: - Constants
@@ -61,7 +61,7 @@ class ShowEquipmentViewController: ViewController {
         super.viewDidLoad()
         setupView()
         setupInfo()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +74,9 @@ class ShowEquipmentViewController: ViewController {
     override func viewDidLayoutSubviews() {
         
         if isAnimated == false {
-        
+            
             super.viewDidLayoutSubviews()
-
+            
             UIView.animate(withDuration: 1.0, animations: {
                 
                 self.barView.frame.origin.x = self.segmentControl.frame.origin.x
@@ -118,19 +118,19 @@ class ShowEquipmentViewController: ViewController {
         }
         if let dataStartAssignment = equipment.dateAssignment {
             
-             dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+            dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
         }
         
         if let dataStartAssignment = equipment.dateStartAssignment {
             
-             dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+            dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
         }
         
         if let dataEndAssignment = equipment.dateEndAssignment {
             
-             dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
+            dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
         }
-       
+        
         brandLabel.text = equipment.brand
         
         if equipment.plate != nil {
@@ -176,7 +176,39 @@ class ShowEquipmentViewController: ViewController {
                     
                     DispatchQueue.main.async {
                         
-                        self.historyEquipment = historyData
+                        for historyDataElement in historyData {
+                            
+                            if let interventions = historyDataElement.intervencoes {
+                                
+                                for intervention in interventions {
+                                    
+                                    var equipmentHistory = EquipmentHistory()
+                                    
+                                    equipmentHistory.date = intervention.dateIntervention
+                                    equipmentHistory.hours = intervention.hours
+                                    equipmentHistory.finalized = historyDataElement.finalizada
+                                    var description = ""
+                                    for descriptionElement in historyDataElement.descricaoIntervencao ?? [""] {
+                                        
+                                        if description != "" {
+                                            
+                                            description = "\(description)" + "," + "\(descriptionElement)"
+                                        }
+                                        else {
+                                            
+                                            description = "\(descriptionElement)"
+                                        }
+                                        
+                                    }
+                                    equipmentHistory.description = description
+                                    
+                                    self.historyEquipment.append(equipmentHistory)
+                                    
+                                }
+                            }
+                        }
+                        
+                        
                         self.historyCollectionView.reloadData()
                     }
                 }
@@ -194,7 +226,7 @@ class ShowEquipmentViewController: ViewController {
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         navigationItem.leftBarButtonItem?.tintColor = .RedPaulosAuto
-
+        
         informationView.setCardView()
         
         reportProblemButton.setButtonStyle(cornerRadius: 10)
@@ -217,7 +249,7 @@ class ShowEquipmentViewController: ViewController {
             
         }
     }
-
+    
     
     // MARK: - Actions
     

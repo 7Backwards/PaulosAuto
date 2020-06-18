@@ -69,6 +69,8 @@
 		FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543D247DED730079A646 /* TokenResponseModel.swift */; };
 		FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */; };
 		FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */; };
+		FA4F4BE6249BFCE500B18925 /* InterventionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */; };
+		FA4F4BE8249C0F8E00B18925 /* EquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */; };
 		FA529CB724997F0F00D2255B /* ReportProblemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */; };
 		FA529CB9249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CB8249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift */; };
 		FA529CBB249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CBA249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift */; };
@@ -147,6 +149,8 @@
 		FA29543D247DED730079A646 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
 		FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAuthentication.swift; sourceTree = "<group>"; };
 		FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAdminAuthentication.swift; sourceTree = "<group>"; };
+		FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionsModel.swift; sourceTree = "<group>"; };
+		FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentHistory.swift; sourceTree = "<group>"; };
 		FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemInfoViewController.swift; sourceTree = "<group>"; };
 		FA529CB8249A805600D2255B /* ReportProblemInfoViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportProblemInfoViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FA529CBA249A916400D2255B /* CollectionViewInfoReportProblemAttachmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInfoReportProblemAttachmentsCell.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				B02B429824797AF500A22EAA /* ReportProblemModel.swift */,
 				B02B429A247ADC1F00A22EAA /* VideoModel.swift */,
 				FA29543D247DED730079A646 /* TokenResponseModel.swift */,
+				FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */,
+				FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			files = (
 				FA529CB724997F0F00D2255B /* ReportProblemInfoViewController.swift in Sources */,
 				B01CA8D8244F81F7000228A5 /* ApiConstants.swift in Sources */,
+				FA4F4BE8249C0F8E00B18925 /* EquipmentHistory.swift in Sources */,
 				B0B32D322448F2CE009F9008 /* CollectionViewCategoriesCell.swift in Sources */,
 				FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */,
 				B01CA8D6244F81B3000228A5 /* RQ_ListEquipments.swift in Sources */,
@@ -490,6 +497,7 @@
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,
 				B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */,
 				B01A8012245BAB0D004EC603 /* AppConstants.swift in Sources */,
+				FA4F4BE6249BFCE500B18925 /* InterventionsModel.swift in Sources */,
 				B0D0E3152454B20700BE3A98 /* EquipmentHistoryModel.swift in Sources */,
 				B08B3B3B24294FC400FBBD4B /* UIButton+Extensions.swift in Sources */,
 				B0929120243B6E09003F097F /* UISearchBar+Extensions.swift in Sources */,

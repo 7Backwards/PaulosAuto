@@ -11,37 +11,26 @@ class EquipmentHistoryModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         
-        case description = "descricaoIntervencao"
-        case endedState = "finalizada"
-        case date = "dataIntervencao"
+        case intervencoes = "intervencoes"
+        case descricaoIntervencao = "descricaoIntervencao"
+        case finalizada = "finalizada"
     }
     
-    var description: String?
-    var endedState: Bool?
-    var date: Date?
+    var intervencoes: [InterventionsModel]?
+    var descricaoIntervencao: [String]?
+    var finalizada: Bool?
     
-    init (description: String?, endedState: Bool?, date: String?) {
-        
-        self.description = description
-        self.endedState = endedState
-        
-        if let date = date {
-            
-            if let date = ApiConstants.dateFormatter.date(from: date) {
-                
-                self.date = date
-            }
-        }
+    init (intervencoes: [InterventionsModel]?, descricaoIntervencao: [String]?, finalizada: Bool?) {
+      self.intervencoes = intervencoes
+      self.descricaoIntervencao = descricaoIntervencao
+      self.finalizada = finalizada
     }
     
-    required convenience init(from decoder: Decoder) throws {
-        
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let description = try container.decodeIfPresent(String.self, forKey: .description)
-        let endedState = try container.decodeIfPresent(Bool.self, forKey: .endedState)
-        let dateString = try container.decodeIfPresent(String.self, forKey: .date)
-        
-        self.init(description: description, endedState: endedState, date: dateString)
+    required init(from decoder: Decoder) throws {
+      let container = try decoder.container(keyedBy: CodingKeys.self)
+      intervencoes = try container.decodeIfPresent([InterventionsModel].self, forKey: .intervencoes)
+      descricaoIntervencao = try container.decodeIfPresent([String].self, forKey: .descricaoIntervencao)
+      finalizada = try container.decodeIfPresent(Bool.self, forKey: .finalizada)
     }
     
 }
