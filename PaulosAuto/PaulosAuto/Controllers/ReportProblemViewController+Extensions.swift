@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import Photos
+import QuickLook
 
 extension ReportProblemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -154,6 +155,10 @@ extension ReportProblemViewController : UICollectionViewDataSource {
             
             cell.previewImageView.image = UIImage(data:imageData)
             cell.previewImageView.contentMode = .scaleAspectFit
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.PreviewAttachment(_:)))
+            cell.previewImageView.isUserInteractionEnabled = true
+            cell.previewImageView.tag = indexPath.row
+            cell.previewImageView.addGestureRecognizer(tapGestureRecognizer)
         }
         else if let videoUrl = attachmentArray[indexPath.row]?.video?.urlPath {
             
@@ -176,7 +181,10 @@ extension ReportProblemViewController : UICollectionViewDataSource {
                     let centerXConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerX, relatedBy: .equal, toItem: cell.cellView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
                     let centerYConst = NSLayoutConstraint(item: imageViewPlayerPopUp, attribute: .centerY, relatedBy: .equal, toItem: cell.cellView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
                     NSLayoutConstraint.activate([centerXConst, centerYConst])
-                    
+                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self?.PreviewAttachment(_:)))
+                    cell.previewImageView.isUserInteractionEnabled = true
+                    cell.previewImageView.tag = indexPath.row
+                    cell.previewImageView.addGestureRecognizer(tapGestureRecognizer)
                     
                     
                     
@@ -204,4 +212,55 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         return cell
     }
 }
+
+extension ReportProblemViewController : QLPreviewControllerDataSource, QLPreviewControllerDelegate {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        
+        return previewItem
+    }
+    
+    func previewFile(fileName: String) {
+        
+        var fileFound : Bool = false
+        
+        do {
+            
+            let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
+            for url in contents {
+                
+                if url.description.contains(fileName) {
+                    
+                    fileFound = true
+                    let previewController = PreviewController()
+                    self.previewItem = PreviewItem(url:url)
+                    previewController.dataSource = self
+                    self.present(previewController,animated: true, completion: nil)
+                }
+            }
+            if !fileFound {
+                
+                addInformativeAlert(alertControllerTitle: "Ficheiro não encontrado", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+            }
+            return
+        } catch {
+            
+            addInformativeAlert(alertControllerTitle: "Erro no acesso à diretoria", message: "Não foi possível abrir o ficheiro pretendido, tente novamente", alertActionTitle: "Sair")
+        }
+    }
+}
+
+
+
+
+
+
+
+
 

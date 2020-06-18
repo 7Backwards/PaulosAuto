@@ -38,6 +38,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     
     var Equipment : EquipmentModel!
     var attachmentArray : [AttachmentReportProblemStruct?] = []
+    var previewItem: PreviewItem!
     
     
     // MARK: - Override inherited functions
@@ -248,6 +249,32 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
             }
         })
     }
+    
+    @IBAction func PreviewAttachment(_ sender:AnyObject){
+     print("you tap image number : \(sender.view.tag)")
+     
+        if let image = attachmentArray[sender.view.tag]?.image {
+            
+            if let urlImage = image.urlPath {
+                
+                let fileName = "\(NSUUID().uuidString)" + ".jpg"
+                
+                saveURLFileLocally(fileName: fileName, url: urlImage.absoluteString) {(url, error)  in
+                    if url != nil {
+                        
+                        self.previewFile(fileName: fileName)
+                        
+                    }
+                    else if let error = error {
+                        
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
 
 
