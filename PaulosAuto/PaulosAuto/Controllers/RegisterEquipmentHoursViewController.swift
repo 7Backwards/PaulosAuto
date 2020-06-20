@@ -20,12 +20,16 @@ class RegisterEquipmentHoursViewController: ViewController {
     @IBOutlet weak var lastRegistHoursLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var currentHoursTextField: UITextField!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topPopUpViewConstraint: NSLayoutConstraint!
+    
     
     
     // MARK: - Properties
     
     
     var Equipment : EquipmentModel!
+    
     
     // MARK: - Override inherited functions
     
@@ -40,6 +44,7 @@ class RegisterEquipmentHoursViewController: ViewController {
         
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         [currentHoursTextField].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
     }
     
@@ -75,40 +80,31 @@ class RegisterEquipmentHoursViewController: ViewController {
         submitHoursButton.disableButton()
     }
     
-    private func animateViewMoving (up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
-
-        UIView.beginAnimations("animateView", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration)
-
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
-    }
-    
     
     // MARK: - Objc functions
     
     
     @objc func keyboardWillShow(notification: Notification) {
         
-        if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height) != nil {
-            
-            animateViewMoving(up: true, moveValue: (
-                
-                view.safeAreaLayoutGuide.layoutFrame.size.height - self.popUpView.frame.height)/2 - 10)
-        }
+        self.centerYConstraint.isActive = false
+        self.topPopUpViewConstraint.isActive = true
     }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        self.topPopUpViewConstraint.isActive = false
+        self.centerYConstraint.isActive = true
+    }
+    
     
     @objc func editingChanged(_ textField: UITextField) {
         
         guard
             let currentHours = currentHoursTextField.text, !currentHours.isEmpty
-        else {
-            
-            submitHoursButton.disableButton()
-            return
+            else {
+                
+                submitHoursButton.disableButton()
+                return
         }
         if currentHours.isInt {
             
@@ -147,11 +143,12 @@ class RegisterEquipmentHoursViewController: ViewController {
                     self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Registo de horas de utilização efetuado com sucesso", alertActionTitle: "Ok")
                 }
             }
-            else if let error = error {
+            else if error != nil {
                 
-                print(error)
-
-                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Registo de horas de utilização efetuado sem sucesso", alertActionTitle: "Tentar Novamente")
+                DispatchQueue.main.async {
+                    
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Registo de horas de utilização efetuado sem sucesso", alertActionTitle: "Tentar Novamente")
+                }
             }
         })
         dismisspopup()

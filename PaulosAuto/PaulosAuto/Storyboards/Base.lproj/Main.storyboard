@@ -724,6 +724,7 @@
                                                                     <constraint firstItem="BNS-5w-wGQ" firstAttribute="centerY" secondItem="cN4-df-HZP" secondAttribute="centerY" id="LJy-rM-dAS"/>
                                                                     <constraint firstItem="jyB-in-1eY" firstAttribute="centerY" secondItem="cN4-df-HZP" secondAttribute="centerY" id="RRF-Au-H3N"/>
                                                                     <constraint firstItem="jyB-in-1eY" firstAttribute="leading" secondItem="cN4-df-HZP" secondAttribute="leading" constant="10" id="ctG-Vq-rGl"/>
+                                                                    <constraint firstItem="BNS-5w-wGQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jyB-in-1eY" secondAttribute="trailing" constant="8" symbolic="YES" id="ysa-MK-Fx6"/>
                                                                     <constraint firstItem="BNS-5w-wGQ" firstAttribute="top" secondItem="cN4-df-HZP" secondAttribute="top" constant="5" id="zwU-lM-9zl"/>
                                                                 </constraints>
                                                             </view>
@@ -749,6 +750,7 @@
                                                                     <constraint firstItem="9fH-Fj-WG3" firstAttribute="centerY" secondItem="Zf4-Ln-gf2" secondAttribute="centerY" id="bKN-DY-5Y8"/>
                                                                     <constraint firstAttribute="trailing" secondItem="mDp-xv-jWP" secondAttribute="trailing" constant="10" id="ccg-dR-LTm"/>
                                                                     <constraint firstItem="mDp-xv-jWP" firstAttribute="centerY" secondItem="Zf4-Ln-gf2" secondAttribute="centerY" id="cmi-fM-4JS"/>
+                                                                    <constraint firstItem="mDp-xv-jWP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9fH-Fj-WG3" secondAttribute="trailing" constant="8" symbolic="YES" id="fFP-Rf-XPD"/>
                                                                     <constraint firstAttribute="bottom" secondItem="mDp-xv-jWP" secondAttribute="bottom" constant="5" id="n0V-et-uU3"/>
                                                                 </constraints>
                                                             </view>
@@ -769,6 +771,7 @@
                                                                 <constraints>
                                                                     <constraint firstItem="E3p-fN-nqg" firstAttribute="centerY" secondItem="Ijr-8W-2uv" secondAttribute="centerY" id="JM2-tV-MXe"/>
                                                                     <constraint firstItem="dON-gs-pCn" firstAttribute="leading" secondItem="Ijr-8W-2uv" secondAttribute="leading" constant="10" id="JfN-So-aQJ"/>
+                                                                    <constraint firstItem="E3p-fN-nqg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dON-gs-pCn" secondAttribute="trailing" constant="8" symbolic="YES" id="byB-QO-PYk"/>
                                                                     <constraint firstAttribute="trailing" secondItem="E3p-fN-nqg" secondAttribute="trailing" constant="10" id="pAG-IZ-CGH"/>
                                                                     <constraint firstItem="dON-gs-pCn" firstAttribute="centerY" secondItem="Ijr-8W-2uv" secondAttribute="centerY" id="wXx-QV-zTd"/>
                                                                 </constraints>
@@ -794,6 +797,7 @@
                                                                     <constraint firstItem="4VR-TC-kv0" firstAttribute="top" secondItem="TXR-O3-mJK" secondAttribute="top" constant="5" id="ire-my-z01"/>
                                                                     <constraint firstItem="4VR-TC-kv0" firstAttribute="centerY" secondItem="TXR-O3-mJK" secondAttribute="centerY" id="oau-Pb-kgx"/>
                                                                     <constraint firstItem="1DS-3e-mrY" firstAttribute="leading" secondItem="TXR-O3-mJK" secondAttribute="leading" constant="10" id="tJV-a0-X1w"/>
+                                                                    <constraint firstItem="4VR-TC-kv0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1DS-3e-mrY" secondAttribute="trailing" constant="8" symbolic="YES" id="vtw-pi-Pci"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -850,6 +854,7 @@
                                                                         <constraint firstItem="JFj-uU-61x" firstAttribute="leading" secondItem="XC2-ol-x9U" secondAttribute="leading" constant="10" id="0ps-5B-a3t"/>
                                                                         <constraint firstItem="mHZ-PN-yaT" firstAttribute="centerY" secondItem="XC2-ol-x9U" secondAttribute="centerY" id="3Us-oC-ke6"/>
                                                                         <constraint firstItem="JFj-uU-61x" firstAttribute="centerY" secondItem="XC2-ol-x9U" secondAttribute="centerY" id="AGI-jq-iYN"/>
+                                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JFj-uU-61x" secondAttribute="trailing" constant="-84.333333333333314" id="F2P-E4-Itq"/>
                                                                         <constraint firstAttribute="trailing" secondItem="mHZ-PN-yaT" secondAttribute="trailing" constant="10" id="Kgs-8Q-V9Q"/>
                                                                         <constraint firstItem="mHZ-PN-yaT" firstAttribute="top" secondItem="XC2-ol-x9U" secondAttribute="top" constant="5" id="Nxd-5e-UQT"/>
                                                                         <constraint firstAttribute="bottom" secondItem="mHZ-PN-yaT" secondAttribute="bottom" constant="5" id="TCw-xO-TNl"/>
@@ -1968,7 +1973,7 @@
                                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="YmO-q6-eGP"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -2016,11 +2021,18 @@
                             <constraint firstItem="GFa-RH-6Gf" firstAttribute="width" secondItem="k9I-0B-hNY" secondAttribute="width" multiplier="0.85" id="7tq-SI-mqb"/>
                             <constraint firstItem="GFa-RH-6Gf" firstAttribute="centerX" secondItem="z8A-sQ-13H" secondAttribute="centerX" id="BqE-gQ-g1L"/>
                             <constraint firstItem="GFa-RH-6Gf" firstAttribute="height" secondItem="k9I-0B-hNY" secondAttribute="height" multiplier="0.55" id="P3I-5F-an1"/>
+                            <constraint firstItem="GFa-RH-6Gf" firstAttribute="top" secondItem="z8A-sQ-13H" secondAttribute="top" constant="10" id="ci7-Vt-lHN"/>
                             <constraint firstItem="GFa-RH-6Gf" firstAttribute="centerY" secondItem="z8A-sQ-13H" secondAttribute="centerY" id="eiQ-wE-vio"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z8A-sQ-13H"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ci7-Vt-lHN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="centerYConstraint" destination="eiQ-wE-vio" id="69k-a0-jvR"/>
                         <outlet property="closeButton" destination="yJf-7f-1CH" id="n7c-HX-3dZ"/>
                         <outlet property="currentHoursTextField" destination="jh7-kp-pKq" id="J5Z-9n-WZh"/>
                         <outlet property="lastRegistHoursLabel" destination="S4e-EM-ojR" id="tD0-ty-p5B"/>
