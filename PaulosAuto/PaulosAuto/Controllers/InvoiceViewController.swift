@@ -49,35 +49,48 @@ class InvoiceViewController: ViewController {
         
         super.viewWillAppear(true)
         addHUDLoading()
-        let id = 744
-        RQ_ListInvoices().repos(username: id, { (invoicesData,error) in
-            if let invoicesData = invoicesData {
+        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            
+            let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+            
+            if let id = user?.num_client {
                 
+                RQ_ListInvoices().repos(username: id, { (invoicesData,error) in
+                    if let invoicesData = invoicesData {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.invoices = invoicesData
+                            self.collectionView?.reloadData()
+                            self.removeHUDLoading()
+                            if self.invoices.count == 0 {
+                                
+                                self.noInvoicesView.isHidden = false
+                                self.collectionView.isHidden = true
+                            }
+                            else {
+                                
+                                self.noInvoicesView.isHidden = true
+                                self.collectionView.isHidden = false
+                            }
+                        }
+                    }
+                    else if error != nil {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de faturas", alertActionTitle: "Tentar Novamente")
+                        }
+                    }
+                })
+            }
+            else {
                 DispatchQueue.main.async {
                     
-                    self.invoices = invoicesData
-                    self.collectionView?.reloadData()
-                    self.removeHUDLoading()
-                    if self.invoices.count == 0 {
-                        
-                        self.noInvoicesView.isHidden = false
-                        self.collectionView.isHidden = true
-                    }
-                    else {
-                        
-                        self.noInvoicesView.isHidden = true
-                        self.collectionView.isHidden = false
-                    }
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno", alertActionTitle: "Tentar Novamente")
                 }
             }
-            else if error != nil {
-                
-                DispatchQueue.main.async {
-                    
-                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de faturas", alertActionTitle: "Tentar Novamente")
-                }
-            }
-        })
+        }
     }
     
     

@@ -76,30 +76,43 @@ class ListEquipmentViewController: ViewController {
     private func refreshData() {
         
         self.addHUDLoading()
-        let id = 744
-        RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
-            if let equipmentData = equipmentData {
+        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            
+            let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+            
+            if let id = user?.num_client {
                 
-                DispatchQueue.main.async {
-                    
-                    self.equipments = equipmentData
-                    self.collectionView?.reloadData()
-                    self.removeHUDLoading()
-                    if self.equipments.count == 0 {
-                        self.noEquipmentsView.isHidden = false
-                        self.collectionView.isHidden = true
+                RQ_ListEquipments().repos(username: id, { (equipmentData,error) in
+                    if let equipmentData = equipmentData {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.equipments = equipmentData
+                            self.collectionView?.reloadData()
+                            self.removeHUDLoading()
+                            if self.equipments.count == 0 {
+                                self.noEquipmentsView.isHidden = false
+                                self.collectionView.isHidden = true
+                            }
+                            
+                        }
                     }
-                    
-                }
+                    else if error != nil {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de equipamentos", alertActionTitle: "Tentar Novamente")
+                        }
+                    }
+                })
             }
-            else if error != nil {
-                
+            else {
                 DispatchQueue.main.async {
                     
-                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de equipamentos", alertActionTitle: "Tentar Novamente")
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno", alertActionTitle: "Tentar Novamente")
                 }
             }
-        })
+        }
     }
     
     private func setupEquipmentoController() {
@@ -171,7 +184,7 @@ class ListEquipmentViewController: ViewController {
             
         }
     }
-
+    
     
     // MARK: - Public
     
@@ -223,7 +236,7 @@ class ListEquipmentViewController: ViewController {
     
     // MARK: - Objc functions
     
-
+    
     @objc func keyboardWillShow(notification: Notification) {
         
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {

@@ -191,17 +191,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     }
     
     @IBAction func reportProblemButtonPressed(_ sender: Any) {
-        
-        //É PRECISO GET USER ID mas neste momento a API nao está a dar essa informaçao
-        //        var user : UserModel?
-        //        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
-        //            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
-        //        }
-        //        if let clientNumber = user?. {
-        //
-        //            nameLabel.text = "\(name)"
-        //        }
-        
+
         var imagesPOST : [ImageModel] = []
         for i in attachmentArray {
             
@@ -220,38 +210,47 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
             }
         }
         
-        let postModel = ReportProblemPOSTModel(serialNumber: Equipment.serialNumber, imagens: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST, numeroCliente: 1)
-        
-        RQ_SendReportProblem().repos(reportProblemPOST: postModel, { (responseModel,error) in
-            if responseModel != nil {
+        if let data = UserDefaults.standard.value(forKey:"user") as? Data {
+            let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+            if let email = user?.email {
                 
-                DispatchQueue.main.async {
-                    
-                    AppConstants.requestDone = true
-                    
-                    self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
-                }
-            }
-            else if let error = error {
+                let postModel = ReportProblemPOSTModel(email: email ,serialNumber: Equipment.serialNumber, imagens: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST)
                 
-                DispatchQueue.main.async {
-                    
-                    switch error {
+                RQ_SendReportProblem().repos(reportProblemPOST: postModel, { (responseModel,error) in
+                    if responseModel != nil {
                         
-                    case APPError.requestEntityTooLarge:
-                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Tamanho de ficheiros anexados demasiado grande", alertActionTitle: "Tentar novamente")
-                        
-                        
-                    default:
-                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno, contactar administrador", alertActionTitle: "Tentar novamente")
+                        DispatchQueue.main.async {
+                            
+                            AppConstants.requestDone = true
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
+                        }
                     }
-                }
+                    else if let error = error {
+                        
+                        DispatchQueue.main.async {
+                            
+                            switch error {
+                                
+                            case APPError.requestEntityTooLarge:
+                                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Tamanho de ficheiros anexados demasiado grande", alertActionTitle: "Tentar novamente")
+                                
+                                
+                            default:
+                                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro interno, contactar administrador", alertActionTitle: "Tentar novamente")
+                            }
+                        }
+                    }
+                })
             }
-        })
+            
+        }
+        
+        
     }
     
     @IBAction func PreviewAttachment(_ sender:AnyObject){
-     
+        
         if let image = attachmentArray[sender.view.tag]?.image {
             
             if let urlImage = image.urlPath {

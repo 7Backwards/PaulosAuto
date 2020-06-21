@@ -36,7 +36,9 @@ class ReportProblemInfoViewController: ViewController {
         super.viewDidLoad()
         setupView()
         setupInfo()
+        
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -104,7 +106,6 @@ class ReportProblemInfoViewController: ViewController {
                 attachment.video = videoModel
                 
                 problemAttachment.append(attachment)
-                
             }
         }
     }

@@ -51,7 +51,7 @@ class ListReportProblemViewController: ViewController {
             
             user = try? PropertyListDecoder().decode(UserModel.self, from: data)
             
-            if let equipments = user?.equipamentos {
+            if let equipments = user?.equipments {
                 
                 for equipment in equipments {
                     

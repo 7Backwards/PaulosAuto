@@ -69,10 +69,14 @@ class ViewController: UIViewController {
     
     func removeHUDLoading() {
         
-        self.activityView.stopAnimating()
-        activityView.removeFromSuperview()
-        loadingView.removeFromSuperview()
-        fullscreenView.removeFromSuperview()
+        DispatchQueue.main.async {
+            
+            self.activityView.stopAnimating()
+            self.activityView.removeFromSuperview()
+            self.loadingView.removeFromSuperview()
+            self.fullscreenView.removeFromSuperview()
+        }
+
     }
     
     func getFormattedDate(date: Date, format: String) -> String {

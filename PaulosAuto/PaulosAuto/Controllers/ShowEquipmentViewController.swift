@@ -207,8 +207,6 @@ class ShowEquipmentViewController: ViewController {
                                 }
                             }
                         }
-                        
-                        
                         self.historyCollectionView.reloadData()
                     }
                 }

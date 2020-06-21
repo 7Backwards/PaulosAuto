@@ -96,11 +96,15 @@ extension ReportProblemInfoViewController : QLPreviewControllerDataSource, QLPre
                 
                 if url.description.contains(fileName) {
                     
-                    fileFound = true
-                    let previewController = PreviewController()
-                    self.previewItem = PreviewItem(url:url)
-                    previewController.dataSource = self
-                    self.present(previewController,animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        
+                        fileFound = true
+                        let previewController = PreviewController()
+                        self.previewItem = PreviewItem(url:url)
+                        previewController.dataSource = self
+                        self.present(previewController,animated: false, completion: nil)
+                        return
+                    }
                 }
             }
             if !fileFound {

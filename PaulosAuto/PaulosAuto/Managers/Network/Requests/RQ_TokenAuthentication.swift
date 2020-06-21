@@ -20,34 +20,32 @@ class RQ_TokenAuthentication {
         let request = URLRequest(url: (ApiConstants.testTokenURL)!)
         let url = request.url
         
-        var user :UserModel?
         if let data = UserDefaults.standard.value(forKey:"user") as? Data {
             
-            user = try? PropertyListDecoder().decode(UserModel.self, from: data)
-        }
-        if let accessToken = user?.token {
-            
-            NetworkManager.fetchAPIData(url: url!,
-                                        method: "GET",
-                                        params: nil,
-                                        multipartParams: nil,
-                                        headers: nil,
-                                        accessToken: accessToken) { (result: Result<TokenResponseModel, Error>) in
-                switch result {
+            let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
+        
+            if let accessToken = user?.token {
+                
+                NetworkManager.fetchAPIData(url: url!,
+                                            method: "GET",
+                                            params: nil,
+                                            multipartParams: nil,
+                                            headers: nil,
+                                            accessToken: accessToken) { (result: Result<TokenResponseModel, Error>) in
+                    switch result {
 
-                case .success(let data):
-                    completion(data,nil)
+                    case .success(let data):
+                        completion(data,nil)
 
-                    
-                case .failure(let error):
-                    completion(nil,error)
+                        
+                    case .failure(let error):
+                        completion(nil,error)
 
-                    
+                        
+                    }
                 }
             }
         }
-    
-
     }
 
 }
