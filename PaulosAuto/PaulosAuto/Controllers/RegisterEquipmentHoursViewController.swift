@@ -61,11 +61,6 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Private
     
     
-    private func dismisspopup() {
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func setupView() {
         
         let textFieldBorderColor : UIColor = .green

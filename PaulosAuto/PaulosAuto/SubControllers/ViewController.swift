@@ -232,11 +232,14 @@ class ViewController: UIViewController {
             self.tabBarController?.tabBar.isHidden = true
         }
         
-        
-        
-        
-        
     }
+        
+    
+    func dismisspopup() {
+        
+        dismiss(animated: true, completion: nil)
+    }
+
     
     //  Not used as the final version of the API doesnt have token authentication implemented
     //    func  {

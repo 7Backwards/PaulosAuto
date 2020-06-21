@@ -38,14 +38,18 @@ class ReportProblemInfoViewController: ViewController {
         setupInfo()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first!
+        if touch.view?.tag != 800 {
+            
+            dismisspopup()
+        }
+    }
+    
     
     // MARK: - Private
     
-    
-    private func dismisspopup() {
-        
-        dismiss(animated: true, completion: nil)
-    }
     
     private func setupView() {
         
