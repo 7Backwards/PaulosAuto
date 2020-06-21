@@ -70,9 +70,12 @@ class InvoiceViewController: ViewController {
                     }
                 }
             }
-            else if let error = error {
+            else if error != nil {
                 
-                print(error)
+                DispatchQueue.main.async {
+                    
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de faturas", alertActionTitle: "Tentar Novamente")
+                }
             }
         })
     }
@@ -91,12 +94,20 @@ class InvoiceViewController: ViewController {
             saveURLFileLocally(fileName: fileName, url: invoiceURL) {(url, error)  in
                 if url != nil {
                     
-                    self.previewFile(fileName: fileName)
-
-                }
-                else if let error = error {
+                    DispatchQueue.main.async {
+                        
+                        self.removeHUDLoading()
+                        self.previewFile(fileName: fileName)
+                    }
                     
-                    print(error)
+                }
+                else if error != nil {
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeHUDLoading()
+                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na visualização do PDF", alertActionTitle: "Tentar Novamente")
+                    }
                 }
             }
         }
