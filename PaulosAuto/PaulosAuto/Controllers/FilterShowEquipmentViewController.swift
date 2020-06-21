@@ -115,9 +115,6 @@ class FilterShowEquipmentViewController: ViewController {
         }
         sender.setTranslation(.zero, in: view)
         sender.setTranslation(.zero, in: outerView)
-        
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -162,7 +159,6 @@ class FilterShowEquipmentViewController: ViewController {
         }
         
         self.setSelectedOrderBy()
-        
     }
     
     
@@ -234,7 +230,6 @@ class FilterShowEquipmentViewController: ViewController {
             
             
         default: break
-            
         }
     }
     
@@ -265,7 +260,6 @@ class FilterShowEquipmentViewController: ViewController {
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         barView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments)).isActive = true
-        
     }
     
     private func getCategories() {

@@ -251,7 +251,6 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     }
     
     @IBAction func PreviewAttachment(_ sender:AnyObject){
-     print("you tap image number : \(sender.view.tag)")
      
         if let image = attachmentArray[sender.view.tag]?.image {
             
@@ -265,9 +264,12 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                         self.previewFile(fileName: fileName)
                         
                     }
-                    else if let error = error {
+                    else if error != nil {
                         
-                        print(error)
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na visualização do anexo", alertActionTitle: "Tentar Novamente")
+                        }
                     }
                 }
             }

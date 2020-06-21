@@ -80,9 +80,12 @@ class ListReportProblemViewController: ViewController {
                                 }
                             }
                         }
-                        else if let error = error {
+                        else if error != nil {
                             
-                            print(error)
+                            DispatchQueue.main.async {
+                                
+                                self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem dos problemas submetidos", alertActionTitle: "Tentar Novamente")
+                            }
                         }
                     })
                 }

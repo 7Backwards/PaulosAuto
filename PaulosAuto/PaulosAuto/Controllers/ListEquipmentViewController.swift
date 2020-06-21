@@ -92,8 +92,12 @@ class ListEquipmentViewController: ViewController {
                     
                 }
             }
-            else if let error = error {
-                print(error)
+            else if error != nil {
+                
+                DispatchQueue.main.async {
+                    
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem de equipamentos", alertActionTitle: "Tentar Novamente")
+                }
             }
         })
     }
@@ -224,14 +228,12 @@ class ListEquipmentViewController: ViewController {
         
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
             
-            print("Notification: Keyboard will show")
             collectionViewBottomConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom
         }
     }
     
     @objc func keyboardWillHide(notification: Notification) {
         
-        print("Notification: Keyboard will hide")
         collectionViewBottomConstraint.constant = 0
     }
     

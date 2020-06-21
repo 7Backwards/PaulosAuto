@@ -27,7 +27,6 @@ class RQ_TokenAdminAuthentication {
         }
         if let accessToken = user?.token {
             
-            print(accessToken)
             NetworkManager.fetchAPIData(url: url!,
                                         method: "GET",
                                         params: nil,
@@ -37,12 +36,10 @@ class RQ_TokenAdminAuthentication {
                 switch result {
 
                 case .success(let data):
-                    print(result)
                     completion(data,nil)
 
                     
                 case .failure(let error):
-                    print(result)
                     completion(nil,error)
 
                     

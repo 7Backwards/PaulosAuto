@@ -101,7 +101,6 @@ class LogInViewController: ViewController {
                         UserDefaults.standard.synchronize()
                         appDel.window!.rootViewController = centerVC
                         appDel.window!.makeKeyAndVisible()
-                        print("set isUserLoggedIn = true")
                         self.performSegue(withIdentifier: "LogInSegue", sender: self)
                     }
                     else {
@@ -110,10 +109,13 @@ class LogInViewController: ViewController {
                     }
                 }
             }
-            else if let error = error {
+            else if error != nil {
                 
                 self.removeHUDLoading()
-                print(error)
+                DispatchQueue.main.async {
+                    
+                    self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro no processo de inicio de sessão", alertActionTitle: "Tentar Novamente")
+                }
             }
         })
     }

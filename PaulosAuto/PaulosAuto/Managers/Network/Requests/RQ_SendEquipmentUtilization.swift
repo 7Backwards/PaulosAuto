@@ -38,12 +38,10 @@ class RQ_SendEquipmentUtilization {
                                    switch result {
 
                                    case .success(let data):
-                                       print(result)
                                        completion(data,nil)
 
                                        
                                    case .failure(let error):
-                                       print(result)
                                        completion(nil,error)
 
                                        

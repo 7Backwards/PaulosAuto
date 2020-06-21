@@ -212,9 +212,12 @@ class ShowEquipmentViewController: ViewController {
                         self.historyCollectionView.reloadData()
                     }
                 }
-                else if let error = error {
+                else if error != nil {
                     
-                    print(error)
+                    DispatchQueue.main.async {
+                        
+                        self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na listagem do historico do equipamento", alertActionTitle: "Tentar Novamente")
+                    }
                 }
             })
         }
@@ -246,7 +249,6 @@ class ShowEquipmentViewController: ViewController {
         UIView.animate(withDuration: 0.3) {
             
             self.barView.frame.origin.x = (CGFloat(self.segmentControl.frame.width) / CGFloat(self.segmentControl.numberOfSegments)) * CGFloat(self.segmentControl.selectedSegmentIndex) + self.segmentControl.frame.origin.x
-            
         }
     }
     

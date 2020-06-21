@@ -178,36 +178,11 @@ class ViewController: UIViewController {
                 let thumbnail = UIImage(cgImage: img)
                 completion(thumbnail)
             } catch {
-                print("Error :: ", error.localizedDescription)
                 completion(nil)
             }
         }
     }
-    
-    //    func createVideoThumbnail(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
-    //        DispatchQueue.global().async {
-    //
-    //            let asset = AVAsset(url: url)
-    //            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-    //            avAssetImageGenerator.appliesPreferredTrackTransform = true
-    //            let thumnailTime = CMTimeMake(value: 2, timescale: 1)
-    //            do {
-    //
-    //                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil)
-    //                let thumbNailImage = UIImage(cgImage: cgThumbImage)
-    //                DispatchQueue.main.async {
-    //
-    //                    completion(thumbNailImage)
-    //                }
-    //            } catch {
-    //                print(error.localizedDescription)
-    //                DispatchQueue.main.async {
-    //
-    //                    completion(nil)
-    //                }
-    //            }
-    //        }
-    //    }
+
     
     func saveURLFileLocally(fileName : String, url : String, _ completion: @escaping (URL?, Error?) -> Void) {
         
@@ -248,7 +223,6 @@ class ViewController: UIViewController {
             let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
             
             appDel.window?.rootViewController = loginVC
-            print("set isUserLoggedIn = false")
             UserDefaults.standard.removeObject(forKey: "user")
             let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LogInViewController
             

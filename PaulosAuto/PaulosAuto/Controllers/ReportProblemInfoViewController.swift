@@ -132,9 +132,12 @@ class ReportProblemInfoViewController: ViewController {
                         self.previewFile(fileName: fileName)
                         
                     }
-                    else if let error = error {
+                    else if error != nil {
                         
-                        print(error)
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na visualização do anexo", alertActionTitle: "Tentar Novamente")
+                        }
                     }
                 }
             }
@@ -151,9 +154,12 @@ class ReportProblemInfoViewController: ViewController {
                         self.previewFile(fileName: fileName)
                         
                     }
-                    else if let error = error {
+                    else if error != nil {
                         
-                        print(error)
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na visualização do anexo", alertActionTitle: "Tentar Novamente")
+                        }
                     }
                 }
             }
