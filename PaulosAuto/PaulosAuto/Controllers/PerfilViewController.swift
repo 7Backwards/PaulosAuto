@@ -31,7 +31,7 @@ class PerfilViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        SetupView()
+        SetupPerfilViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,10 +50,11 @@ class PerfilViewController: ViewController {
         }
     }
     
+    
     // MARK: - Private
 
     
-    private func SetupView() {
+    private func SetupPerfilViewController() {
         
         super.addNavBarLogo()
         cardView.setCardView()

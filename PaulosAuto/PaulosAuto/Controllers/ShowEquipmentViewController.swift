@@ -59,8 +59,7 @@ class ShowEquipmentViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupView()
-        setupInfo()
+        setupShowEquipmentViewController()
         
     }
     
@@ -105,70 +104,7 @@ class ShowEquipmentViewController: ViewController {
     // MARK: - Private
     
     
-    private func setupInfo() {
-        
-        modelLabel.text = equipment.model
-        equipmentTypeLabel.text = equipment.type
-        serialNumberLabel.text = equipment.serialNumber
-        if let imageURL = equipment.image  {
-            
-            UIImage.loadFrom(url: URL(string:imageURL)!) { image in
-                self.equipmentImageView.image = image
-            }
-        }
-        if let dataStartAssignment = equipment.dateAssignment {
-            
-            dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
-        }
-        
-        if let dataStartAssignment = equipment.dateStartAssignment {
-            
-            dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
-        }
-        
-        if let dataEndAssignment = equipment.dateEndAssignment {
-            
-            dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
-        }
-        
-        brandLabel.text = equipment.brand
-        
-        if equipment.plate != nil {
-            
-            plateLabel.text = equipment.plate
-        }
-        else {
-            
-            plateEquipmentStackView.isHidden = true
-        }
-        
-        currentHoursLabel.text = "\(equipment.currentHours!)"
-        
-        if (equipment.smp == true) {
-            
-            smpImageView.tintColor = .green
-            
-            if #available(iOS 13.0, *) {
-                
-                smpImageView.image = UIImage(systemName: "checkmark.circle")
-            } else {
-                
-                smpImageView.image = UIImage(named: "checkmark_circle")
-            }
-        }
-        else {
-            
-            smpImageView.tintColor = .RedPaulosAuto
-            
-            if #available(iOS 13.0, *) {
-                
-                smpImageView.image = UIImage(systemName: "xmark.circle")
-            } else {
-                
-                smpImageView.image = UIImage(named: "multiply")
-            }
-        }
-        
+    private func refreshData() {
         if let serialNumber = equipment.serialNumber {
             
             RQ_ListEquipmentHistory().repos(serialNumber: serialNumber, { (historyData,error) in
@@ -232,7 +168,7 @@ class ShowEquipmentViewController: ViewController {
         }
     }
     
-    private func setupView() {
+    private func setupShowEquipmentViewController() {
         
         super.addNavBarLogo()
         segmentControl.setLayoutSegmentControl(segmentControl)
@@ -247,6 +183,69 @@ class ShowEquipmentViewController: ViewController {
         topView.layer.masksToBounds = false
         historyCollectionView.collectionViewLayout = cellLayout
         historyCollectionView.dataSource = self
+        
+        modelLabel.text = equipment.model
+        equipmentTypeLabel.text = equipment.type
+        serialNumberLabel.text = equipment.serialNumber
+        if let imageURL = equipment.image  {
+            
+            UIImage.loadFrom(url: URL(string:imageURL)!) { image in
+                self.equipmentImageView.image = image
+            }
+        }
+        if let dataStartAssignment = equipment.dateAssignment {
+            
+            dateAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+        }
+        
+        if let dataStartAssignment = equipment.dateStartAssignment {
+            
+            dateStartAgreementLabel.text = getFormattedDate(date: dataStartAssignment, format: "dd/MM/yyyy")
+        }
+        
+        if let dataEndAssignment = equipment.dateEndAssignment {
+            
+            dateEndAgreementLabel.text = getFormattedDate(date: dataEndAssignment, format: "dd/MM/yyyy")
+        }
+        
+        brandLabel.text = equipment.brand
+        
+        if equipment.plate != nil {
+            
+            plateLabel.text = equipment.plate
+        }
+        else {
+            
+            plateEquipmentStackView.isHidden = true
+        }
+        
+        currentHoursLabel.text = "\(equipment.currentHours!)"
+        
+        if (equipment.smp == true) {
+            
+            smpImageView.tintColor = .green
+            
+            if #available(iOS 13.0, *) {
+                
+                smpImageView.image = UIImage(systemName: "checkmark.circle")
+            } else {
+                
+                smpImageView.image = UIImage(named: "checkmark_circle")
+            }
+        }
+        else {
+            
+            smpImageView.tintColor = .RedPaulosAuto
+            
+            if #available(iOS 13.0, *) {
+                
+                smpImageView.image = UIImage(systemName: "xmark.circle")
+            } else {
+                
+                smpImageView.image = UIImage(named: "multiply")
+            }
+        }
+            refreshData()
     }
     
     

@@ -47,7 +47,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupView()
+        setupReportProblemViewController()
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -74,7 +74,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     // MARK: - Private
     
     
-    private func setupView() {
+    private func setupReportProblemViewController() {
         
         reportProblemButton.setButtonStyle(cornerRadius: 10)
         
@@ -221,7 +221,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                         
                         DispatchQueue.main.async {
                             
-                            AppConstants.requestDone = true
+                            AppConstants.reportProblemDone = true
                             
                             self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Reporte efetuado com sucesso", alertActionTitle: "Ok")
                         }
@@ -243,10 +243,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                     }
                 })
             }
-            
         }
-        
-        
     }
     
     @IBAction func PreviewAttachment(_ sender:AnyObject){

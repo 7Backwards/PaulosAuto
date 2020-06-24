@@ -11,5 +11,6 @@ import Foundation
 
 public struct AppConstants {
     
-    static var requestDone = false
+    static var reportProblemDone = false
+    static var registerHoursDone = false
 }

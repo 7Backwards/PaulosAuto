@@ -40,14 +40,14 @@ class InvoiceViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        super.addNavBarLogo()
-        collectionView.collectionViewLayout = cellLayout
-        collectionView.dataSource = self
+        setupInvoiceViewController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    // MARK: - Private
+    
+    private func refreshData() {
         
-        super.viewWillAppear(true)
         addHUDLoading()
         if let data = UserDefaults.standard.value(forKey:"user") as? Data {
             
@@ -91,6 +91,14 @@ class InvoiceViewController: ViewController {
                 }
             }
         }
+    }
+    
+    private func setupInvoiceViewController() {
+        
+        super.addNavBarLogo()
+        collectionView.collectionViewLayout = cellLayout
+        collectionView.dataSource = self
+        refreshData()
     }
     
     

@@ -34,9 +34,7 @@ class ReportProblemInfoViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupView()
-        setupInfo()
-        
+        setupReportProblemInfoViewController()
     }
     
     
@@ -53,14 +51,11 @@ class ReportProblemInfoViewController: ViewController {
     // MARK: - Private
     
     
-    private func setupView() {
+    private func setupReportProblemInfoViewController() {
         
         popUpView.setCardView()
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    private func setupInfo() {
         
         if let serialNumber = problemReported?.serialNumber {
             
@@ -110,19 +105,9 @@ class ReportProblemInfoViewController: ViewController {
         }
     }
     
+    // MARK: - Public
     
-    // MARK: - Actions
-    
-    
-    @IBAction func closeButtonAction(_ sender: Any) {
-        
-        dismisspopup()
-        
-    }
-    
-    // MARK: - Objc functions
-    
-    func previewAttachment(index: Int) {
+    public func previewAttachment(index: Int) {
         
         
         if let image = problemAttachment[index].image {
@@ -169,5 +154,15 @@ class ReportProblemInfoViewController: ViewController {
                 }
             }
         }
+    }
+    
+    
+    // MARK: - Actions
+    
+    
+    @IBAction func closeButtonAction(_ sender: Any) {
+        
+        dismisspopup()
+        
     }
 }

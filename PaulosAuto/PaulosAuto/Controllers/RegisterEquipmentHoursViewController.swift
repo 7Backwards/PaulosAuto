@@ -37,7 +37,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupView()
+        setupRegisterEquipmentViewController()
     }
     
     override func viewWillAppear(_ animated:Bool) {
@@ -61,7 +61,7 @@ class RegisterEquipmentHoursViewController: ViewController {
     // MARK: - Private
     
     
-    private func setupView() {
+    private func setupRegisterEquipmentViewController() {
         
         let textFieldBorderColor : UIColor = .green
         popUpView.setCardView()
@@ -132,9 +132,10 @@ class RegisterEquipmentHoursViewController: ViewController {
         RQ_SendEquipmentUtilization().repos(serialNumber: Equipment.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
             if equipmentData != nil {
                 
-                AppConstants.requestDone = true
+                
                 DispatchQueue.main.async {
-                    
+                 
+                        AppConstants.registerHoursDone = true
                     self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Registo de horas de utilização efetuado com sucesso", alertActionTitle: "Ok")
                 }
             }

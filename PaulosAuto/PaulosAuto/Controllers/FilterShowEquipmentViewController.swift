@@ -58,7 +58,7 @@ class FilterShowEquipmentViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupView()
+        setupFilterShowViewController()
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.onDrage(_:))))
@@ -234,7 +234,7 @@ class FilterShowEquipmentViewController: ViewController {
     }
     
     
-    private func setupView() {
+    private func setupFilterShowViewController() {
         
         handlerView.layer.masksToBounds = true
         handlerView.layer.cornerRadius = 3

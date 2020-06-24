@@ -35,15 +35,15 @@ class ListReportProblemViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        super.addNavBarLogo()
-        collectionView.collectionViewLayout = cellLayout
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        setupListReportProblemViewController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    // MARK: - Private
+    
+    
+    private func refreshData() {
         
-        super.viewWillAppear(true)
         addHUDLoading()
         problemsReported.removeAll()
         var user :UserModel?
@@ -103,7 +103,18 @@ class ListReportProblemViewController: ViewController {
                 }
             }
         }
+    }
+    
+    private func setupListReportProblemViewController() {
         
-        
+        super.addNavBarLogo()
+        collectionView.collectionViewLayout = cellLayout
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        if problemsReported.count == 0 || AppConstants.reportProblemDone {
+            
+            AppConstants.reportProblemDone = false
+            refreshData()
+        }
     }
 }

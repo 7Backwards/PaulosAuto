@@ -48,7 +48,7 @@ class ListEquipmentViewController: ViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupEquipmentoController()
+        setupListEquipmentViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,10 +58,6 @@ class ListEquipmentViewController: ViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        if AppConstants.requestDone {
-            
-            self.refreshData()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,7 +90,6 @@ class ListEquipmentViewController: ViewController {
                                 self.noEquipmentsView.isHidden = false
                                 self.collectionView.isHidden = true
                             }
-                            
                         }
                     }
                     else if error != nil {
@@ -115,19 +110,23 @@ class ListEquipmentViewController: ViewController {
         }
     }
     
-    private func setupEquipmentoController() {
+    private func setupListEquipmentViewController() {
         
         super.addNavBarLogo()
         super.setSearchBarStyle(searchBar: searchBar)
         self.refreshData()
-        AppConstants.requestDone = false
         collectionView.delegate = self
         collectionView.dataSource = self
         searchBar.delegate = self
         addNavBarFilter()
         collectionView.collectionViewLayout = cellLayout
         smpSwitch.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)  
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        if equipments.count == 0 || AppConstants.registerHoursDone {
+            
+            AppConstants.registerHoursDone = false
+            refreshData()
+        }
     }
     
     private func filterOrderBy( equipmentArray : [EquipmentModel])-> [EquipmentModel] {
