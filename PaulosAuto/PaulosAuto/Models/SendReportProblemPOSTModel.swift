@@ -58,7 +58,7 @@ class SendReportProblemPOSTModel {
         
         if let imagens = images {
             
-                for i in imagens { //ERRO A RECEBER IMAGENS DA CAMARA, nome = nil
+                for i in imagens {
                 
                     requestData.append("\r\n--\(boundary)\r\n" .data(using: .utf8)!)
                     requestData.append("content-disposition: form-data; name= \"\(CodingKeys.images.rawValue)\"; filename=\"\(String(i.name!))\" \(lineBreak)".data(using: .utf8)!)
@@ -74,7 +74,7 @@ class SendReportProblemPOSTModel {
                     
                     requestData.append("\r\n--\(boundary)\r\n" .data(using: .utf8)!)
                     requestData.append("content-disposition: form-data; name= \"\(CodingKeys.videos.rawValue)\"; filename=\"\(String(i.name!))\" \(lineBreak)".data(using: .utf8)!)
-                    requestData.append("Content-Type: video/MOV\r\n\r\n".data(using: .utf8)!)
+                    requestData.append("Content-Type: video/mp4\r\n\r\n".data(using: .utf8)!)
                     requestData.append(i.data!)
                     requestData.append("\r\n".data(using: .utf8)!)
             }

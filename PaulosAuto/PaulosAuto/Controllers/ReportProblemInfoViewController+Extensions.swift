@@ -102,7 +102,10 @@ extension ReportProblemInfoViewController : QLPreviewControllerDataSource, QLPre
                         let previewController = PreviewController()
                         self.previewItem = PreviewItem(url:url)
                         previewController.dataSource = self
-                        self.present(previewController,animated: false, completion: nil)
+                        DispatchQueue.main.async {
+                            
+                            self.present(previewController,animated: false, completion: nil)
+                        }
                         return
                     }
                 }

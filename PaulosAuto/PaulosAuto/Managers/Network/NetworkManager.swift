@@ -54,19 +54,19 @@ class NetworkManager: NSObject {
             urlRequest.httpBody = multipartParams
             urlRequest.setValue("\(multipartParams?.count ?? 0)", forHTTPHeaderField: "Content-Length")
 
-            session.uploadTask(with: urlRequest, from: multipartParams, completionHandler: { responseData, response, error in
-                if error == nil {
-                    let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-                    if let json = jsonData as? [String: Any] {
-                        print(json)
-                    }
-                }
-                else {
-                    print("erro")
-                }
-            }).resume()
-
-            return
+//            session.uploadTask(with: urlRequest, from: multipartParams, completionHandler: { responseData, response, error in
+//                if error == nil {
+//                    let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+//                    if let json = jsonData as? [String: Any] {
+//                        print(json)
+//                    }
+//                }
+//                else {
+//                    print("erro")
+//                }
+//            }).resume()
+//
+//            return
         }
         else {
             

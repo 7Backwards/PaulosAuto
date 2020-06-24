@@ -19,6 +19,8 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
     
     func showAlert() {
         
+        DispatchQueue.main.async {
+            
         let alert = UIAlertController(title: "Seleção de Imagem", message: "De onde pretende selecionar a imagem?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
             self.openCamera()
@@ -29,7 +31,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
         alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
+        }
     }
     
     func openCamera()
@@ -41,13 +43,19 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             Picker.mediaTypes = ["public.image", "public.movie"]
             Picker.sourceType = UIImagePickerController.SourceType.camera
             Picker.allowsEditing = true
-            self.present(Picker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                
+                self.present(Picker, animated: true, completion: nil)
+            }
         }
         else {
             
             let alert  = UIAlertController(title: "Warning", message: "Câmera inexistente", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -60,14 +68,20 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             Picker.mediaTypes = ["public.image", "public.movie"]
             Picker.allowsEditing = true
             Picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.present(Picker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                
+                self.present(Picker, animated: true, completion: nil)
+            }
         }
         else
         {
             
             let alert  = UIAlertController(title: "Erro", message: "Não existem permissões para aceder à Galeria.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -249,7 +263,10 @@ extension ReportProblemViewController : QLPreviewControllerDataSource, QLPreview
                     let previewController = PreviewController()
                     self.previewItem = PreviewItem(url:url)
                     previewController.dataSource = self
-                    self.present(previewController,animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        
+                        self.present(previewController,animated: true, completion: nil)
+                    }
                 }
             }
             if !fileFound {

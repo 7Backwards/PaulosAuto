@@ -148,8 +148,10 @@ class ViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         
-        
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func displayPDF(pdfFileURL : URL) {
@@ -210,6 +212,7 @@ class ViewController: UIViewController {
             }
             
             if error != nil {
+                
                 self.addInformativeAlert(alertControllerTitle: "Erro", message: "Ficheiro não encontrado", alertActionTitle: "Sair")
                 completion(nil,error)
             }
@@ -235,7 +238,6 @@ class ViewController: UIViewController {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.tabBarController?.tabBar.isHidden = true
         }
-        
     }
         
     
