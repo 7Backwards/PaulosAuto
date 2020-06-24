@@ -66,6 +66,18 @@ class ListReportProblemViewController: ViewController {
                                     self.problemsReported.append(reportProblem)
                                 }
                                 
+                                self.problemsReported = {
+                                    return self.problemsReported.sorted {
+                                        var isSorted = false
+                                        if let first = $0.date, let second = $1.date {
+                                            
+                                            isSorted = first > second
+                                        }
+                                        return isSorted
+                                    }
+                                    
+                                }()
+                                
                                 self.collectionView?.reloadData()
                                 self.removeHUDLoading()
                                 if self.problemsReported.count == 0 {
