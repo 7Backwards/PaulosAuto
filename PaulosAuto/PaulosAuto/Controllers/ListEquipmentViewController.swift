@@ -84,6 +84,22 @@ class ListEquipmentViewController: ViewController {
                         DispatchQueue.main.async {
                             
                             self.equipments = equipmentData
+                            
+                            let fileManager = FileManager.default
+                            let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+                            
+                            for equipment in self.equipments {
+                                
+                                if let url = equipment.image {
+                                    
+                                   let imagePath = documentsPath?.appendingPathComponent("\(NSUUID().uuidString)" + ".jpg")
+                                    
+                                    let data = try? Data(contentsOf: URL(string:url)!)
+                                    try! data?.write(to: imagePath!)
+                                    
+                                    equipment.image = imagePath?.absoluteString
+                                }
+                            }
                             self.collectionView?.reloadData()
                             self.removeHUDLoading()
                             if self.equipments.count == 0 {
