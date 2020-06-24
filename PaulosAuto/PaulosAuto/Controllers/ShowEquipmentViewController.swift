@@ -190,7 +190,7 @@ class ShowEquipmentViewController: ViewController {
                                     var description = ""
                                     for descriptionElement in historyDataElement.descricaoIntervencao ?? [""] {
                                         
-                                        if description != "" {
+                                        if description != "" && descriptionElement != description {
                                             
                                             description = "\(description)" + "," + "\(descriptionElement)"
                                         }

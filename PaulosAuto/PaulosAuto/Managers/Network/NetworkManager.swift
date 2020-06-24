@@ -51,22 +51,54 @@ class NetworkManager: NSObject {
         if headers == "multipart/form-data" {
             
             urlRequest.setValue("multipart/form-data; boundary=\(ApiConstants.boundary)", forHTTPHeaderField: "content-type")
-            urlRequest.httpBody = multipartParams
             urlRequest.setValue("\(multipartParams?.count ?? 0)", forHTTPHeaderField: "Content-Length")
-
-//            session.uploadTask(with: urlRequest, from: multipartParams, completionHandler: { responseData, response, error in
-//                if error == nil {
-//                    let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-//                    if let json = jsonData as? [String: Any] {
-//                        print(json)
-//                    }
-//                }
-//                else {
-//                    print("erro")
-//                }
-//            }).resume()
-//
-//            return
+            
+            session.uploadTask(with: urlRequest, from: multipartParams, completionHandler: { data, response, error in
+                
+                guard error == nil else {
+                    
+                    completion(.failure(APPError.networkError(error!)))
+                    return
+                }
+                guard response != nil else {
+                    
+                    return
+                }
+                
+                if let data = data, let httpResponse = response as? HTTPURLResponse {
+                    
+                    switch httpResponse.statusCode {
+                        
+                    case 200:
+                        DispatchQueue.main.async {
+                            
+                            let response = try! JSONDecoder().decode(T.self, from: data)
+                            completion(.success(response))
+                        }
+                        
+                        
+                    case 413:
+                        completion(.failure(APPError.requestEntityTooLarge))
+                        
+                        
+                    case 401:
+                        completion(.failure(APPError.unauthorized))
+                        
+                    case 403:
+                        completion(.failure(APPError.forbidden))
+                        
+                    case 500:
+                        completion(.failure(APPError.dataNotFound))
+                        
+                
+                    default:
+                        
+                        break
+                    }
+                }
+            }).resume()
+            
+            return
         }
         else {
             
@@ -112,11 +144,11 @@ class NetworkManager: NSObject {
                     
                 case 413:
                     completion(.failure(APPError.requestEntityTooLarge))
-                
+                    
                     
                 case 401:
                     completion(.failure(APPError.unauthorized))
-                
+                    
                 case 403:
                     completion(.failure(APPError.forbidden))
                     
