@@ -204,6 +204,17 @@ class ShowEquipmentViewController: ViewController {
                                     
                                     self.historyEquipment.append(equipmentHistory)
                                     
+                                    self.historyEquipment = {
+                                        return self.historyEquipment.sorted {
+                                            var isSorted = false
+                                            if let first = $0.date, let second = $1.date {
+                                                
+                                                isSorted = first > second
+                                            }
+                                            return isSorted
+                                        }
+                                        
+                                    }()
                                 }
                             }
                         }
