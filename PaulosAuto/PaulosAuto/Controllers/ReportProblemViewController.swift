@@ -214,7 +214,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
             let user = try? PropertyListDecoder().decode(UserModel.self, from: data)
             if let email = user?.email {
                 
-                let postModel = ReportProblemPOSTModel(email: email ,serialNumber: Equipment.serialNumber, imagens: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST)
+                let postModel = SendReportProblemPOSTModel(email: email ,serialNumber: Equipment.serialNumber, images: imagesPOST, descricao: problemDescriptionTextView.text, videos: videoPOST)
                 
                 RQ_SendReportProblem().repos(reportProblemPOST: postModel, { (responseModel,error) in
                     if responseModel != nil {

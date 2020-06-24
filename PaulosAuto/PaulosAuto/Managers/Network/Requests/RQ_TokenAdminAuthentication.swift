@@ -17,7 +17,7 @@ class RQ_TokenAdminAuthentication {
     func repos( _ completion: @escaping (TokenResponseModel?, Error?) -> Void ) {
         
         
-        let request = URLRequest(url: (ApiConstants.testTokenAdmin)!)
+        let request = URLRequest(url: (ApiConstants.testTokenAdminURL)!)
         let url = request.url
         
         var user :UserModel?

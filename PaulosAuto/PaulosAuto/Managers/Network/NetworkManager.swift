@@ -40,6 +40,8 @@ class NetworkManager: NSObject {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method
+        let session = URLSession(configuration: .default)
+        
         
         if accessToken != nil {
             
@@ -49,8 +51,22 @@ class NetworkManager: NSObject {
         if headers == "multipart/form-data" {
             
             urlRequest.setValue("multipart/form-data; boundary=\(ApiConstants.boundary)", forHTTPHeaderField: "content-type")
-            
             urlRequest.httpBody = multipartParams
+            urlRequest.setValue("\(multipartParams?.count ?? 0)", forHTTPHeaderField: "Content-Length")
+
+            session.uploadTask(with: urlRequest, from: multipartParams, completionHandler: { responseData, response, error in
+                if error == nil {
+                    let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                    if let json = jsonData as? [String: Any] {
+                        print(json)
+                    }
+                }
+                else {
+                    print("erro")
+                }
+            }).resume()
+
+            return
         }
         else {
             
@@ -69,7 +85,7 @@ class NetworkManager: NSObject {
         }
         
         urlRequest.timeoutInterval = 20
-        let session = URLSession(configuration: .default)
+        
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
             
             guard error == nil else {

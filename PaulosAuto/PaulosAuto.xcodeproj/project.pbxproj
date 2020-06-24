@@ -23,7 +23,7 @@
 		B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */; };
 		B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */; };
 		B02A3A972429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */; };
-		B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */; };
+		B02B429324796B9C00A22EAA /* SendReportProblemPOSTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429224796B9C00A22EAA /* SendReportProblemPOSTModel.swift */; };
 		B02B429524796DA500A22EAA /* RQ_SendReportProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */; };
 		B02B42972479783800A22EAA /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B42962479783800A22EAA /* ImageModel.swift */; };
 		B02B429924797AF500A22EAA /* ReportProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B429824797AF500A22EAA /* ReportProblemModel.swift */; };
@@ -77,6 +77,7 @@
 		FA66F2BB2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */; };
 		FA66F2BD2498012B005182F6 /* ListReportProblemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */; };
 		FA66F2BF24981ACB005182F6 /* RQ_ListReportProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */; };
+		FA749C4124A27F3100907918 /* SendReportProblemResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA749C4024A27F3100907918 /* SendReportProblemResponseModel.swift */; };
 		FACD18162419AEEE0085574C /* ListReportProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18152419AEEE0085574C /* ListReportProblemViewController.swift */; };
 		FACD18182419AF880085574C /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD18172419AF880085574C /* InvoiceViewController.swift */; };
 		FACD181E241AFF980085574C /* ListEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD181D241AFF980085574C /* ListEquipmentViewController.swift */; };
@@ -101,7 +102,7 @@
 		B01CA8D9244F820E000228A5 /* RQ_ListInvoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListInvoices.swift; sourceTree = "<group>"; };
 		B01CA8DB244F8227000228A5 /* RQ_ListEquipmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListEquipmentHistory.swift; sourceTree = "<group>"; };
 		B02A3A962429011A0008DDC6 /* ListEquipmentViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListEquipmentViewController+Extensions.swift"; sourceTree = "<group>"; };
-		B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemPOSTModel.swift; sourceTree = "<group>"; };
+		B02B429224796B9C00A22EAA /* SendReportProblemPOSTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportProblemPOSTModel.swift; sourceTree = "<group>"; };
 		B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_SendReportProblem.swift; sourceTree = "<group>"; };
 		B02B42962479783800A22EAA /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		B02B429824797AF500A22EAA /* ReportProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemModel.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		FA66F2BA2497F7C5005182F6 /* CollectionViewListReportProblemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewListReportProblemCell.swift; sourceTree = "<group>"; };
 		FA66F2BC2498012B005182F6 /* ListReportProblemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListReportProblemViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_ListReportProblems.swift; sourceTree = "<group>"; };
+		FA749C4024A27F3100907918 /* SendReportProblemResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReportProblemResponseModel.swift; sourceTree = "<group>"; };
 		FACD18152419AEEE0085574C /* ListReportProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReportProblemViewController.swift; sourceTree = "<group>"; };
 		FACD18172419AF880085574C /* InvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
 		FACD181D241AFF980085574C /* ListEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEquipmentViewController.swift; sourceTree = "<group>"; };
@@ -349,13 +351,14 @@
 				B0B10514246B81F0003960BC /* LogInPOSTModel.swift */,
 				B0B10516246CAD81003960BC /* InvoiceDownloadModel.swift */,
 				B055F5642475C6DA0011B1ED /* AttachmentReportProblemStruct.swift */,
-				B02B429224796B9C00A22EAA /* ReportProblemPOSTModel.swift */,
+				B02B429224796B9C00A22EAA /* SendReportProblemPOSTModel.swift */,
 				B02B42962479783800A22EAA /* ImageModel.swift */,
 				B02B429824797AF500A22EAA /* ReportProblemModel.swift */,
 				B02B429A247ADC1F00A22EAA /* VideoModel.swift */,
 				FA29543D247DED730079A646 /* TokenResponseModel.swift */,
 				FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */,
 				FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */,
+				FA749C4024A27F3100907918 /* SendReportProblemResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				B0B1050F246B7BBE003960BC /* LogInViewController.swift in Sources */,
 				B02B429524796DA500A22EAA /* RQ_SendReportProblem.swift in Sources */,
 				B0B32D342448FBB3009F9008 /* CategoriesEquipmentCellLayout.swift in Sources */,
+				FA749C4124A27F3100907918 /* SendReportProblemResponseModel.swift in Sources */,
 				B01CA8DA244F820E000228A5 /* RQ_ListInvoices.swift in Sources */,
 				B01A8012245BAB0D004EC603 /* AppConstants.swift in Sources */,
 				FA4F4BE6249BFCE500B18925 /* InterventionsModel.swift in Sources */,
@@ -521,7 +525,7 @@
 				B0C7E20C2454C404005995A3 /* CollectionViewHistoryEquipmentCell.swift in Sources */,
 				B09FE97B242E526C00EE2FA1 /* FilterShowEquipmentViewController.swift in Sources */,
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
-				B02B429324796B9C00A22EAA /* ReportProblemPOSTModel.swift in Sources */,
+				B02B429324796B9C00A22EAA /* SendReportProblemPOSTModel.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
 				FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,

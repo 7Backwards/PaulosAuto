@@ -14,7 +14,7 @@ class RQ_SendReportProblem {
     // MARK: - Public
     
     
-    func repos(reportProblemPOST : ReportProblemPOSTModel, _ completion: @escaping (ReportProblemModel?, Error?) -> Void ) {
+    func repos(reportProblemPOST : SendReportProblemPOSTModel, _ completion: @escaping (SendReportProblemResponseModel?, Error?) -> Void ) {
         
         var requestData = Data()
         
@@ -29,7 +29,7 @@ class RQ_SendReportProblem {
                                     method: "POST",
                                     params: nil,
                                     multipartParams: requestData,
-                                    headers: headers) { (result: Result<ReportProblemModel, Error>) in
+                                    headers: headers) { (result: Result<SendReportProblemResponseModel, Error>) in
             switch result {
 
             case .success(let data):

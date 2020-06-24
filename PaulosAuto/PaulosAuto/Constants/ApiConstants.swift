@@ -11,19 +11,17 @@ import Foundation
 
 struct ApiConstants {
     
-    static let base = URL(string: "http://rootfixxxer.no-ip.info:90/api/pa/")
-    static let baseNewAPI = URL(string: "http://192.168.99.100:5080/")
-    static let listEquipmentURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/clientes/equipamentos_v2/")
-    static let listEquipmentHistoryURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/intervencoes/")
-    static let listInvoicesURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/clientes/faturas/")
-    static let listReportProblemURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias/")
+    static let baseAPI = URL(string: "http://192.168.1.53:5080/")
+    static let listEquipmentURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/clientes/equipamentos_v2/")
+    static let listEquipmentHistoryURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/intervencoes/")
+    static let listInvoicesURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/clientes/faturas/")
+    static let listReportProblemURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias/")
     static let sendEquipmentUtilizationURL =
-        baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/utilizacao")
-    static let loginURL = baseNewAPI?.appendingPathComponent("Autenticacao/login")
-    static let testTokenURL = base?.appendingPathComponent("testeToken")
-    static let testTokenAdmin = base?.appendingPathComponent("testeTokenAdministrador")
-    static let testTokenOthers = base?.appendingPathComponent("testeTokenOutros")
-    static let problemReportURL = baseNewAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias_v2")
+        baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/utilizacao")
+    static let loginURL = baseAPI?.appendingPathComponent("Autenticacao/login")
+    static let testTokenURL = baseAPI?.appendingPathComponent("Autenticacao/checkAll")
+    static let testTokenAdminURL = baseAPI?.appendingPathComponent("Autenticacao/checkAdmin")
+    static let problemReportURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias")
     static let dateFormatter : DateFormatter = {
         
         let dateFormatter = DateFormatter()
