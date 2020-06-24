@@ -80,6 +80,11 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else { return }
             if mediaType == (kUTTypeMovie as String) {
                 
+                let fileManager = FileManager.default
+                let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+                let videoPath = documentsPath?.appendingPathComponent("\(NSUUID().uuidString)" + ".mov")
+                
+                
                 let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL
                 
                 var videoData = AttachmentReportProblemStruct()
@@ -87,14 +92,11 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
                 
                 videoModel.urlPath = url
                 videoModel.name = url?.lastPathComponent
-                var dataVideo = Data()
-                do {
-                    
-                    dataVideo = try Data(contentsOf: videoModel.urlPath!)
-                } catch _ {
-                    
-                }
-                videoModel.data = dataVideo
+                videoModel.data = NSData(contentsOf: videoModel.urlPath!) as Data?
+                try! videoModel.data?.write(to: videoPath!)
+                videoModel.urlPath = videoPath
+                
+                
                 videoData.video = videoModel
                 
                 self?.attachmentArray.append(videoData)
@@ -103,20 +105,26 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
             }
             if mediaType == (kUTTypeImage as String) {
                 
-                let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-                var imageData = AttachmentReportProblemStruct()
-                var imageModel = ImageModel()
                 
-                imageModel.data = image?.pngData()
-                if let imagePath = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+                let fileManager = FileManager.default
+                let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+                let imagePath = documentsPath?.appendingPathComponent("\(NSUUID().uuidString)" + ".jpg")
+                
+                if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                     
+                    let data = pickedImage.jpegData(compressionQuality: 0.75)
+                    try! data?.write(to: imagePath!)
+                    var imageData = AttachmentReportProblemStruct()
+                    var imageModel = ImageModel()
+                    imageModel.data = data
                     imageModel.urlPath = imagePath
-                    imageModel.name = imagePath.lastPathComponent
+                    imageModel.name = imagePath?.lastPathComponent
+                    imageData.image = imageModel
+                    self?.attachmentArray.append(imageData)
+                    self?.collectionView.reloadData()
+                    
                 }
-                imageData.image = imageModel
-                self?.attachmentArray.append(imageData)
-                self?.collectionView.reloadData()
-                return
+                
             }
             return
         }
@@ -197,7 +205,7 @@ extension ReportProblemViewController : UICollectionViewDataSource {
         deleteButton.backgroundColor = .redTransparent60
         deleteButton.tintColor = .black
         deleteButton.layer.cornerRadius = 10
-
+        
         
         cell.previewImageOuterView.addSubview(deleteButton)
         deleteButton.translatesAutoresizingMaskIntoConstraints = false

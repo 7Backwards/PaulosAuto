@@ -191,7 +191,7 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
     }
     
     @IBAction func reportProblemButtonPressed(_ sender: Any) {
-
+        
         var imagesPOST : [ImageModel] = []
         for i in attachmentArray {
             
@@ -273,10 +273,31 @@ class ReportProblemViewController: ViewController, UITextViewDelegate {
                 }
             }
         }
+        else if let video = attachmentArray[sender.view.tag]?.video {
+            
+            if let urlVideo = video.urlPath {
+                
+                let fileName = "\(NSUUID().uuidString)" + ".mov"
+                
+                saveURLFileLocally(fileName: fileName, url: urlVideo.absoluteString) {(url, error)  in
+                    if url != nil {
+                        
+                        self.previewFile(fileName: fileName)
+                        
+                    }
+                    else if error != nil {
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.addInformativeAlert(alertControllerTitle: "Erro", message: "Erro na visualização do anexo", alertActionTitle: "Tentar Novamente")
+                        }
+                    }
+                }
+            }
+        }
     }
-    
-    
 }
+
 
 
 
