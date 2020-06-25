@@ -42,11 +42,10 @@ extension ListEquipmentViewController : UICollectionViewDataSource {
         
         if !equipmentArray.isEmpty {
             
-            if let imageURL = equipmentArray[indexPath.row].image {
+            if let imageData = equipmentArray[indexPath.row].imageData {
                 
-                UIImage.loadFrom(url: URL(string:imageURL)!) { image in
-                    cell.EquipmentImageView.image = image
-                }
+                cell.EquipmentImageView.image = UIImage(data: imageData)
+                
             }
             
             if let plateEquipment = equipmentArray[indexPath.row].plate {

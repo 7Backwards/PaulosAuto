@@ -57,6 +57,7 @@ class PerfilViewController: ViewController {
     private func SetupPerfilViewController() {
         
         super.addNavBarLogo()
+        authenticateToken()
         cardView.setCardView()
         if let data = UserDefaults.standard.value(forKey:"user") as? Data {
             

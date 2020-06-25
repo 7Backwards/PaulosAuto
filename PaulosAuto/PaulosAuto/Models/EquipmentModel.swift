@@ -37,6 +37,7 @@ class EquipmentModel: Codable {
     var model: String?
     var image: String?
     var dateEndAssignment: Date?
+    var imageData: Data?
     
     init (model: String?, serialNumber: String?, year: Int?, currentHours: Int?, smp: Bool?, brand: String?, plate: String?, type: String?, dateAssignment: String?, dateStartAssignment: String?, dateEndAssignment: String?, image: String?) {
         

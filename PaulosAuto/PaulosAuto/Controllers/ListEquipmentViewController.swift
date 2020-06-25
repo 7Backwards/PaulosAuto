@@ -85,19 +85,12 @@ class ListEquipmentViewController: ViewController {
                             
                             self.equipments = equipmentData
                             
-                            let fileManager = FileManager.default
-                            let documentsPath = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-                            
                             for equipment in self.equipments {
                                 
                                 if let url = equipment.image {
                                     
-                                   let imagePath = documentsPath?.appendingPathComponent("\(NSUUID().uuidString)" + ".jpg")
-                                    
                                     let data = try? Data(contentsOf: URL(string:url)!)
-                                    try! data?.write(to: imagePath!)
-                                    
-                                    equipment.image = imagePath?.absoluteString
+                                    equipment.imageData = data
                                 }
                             }
                             self.collectionView?.reloadData()
@@ -129,6 +122,7 @@ class ListEquipmentViewController: ViewController {
     private func setupListEquipmentViewController() {
         
         super.addNavBarLogo()
+        authenticateToken()
         super.setSearchBarStyle(searchBar: searchBar)
         self.refreshData()
         collectionView.delegate = self

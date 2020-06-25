@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             self.loadingView.removeFromSuperview()
             self.fullscreenView.removeFromSuperview()
         }
-
+        
     }
     
     func getFormattedDate(date: Date, format: String) -> String {
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     
     func saveURLFileLocally(fileName : String, url : String, _ completion: @escaping (URL?, Error?) -> Void) {
         
@@ -239,43 +239,25 @@ class ViewController: UIViewController {
             self.tabBarController?.tabBar.isHidden = true
         }
     }
-        
     
     func dismisspopup() {
         
         dismiss(animated: true, completion: nil)
     }
 
-    
-    //  Not used as the final version of the API doesnt have token authentication implemented
-    //    func  {
-    //
-    //        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
-    //            if TokenResponse != nil {
-    //
-    //                return
-    //            }
-    //            else if error != nil {
-    //
-    //                self.signout()
-    //            }
-    //        })
-    //    }
-    //
-    //    func authenticateAdminToken(_ completion: @escaping (Bool) -> ()) {
-    //
-    //        RQ_TokenAdminAuthentication().repos( { (TokenResponse,error) in
-    //            if TokenResponse != nil {
-    //
-    //                completion(true)
-    //            }
-    //            else {
-    //
-    //                completion(false)
-    //            }
-    //        })
-    //
-    //    }
+    func authenticateToken() {
+        
+        RQ_TokenAuthentication().repos( { (TokenResponse,error) in
+            if TokenResponse != nil {
+                
+                return
+            }
+            else if error != nil {
+                
+                self.signout()
+            }
+        })
+    }
     
     
     // MARK: - Objc functions

@@ -171,6 +171,7 @@ class ShowEquipmentViewController: ViewController {
     private func setupShowEquipmentViewController() {
         
         super.addNavBarLogo()
+        authenticateToken()
         segmentControl.setLayoutSegmentControl(segmentControl)
         
         navigationItem.leftBarButtonItem?.tintColor = .RedPaulosAuto
@@ -187,11 +188,9 @@ class ShowEquipmentViewController: ViewController {
         modelLabel.text = equipment.model
         equipmentTypeLabel.text = equipment.type
         serialNumberLabel.text = equipment.serialNumber
-        if let imageURL = equipment.image  {
-            
-            UIImage.loadFrom(url: URL(string:imageURL)!) { image in
-                self.equipmentImageView.image = image
-            }
+        if let imageData = equipment.imageData  {
+    
+            self.equipmentImageView.image = UIImage(data: imageData)
         }
         if let dataStartAssignment = equipment.dateAssignment {
             

@@ -68,7 +68,6 @@
 		FA05FB0E242064020033B901 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA05FB0D242064020033B901 /* UIView+Extensions.swift */; };
 		FA29543E247DED730079A646 /* TokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543D247DED730079A646 /* TokenResponseModel.swift */; };
 		FA295440247DEDE10079A646 /* RQ_TokenAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */; };
-		FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */; };
 		FA4F4BE6249BFCE500B18925 /* InterventionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */; };
 		FA4F4BE8249C0F8E00B18925 /* EquipmentHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */; };
 		FA529CB724997F0F00D2255B /* ReportProblemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */; };
@@ -149,7 +148,6 @@
 		FA05FB0D242064020033B901 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FA29543D247DED730079A646 /* TokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponseModel.swift; sourceTree = "<group>"; };
 		FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAuthentication.swift; sourceTree = "<group>"; };
-		FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RQ_TokenAdminAuthentication.swift; sourceTree = "<group>"; };
 		FA4F4BE5249BFCE500B18925 /* InterventionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionsModel.swift; sourceTree = "<group>"; };
 		FA4F4BE7249C0F8E00B18925 /* EquipmentHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentHistory.swift; sourceTree = "<group>"; };
 		FA529CB624997F0F00D2255B /* ReportProblemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemInfoViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				B0B10512246B80C9003960BC /* RQ_LogIn.swift */,
 				B02B429424796DA500A22EAA /* RQ_SendReportProblem.swift */,
 				FA29543F247DEDE10079A646 /* RQ_TokenAuthentication.swift */,
-				FA295441247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift */,
 				FA66F2BE24981ACB005182F6 /* RQ_ListReportProblems.swift */,
 			);
 			path = Requests;
@@ -527,7 +524,6 @@
 				B06A0D012470C78A00074AE1 /* TabBarViewController.swift in Sources */,
 				B02B429324796B9C00A22EAA /* SendReportProblemPOSTModel.swift in Sources */,
 				B0B10513246B80C9003960BC /* RQ_LogIn.swift in Sources */,
-				FA295442247DF85D0079A646 /* RQ_TokenAdminAuthentication.swift in Sources */,
 				B01CA8DC244F8227000228A5 /* RQ_ListEquipmentHistory.swift in Sources */,
 				B0B10517246CAD81003960BC /* InvoiceDownloadModel.swift in Sources */,
 				FACD18162419AEEE0085574C /* ListReportProblemViewController.swift in Sources */,

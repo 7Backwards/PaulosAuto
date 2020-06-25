@@ -108,6 +108,7 @@ class ListReportProblemViewController: ViewController {
     private func setupListReportProblemViewController() {
         
         super.addNavBarLogo()
+        authenticateToken()
         collectionView.collectionViewLayout = cellLayout
         collectionView.dataSource = self
         collectionView.delegate = self

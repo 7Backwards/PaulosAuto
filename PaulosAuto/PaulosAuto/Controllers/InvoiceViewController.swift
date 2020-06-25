@@ -96,6 +96,7 @@ class InvoiceViewController: ViewController {
     private func setupInvoiceViewController() {
         
         super.addNavBarLogo()
+        authenticateToken()
         collectionView.collectionViewLayout = cellLayout
         collectionView.dataSource = self
         refreshData()
