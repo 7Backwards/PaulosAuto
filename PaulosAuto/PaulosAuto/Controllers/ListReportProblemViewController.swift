@@ -63,6 +63,7 @@ class ListReportProblemViewController: ViewController {
                                 for reportProblem in reportProblemData {
                                     
                                     reportProblem.serialNumber = equipment
+                                   
                                     self.problemsReported.append(reportProblem)
                                 }
                                 
@@ -77,9 +78,9 @@ class ListReportProblemViewController: ViewController {
                                     }
                                     
                                 }()
-                                
-                                self.collectionView?.reloadData()
                                 self.removeHUDLoading()
+                                self.collectionView?.reloadData()
+                                
                                 if self.problemsReported.count == 0 {
                                     
                                     self.noReportProblemsView.isHidden = false
