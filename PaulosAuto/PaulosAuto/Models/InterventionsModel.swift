@@ -23,7 +23,7 @@ class InterventionsModel: Codable {
         self.hours = hours
         if let date = dateIntervention {
             
-            if let date = ApiConstants.dateFormatter.date(from: date) {
+            if let date = ApiConstants.dateFormatter1.date(from: date) {
                 
                 self.dateIntervention = date
             }

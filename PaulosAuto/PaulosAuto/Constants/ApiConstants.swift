@@ -22,15 +22,19 @@ struct ApiConstants {
     static let testTokenURL = baseAPI?.appendingPathComponent("Autenticacao/checkAll")
     static let testTokenAdminURL = baseAPI?.appendingPathComponent("Autenticacao/checkAdmin")
     static let problemReportURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias")
-    static let dateFormatter : DateFormatter = {
+    static let dateFormatter1 : DateFormatter = {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return dateFormatter
     }()
+    static let dateFormatter2 : DateFormatter = {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return dateFormatter
+    }()
     static let boundary = "------------------------\(UUID().uuidString)"
-    
-    
 }
 
 enum APPError: Error {

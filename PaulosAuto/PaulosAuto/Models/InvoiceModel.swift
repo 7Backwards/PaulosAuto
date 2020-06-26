@@ -37,7 +37,7 @@ class InvoiceModel: Codable {
         
         if let dueDate = dueDate {
             
-            if let date = ApiConstants.dateFormatter.date(from: dueDate) {
+            if let date = ApiConstants.dateFormatter1.date(from: dueDate) {
                 
                 self.dueDate = date
             }
@@ -45,7 +45,7 @@ class InvoiceModel: Codable {
         
         if let issueDate = issueDate {
             
-            if let date = ApiConstants.dateFormatter.date(from: issueDate) {
+            if let date = ApiConstants.dateFormatter1.date(from: issueDate) {
                 
                 self.issueDate = date
             }

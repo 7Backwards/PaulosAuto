@@ -36,7 +36,6 @@ extension ListReportProblemViewController : UICollectionViewDataSource {
             cell.dateLabel.text = getFormattedDate(date: date, format: "dd/MM/yyyy")
         }
         
-        
         cell.cellView.setCardView()
         return cell
     }

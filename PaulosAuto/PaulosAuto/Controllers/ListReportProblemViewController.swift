@@ -13,6 +13,7 @@ class ListReportProblemViewController: ViewController {
     
     // MARK: - Outlets
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var noReportProblemsView: UIView!
     

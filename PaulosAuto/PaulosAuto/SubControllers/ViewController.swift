@@ -148,6 +148,7 @@ class ViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         
+        self.view.addSubview((alert.view)!)
         DispatchQueue.main.async {
             
             self.present(alert, animated: true, completion: nil)
@@ -294,6 +295,11 @@ class ViewController: UIViewController {
             }
         }
         sender.setTranslation(.zero, in: view)
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
 

@@ -34,11 +34,19 @@ class ReportProblemModel: Codable {
         self.videos = videos
         self.email = email
         
+        
         if let date = date {
             
-            if let date = ApiConstants.dateFormatter.date(from: date) {
+            if let date = ApiConstants.dateFormatter1.date(from: date) {
                 
                 self.date = date
+            }
+            else {
+                
+                if let date = ApiConstants.dateFormatter2.date(from: date) {
+                    
+                    self.date = date
+                }
             }
         }
     }

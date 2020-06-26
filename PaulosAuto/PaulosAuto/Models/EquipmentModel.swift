@@ -53,7 +53,7 @@ class EquipmentModel: Codable {
         
         if let dateAssignment = dateAssignment {
             
-            if let date = ApiConstants.dateFormatter.date(from: dateAssignment) {
+            if let date = ApiConstants.dateFormatter1.date(from: dateAssignment) {
                 
                 self.dateAssignment = date
             }
@@ -62,7 +62,7 @@ class EquipmentModel: Codable {
         
         if let dateStartAssignment = dateStartAssignment {
             
-            if let date = ApiConstants.dateFormatter.date(from: dateStartAssignment) {
+            if let date = ApiConstants.dateFormatter1.date(from: dateStartAssignment) {
                 
                 self.dateStartAssignment = date
             }
@@ -70,7 +70,7 @@ class EquipmentModel: Codable {
         
         if let dateEndAssignment = dateEndAssignment {
             
-            if let date = ApiConstants.dateFormatter.date(from: dateEndAssignment) {
+            if let date = ApiConstants.dateFormatter1.date(from: dateEndAssignment) {
                 
                 self.dateEndAssignment = date
             }

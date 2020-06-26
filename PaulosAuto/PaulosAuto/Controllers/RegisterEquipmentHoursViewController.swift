@@ -132,10 +132,10 @@ class RegisterEquipmentHoursViewController: ViewController {
         RQ_SendEquipmentUtilization().repos(serialNumber: Equipment.serialNumber!, currentHours: Int(currentHoursTextField.text!)!, { (equipmentData,error) in
             if equipmentData != nil {
                 
-                
+                AppConstants.registerHoursDone = true
                 DispatchQueue.main.async {
                  
-                        AppConstants.registerHoursDone = true
+                        
                     self.addInformativeAlert(alertControllerTitle: "Sucesso", message: "Registo de horas de utilização efetuado com sucesso", alertActionTitle: "Ok")
                 }
             }
@@ -147,8 +147,10 @@ class RegisterEquipmentHoursViewController: ViewController {
                 }
             }
         })
-        dismisspopup()
+        dismissKeyboard()
     }
+    
+
 }
 
 
