@@ -38,6 +38,7 @@ struct ApiConstants {
 
 enum APPError: Error {
     
+    case networkError(Error)
     case dataNotFound
     case jsonParsingError(Error)
     case invalidStatusCode(Int)
