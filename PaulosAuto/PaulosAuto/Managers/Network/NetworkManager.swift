@@ -72,28 +72,36 @@ class NetworkManager: NSObject {
                     case 200:
                         DispatchQueue.main.async {
                             
-                            let response = try! JSONDecoder().decode(T.self, from: data)
-                            completion(.success(response))
+                            do {
+                                
+                                let response = try JSONDecoder().decode(T.self, from: data)
+                                completion(.success(response))
+                                
+                            }
+                            catch {
+                                
+                                completion(.failure(APPError.jsonParsingError(error)))
+                            }
                         }
-                        
-                        
-                    case 413:
-                        completion(.failure(APPError.requestEntityTooLarge))
-                        
-                        
+
                     case 401:
                         completion(.failure(APPError.unauthorized))
                         
                     case 403:
                         completion(.failure(APPError.forbidden))
                         
-                    case 500:
+                    case 404:
                         completion(.failure(APPError.dataNotFound))
                         
-                
+                    case 413:
+                        completion(.failure(APPError.requestEntityTooLarge))
+                        
+                    case 500:
+                        completion(.failure(APPError.InternalError))
+                        
                     default:
                         
-                        break
+                        completion(.failure(APPError.invalidStatusCode(httpResponse.statusCode)))
                     }
                 }
             }).resume()
@@ -137,28 +145,34 @@ class NetworkManager: NSObject {
                 case 200:
                     DispatchQueue.main.async {
                         
-                        let response = try! JSONDecoder().decode(T.self, from: data)
-                        completion(.success(response))
+                        do {
+                            
+                            let response = try JSONDecoder().decode(T.self, from: data)
+                            completion(.success(response))
+                        }
+                        catch {
+                            completion(.failure(APPError.jsonParsingError(error)))
+                        }
                     }
-                    
-                    
-                case 413:
-                    completion(.failure(APPError.requestEntityTooLarge))
-                    
-                    
+                      
                 case 401:
                     completion(.failure(APPError.unauthorized))
                     
                 case 403:
                     completion(.failure(APPError.forbidden))
                     
-                case 500:
+                case 404:
                     completion(.failure(APPError.dataNotFound))
                     
+                case 413:
+                    completion(.failure(APPError.requestEntityTooLarge))
+                    
+                case 500:
+                    completion(.failure(APPError.InternalError))
                     
                 default:
                     
-                    break
+                    completion(.failure(APPError.invalidStatusCode(httpResponse.statusCode)))
                 }
             }
         }

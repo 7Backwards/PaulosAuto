@@ -21,7 +21,7 @@ extension ReportProblemViewController: UIImagePickerControllerDelegate, UINaviga
         
         DispatchQueue.main.async {
             
-        let alert = UIAlertController(title: "Seleção de Imagem", message: "De onde pretende selecionar a imagem?", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Seleção de anexo", message: "De onde pretende selecionar o anexo?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
             self.openCamera()
         }))

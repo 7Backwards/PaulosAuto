@@ -20,7 +20,6 @@ struct ApiConstants {
         baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/utilizacao")
     static let loginURL = baseAPI?.appendingPathComponent("Autenticacao/login")
     static let testTokenURL = baseAPI?.appendingPathComponent("Autenticacao/checkAll")
-    static let testTokenAdminURL = baseAPI?.appendingPathComponent("Autenticacao/checkAdmin")
     static let problemReportURL = baseAPI?.appendingPathComponent("PaulosAutoAPI/equipamentos/avarias")
     static let dateFormatter1 : DateFormatter = {
         
@@ -39,13 +38,13 @@ struct ApiConstants {
 
 enum APPError: Error {
     
-    case networkError(Error)
     case dataNotFound
     case jsonParsingError(Error)
     case invalidStatusCode(Int)
     case requestEntityTooLarge
     case unauthorized
     case forbidden
+    case InternalError
 }
 
 enum Result<T,Error> {
