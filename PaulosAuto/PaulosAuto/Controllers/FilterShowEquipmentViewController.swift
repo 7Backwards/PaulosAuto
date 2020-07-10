@@ -251,19 +251,18 @@ class FilterShowEquipmentViewController: ViewController {
         
         dateContractView.layer.masksToBounds = true
         dateContractView.layer.cornerRadius = 20
-        dateContractView.backgroundColor = .redTransparent5
+        
         
         hoursUtilizationView.layer.masksToBounds = true
         hoursUtilizationView.layer.cornerRadius = 20
-        hoursUtilizationView.backgroundColor = .blackTransparent
         
         modelView.layer.masksToBounds = true
         modelView.layer.cornerRadius = 20
-        modelView.backgroundColor = .blackTransparent
         
         serialNumberView.layer.masksToBounds = true
         serialNumberView.layer.cornerRadius = 20
-        serialNumberView.backgroundColor = .blackTransparent
+        
+        setSelectedOrderBy()
         
         topView.setCardViewTopCorners()
         
