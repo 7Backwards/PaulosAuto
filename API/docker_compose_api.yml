@@ -1,0 +1,38 @@
+﻿version: "3"
+
+volumes: 
+    bd_data:
+    www_data:
+
+networks:
+     paulos_auto_network:
+
+services:
+    paulos_auto_bd:
+        image: "mysql:latest"
+        ports:
+            - 3306:3306
+        volumes:
+            - bd_data:/var/lib/mysql
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456789
+        networks:
+            - paulos_auto_network
+
+    paulos_auto_api:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - paulos_auto_bd
+        restart: always
+        ports:
+            - 5080:80
+        environment:
+            - DB_Host=paulos_auto_bd
+            - DB_Pass=123456789
+        volumes:
+            - www_data:/app/wwwroot
+        networks:
+            - paulos_auto_network
