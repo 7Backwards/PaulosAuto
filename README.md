@@ -1,3 +1,3 @@
 # Paulos Auto iOS App
 
-Aplicação iOS realizada para a PaulosAuto durante o período de estágio da softinsa
+iOS Application made for Paulos Auto during my internship at Softinsa (IBM)
